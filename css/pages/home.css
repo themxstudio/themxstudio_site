@@ -57,12 +57,12 @@ body.home-page .site-header {
 
 .hero::before {
   background:
-    center 18% / cover no-repeat url("/assets/images/the-mx-studio-10.webp");
+    center 98% / cover no-repeat url("/assets/images/mx-st3.webp");
   z-index: 0;
 }
 
 .hero::after {
-  background: color-mix(in srgb, var(--bg) 90%, var(--accent) 10%);
+  background: color-mix(in srgb, var(--bg) 90%, var(--accent) 0%);
   opacity: 0.75;
   z-index: 0;
 }

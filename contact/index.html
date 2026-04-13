@@ -813,7 +813,7 @@
     <main>
       <section class="page-hero">
         <div class="page-hero__content">
-          <h1 class="page-hero__title">You’re in the right place!</h1>
+          <h1 class="page-hero__title">Let's Grow Your Business.</h1>
           <p class="page-hero__sub">
             We typically respond within a business day. Sometimes within the
             hour.
@@ -821,125 +821,134 @@
         </div>
       </section>
 
-      <section class="contact-meta" aria-label="Direct contact">
-        <div class="contact-direct" aria-label="Direct contact">
-          <p class="contact-meta__badge" aria-hidden="true">
-            <span class="contact-meta__badge-label"
-              >Coffee <br />
-              on us!</span
-            >
+      <div class="contact-layout">
+        <section class="contact-meta" aria-label="Direct contact">
+          <div class="contact-direct" aria-label="Direct contact">
+            <p class="contact-meta__badge" aria-hidden="true">
+              <span class="contact-meta__badge-label"
+                >Coffee <br />
+                on us!</span
+              >
+            </p>
+            <div class="contact-direct__inner">
+              <a class="page-hero__email" href="mailto:hello@themxstudio.com">
+                <svg
+                  class="page-hero__lead-icon"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <rect
+                    x="3"
+                    y="5"
+                    width="18"
+                    height="14"
+                    rx="2"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M3 7l9 6 9-6"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                hello@themxstudio.com
+              </a>
+
+              <a class="page-hero__phone" href="tel:+61421709047">
+                <svg
+                  class="page-hero__lead-icon"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.07 21 3 13.93 3 5c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.24.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
+                  />
+                </svg>
+                0421 709 047
+              </a>
+            </div>
+          </div>
+          <p class="contact-meta__copy">
+            Web design, SEO, and website support for Brisbane businesses. If
+            you already know what you need, use the form and we’ll get back to
+            you within a business day.
           </p>
-          <div class="contact-direct__inner">
-            <a class="page-hero__email" href="mailto:hello@themxstudio.com">
-              <svg
-                class="page-hero__lead-icon"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <rect
-                  x="3"
-                  y="5"
-                  width="18"
-                  height="14"
-                  rx="2"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2.2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M3 7l9 6 9-6"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2.2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-              hello@themxstudio.com
-            </a>
+        </section>
 
-            <a class="page-hero__phone" href="tel:+61421709047">
-              <svg
-                class="page-hero__lead-icon"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path
-                  fill="currentColor"
-                  d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.07 21 3 13.93 3 5c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.24.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
-                />
-              </svg>
-              0421 709 047
-            </a>
+        <section class="contact-forms" aria-label="Contact form">
+          <div class="contact-forms__inner">
+            <div class="contact-forms__grid">
+              <article class="contact-forms__card">
+                <div class="contact-forms__head">
+                  <h3 class="contact-forms__card-title">Free Discovery Call</h3>
+                  <p class="contact-forms__card-desc">
+                    Advice is free. Book a free discovery call to explore what
+                    you need and how we can help.
+                  </p>
+                  <p class="contact-forms__card-note">
+                    Share a few times that suit you and we'll work around your
+                    schedule.
+                  </p>
+                </div>
+
+                <form
+                  class="discovery-form"
+                  id="contact-discovery-form"
+                  name="discovery-call"
+                  method="POST"
+                  data-netlify="true"
+                  netlify-honeypot="bot-field"
+                >
+                  <input
+                    type="hidden"
+                    name="form-name"
+                    value="discovery-call"
+                  />
+                  <p style="display: none">
+                    <label
+                      >Don't fill this out <input name="bot-field"
+                    /></label>
+                  </p>
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Your Name"
+                    required
+                  />
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Your Email"
+                    required
+                  />
+                  <input type="url" name="website" placeholder="Your Website" />
+                  <textarea
+                    name="project"
+                    placeholder="What do you need done?"
+                    required
+                  ></textarea>
+                  <textarea
+                    name="availability"
+                    placeholder="Some dates and times you're available"
+                    required
+                  ></textarea>
+                  <button type="submit" class="discovery-form__submit">
+                    Book My Free Discovery Call
+                  </button>
+                </form>
+              </article>
+            </div>
           </div>
-        </div>
-      </section>
-
-      <section class="contact-forms" aria-labelledby="contact-forms-title">
-        <div class="contact-forms__inner">
-          <h2 class="contact-forms__title" id="contact-forms-title">
-            Or skip the back-and-forth…
-          </h2>
-
-          <div class="contact-forms__grid">
-            <article class="contact-forms__card">
-              <div class="contact-forms__head">
-                <h3 class="contact-forms__card-title">Free Discovery Call</h3>
-                <p class="contact-forms__card-desc">
-                  Advice is free. Book a free discovery call to explore what you
-                  need and how we can help.
-                </p>
-                <p class="contact-forms__card-note">
-                  Share a few times that suit you and we'll work around your
-                  schedule.
-                </p>
-              </div>
-
-              <form
-                class="discovery-form"
-                id="contact-discovery-form"
-                name="discovery-call"
-                method="POST"
-                data-netlify="true"
-                netlify-honeypot="bot-field"
-              >
-                <input type="hidden" name="form-name" value="discovery-call" />
-                <p style="display: none">
-                  <label>Don't fill this out <input name="bot-field" /></label>
-                </p>
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Your Name"
-                  required
-                />
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Your Email"
-                  required
-                />
-                <input type="url" name="website" placeholder="Your Website" />
-                <textarea
-                  name="project"
-                  placeholder="What do you need done?"
-                  required
-                ></textarea>
-                <textarea
-                  name="availability"
-                  placeholder="Some dates and times you're available"
-                  required
-                ></textarea>
-                <button type="submit" class="discovery-form__submit">
-                  Book My Free Discovery Call
-                </button>
-              </form>
-            </article>
-          </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </main>
 
     <footer class="site-footer">
@@ -993,30 +1002,15 @@
 
           <a
             class="footer-social__link"
-            href="https://www.tiktok.com/@themxstudio"
-            aria-label="TikTok"
+            href="https://www.linkedin.com/company/the-mx-studio/"
+            aria-label="LinkedIn"
             target="_blank"
             rel="noreferrer"
           >
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path
                 fill="currentColor"
-                d="M16.7 3c.6 2.6 2.4 4.4 5.3 4.6v3.2c-1.9.1-3.6-.5-5.2-1.6v7.1c0 4-3.3 6.7-7.1 6.1-2.8-.4-5.1-2.9-5.3-5.8C4.1 12.8 7.4 10 11 10.5v3.5c-.3-.1-.7-.1-1 0-1.3.2-2.2 1.4-2 2.7.2 1.5 1.9 2.4 3.3 1.7.6-.3 1-1 1-1.7V3h3.4Z"
-              />
-            </svg>
-          </a>
-
-          <a
-            class="footer-social__link"
-            href="https://au.pinterest.com/themxstudio/"
-            aria-label="Pinterest"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                fill="currentColor"
-                d="M12 2C6.477 2 2 6.477 2 12c0 4.237 2.636 7.846 6.356 9.301-.088-.791-.167-2.005.035-2.87.182-.782 1.172-4.98 1.172-4.98s-.298-.596-.298-1.477c0-1.383.802-2.416 1.8-2.416.849 0 1.259.637 1.259 1.4 0 .853-.543 2.128-.823 3.31-.235.993.499 1.803 1.48 1.803 1.776 0 3.141-1.873 3.141-4.576 0-2.393-1.72-4.067-4.177-4.067-2.846 0-4.518 2.134-4.518 4.339 0 .859.331 1.781.744 2.281.082.1.093.187.069.288-.075.317-.244 1.006-.277 1.147-.044.185-.145.224-.335.135-1.249-.582-2.03-2.411-2.03-3.881 0-3.159 2.294-6.059 6.614-6.059 3.472 0 6.17 2.475 6.17 5.784 0 3.452-2.176 6.23-5.198 6.23-1.015 0-1.971-.527-2.297-1.149l-.624 2.379c-.226.868-.837 1.956-1.246 2.619A10.04 10.04 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2Z"
+                d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M8.34 17V10.98H6.33V17H8.34M7.34 10.15A1.17 1.17 0 1 0 7.34 7.81 1.17 1.17 0 0 0 7.34 10.15M17 17V13.7C17 11.93 16.62 10.57 14.55 10.57C13.55 10.57 12.88 11.12 12.6 11.64H12.57V10.74H10.64V17H12.65V13.97C12.65 13.17 12.8 12.39 13.79 12.39C14.77 12.39 14.79 13.31 14.79 14.02V17H17Z"
               />
             </svg>
           </a>

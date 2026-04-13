@@ -125,7 +125,7 @@
 .discovery-form__submit {
   padding: 0.75rem 1.5rem;
   background: var(--accent);
-  color: var(--bg);
+  color: var(--text);
   font-weight: 900;
   font-size: 1rem;
   border: 0;
@@ -193,7 +193,7 @@
   background: var(--accent);
   box-shadow: none;
   filter: none;
-  color: var(--bg);
+  color: var(--text);
   translate: 0 0;
   transform-origin: center;
   will-change: transform, translate;
@@ -211,7 +211,7 @@
 .offer-wrap__toggle-text {
   display: block;
   max-inline-size: 4rem;
-  color: var(--bg);
+  color: var(--text);
 }
 
 .offer-wrap__toggle:hover,

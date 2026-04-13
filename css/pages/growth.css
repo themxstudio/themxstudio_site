@@ -29,8 +29,8 @@
 }
 
 .pricing-grid3__col--featured .pricing-grid3__card {
-  border-color: var(--card-border);
-  border-width: 1px;
+  border-color: var(--accent);
+  border-width: 3px;
 }
 
 .pricing-grid3__badge {
@@ -45,7 +45,7 @@
   place-items: center;
   padding: 0.9rem;
   background: var(--accent);
-  color: var(--bg);
+  color: var(--text);
   transform: translate(50%, -50%) rotate(10deg);
   clip-path: polygon(
     50% 0%,
@@ -76,7 +76,7 @@
   max-width: 3.6rem;
   padding: 0;
   background: transparent;
-  color: var(--bg);
+  color: var(--text);
   border-radius: 0;
   font-size: 0.54rem;
   font-weight: 900;

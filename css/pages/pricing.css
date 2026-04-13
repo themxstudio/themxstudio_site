@@ -75,7 +75,7 @@ main {
 .site-header__cta,
 .site-header__cta:hover,
 .site-header__cta:focus-visible {
-  color: var(--bg);
+  color: var(--text);
 }
 
 @media (max-width: 1366px) {

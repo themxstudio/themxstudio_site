@@ -65,7 +65,7 @@
   border: 0;
   border-radius: 10px;
   background: var(--accent);
-  color: var(--bg);
+  color: var(--text);
   font: inherit;
   font-weight: 900;
   cursor: pointer;
@@ -79,7 +79,7 @@
 .landing-hero__promo-cta:hover,
 .landing-hero__promo-cta:focus-visible {
   background: var(--accent-hover);
-  color: var(--bg);
+  color: var(--text);
   text-decoration: none;
 }
 
@@ -386,6 +386,7 @@
   .ads-landing-page .photo-grid__image-wrap {
     aspect-ratio: 4 / 3;
   }
+
 }
 
 @media (max-width: 767px) {
