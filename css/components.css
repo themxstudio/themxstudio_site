@@ -1422,7 +1422,7 @@
   display: grid;
   align-content: start;
   justify-items: center;
-  gap: clamp(0.95rem, 1.4vw, 1.2rem);
+  gap: clamp(1.1rem, 1.55vw, 1.4rem);
   color: var(--bg);
   background: 0 0;
   border: 0;
@@ -1454,8 +1454,9 @@
   margin: 0;
   max-width: none;
   color: inherit;
-  font-size: clamp(2rem, 1.7vw + 1.4rem, 3.05rem);
-  font-weight: 800;
+  font-family: var(--font-accent);
+  font-size: clamp(2.15rem, 1.9vw + 1.42rem, 3.2rem);
+  font-weight: 400;
   line-height: 0.98;
   text-wrap: balance;
   text-align: center;
@@ -1816,6 +1817,10 @@
   padding-bottom: 1.35rem;
   border-bottom: 1px solid var(--rule-color);
 }
+.offer-copy__item {
+  gap: clamp(1.15rem, 1.6vw, 1.45rem);
+  padding-bottom: 1.5rem;
+}
 .intro-copy__item:last-child,
 .offer-copy__item:last-child,
 .steps-copy__item:last-child {
@@ -1832,6 +1837,11 @@
   line-height: 1.02;
   letter-spacing: -1px;
   text-align: left;
+}
+.offer-copy__title {
+  font-family: var(--font-accent);
+  font-size: clamp(2.22rem, 2.55vw, 2.62rem);
+  font-weight: 400;
 }
 .offer-copy__title a {
   font: inherit;
@@ -3610,6 +3620,13 @@
     line-height: 0.99;
     text-align: left;
   }
+  .offer-copy__item {
+    gap: 1.1rem;
+    padding-bottom: 1.5rem;
+  }
+  .offer-copy__title {
+    font-size: clamp(1.76rem, 5.9vw, 2.04rem);
+  }
   .offer-card__text {
     gap: 0.55rem;
     order: 1;
@@ -4013,7 +4030,7 @@
     font-size: 0.54rem;
   }
   .strategy-promo__title {
-    font-size: clamp(1.7rem, 6vw, 2.2rem);
+    font-size: clamp(1.82rem, 6.4vw, 2.34rem);
     text-align: center;
   }
   .strategy-promo__copy {

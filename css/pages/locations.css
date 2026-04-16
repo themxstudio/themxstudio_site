@@ -4,7 +4,8 @@
 }
 
 .locations-page .page-hero {
-  min-height: 60svh;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .locations-page .page-hero__content {
@@ -17,11 +18,19 @@
   display: block;
   color: var(--text);
   text-align: left;
+  font-size: clamp(3rem, 7vw, 6.5rem);
 }
 
 .locations-page:not(.free-audit-page)
   .page-hero__title:has(.pricing-type[data-type-text]) {
   min-height: max(var(--page-hero-title-reserve, 0px), 2.05em);
+}
+
+@media (min-width: 768px) {
+  .locations-page:not(.free-audit-page)
+    .page-hero__title:has(.pricing-type[data-type-text]) {
+    min-height: max(var(--page-hero-title-reserve, 0px), 2.15em);
+  }
 }
 
 .locations-page .pricing-type,
@@ -43,7 +52,7 @@
   line-height: 1.55;
   color: var(--text);
   opacity: 0.72;
-  position: static;
+  position: static;ß
   left: auto;
   top: auto;
   transform: none;
@@ -154,7 +163,7 @@
 
   .locations-page:not(.free-audit-page)
     .page-hero__title:has(.pricing-type[data-type-text]) {
-    min-height: max(var(--page-hero-title-reserve, 0px), 2.15em);
+    min-height: max(var(--page-hero-title-reserve, 0px), 2.05em);
   }
 
   .locations-page .pricing-type,

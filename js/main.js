@@ -941,11 +941,11 @@ if (header) {
   if (!title) return;
 
   const phrases = [
-    "work harder",
-    "look better",
-    "load faster",
-    "rank higher",
-    "get you calls",
+    "WORK HARDER",
+    "LOOK BETTER",
+    "LOAD FASTER",
+    "RANK HIGHER",
+    "GET YOU CALLS",
   ];
   const typeSpeed = 35;
   const deleteSpeed = 35;
@@ -1387,13 +1387,68 @@ if (header) {
 })();
 
 (() => {
-  const btn = document.getElementById("audit-toggle");
+  const path = window.location.pathname.replace(/\/index\.html$/, "/");
+  if (/^\/contact(?:\/|$)/.test(path)) return;
+
+  const phoneDisplay = "0421709047";
+  const phoneHref = "+61421709047";
+  const defaultLabel = "WE'RE AVAILABLE TO CHAT RIGHT NOW";
+  const createCallToggle = () => {
+    const link = document.createElement("a");
+    link.className = "site-call-toggle";
+    link.id = "audit-toggle";
+    link.href = `tel:${phoneHref}`;
+    link.setAttribute("aria-label", defaultLabel);
+    link.innerHTML = `
+      <span class="site-call-toggle__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" focusable="false">
+          <path
+            fill="currentColor"
+            d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.07 21 3 13.93 3 5c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.24.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
+          />
+        </svg>
+      </span>
+      <span class="site-call-toggle__bubble" data-call-reveal-label aria-live="polite">
+        ${defaultLabel}
+      </span>
+    `;
+    return link;
+  };
+
+  let btn = document.getElementById("audit-toggle");
+  const replacement = createCallToggle();
+  if (btn) {
+    btn.replaceWith(replacement);
+  } else {
+    document.body.append(replacement);
+  }
+  btn = replacement;
+
+  const label = btn.querySelector("[data-call-reveal-label]");
   const footer = document.querySelector(".site-footer");
-  if (!btn) return;
 
   let scrollTimer = null;
   let footerVisible = false;
+  let clickResetTimer = null;
+  let isPinnedByClick = false;
   const idleDelayMs = 500;
+  const showPhone = () => {
+    btn.classList.add("is-revealed");
+    btn.setAttribute("aria-label", `Call ${phoneDisplay}`);
+    if (label) label.textContent = phoneDisplay;
+  };
+  const showDefault = () => {
+    btn.classList.remove("is-revealed");
+    btn.setAttribute("aria-label", defaultLabel);
+    if (label) label.textContent = defaultLabel;
+  };
+  const queueDefaultState = () => {
+    clearTimeout(clickResetTimer);
+    clickResetTimer = setTimeout(() => {
+      isPinnedByClick = false;
+      showDefault();
+    }, 3000);
+  };
   const isInTopZone = () => {
     const y = window.scrollY || window.pageYOffset || 0;
     const vh = window.innerHeight || document.documentElement.clientHeight || 0;
@@ -1481,6 +1536,20 @@ if (header) {
   window.addEventListener("mobilepanelclosed", () => {
     clearTimeout(scrollTimer);
     btn.classList.remove("is-hidden-by-scroll");
+  });
+
+  btn.addEventListener("pointerenter", showPhone);
+  btn.addEventListener("pointerleave", () => {
+    if (!isPinnedByClick) showDefault();
+  });
+  btn.addEventListener("focus", showPhone);
+  btn.addEventListener("blur", () => {
+    if (!isPinnedByClick) showDefault();
+  });
+  btn.addEventListener("click", () => {
+    isPinnedByClick = true;
+    showPhone();
+    queueDefaultState();
   });
 
   update();
