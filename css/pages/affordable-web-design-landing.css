@@ -95,9 +95,9 @@
 }
 
 .landing-hero.page-hero {
-  margin-bottom: 5rem;
+  margin-bottom: 0;
   min-height: auto;
-  padding-bottom: clamp(1rem, 3vw, 2rem);
+  padding-bottom: 0;
 }
 
 .landing-hero .page-hero__content {
@@ -130,8 +130,8 @@
   width: min(100%, 44rem);
   justify-items: center;
   padding: 1.25rem 1.3rem;
-  background: color-mix(in srgb, var(--bg) 84%, var(--accent) 16%);
-  border: 1px solid color-mix(in srgb, var(--text) 12%, transparent);
+  background: var(--bg);
+  border: 0;
   border-radius: 14px;
   box-shadow:
     0 18px 36px color-mix(in srgb, var(--text) 10%, transparent),
@@ -148,9 +148,33 @@
   text-wrap: pretty;
 }
 
-.landing-hero .page-hero__google-proof {
-  justify-self: center;
-  margin-top: 0.15rem;
+.landing-hero__pricing-link {
+  color: var(--text);
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 0.14em;
+  text-decoration-thickness: 0.06em;
+}
+
+.landing-hero__pricing-link:hover,
+.landing-hero__pricing-link:focus-visible {
+  color: var(--text);
+  opacity: 0.72;
+}
+
+.ads-landing-page .reviews__inner {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.ads-landing-page .reviews {
+  margin-top: clamp(3rem, 6vw, 4.5rem);
+}
+
+.ads-landing-page .pricing-grid2 {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
 }
 
 .ads-landing-page .home-maxx {
