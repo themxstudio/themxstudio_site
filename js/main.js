@@ -1426,11 +1426,12 @@ if (header) {
 
   const label = btn.querySelector("[data-call-reveal-label]");
   const footer = document.querySelector(".site-footer");
+  const canHoverToggle =
+    typeof window.matchMedia === "function" &&
+    window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
   let scrollTimer = null;
   let footerVisible = false;
-  let clickResetTimer = null;
-  let isPinnedByClick = false;
   const idleDelayMs = 500;
   const showPhone = () => {
     btn.classList.add("is-revealed");
@@ -1441,13 +1442,6 @@ if (header) {
     btn.classList.remove("is-revealed");
     btn.setAttribute("aria-label", defaultLabel);
     if (label) label.textContent = defaultLabel;
-  };
-  const queueDefaultState = () => {
-    clearTimeout(clickResetTimer);
-    clickResetTimer = setTimeout(() => {
-      isPinnedByClick = false;
-      showDefault();
-    }, 3000);
   };
   const isInTopZone = () => {
     const y = window.scrollY || window.pageYOffset || 0;
@@ -1538,19 +1532,12 @@ if (header) {
     btn.classList.remove("is-hidden-by-scroll");
   });
 
-  btn.addEventListener("pointerenter", showPhone);
-  btn.addEventListener("pointerleave", () => {
-    if (!isPinnedByClick) showDefault();
-  });
-  btn.addEventListener("focus", showPhone);
-  btn.addEventListener("blur", () => {
-    if (!isPinnedByClick) showDefault();
-  });
-  btn.addEventListener("click", () => {
-    isPinnedByClick = true;
-    showPhone();
-    queueDefaultState();
-  });
+  if (canHoverToggle) {
+    btn.addEventListener("pointerenter", showPhone);
+    btn.addEventListener("pointerleave", showDefault);
+    btn.addEventListener("focus", showPhone);
+    btn.addEventListener("blur", showDefault);
+  }
 
   update();
 })();

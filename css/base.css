@@ -40,10 +40,10 @@ button {
 }
 
 :root {
-  --bg: #fff9f2;
+  --bg: #ffffff;
   --text: #121212;
-  --accent: #ffae68 !important;
-  --accent-hover: #ffdab9 !important;
+  --accent: #ff7f50 !important;
+  --accent-hover: #ffb59a !important;
   --page-ombre: linear-gradient(
     180deg,
     color-mix(in srgb, var(--bg) 72%, var(--accent) 28%) 0%,
