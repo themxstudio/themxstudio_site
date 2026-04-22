@@ -44,7 +44,7 @@
   display: grid;
   place-items: center;
   padding: 0.9rem;
-  background: var(--accent);
+  background: var(--accent2);
   color: var(--text);
   transform: translate(50%, -50%) rotate(10deg);
   clip-path: polygon(

@@ -42,8 +42,9 @@ button {
 :root {
   --bg: #ffffff;
   --text: #121212;
-  --accent: #ff7f50 !important;
-  --accent-hover: #ffb59a !important;
+  --accent: #ff6d50 !important;
+  --accent-hover: #ff9782 !important;
+  --accent2: #55e761;
   --page-ombre: linear-gradient(
     180deg,
     color-mix(in srgb, var(--bg) 72%, var(--accent) 28%) 0%,

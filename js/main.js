@@ -941,11 +941,9 @@ if (header) {
   if (!title) return;
 
   const phrases = [
-    "WORK HARDER",
-    "LOOK BETTER",
-    "LOAD FASTER",
-    "RANK HIGHER",
-    "GET YOU CALLS",
+    "TRADES",
+    "SERVICE BUSINESSES",
+    "LOCAL GROWTH",
   ];
   const typeSpeed = 35;
   const deleteSpeed = 35;
