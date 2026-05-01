@@ -1106,6 +1106,19 @@ main {
   order: 3;
 }
 @media (min-width: 1367px) {
+  .site-header__nav {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    justify-content: center;
+    justify-self: auto;
+    transform: translate(-50%, -50%);
+  }
+  .nav {
+    width: auto;
+    justify-content: center;
+  }
   .site-footer__info-grid {
     width: min(100%, 86rem);
     max-width: min(100%, 86rem);
