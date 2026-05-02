@@ -42,8 +42,8 @@ button {
 :root {
   --bg: #ffffff;
   --text: #000000;
-  --accent: #ff6d50 !important;
-  --accent-hover: #ff9782 !important;
+  --accent: #55e761 !important;
+  --accent-hover: #aaf5b1 !important;
   --accent2: #55e761;
   --page-ombre: linear-gradient(
     180deg,

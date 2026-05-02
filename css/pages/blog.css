@@ -15,6 +15,10 @@ body.blog-index-page {
   color: var(--text);
 }
 
+body.blog-index-page .page-hero__title {
+  font-size: clamp(3rem, 7vw, 6.5rem);
+}
+
 body.blog-post-page .page-hero__sub {
   max-width: min(100%, 705px);
   font-size: clamp(1rem, 0.42vw + 0.94rem, 1.22rem);
@@ -268,6 +272,12 @@ body.blog-post-page .page-hero__sub {
 
   .card-grid__grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1366px) {
+  body.blog-index-page .page-hero__title {
+    font-size: clamp(2.25rem, 10vw, 4rem);
   }
 }
 
