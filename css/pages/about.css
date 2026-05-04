@@ -6,10 +6,10 @@
 body {
   background-image: linear-gradient(
     180deg,
-    color-mix(in srgb, var(--bg) 72%, var(--accent2) 28%) 0%,
-    color-mix(in srgb, var(--bg) 82%, var(--accent2) 18%) 18%,
-    color-mix(in srgb, var(--bg) 91%, var(--accent2) 9%) 40%,
-    color-mix(in srgb, var(--bg) 97%, var(--accent2) 3%) 60%,
+    color-mix(in srgb, var(--bg) 72%, var(--accent) 28%) 0%,
+    color-mix(in srgb, var(--bg) 82%, var(--accent) 18%) 18%,
+    color-mix(in srgb, var(--bg) 91%, var(--accent) 9%) 40%,
+    color-mix(in srgb, var(--bg) 97%, var(--accent) 3%) 60%,
     transparent 78%
   );
 }

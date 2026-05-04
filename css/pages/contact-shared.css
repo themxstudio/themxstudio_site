@@ -39,7 +39,7 @@
 }
 
 .contact-forms__card {
-  background: var(--card-bg);
+  background: var(--form-surface, var(--card-bg));
   border: 0;
 }
 

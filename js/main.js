@@ -1388,7 +1388,7 @@ if (header) {
   const path = window.location.pathname.replace(/\/index\.html$/, "/");
   if (/^\/contact(?:\/|$)/.test(path)) return;
 
-  const phoneDisplay = "0421709047";
+  const phoneDisplay = "042 170 9047";
   const phoneHref = "+61421709047";
   const defaultLabel = "WE'RE AVAILABLE TO CHAT RIGHT NOW";
   const createCallToggle = () => {

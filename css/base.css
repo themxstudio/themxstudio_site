@@ -42,9 +42,9 @@ button {
 :root {
   --bg: #ffffff;
   --text: #000000;
-  --accent: #55e761 !important;
-  --accent-hover: #aaf5b1 !important;
-  --accent2: #55e761;
+  --accent: #FF7072 !important;
+  --accent-hover: #ffa3a5 !important;
+  --accent2: #aee051 ;
   --page-ombre: linear-gradient(
     180deg,
     color-mix(in srgb, var(--bg) 72%, var(--accent) 28%) 0%,
@@ -79,7 +79,7 @@ button {
     "Urbanist", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
     sans-serif;
   --font-accent:
-    "Londrina", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
+    "Bowlby", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
     sans-serif;
 }
 .header {
@@ -97,8 +97,8 @@ button {
   font-display: swap;
 }
 @font-face {
-  font-family: Londrina;
-  src: url("/assets/fonts/LondrinaSolid-Regular.woff2") format("woff2");
+  font-family: Bowlby;
+  src: url("/assets/fonts/BowlbyOneSC-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: fallback;
@@ -251,7 +251,7 @@ main {
 .site-header__logo {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%) scale(1.3);
+  transform: translateY(-50%) scale(1.22);
   transform-origin: left center;
   height: 40px;
   width: auto;
