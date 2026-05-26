@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-41D0NFF4ZZ"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-41D0NFF4ZZ");
+      gtag("config", "AW-18039650926");
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Apply | The MX Studio</title>
+    <meta
+      name="description"
+      content="Private application form for The MX Studio. Send your details, CV, portfolio link, and one supporting file in one place."
+    />
+
+    <link rel="canonical" href="https://themxstudio.com/apply/" />
+    <meta name="robots" content="noindex, follow" />
+    <meta name="googlebot" content="noindex, follow" />
+
+    <link
+      rel="icon"
+      href="/favicon-32x32.png?v=20260504-favicon-refresh-2"
+      type="image/png"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      href="/favicon-16x16.png?v=20260504-favicon-refresh-2"
+      type="image/png"
+      sizes="16x16"
+    />
+    <link
+      rel="icon"
+      href="/favicon.ico?v=20260504-favicon-refresh-2"
+      sizes="any"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/apple-touch-icon.png?v=20260504-favicon-refresh-2"
+    />
+    <link
+      rel="manifest"
+      href="/site.webmanifest?v=20260504-favicon-refresh-2"
+    />
+    <link
+      rel="preload"
+      href="/assets/fonts/BBHBogle-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <meta property="og:site_name" content="The MX Studio" />
+    <meta property="og:title" content="Apply | The MX Studio" />
+    <meta
+      property="og:description"
+      content="Private application form for The MX Studio. Send your details, CV, portfolio link, and one supporting file in one place."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://themxstudio.com/apply/" />
+    <meta
+      property="og:image"
+      content="https://themxstudio.com/assets/og-default-20260506.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <link rel="stylesheet" href="/css/base.css?v=20260404au" />
+    <link rel="stylesheet" href="/css/components.css?v=20260404bb" />
+    <link rel="stylesheet" href="/css/forms.css?v=20260422b" />
+    <link rel="stylesheet" href="/css/pages/apply.css?v=20260526a" />
+  </head>
+
+  <body class="apply-page">
+    <header class="apply-header">
+      <div class="apply-header__inner">
+        <a class="apply-header__brand" href="/" aria-label="The MX Studio home">
+          <img
+            class="apply-header__logo"
+            src="/assets/logos/logo-black.svg"
+            alt="The MX Studio"
+          />
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero" aria-labelledby="apply-title">
+        <div class="page-hero__content">
+          <h1 class="page-hero__title" id="apply-title">APPLY</h1>
+          <p class="page-hero__sub">
+            Apply to work with The MX Studio. Send through your details, CV,
+            portfolio link, and anything else that helps show your skills,
+            creativity, or way of thinking. We’d love to grow with people who
+            are excited about design, development, branding, marketing, and
+            building something long-term alongside a growing studio.
+          </p>
+        </div>
+      </section>
+
+      <section class="apply-shell" aria-labelledby="apply-form-title">
+        <div class="apply-shell__inner">
+          <div class="contact-forms__card apply-card">
+            <div class="contact-forms__head">
+              <h2 class="contact-forms__card-title" id="apply-form-title">
+                Application Form
+              </h2>
+              <p class="contact-forms__card-note">
+                Portfolio link and supporting file are optional. Use one file
+                per upload field and keep the total upload under 8 MB.
+              </p>
+            </div>
+
+            <ul class="apply-card__list" aria-label="What to include">
+              <li>Your name, email, and phone number</li>
+              <li>A short note on why you&apos;d be a good fit</li>
+              <li>Your portfolio link if you have one</li>
+              <li>Your CV plus one extra supporting file if needed</li>
+            </ul>
+
+            <form
+              class="discovery-form apply-form"
+              id="apply-form"
+              name="apply"
+              method="POST"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
+              enctype="multipart/form-data"
+            >
+              <input type="hidden" name="form-name" value="apply" />
+              <input type="hidden" name="page" value="/apply/" />
+              <p style="display: none">
+                <label
+                  >Don&apos;t fill this out <input name="bot-field"
+                /></label>
+              </p>
+
+              <div class="apply-form__grid">
+                <label class="apply-form__field">
+                  <span class="apply-form__label">Name</span>
+                  <input
+                    type="text"
+                    name="name"
+                    autocomplete="name"
+                    placeholder="Your full name"
+                    required
+                  />
+                </label>
+
+                <label class="apply-form__field">
+                  <span class="apply-form__label">Email</span>
+                  <input
+                    type="email"
+                    name="email"
+                    autocomplete="email"
+                    placeholder="you@example.com"
+                    required
+                  />
+                </label>
+
+                <label class="apply-form__field">
+                  <span class="apply-form__label">Phone Number</span>
+                  <input
+                    type="tel"
+                    name="phone"
+                    autocomplete="tel"
+                    placeholder="Your phone number"
+                    required
+                  />
+                </label>
+
+                <label class="apply-form__field">
+                  <span class="apply-form__label">Portfolio Link</span>
+                  <input
+                    type="url"
+                    name="portfolio_url"
+                    autocomplete="url"
+                    placeholder="https://yourportfolio.com"
+                  />
+                </label>
+
+                <label class="apply-form__field apply-form__field--full">
+                  <span class="apply-form__label"
+                    >Why You&apos;re a Good Fit</span
+                  >
+                  <textarea
+                    name="why_good_fit"
+                    placeholder="Tell us a bit about your background, strengths, and why you'd be a good fit."
+                    required
+                  ></textarea>
+                </label>
+
+                <label class="apply-form__field apply-form__field--full">
+                  <span class="apply-form__label">CV Upload</span>
+                  <input
+                    type="file"
+                    name="cv_upload"
+                    accept=".pdf,.doc,.docx,.rtf"
+                    required
+                  />
+                  <span class="apply-form__hint">
+                    PDF, DOC, DOCX, or RTF.
+                  </span>
+                </label>
+
+                <label class="apply-form__field apply-form__field--full">
+                  <span class="apply-form__label">Supporting File</span>
+                  <input type="file" name="supporting_file_upload" />
+                  <span class="apply-form__hint">
+                    Optional. Add one extra file if it helps support your
+                    application.
+                  </span>
+                </label>
+              </div>
+
+              <button type="submit" class="discovery-form__submit">
+                Submit Application
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer apply-footer">
+      <div class="site-footer__container container apply-footer__container">
+        <div class="site-footer__top">
+          <div class="site-footer__top-grid">
+            <p class="site-footer__slogan">
+              YOUR WEBSITE SHOULD BRING IN BUSINESS
+              <a class="site-footer__slogan-link" href="/contact/"
+                >LET&apos;S
+                <span class="site-footer__slogan-link-tail"
+                  >TALK<span class="link-arrow">
+                    <svg
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                      width="14"
+                      height="14"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M13.5 5l7 7-7 7-1.4-1.4 4.6-4.6H4v-2h12.7l-4.6-4.6L13.5 5z"
+                      /></svg></span></span
+              ></a>
+            </p>
+          </div>
+        </div>
+
+        <div class="apply-footer__contact-row" aria-label="Footer contact">
+          <a
+            class="apply-footer__contact-item"
+            href="mailto:hello@themxstudio.com"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                fill="currentColor"
+                d="M12 13.5L2 6.75V18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6.75L12 13.5zM20 4H4c-1.1 0-2 .9-2 2l10 6.25L22 6c0-1.1-.9-2-2-2z"
+              />
+            </svg>
+            <span class="site-footer__email">hello@themxstudio.com</span>
+          </a>
+          <a class="apply-footer__contact-item" href="tel:+61421709047">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                fill="currentColor"
+                d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.07 21 3 13.93 3 5c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.24.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
+              />
+            </svg>
+            <span class="site-footer__phone">0421 709 047</span>
+          </a>
+          <address
+            class="apply-footer__contact-item apply-footer__contact-item--address"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 21s6-5.33 6-11a6 6 0 10-12 0c0 5.67 6 11 6 11z"
+              />
+              <circle
+                cx="12"
+                cy="10"
+                r="2.5"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.2"
+              />
+            </svg>
+            <span class="site-footer__address"
+              >12/76 Doggett St, Newstead QLD 4006</span
+            >
+          </address>
+        </div>
+
+        <div
+          class="footer-social site-footer__social-row apply-footer__social-row"
+          aria-label="Footer social"
+        >
+          <a
+            class="footer-social__link"
+            href="https://www.instagram.com/themxstudioweb/"
+            aria-label="Instagram"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                fill="currentColor"
+                d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4C22 19.4 19.4 22 16.2 22H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2zm8.4 2H7.8C5.7 4 4 5.7 4 7.8v8.4C4 18.3 5.7 20 7.8 20h8.4c2.1 0 3.8-1.7 3.8-3.8V7.8C20 5.7 18.3 4 16.2 4z"
+              />
+              <path
+                fill="currentColor"
+                d="M12 7.3A4.7 4.7 0 1 1 7.3 12 4.7 4.7 0 0 1 12 7.3zm0 2A2.7 2.7 0 1 0 14.7 12 2.7 2.7 0 0 0 12 9.3z"
+              />
+              <path
+                fill="currentColor"
+                d="M17.6 6.6a1.1 1.1 0 1 1-1.1-1.1 1.1 1.1 0 0 1 1.1 1.1z"
+              />
+            </svg>
+          </a>
+
+          <a
+            class="footer-social__link"
+            href="https://www.linkedin.com/company/the-mx-studio/"
+            aria-label="LinkedIn"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect
+                x="3"
+                y="3"
+                width="18"
+                height="18"
+                rx="4"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              />
+              <circle cx="8" cy="8" r="1.15" fill="currentColor" />
+              <path
+                fill="currentColor"
+                d="M6.8 10h2.35v7H6.8v-7zm4 0h2.25v.95c.45-.72 1.24-1.2 2.35-1.2 2.05 0 3.2 1.32 3.2 3.8V17h-2.35v-3.22c0-1.33-.48-2.16-1.57-2.16-1.13 0-1.73.76-1.73 2.16V17H10.8v-7z"
+              />
+            </svg>
+          </a>
+
+          <a
+            class="footer-social__link"
+            href="https://www.facebook.com/people/The-MX-Studio/61588824561192/"
+            aria-label="Facebook"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect
+                x="3"
+                y="3"
+                width="18"
+                height="18"
+                rx="4"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              />
+              <path
+                fill="currentColor"
+                d="M14.15 20v-5.35h2.05l.32-2.3h-2.37v-1.5c0-.68.23-1.33 1.37-1.33h1.05V7.42c-.18-.03-.8-.07-1.54-.07-1.82 0-3.02 1.08-3.02 3.1v1.9H10v2.3h1.96V20h2.19z"
+              />
+            </svg>
+          </a>
+        </div>
+
+        <div class="site-footer__bottom">
+          <div class="site-footer__bottom-brand">
+            <div class="site-footer__logo-wrap">
+              <img
+                class="site-footer__logo"
+                src="/assets/logos/logo.svg"
+                alt="The MX Studio"
+              />
+            </div>
+            <div class="site-footer__copyright">
+              &copy; 2026 The MX Studio <span aria-hidden="true">|</span>
+              <a class="site-footer__copyright-link" href="/terms/">
+                Terms and Conditions
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
