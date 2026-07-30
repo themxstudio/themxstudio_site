@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://themxstudio.com/sitemap.xml
+Sitemap: https://www.themxstudio.com.au/sitemap.xml

@@ -1,0 +1,615 @@
+body.results-case-study-page {
+  background-image: none;
+  --accent: #ea2556;
+  --accent-hover: #f05f82;
+  --blog-post-width: var(--site-width);
+}
+
+body.results-case-study-page main {
+  background: #fff;
+}
+
+body.results-case-study-page main section.case-study-hero {
+  --case-study-hero-header-overlap: 90px;
+  margin: calc(-1 * var(--case-study-hero-header-overlap))
+    calc(50% - 50vw) 0 !important;
+  padding-top: calc(var(--case-study-hero-header-overlap) + 2rem) !important;
+  padding-bottom: clamp(3rem, 6vw, 4.6rem) !important;
+}
+
+.case-study-hero {
+  position: relative;
+  width: 100vw;
+  max-width: none;
+  overflow: hidden;
+  border-radius: 0 0 var(--section-radius) var(--section-radius);
+  background: #000;
+  isolation: isolate;
+}
+
+.case-study-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      ellipse 95% 135% at 100% 0%,
+      rgba(255, 255, 255, 0.96) 0%,
+      rgba(255, 255, 255, 0.68) 14%,
+      rgba(255, 255, 255, 0.22) 34%,
+      rgba(255, 255, 255, 0.06) 52%,
+      transparent 72%
+    ),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 44%);
+}
+
+.case-study-hero__content.page-hero__content {
+  position: relative;
+  z-index: 1;
+  padding-right: 0;
+  min-block-size: 0;
+  justify-items: start;
+  text-align: left;
+}
+
+.case-study-hero__desk {
+  position: static;
+  display: grid;
+  gap: clamp(0.85rem, 1.6vw, 1.1rem);
+  width: 100%;
+  justify-items: start;
+  text-align: left;
+  align-content: start;
+}
+
+.case-study-hero__note.hero__sub {
+  display: flex;
+  align-items: center;
+  gap: 0.55em;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1.28rem, 1.15vw + 1rem, 2.05rem);
+  font-weight: 300 !important;
+  font-variation-settings: "wght" 300 !important;
+  line-height: 1.16;
+  text-align: left;
+  text-wrap: pretty;
+}
+
+.case-study-hero__graphic.hero__sub-icon {
+  width: 1.75em;
+  height: 1.75em;
+  flex: 0 0 1.75em;
+  margin-top: 0;
+  object-fit: contain;
+}
+
+.case-study-hero__note .hero__sub-text {
+  display: inline;
+}
+
+.case-study-article {
+  margin-top: var(--site-gap);
+}
+
+.case-study-article .blog-toc__title {
+  color: var(--accent);
+}
+
+.case-study-article .blog-toc__list a {
+  max-width: 100%;
+}
+
+.case-study-article__inner {
+  width: var(--site-width);
+  max-width: none;
+  margin-inline: auto;
+  padding-inline: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.case-study-article__rail {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+}
+
+.case-study-article__content {
+  min-width: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.case-study-article .case-study-intro-label {
+  margin: 0;
+  color: var(--accent);
+  opacity: 1;
+  font-size: clamp(1.18rem, 0.75vw + 1rem, 1.55rem);
+  font-weight: 900;
+  font-variation-settings: "wght" 900;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.case-study-lead {
+  margin: 0;
+  max-width: none;
+  font-size: clamp(1.08rem, 0.4vw + 1rem, 1.22rem);
+  line-height: 1.78;
+  opacity: 0.82;
+}
+
+.case-study-toc {
+  width: min(100%, 34rem);
+  display: grid;
+  gap: 0.75rem;
+  padding: clamp(1.15rem, 1.8vw, 1.55rem);
+  border: 1px solid #dbdbdb;
+  border-radius: 1.25rem;
+  background: linear-gradient(180deg, #fff 0%, #f7f7f7 100%);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+}
+
+.case-study-toc__title,
+.case-study-toc__list {
+  margin: 0;
+}
+
+.case-study-toc__title {
+  color: var(--accent);
+  font-size: 0.95rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.case-study-toc__list {
+  display: grid;
+  gap: 0.6rem;
+  padding: 0;
+  list-style: none;
+}
+
+.case-study-toc__list li + li {
+  padding-top: 0.6rem;
+  border-top: 1px solid rgba(15, 15, 15, 0.08);
+}
+
+.case-study-toc__list a {
+  display: block;
+  color: var(--text);
+  font-size: 0.98rem;
+  line-height: 1.45;
+  text-decoration: none;
+  max-width: 100%;
+}
+
+.case-study-toc__list a:hover,
+.case-study-toc__list a:focus-visible {
+  color: var(--text);
+  text-decoration-line: underline;
+  text-decoration-thickness: 0.06em;
+  text-underline-offset: 0.08em;
+  text-decoration-skip-ink: none;
+  text-decoration-color: currentColor;
+}
+
+.case-study-gallery {
+  display: grid;
+  gap: 1rem;
+}
+
+.case-study-gallery--rail {
+  display: none;
+}
+
+.case-study-gallery__card {
+  margin: 0;
+}
+
+.case-study-gallery__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 1.25rem;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.case-study-gallery__image--contain {
+  padding: 0;
+  object-fit: contain;
+  background: transparent;
+}
+
+.case-study-article h2,
+.case-study-article h3,
+.case-study-article p {
+  margin: 0;
+}
+
+.case-study-article h2 {
+  margin-top: clamp(1.5rem, 3vw, 2.5rem);
+  color: var(--text);
+  font-size: clamp(1.45rem, 1.8vw + 1rem, 2.2rem);
+  font-weight: 900;
+  font-variation-settings: "wght" 900;
+  line-height: 1.08;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  scroll-margin-top: 7rem;
+}
+
+.case-study-article h2:first-of-type {
+  margin-top: 0.2rem;
+}
+
+.case-study-article h3 {
+  margin-top: 0.55rem;
+  color: var(--text);
+  font-size: clamp(1.15rem, 1vw + 1rem, 1.5rem);
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.case-study-article p {
+  max-width: none;
+  font-size: clamp(1rem, 0.35vw + 0.95rem, 1.15rem);
+  line-height: 1.75;
+  opacity: 0.72;
+}
+
+.case-study-inline-form {
+  display: grid;
+  width: min(90vw, 480px);
+  max-width: none;
+  margin: clamp(2.4rem, 4vw, 3.25rem) 0 0;
+  margin-inline: 0;
+  padding: clamp(1.35rem, 2.2vw, 1.75rem);
+  align-self: start;
+  justify-self: start;
+  overflow: visible;
+}
+
+.case-study-inline-form .form-modal__header {
+  margin-bottom: 1.15rem;
+}
+
+.case-study-inline-form .form-modal__heading {
+  justify-items: start;
+  text-align: left;
+}
+
+.case-study-article .case-study-inline-form .form-modal__title,
+.case-study-article .case-study-inline-form .form-modal__desc,
+.case-study-article .case-study-inline-form .form-modal__trust,
+.case-study-article .case-study-inline-form .form-modal__trust-item,
+.case-study-article .case-study-inline-form .form-thanks__message {
+  color: var(--form-text);
+  text-align: left;
+}
+
+.case-study-article .case-study-inline-form .form-modal__desc {
+  margin: 0;
+  opacity: 0.72;
+}
+
+.case-study-inline-form .form-thanks {
+  justify-content: flex-start;
+  min-height: 0;
+  padding-top: 0.2rem;
+}
+
+.case-study-article .case-study-inline-form.form-modal__panel {
+  margin-top: clamp(1.55rem, 2.4vw, 2rem);
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  justify-self: start;
+  align-self: start;
+}
+
+.case-study-form--rail {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .case-study-article .blog-article__inner {
+    width: var(--site-width);
+    grid-template-columns: minmax(18rem, 21rem) minmax(0, 1fr);
+    align-items: start;
+    column-gap: clamp(1rem, 1.7vw, 1.75rem);
+    row-gap: clamp(1rem, 1.8vw, 1.35rem);
+  }
+
+  .case-study-article .blog-article__rail {
+    grid-column: 1;
+    grid-row: 1;
+    width: 100%;
+    justify-self: stretch;
+    gap: 2.3rem;
+  }
+
+  .case-study-article .blog-article__content {
+    grid-column: 2;
+    grid-row: 1;
+    width: 100%;
+    max-width: min(70vw, 100%);
+    justify-self: start;
+  }
+
+  .case-study-article .blog-article__rail > .blog-toc {
+    width: 100%;
+    max-width: none;
+  }
+
+  .case-study-article .blog-article__rail > .blog-inline-form.blog-rail-form {
+    display: grid;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: clamp(1.05rem, 1.3vw, 1.3rem);
+    justify-self: stretch;
+  }
+
+  .case-study-article
+    .blog-article__rail
+    > .blog-inline-form.blog-rail-form
+    .form-modal__header {
+    margin-bottom: 0.95rem;
+  }
+
+  .case-study-article
+    .blog-article__rail
+    > .blog-inline-form.blog-rail-form
+    .form-modal__title {
+    font-size: clamp(1.1rem, 0.5vw + 0.95rem, 1.28rem);
+    line-height: 1.12;
+  }
+
+  .case-study-article
+    .blog-article__rail
+    > .blog-inline-form.blog-rail-form
+    .form-modal__desc {
+    max-width: none;
+    font-size: 0.9rem;
+    line-height: 1.48;
+  }
+
+  .case-study-article
+    .blog-article__rail
+    > .blog-inline-form.blog-rail-form
+    .form-modal__trust {
+    gap: 0.45rem;
+  }
+
+  .case-study-article
+    .blog-article__rail
+    > .blog-inline-form.blog-rail-form
+    .form-modal__trust-item {
+    gap: 0.5rem;
+    font-size: 0.84rem;
+    line-height: 1.25;
+  }
+
+  .case-study-article
+    .blog-article__rail
+    > .blog-inline-form.blog-rail-form
+    .form-modal__trust-icon {
+    width: 1.1rem;
+    height: 1.1rem;
+    flex-basis: 1.1rem;
+  }
+
+  .case-study-article
+    .blog-article__rail
+    > .blog-inline-form.blog-rail-form
+    .form-modal__trust-icon
+    svg {
+    width: 0.88rem;
+    height: 0.88rem;
+  }
+
+  .case-study-article
+    .blog-article__rail
+    > .blog-inline-form.blog-rail-form
+    .discovery-form {
+    gap: 0.72rem;
+  }
+
+  .case-study-article
+    .blog-article__rail
+    > .blog-inline-form.blog-rail-form
+    .discovery-form
+    input,
+  .case-study-article
+    .blog-article__rail
+    > .blog-inline-form.blog-rail-form
+    .discovery-form
+    textarea {
+    padding: 0.78rem 0.8rem;
+    font-size: 0.95rem;
+  }
+
+  .case-study-article
+    .blog-article__rail
+    > .blog-inline-form.blog-rail-form
+    .discovery-form
+    textarea {
+    min-height: 5.6rem;
+  }
+
+  .case-study-article
+    .blog-article__rail
+    > .blog-inline-form.blog-rail-form
+    .discovery-form__submit {
+    width: 100%;
+    padding: 0.82rem 1rem;
+    font-size: 0.96rem;
+  }
+
+  .case-study-article__inner {
+    width: var(--site-width);
+    grid-template-columns: minmax(18rem, 21rem) minmax(0, 1fr);
+    align-items: start;
+    column-gap: clamp(1rem, 1.7vw, 1.75rem);
+    row-gap: clamp(1rem, 1.8vw, 1.35rem);
+  }
+
+  .case-study-article__rail {
+    grid-column: 1;
+    grid-row: 1;
+    width: 100%;
+    justify-self: stretch;
+    gap: 2.3rem;
+  }
+
+  .case-study-article__content {
+    grid-column: 2;
+    grid-row: 1;
+    width: 100%;
+    max-width: min(70vw, 100%);
+    justify-self: start;
+  }
+
+  .case-study-toc,
+  .case-study-gallery--rail,
+  .case-study-form--rail {
+    width: 100%;
+    max-width: none;
+  }
+
+  .case-study-gallery--inline,
+  .case-study-form--inline {
+    display: none !important;
+  }
+
+  .case-study-gallery--rail,
+  .case-study-form--rail {
+    display: grid;
+  }
+
+  .case-study-inline-form {
+    width: min(90vw, 560px);
+  }
+
+  .case-study-article__rail > .case-study-inline-form.case-study-form--rail {
+    margin: 0;
+    padding: clamp(1.05rem, 1.3vw, 1.3rem);
+    justify-self: stretch;
+  }
+
+  .case-study-article__rail
+    > .case-study-inline-form.case-study-form--rail
+    .form-modal__header {
+    margin-bottom: 0.95rem;
+  }
+
+  .case-study-article__rail
+    > .case-study-inline-form.case-study-form--rail
+    .form-modal__title {
+    font-size: clamp(1.1rem, 0.5vw + 0.95rem, 1.28rem);
+    line-height: 1.12;
+  }
+
+  .case-study-article__rail
+    > .case-study-inline-form.case-study-form--rail
+    .form-modal__desc {
+    max-width: none;
+    font-size: 0.9rem;
+    line-height: 1.48;
+  }
+
+  .case-study-article__rail
+    > .case-study-inline-form.case-study-form--rail
+    .form-modal__trust {
+    gap: 0.45rem;
+  }
+
+  .case-study-article__rail
+    > .case-study-inline-form.case-study-form--rail
+    .form-modal__trust-item {
+    gap: 0.5rem;
+    font-size: 0.84rem;
+    line-height: 1.25;
+  }
+
+  .case-study-article__rail
+    > .case-study-inline-form.case-study-form--rail
+    .form-modal__trust-icon {
+    width: 1.1rem;
+    height: 1.1rem;
+    flex-basis: 1.1rem;
+  }
+
+  .case-study-article__rail
+    > .case-study-inline-form.case-study-form--rail
+    .form-modal__trust-icon
+    svg {
+    width: 0.88rem;
+    height: 0.88rem;
+  }
+
+  .case-study-article__rail
+    > .case-study-inline-form.case-study-form--rail
+    .discovery-form {
+    gap: 0.72rem;
+  }
+
+  .case-study-article__rail
+    > .case-study-inline-form.case-study-form--rail
+    .discovery-form
+    input,
+  .case-study-article__rail
+    > .case-study-inline-form.case-study-form--rail
+    .discovery-form
+    textarea {
+    padding: 0.78rem 0.8rem;
+    font-size: 0.95rem;
+  }
+
+  .case-study-article__rail
+    > .case-study-inline-form.case-study-form--rail
+    .discovery-form
+    textarea {
+    min-height: 5.6rem;
+  }
+
+  .case-study-article__rail
+    > .case-study-inline-form.case-study-form--rail
+    .discovery-form__submit {
+    width: 100%;
+    padding: 0.82rem 1rem;
+    font-size: 0.96rem;
+  }
+}
+
+@media (max-width: 1366px) {
+  body.results-case-study-page main section.case-study-hero {
+    --case-study-hero-header-overlap: 74px;
+  }
+}
+
+@media (max-width: 767px) {
+  body.results-case-study-page main section.case-study-hero {
+    padding-top: calc(var(--case-study-hero-header-overlap) + 1.4rem) !important;
+    padding-bottom: 2.5rem !important;
+  }
+
+  .case-study-hero__desk,
+  .case-study-hero__note.hero__sub,
+  .case-study-toc,
+  .case-study-inline-form {
+    width: 100%;
+  }
+
+  .case-study-gallery--inline {
+    margin-top: clamp(1.85rem, 4.2vw, 2.5rem);
+  }
+}

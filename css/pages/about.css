@@ -3,44 +3,10 @@
   --accent-hover: #ffb08d;
 }
 
-body {
-  background-image: linear-gradient(
-    180deg,
-    color-mix(in srgb, var(--bg) 72%, var(--accent) 28%) 0%,
-    color-mix(in srgb, var(--bg) 82%, var(--accent) 18%) 18%,
-    color-mix(in srgb, var(--bg) 91%, var(--accent) 9%) 40%,
-    color-mix(in srgb, var(--bg) 97%, var(--accent) 3%) 60%,
-    transparent 78%
-  );
-}
-
 .about-landing {
   display: flex;
   flex-direction: column;
   gap: 0;
-}
-
-.page-hero {
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-  padding: 110px 0 clamp(3rem, 8vw, 6rem);
-  margin-bottom: 0;
-}
-
-.page-hero__content {
-  display: block;
-}
-
-.page-hero__title {
-  width: 100%;
-  max-width: 100%;
-  color: var(--text);
-  font-size: clamp(3rem, 7vw, 6.5rem);
-  font-weight: 400;
-  line-height: 0.94;
-  word-break: break-word;
-  overflow-wrap: break-word;
 }
 
 .hero-divider {
@@ -78,7 +44,7 @@ body {
 .hero-stats__figure {
   margin: 0;
   color: var(--text);
-  font-family: var(--font-accent);
+  font-family: var(--font);
   font-size: clamp(2.4rem, 4vw, 3.5rem);
   font-weight: 400;
   line-height: 0.96;
@@ -98,14 +64,94 @@ body {
   opacity: 0.72;
 }
 
+body.about-page .hero-points--about {
+  width: var(--site-width);
+  max-width: none;
+  margin: 0 auto;
+  padding: clamp(2.4rem, 5vw, 4rem) 0 0;
+}
+
+body.about-page .hero-points--about .hero-points__inner {
+  width: 100%;
+  gap: 0;
+}
+
+body.about-page .hero-points--about .hero-points__grid {
+  width: 100%;
+  max-width: none;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(1.6rem, 4vw, 2.4rem);
+  justify-items: stretch;
+  align-items: stretch;
+}
+
+body.about-page .hero-points--about .hero-points__item {
+  align-items: stretch;
+  height: 100%;
+}
+
+body.about-page .hero-points--about .hero-points__card {
+  --about-point-graphic-length: clamp(11rem, 12.4vw, 12.4rem);
+  --about-point-graphic-span: clamp(7.45rem, 8.45vw, 8.45rem);
+  position: relative;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  padding: 0 0 0
+    calc(var(--about-point-graphic-span) + clamp(0.95rem, 1.2vw, 1.25rem));
+  min-height: clamp(14rem, 15vw, 15rem);
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  gap: clamp(0.8rem, 1vw, 1rem);
+}
+
+body.about-page .hero-points--about .hero-points__card::before {
+  content: "";
+  position: absolute;
+  top: calc(50% - 0.2rem);
+  left: calc(
+    (var(--about-point-graphic-span) - var(--about-point-graphic-length)) / 2
+  );
+  width: var(--about-point-graphic-length);
+  height: var(--about-point-graphic-span);
+  background: url("/assets/images/balloon-graphic-half.webp") center / 100% 100%
+    no-repeat;
+  transform: translateY(-50%) rotate(-90deg);
+  transform-origin: center;
+  pointer-events: none;
+}
+
+body.about-page .hero-points--about .hero-points__head {
+  gap: 0;
+}
+
+body.about-page .hero-points--about .hero-points__icon {
+  display: none;
+}
+
+body.about-page .hero-points--about .hero-points__title {
+  font-size: clamp(1.5rem, 1vw + 1.15rem, 2rem);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1.03;
+}
+
+body.about-page .hero-points--about .hero-points__title-accent {
+  color: var(--accent);
+  font-weight: 900;
+}
+
+body.about-page .hero-points--about .hero-points__sub {
+  font-size: clamp(0.98rem, 0.25vw + 0.95rem, 1.08rem);
+  font-weight: 300;
+  line-height: 1.72;
+  opacity: 0.72;
+}
+
 .intro-copy,
 .photo-grid {
   margin-top: var(--site-gap);
-}
-
-.home-maxx {
-  margin-top: var(--site-gap);
-  padding-top: 3rem;
 }
 
 .photo-grid__inner {
@@ -242,12 +288,6 @@ body {
 }
 
 @media (min-width: 1367px) {
-  .page-hero__content {
-    display: grid;
-    justify-items: start;
-    text-align: left;
-  }
-
   .hero-stats {
     --hero-stat-first-col: 11rem;
     --hero-stat-third-col: 6rem;
@@ -273,19 +313,6 @@ body {
 }
 
 @media (max-width: 1366px) {
-  .page-hero__title {
-    font-size: clamp(2.25rem, 10vw, 4rem);
-  }
-
-  .page-hero {
-    min-height: auto;
-    padding: clamp(6rem, 10vw, 8rem) 0 0;
-  }
-
-  .home-maxx {
-    margin-top: var(--site-gap);
-  }
-
   .hero-divider {
     margin-top: var(--site-gap);
   }
@@ -369,5 +396,743 @@ body {
 
   .photo-grid__image {
     border-radius: 0;
+  }
+
+  body.about-page .hero-points--about .hero-points__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 960px) {
+  body.about-page .hero-points--about .hero-points__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(1.5rem, 2vw, 2.3rem);
+  }
+}
+
+.photo-grid__card,
+.photo-grid__image-target,
+.photo-grid__image-wrap {
+  border-radius: var(--site-radius);
+}
+
+body.about-page .team--home {
+  position: relative;
+  z-index: 1;
+  margin-top: clamp(2.8rem, 5vw, 4rem);
+  padding-block: clamp(3rem, 5vw, 4rem) clamp(3.2rem, 5.4vw, 4.4rem);
+  background: #000;
+  border-radius: clamp(2rem, 3.8vw, 3rem) clamp(2rem, 3.8vw, 3rem) 0 0;
+  overflow: hidden;
+}
+
+body.about-page .team--home .team__inner {
+  width: min(100%, 76rem);
+  padding-inline: clamp(1rem, 2.4vw, 2rem);
+}
+
+body.about-page .team--home .team__header {
+  margin-bottom: clamp(1rem, 1.6vw, 1.5rem);
+  width: min(100%, 72rem);
+}
+
+body.about-page .team--home .team__header .services__label {
+  width: min(100%, 42ch);
+  color: #fff;
+  font-size: clamp(2.45rem, 3.2vw, 3.15rem);
+}
+
+body.about-page .team--home .team__header .services__label-accent {
+  color: #fff;
+}
+
+body.about-page .team--home .team__grid {
+  width: min(100%, 69rem);
+  grid-template-columns: 1fr;
+  gap: clamp(1rem, 1.9vw, 1.55rem);
+  align-items: stretch;
+  justify-items: stretch;
+  margin-inline: auto;
+}
+
+body.about-page .team--home .team__member {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(8.5rem, 12.5rem);
+  align-items: center;
+  gap: clamp(0.7rem, 1.6vw, 1.2rem);
+  position: relative;
+}
+
+body.about-page .team--home .team__member::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+body.about-page .team--home .team__member-info {
+  order: 1;
+  display: grid;
+  gap: 0.8rem;
+  justify-items: start;
+  align-content: center;
+  align-self: center;
+  text-align: left;
+  padding-block: 0;
+  max-width: 37rem;
+  margin-inline: 0 auto;
+}
+
+body.about-page .team--home .team__member-visual {
+  order: 2;
+  align-self: end;
+  width: min(100%, 12.5rem);
+  margin: 0 0 0 auto;
+  margin-bottom: 0;
+  transform: none;
+}
+
+body.about-page .team--home .team__member--reverse .team__member-visual {
+  order: 1;
+  margin: 0 auto 0 0;
+}
+
+body.about-page .team--home .team__member--reverse .team__member-info {
+  order: 2;
+  margin-inline: auto 0;
+}
+
+body.about-page .team--home .team__member--reverse {
+  grid-template-columns: minmax(8.5rem, 12.5rem) minmax(0, 1fr);
+}
+
+body.about-page .team--home .team__member:nth-child(1) {
+  order: 1;
+}
+
+body.about-page .team--home .team__member:nth-child(2) {
+  order: 2;
+}
+
+body.about-page .team--home .team__member:nth-child(3) {
+  order: 3;
+}
+
+body.about-page .team--home .team__member-name {
+  margin: 0;
+  font-size: clamp(1.35rem, 1.55vw, 1.85rem);
+  font-weight: 900;
+  font-variation-settings: "wght" 900;
+  line-height: 1;
+  letter-spacing: -0.035em;
+  color: #fff;
+}
+
+body.about-page .team--home .team__member-desc {
+  margin: 0;
+  font-size: clamp(0.92rem, 0.4vw + 0.9rem, 1.02rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: rgba(255, 255, 255, 0.74);
+  opacity: 1;
+}
+
+body.about-page .team--home .team__member-quote {
+  position: relative;
+  margin: 0;
+  max-width: 33ch;
+  padding-top: clamp(2.45rem, 3.7vw, 3rem);
+  font-size: clamp(1.18rem, 1.05vw + 0.98rem, 1.7rem);
+  font-weight: 300;
+  font-variation-settings: "wght" 300;
+  line-height: 1.18;
+  letter-spacing: -0.03em;
+  opacity: 1;
+  text-wrap: balance;
+  color: #fff;
+}
+
+body.about-page .team--home .team__member-quote::before {
+  content: "\201C";
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: clamp(4rem, 5.9vw, 5.15rem);
+  font-weight: 900;
+  font-variation-settings: "wght" 900;
+  line-height: 0.72;
+}
+
+body.about-page .team--home .team__member-meta {
+  display: inline-grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 0.8rem;
+}
+
+body.about-page .team--home .team__member-mark {
+  width: clamp(2.7rem, 3.3vw, 3.35rem);
+  height: clamp(2.7rem, 3.3vw, 3.35rem);
+  background: url("/assets/icons/graphic.png") center / contain no-repeat;
+  flex: 0 0 auto;
+}
+
+body.about-page .team--home .team__member-heading {
+  display: grid;
+  gap: 0.18rem;
+}
+
+body.about-page .about-instagram {
+  width: 100vw;
+  max-width: none;
+  margin: 0 calc(50% - 50vw);
+  padding: clamp(2rem, 3vw, 2.45rem) 0 clamp(2.35rem, 3.8vw, 3rem);
+  background: #fff;
+  border-radius: var(--section-radius) var(--section-radius) 0 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+}
+
+body.about-page .about-instagram__inner {
+  width: min(calc(100vw - 2rem), 84rem);
+  max-width: none;
+  margin-inline: auto;
+  display: grid;
+  gap: clamp(1.1rem, 2vw, 1.5rem);
+}
+
+body.about-page .about-instagram .services__label {
+  width: 100%;
+  max-width: none;
+  margin: 0 auto clamp(2.2rem, 3vw, 2.8rem);
+  justify-self: stretch;
+  font-size: clamp(1.8rem, 2.8vw + 0.9rem, 3rem);
+  line-height: 1.12;
+  text-align: center;
+  text-wrap: balance;
+}
+
+body.about-page .about-instagram__shell {
+  position: relative;
+  overflow: visible;
+}
+
+body.about-page .about-instagram__viewport {
+  overflow: visible;
+}
+
+body.about-page .about-instagram__track {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: clamp(0.65rem, 1vw, 0.95rem);
+  align-items: start;
+}
+
+body.about-page .about-instagram__item {
+  min-width: 0;
+}
+
+body.about-page .about-instagram__arrow {
+  display: none;
+}
+
+body.about-page .about-instagram__post {
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+  margin-inline: 0;
+  color: inherit;
+  text-decoration: none;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease;
+}
+
+body.about-page .about-instagram__post:is(:hover, :focus-visible) {
+  transform: translateY(-0.25rem);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.18);
+}
+
+body.about-page .about-instagram__post .insta-card__header {
+  padding: 0.5rem 0.65rem;
+}
+
+body.about-page .about-instagram__post .insta-card__profile {
+  gap: 0.5rem;
+  width: 100%;
+}
+
+body.about-page .about-instagram__post .insta-card__pfp-wrap {
+  width: 1.85rem;
+  height: 1.85rem;
+}
+
+body.about-page .about-instagram__post .insta-card__pfp {
+  border-width: 1.5px;
+}
+
+body.about-page .about-instagram__post .insta-card__username {
+  font-size: 0.74rem;
+  line-height: 1.15;
+}
+
+body.about-page .about-instagram__post .insta-card__verified {
+  width: 0.78rem;
+  height: 0.78rem;
+}
+
+body.about-page .about-instagram__post .insta-card__photo {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center top;
+}
+
+@media (min-width: 768px) {
+  body.about-page .team--home .team__member {
+    grid-template-columns: minmax(0, 1fr) minmax(12rem, 18.5rem);
+    gap: clamp(0.9rem, 1.7vw, 1.45rem);
+  }
+
+  body.about-page .team--home .team__member--reverse {
+    grid-template-columns: minmax(12rem, 18.5rem) minmax(0, 1fr);
+  }
+
+  body.about-page .team--home .team__member-visual {
+    width: min(100%, 18.5rem);
+  }
+}
+
+@media (min-width: 1025px) {
+  body.about-page .about-instagram {
+    padding: 0;
+  }
+
+  body.about-page .about-instagram__inner {
+    width: min(calc(100vw - 2rem), 84rem);
+    margin-inline: auto;
+  }
+
+  body.about-page .team--home {
+    --home-team-visual-height: 18.65rem;
+  }
+
+  body.about-page .team--home .team__inner {
+    width: min(100%, 80rem);
+    padding-inline: clamp(0.85rem, 1.4vw, 1.1rem);
+  }
+
+  body.about-page .team--home .team__grid {
+    display: grid;
+    width: 100%;
+    max-width: 76rem;
+    grid-template-columns: repeat(3, clamp(17.25rem, 18.5vw, 19rem));
+    column-gap: clamp(5rem, 7vw, 7.25rem);
+    row-gap: 0;
+    align-items: flex-start;
+    justify-items: stretch;
+    justify-content: center;
+    margin-inline: auto;
+  }
+
+  body.about-page .team--home .team__grid::after {
+    content: none;
+  }
+
+  body.about-page .team--home .team__member,
+  body.about-page .team--home .team__member--reverse {
+    grid-template-columns: 1fr;
+    grid-template-rows: var(--home-team-visual-height) auto;
+    justify-items: center;
+    align-items: start;
+    gap: 0;
+    width: 100%;
+    max-width: none;
+    padding-bottom: 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  body.about-page .team--home .team__member::after {
+    content: none;
+  }
+
+  body.about-page .team--home .team__member:nth-child(1) {
+    order: 0;
+    grid-column: 2;
+    grid-row: 1;
+    justify-items: center;
+  }
+
+  body.about-page .team--home .team__member:nth-child(2) {
+    order: 0;
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  body.about-page .team--home .team__member:nth-child(3) {
+    order: 0;
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  body.about-page .team--home .team__member-visual,
+  body.about-page .team--home .team__member--reverse .team__member-visual {
+    order: initial;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    width: min(100%, 16.5rem);
+    height: var(--home-team-visual-height);
+    margin: 0 auto;
+    justify-self: center;
+    align-self: end;
+  }
+
+  body.about-page .team--home .team__member img,
+  body.about-page .team--home .team__member--reverse img {
+    width: auto;
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+  }
+
+  body.about-page .team--home .team__member:nth-child(3) .team__member-visual img {
+    transform: none;
+  }
+
+  body.about-page .team--home .team__member-info,
+  body.about-page .team--home .team__member--reverse .team__member-info {
+    order: initial;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding-top: clamp(1.35rem, 1.9vw, 1.7rem);
+    gap: 1rem;
+    justify-items: center;
+    text-align: left;
+  }
+
+  body.about-page .team--home .team__member-quote,
+  body.about-page .team--home .team__member--reverse .team__member-quote {
+    width: min(100%, 24ch);
+    max-width: 24ch;
+    padding-top: 0;
+    font-size: clamp(1.08rem, 0.35vw + 1rem, 1.32rem);
+    text-align: center;
+  }
+
+  body.about-page .team--home .team__member:nth-child(3) .team__member-quote {
+    max-width: 24ch;
+  }
+
+  body.about-page .team--home .team__member-quote::before,
+  body.about-page .team--home .team__member--reverse .team__member-quote::before {
+    content: none;
+  }
+
+  body.about-page .team--home .team__member-meta,
+  body.about-page .team--home .team__member--reverse .team__member-meta {
+    justify-self: center;
+  }
+
+  body.about-page .team--home .team__member-heading {
+    justify-items: start;
+    text-align: left;
+  }
+}
+
+@media (max-width: 1024px) {
+  body.about-page .about-instagram__shell {
+    --about-instagram-gap: 0.75rem;
+    padding-inline: 2.75rem;
+  }
+
+  body.about-page .about-instagram__viewport {
+    width: min(calc(100vw - 7rem), 21rem);
+    margin-inline: auto;
+    position: relative;
+    overflow: hidden;
+    touch-action: pan-y;
+    overscroll-behavior-x: contain;
+    padding-block: 0.4rem 0.65rem;
+  }
+
+  body.about-page .about-instagram__track {
+    display: flex;
+    gap: var(--about-instagram-gap);
+    will-change: transform;
+  }
+
+  body.about-page .about-instagram__item {
+    flex: 0 0 100%;
+  }
+
+  body.about-page .about-instagram--home-carousel.is-carousel-active .about-instagram__arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.1rem;
+    height: 3.1rem;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: var(--accent);
+    transform: translateY(-50%);
+  }
+
+  body.about-page
+    .about-instagram--home-carousel.is-carousel-active
+    .about-instagram__arrow[data-direction="prev"] {
+    left: 0;
+  }
+
+  body.about-page
+    .about-instagram--home-carousel.is-carousel-active
+    .about-instagram__arrow[data-direction="next"] {
+    right: 0;
+  }
+
+  body.about-page .about-instagram--home-carousel.is-carousel-active .about-instagram__arrow svg {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+
+  body.about-page .team--home .team__inner {
+    width: min(100%, 42rem);
+    padding-inline: clamp(1rem, 3.8vw, 1.5rem);
+  }
+
+  body.about-page .team--home .team__header {
+    justify-items: start;
+    width: 100%;
+    margin-inline: 0;
+    text-align: left;
+  }
+
+  body.about-page .team--home .team__header .services__label {
+    width: 100%;
+    max-width: none;
+    margin-inline: 0;
+    justify-self: start;
+    text-align: left;
+  }
+
+  body.about-page .team--home .team__grid {
+    width: 100%;
+    gap: clamp(1.35rem, 4vw, 1.9rem);
+  }
+
+  body.about-page .team--home .team__member::after {
+    content: none;
+  }
+
+  body.about-page .team--home .team__member,
+  body.about-page .team--home .team__member--reverse {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding-bottom: 0;
+  }
+
+  body.about-page .team--home .team__member-visual,
+  body.about-page .team--home .team__member--reverse .team__member-visual {
+    width: min(100%, 10.15rem);
+    grid-column: 1;
+    grid-row: 1;
+    order: initial;
+    margin: 0;
+    align-self: end;
+    justify-self: start;
+  }
+
+  body.about-page .team--home .team__member-info,
+  body.about-page .team--home .team__member--reverse .team__member-info {
+    grid-column: 1;
+    grid-row: 2;
+    display: grid;
+    gap: 0.6rem;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding-top: 0.75rem;
+    border-top: 3px solid rgba(255, 255, 255, 0.18);
+    justify-items: end;
+    text-align: right;
+  }
+
+  body.about-page .team--home .team__member-quote,
+  body.about-page .team--home .team__member--reverse .team__member-quote {
+    grid-column: auto;
+    grid-row: auto;
+    width: 100%;
+    max-width: none;
+    margin-top: 0;
+    border-top: 0;
+    padding-top: 1.85rem;
+    padding-right: 0;
+    font-size: clamp(1.04rem, 0.7vw + 0.92rem, 1.32rem);
+  }
+
+  body.about-page .team--home .team__member-quote::before {
+    left: auto;
+    right: 0;
+    font-size: clamp(3.5rem, 8vw, 4.4rem);
+  }
+
+  body.about-page .team--home .team__member-meta {
+    min-width: 0;
+    justify-self: end;
+  }
+}
+
+@media (max-width: 767px) {
+  body.about-page .about-instagram {
+    padding: 0;
+  }
+
+  body.about-page .about-instagram__inner {
+    width: 100%;
+    margin-inline: 0;
+    gap: 1rem;
+  }
+
+  body.about-page .about-instagram .services__label {
+    width: min(calc(100vw - 1rem), 19.5rem);
+    max-width: none;
+    margin: 0 auto 1rem;
+    padding-left: 0;
+    font-size: clamp(2.5rem, 8.6vw, 3.5rem);
+    font-weight: 400;
+    line-height: 0.98;
+    text-align: left;
+  }
+
+  body.about-page .about-instagram__shell {
+    --about-instagram-gap: 0.6rem;
+    padding-inline: 0;
+  }
+
+  body.about-page .about-instagram__viewport {
+    width: min(calc(100vw - 1rem), 19.5rem);
+  }
+
+  body.about-page .about-instagram--home-carousel.is-carousel-active .about-instagram__arrow {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  body.about-page
+    .about-instagram--home-carousel.is-carousel-active
+    .about-instagram__arrow[data-direction="prev"] {
+    left: 0;
+  }
+
+  body.about-page
+    .about-instagram--home-carousel.is-carousel-active
+    .about-instagram__arrow[data-direction="next"] {
+    right: 0;
+  }
+
+  body.about-page .about-instagram--home-carousel.is-carousel-active .about-instagram__arrow svg {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  body.about-page .about-instagram__post {
+    box-shadow: none;
+  }
+
+  body.about-page .hero-points--about {
+    padding-top: clamp(2rem, 8vw, 2.8rem);
+  }
+
+  body.about-page .hero-points--about .hero-points__card {
+    --about-point-graphic-length: 5.4rem;
+    --about-point-graphic-span: 3.75rem;
+    padding-top: calc(var(--about-point-graphic-span) + 0.85rem);
+    padding-left: 0;
+    min-height: 0;
+  }
+
+  body.about-page .hero-points--about .hero-points__card::before {
+    top: 0;
+    left: 0;
+    width: var(--about-point-graphic-length);
+    height: var(--about-point-graphic-span);
+    background-position: left top;
+    transform: none;
+  }
+
+  body.about-page .hero-points--about .hero-points__title {
+    font-size: clamp(1.35rem, 6vw, 1.7rem);
+  }
+
+  body.about-page .hero-points--about .hero-points__sub {
+    font-size: clamp(0.94rem, 3.7vw, 1.02rem);
+    line-height: 1.68;
+  }
+
+  body.about-page .team--home .team__header {
+    justify-items: center;
+    width: 100%;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  body.about-page .team--home .team__header .services__label {
+    width: 80%;
+    max-width: 80%;
+    margin-inline: auto;
+    justify-self: center;
+    text-align: center;
+    font-size: clamp(1.5rem, 6vw, 2rem);
+  }
+
+  body.about-page .team--home .team__member-info,
+  body.about-page .team--home .team__member--reverse .team__member-info {
+    justify-items: center;
+    text-align: center;
+    padding-top: 0.35rem;
+    border-top: 0;
+  }
+
+  body.about-page .team--home .team__member-meta,
+  body.about-page .team--home .team__member--reverse .team__member-meta {
+    justify-self: center;
+  }
+
+  body.about-page .team--home .team__member-visual,
+  body.about-page .team--home .team__member--reverse .team__member-visual {
+    width: min(100%, 8.65rem);
+    justify-self: center;
+  }
+
+  body.about-page .team--home .team__member-heading {
+    justify-items: start;
+    text-align: left;
+  }
+
+  body.about-page .team--home .team__member-quote,
+  body.about-page .team--home .team__member--reverse .team__member-quote {
+    width: 100%;
+    max-width: none;
+    font-size: clamp(1rem, 3.9vw, 1.18rem);
+    text-align: center;
+  }
+
+  body.about-page .team--home .team__member-quote::before,
+  body.about-page .team--home .team__member--reverse .team__member-quote::before {
+    content: none;
   }
 }

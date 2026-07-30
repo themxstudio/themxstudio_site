@@ -1,312 +1,105 @@
-:root {
-  --accent: #a970ff;
-  --accent-hover: #c8a0ff;
+.locations-page .page-hero--simple .page-hero__eyebrow {
+  color: var(--accent) !important;
+  font-weight: 900;
+  font-variation-settings: "wght" 900;
 }
 
-.locations-page .page-hero {
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
-.locations-page .page-hero__content {
-  position: relative;
-  justify-items: start;
-  text-align: left;
-}
-
-.locations-page .page-hero__title {
-  display: block;
-  color: var(--text);
-  text-align: left;
-  font-size: clamp(3rem, 7vw, 6.5rem);
-}
-
-.locations-page:not(.free-audit-page)
-  .page-hero__title:has(.pricing-type[data-type-text]) {
-  min-height: max(var(--page-hero-title-reserve, 0px), 2.05em);
-}
-
-@media (min-width: 768px) {
-  .locations-page:not(.free-audit-page)
-    .page-hero__title:has(.pricing-type[data-type-text]) {
-    min-height: max(var(--page-hero-title-reserve, 0px), 2.15em);
-  }
-}
-
-.locations-page .pricing-type,
-.locations-page .pricing-type__text {
-  margin-inline: 0;
-  text-align: left;
-  transform-origin: left top;
-}
-
-.locations-page .pricing-type__text {
-  white-space: pre-line;
-}
-
-.locations-page__h1 {
-  margin: 0;
-  width: min(100%, 48rem);
-  font-size: clamp(0.98rem, 0.35vw + 0.95rem, 1.1rem);
-  font-weight: 700;
-  line-height: 1.55;
-  color: var(--text);
-  opacity: 0.72;
-  position: static;ß
-  left: auto;
-  top: auto;
-  transform: none;
-  text-align: left;
-}
-
-.locations-page .page-hero__sub {
-  max-width: 48rem;
-  margin-inline: 0;
-  text-align: left;
-}
-
-.locations-page .location-brand {
+.locations-hub {
   width: var(--site-width);
   max-width: none;
-  margin-top: var(--site-gap);
-  padding-top: 0;
-  margin-inline: auto;
-  margin-bottom: 0;
+  margin: var(--site-gap) auto 0;
   padding-inline: 0;
 }
 
-.locations-page .location-brand .brand-position-statement__title {
-  max-width: 80%;
-  margin: 0 auto;
-  text-align: center;
+main section.locations-hub:not(.hero):not(.page-hero):not(.section-accent-tail) {
+  padding-top: clamp(2.15rem, 4vw, 3rem) !important;
+  padding-bottom: clamp(3rem, 5vw, 4rem) !important;
 }
 
-.locations-page .location-brand__media {
-  width: min(100%, 34rem);
-  margin: 0 auto 1.25rem;
-}
-
-.locations-page .location-brand__image {
-  display: block;
+.locations-hub__inner {
   width: 100%;
-  height: auto;
-}
-
-.locations-page .brand-position-statement__accent {
-  color: var(--text);
-}
-
-.seo-brisbane-page .page-hero__title {
-  position: relative;
-}
-
-.seo-brisbane-page__title-reserve {
-  display: block;
-  width: 100%;
-  visibility: hidden;
-  pointer-events: none;
-  user-select: none;
-  white-space: pre-line;
-}
-
-.seo-brisbane-page .page-hero__title > .pricing-type {
-  position: absolute;
-  inset: 0 auto auto 0;
-}
-
-.locations-page .hero-points,
-.locations-page .pricing-grid,
-.locations-page .pricing-grid2,
-.locations-page .pricing-grid3,
-.locations-page .offer-copy,
-.locations-page .services,
-.locations-page .reviews,
-.locations-page .discovery-call,
-.locations-page .faq {
-  margin-top: var(--site-gap);
-}
-
-.free-audit-page .page-hero.locations-page .page-hero__content {
-  justify-items: center;
-  text-align: center;
-}
-
-.free-audit-page .page-hero.locations-page .page-hero__title {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-}
-
-.free-audit-page .page-hero.locations-page .pricing-type,
-.free-audit-page .page-hero.locations-page .pricing-type__text {
   margin-inline: auto;
-  text-align: center;
-  transform-origin: center top;
+  display: grid;
+  gap: clamp(1.35rem, 2.2vw, 1.8rem);
 }
 
-.free-audit-page .page-hero.locations-page .locations-page__h1 {
-  left: auto;
-  transform: none;
-  text-align: center;
+.locations-hub__list {
+  display: grid;
+  width: min(100%, 58rem);
 }
 
-@media (max-width: 1366px) {
-  .locations-page .page-hero__content {
-    justify-items: start;
-    text-align: left;
+.locations-hub__link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-width: 0;
+  padding: 1.15rem 0;
+  border-bottom: 2px solid color-mix(in srgb, var(--text) 18%, transparent);
+  color: var(--text);
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+
+.locations-hub__link:last-child {
+  border-bottom: 0;
+}
+
+.locations-hub__link-title {
+  margin: 0;
+  font-size: clamp(1.32rem, 0.5vw + 1.16rem, 1.62rem);
+  font-weight: 950;
+  font-variation-settings: "wght" 950;
+  line-height: 1.02;
+  text-wrap: pretty;
+}
+
+.locations-hub__link-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  color: currentColor;
+  transition: transform 160ms ease;
+}
+
+.locations-hub__link-icon svg {
+  display: block;
+}
+
+.locations-hub__link:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--accent) 32%, transparent);
+  outline-offset: 0.35rem;
+  color: var(--accent);
+}
+
+.locations-hub__link,
+.locations-hub__link:visited,
+.locations-hub__link:hover,
+.locations-hub__link:focus-visible {
+  text-decoration: none !important;
+}
+
+.locations-hub__link:focus-visible .locations-hub__link-icon {
+  transform: translateX(0.35rem);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .locations-hub__link:hover {
+    color: var(--accent);
   }
 
-  .locations-page .page-hero__title {
-    display: block;
-    text-align: left;
-  }
-
-  .locations-page:not(.free-audit-page)
-    .page-hero__title:has(.pricing-type[data-type-text]) {
-    min-height: max(var(--page-hero-title-reserve, 0px), 2.05em);
-  }
-
-  .locations-page .pricing-type,
-  .locations-page .pricing-type__text,
-  .locations-page .page-hero__sub {
-    margin-inline: 0;
-    text-align: left;
-    transform-origin: left top;
-  }
-
-  .locations-page .pricing-type__text {
-    white-space: normal;
-  }
-
-  .seo-brisbane-page__title-reserve {
-    white-space: normal;
-  }
-
-  .locations-page__h1 {
-    width: 100%;
-    left: auto;
-    transform: none;
-    text-align: left;
-  }
-
-  .free-audit-page .page-hero.locations-page .page-hero__content {
-    justify-items: start;
-    text-align: left;
-  }
-
-  .free-audit-page .page-hero.locations-page .page-hero__title {
-    display: block;
-    text-align: left;
-  }
-
-  .free-audit-page .page-hero.locations-page .pricing-type,
-  .free-audit-page .page-hero.locations-page .pricing-type__text {
-    margin-inline: 0;
-    text-align: left;
-    transform-origin: left top;
-  }
-
-  .locations-page .location-brand .brand-position-statement__title {
-    max-width: 17ch;
-    margin: 0 auto;
-    font-size: clamp(2rem, 6.5vw, 2.55rem);
-    line-height: 1;
-    text-align: center;
-  }
-
-  .free-audit-page .page-hero.locations-page .locations-page__h1 {
-    width: 100%;
-    left: auto;
-    transform: none;
-    text-align: left;
+  .locations-hub__link:hover .locations-hub__link-icon {
+    transform: translateX(0.35rem);
   }
 }
 
-@media (max-width: 1024px) {
-  .locations-page .page-hero__content,
-  .free-audit-page .page-hero.locations-page .page-hero__content {
-    justify-items: center;
-    text-align: center;
+@media (max-width: 767px) {
+  .locations-hub__link {
+    padding: 1rem 0;
   }
 
-  .locations-page .page-hero__title,
-  .locations-page .page-hero__sub,
-  .locations-page .pricing-type,
-  .locations-page .pricing-type__text,
-  .locations-page .locations-page__h1,
-  .free-audit-page .page-hero.locations-page .page-hero__title,
-  .free-audit-page .page-hero.locations-page .pricing-type,
-  .free-audit-page .page-hero.locations-page .pricing-type__text,
-  .free-audit-page .page-hero.locations-page .locations-page__h1 {
-    text-align: center;
-  }
-
-  .locations-page .page-hero__sub,
-  .locations-page .pricing-type,
-  .locations-page .pricing-type__text,
-  .locations-page .locations-page__h1,
-  .free-audit-page .page-hero.locations-page .pricing-type,
-  .free-audit-page .page-hero.locations-page .pricing-type__text,
-  .free-audit-page .page-hero.locations-page .locations-page__h1 {
-    margin-inline: auto;
-  }
-
-  .locations-page .pricing-type,
-  .locations-page .pricing-type__text,
-  .free-audit-page .page-hero.locations-page .pricing-type,
-  .free-audit-page .page-hero.locations-page .pricing-type__text {
-    transform-origin: center top;
-  }
-
-  .free-audit-page .page-hero.locations-page .page-hero__title {
-    display: flex;
-    justify-content: center;
-  }
-
-  .locations-page .page-hero .page-hero__google-proof {
-    justify-self: center;
-  }
-
-  .seo-brisbane-page .page-hero__title > .pricing-type {
-    inset: 0 0 auto 0;
-    width: fit-content;
-    margin-inline: auto;
-  }
-}
-
-@media (min-width: 1025px) {
-  .locations-page .page-hero__content {
-    justify-items: center;
-    text-align: center;
-  }
-
-  .locations-page .page-hero__title,
-  .locations-page .page-hero__sub,
-  .locations-page .pricing-type,
-  .locations-page .pricing-type__text,
-  .locations-page .locations-page__h1 {
-    text-align: center;
-  }
-
-  .locations-page .page-hero__sub,
-  .locations-page .pricing-type,
-  .locations-page .pricing-type__text,
-  .locations-page .locations-page__h1 {
-    margin-inline: auto;
-  }
-
-  .locations-page .pricing-type,
-  .locations-page .pricing-type__text {
-    transform-origin: center top;
-  }
-
-  .locations-page .page-hero__google-proof {
-    justify-self: center;
-  }
-
-  .seo-brisbane-page .page-hero__title > .pricing-type {
-    inset: 0 0 auto 0;
-    width: fit-content;
-    margin-inline: auto;
+  .locations-hub__link-title {
+    max-width: 12ch;
   }
 }
