@@ -214,7 +214,7 @@ body.home-page .portfolio-carousel__viewport {
 }
 
 body.home-page .about-instagram__inner {
-  width: min(calc(100vw - 2rem), 84rem);
+  width: min(calc(100vw - clamp(2rem, 4vw, 4rem)), 78rem);
   max-width: none;
   margin-inline: auto;
   display: grid;
@@ -235,6 +235,9 @@ body.home-page .about-instagram .services__label {
 body.home-page .about-instagram__shell {
   position: relative;
   overflow: visible;
+  width: 100%;
+  padding-inline: clamp(0.35rem, 0.9vw, 0.7rem);
+  box-sizing: border-box;
 }
 
 body.home-page .about-instagram__viewport {
@@ -243,13 +246,15 @@ body.home-page .about-instagram__viewport {
 
 body.home-page .about-instagram__track {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: clamp(0.65rem, 1vw, 0.95rem);
+  grid-template-columns: repeat(5, minmax(0, clamp(11.5rem, 14.2vw, 12.9rem)));
+  justify-content: center;
+  gap: clamp(0.75rem, 0.95vw, 0.95rem);
   align-items: start;
 }
 
 body.home-page .about-instagram__item {
   min-width: 0;
+  width: 100%;
 }
 
 body.home-page .about-instagram__arrow {
@@ -260,7 +265,7 @@ body.home-page .about-instagram__post {
   width: 100%;
   max-width: none;
   min-width: 0;
-  margin-inline: 0;
+  margin-inline: auto;
   color: inherit;
   text-decoration: none;
   transition:
@@ -674,7 +679,7 @@ body.home-page .results-spotlight__project-link:focus-visible {
   }
 
   body.home-page .about-instagram__inner {
-    width: min(calc(100vw - 2rem), 84rem);
+    width: min(calc(100vw - clamp(2rem, 4vw, 4rem)), 78rem);
     margin-inline: auto;
   }
 
@@ -1163,7 +1168,8 @@ body.home-page .web-design-copy__link:is(:hover, :focus-visible) {
   flex-direction: column;
   box-sizing: border-box;
   height: auto;
-  min-height: 95vh;
+  min-height: 100vh;
+  min-height: 100svh;
   max-height: none;
   padding: var(--home-hero-header-clearance-mobile) 0 2rem !important;
   margin-bottom: 0;
@@ -1296,7 +1302,7 @@ body.home-page .web-design-copy__link:is(:hover, :focus-visible) {
   margin-inline: 0;
   max-width: 32ch;
   color: #fff;
-  font-size: clamp(1.12rem, 1.15vw + 0.95rem, 1.78rem);
+  font-size: clamp(1.02rem, 0.98vw + 0.9rem, 1.58rem);
   font-weight: 700;
   line-height: 1.2;
   text-align: left;
@@ -1487,7 +1493,8 @@ body.home-page .web-design-copy__link:is(:hover, :focus-visible) {
   .hero {
     --hero-cta-width: clamp(11.5rem, 22vw, 13rem);
     height: auto;
-    min-height: 95vh;
+    min-height: 100vh;
+    min-height: 100svh;
     max-height: none;
     padding: calc(var(--home-hero-header-clearance-mobile) + 0.85rem) 0 2rem !important;
   }
@@ -1573,9 +1580,10 @@ body.home-page .web-design-copy__link:is(:hover, :focus-visible) {
 
 @media (min-width: 1025px) {
   .hero {
-    height: 95vh;
-    min-height: 95vh;
-    max-height: 95vh;
+    height: auto;
+    min-height: 100vh;
+    min-height: 100svh;
+    max-height: none;
     padding: var(--home-hero-header-clearance-desktop) 0 2rem !important;
   }
 
@@ -1590,8 +1598,6 @@ body.home-page .web-design-copy__link:is(:hover, :focus-visible) {
 
   .hero__title {
     margin-top: clamp(2rem, 5vh, 3.2rem);
-    width: min(100%, 80vw);
-    max-width: 80vw;
     font-size: clamp(2.7rem, 4.9vw, 5rem);
   }
 
@@ -1805,12 +1811,32 @@ body.home-page .hero__sub-text {
     width: min(100%, 56rem);
     max-width: 56rem;
     margin: 0;
-    font-size: clamp(1.28rem, 1.15vw + 1rem, 2.05rem);
+    font-size: clamp(1.14rem, 0.98vw + 0.92rem, 1.78rem);
     line-height: 1.16;
   }
 
   body.home-page .hero__sub--inline {
     display: none !important;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1366px) {
+  .hero {
+    --hero-cta-width: clamp(10.75rem, 15vw, 11.85rem);
+    --hero-cta-gap: 0.72rem;
+  }
+
+  .hero__cta {
+    min-height: 3rem;
+    padding: 0.72rem 1rem;
+    font-size: 0.94rem;
+  }
+
+  body.home-page .hero__sub--stacked {
+    width: min(100%, 35rem);
+    max-width: 35rem;
+    font-size: clamp(0.98rem, 0.28vw + 0.92rem, 1.18rem);
+    line-height: 1.14;
   }
 }
 

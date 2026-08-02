@@ -574,6 +574,7 @@ if (mobileOverlay && mobileOverlay.parentElement !== document.body) {
 let scrollY = 0;
 let menuCloseTimer = null;
 const menuTransitionMs = 140;
+const desktopChromeMq = window.matchMedia("(min-width: 1025px)");
 const mobileUiAfterMenuClose = {
   active: false,
   anchorY: 0,
@@ -624,6 +625,35 @@ const unlockScroll = (afterUnlock) => {
   requestAnimationFrame(() => {
     afterUnlock?.();
   });
+};
+
+const resetMobileMenu = () => {
+  if (!burger || !mobilePanel) return;
+  if (menuCloseTimer) clearTimeout(menuCloseTimer);
+  menuCloseTimer = null;
+
+  mobilePanel.classList.remove("is-open");
+  mobilePanel.hidden = true;
+  mobilePanel.style.maxHeight = "";
+  if (mobileOverlay) {
+    mobileOverlay.classList.remove("is-open");
+    mobileOverlay.hidden = true;
+  }
+  burger.setAttribute("aria-expanded", "false");
+  mobileUiAfterMenuClose.active = false;
+};
+
+const syncMenuForViewport = () => {
+  if (!burger || !mobilePanel) return;
+
+  if (desktopChromeMq.matches) {
+    resetMobileMenu();
+    return;
+  }
+
+  if (burger.getAttribute("aria-expanded") === "true") {
+    syncMobilePanelHeight();
+  }
 };
 
 const openMenu = () => {
@@ -705,15 +735,17 @@ if (burger && mobilePanel) {
     passive: false,
   });
 
-  window.addEventListener("resize", () => {
-    if (burger.getAttribute("aria-expanded") !== "true") return;
-    syncMobilePanelHeight();
-  });
+  window.addEventListener("resize", syncMenuForViewport);
 
-  window.visualViewport?.addEventListener("resize", () => {
-    if (burger.getAttribute("aria-expanded") !== "true") return;
-    syncMobilePanelHeight();
-  });
+  window.visualViewport?.addEventListener("resize", syncMenuForViewport);
+
+  if (typeof desktopChromeMq.addEventListener === "function") {
+    desktopChromeMq.addEventListener("change", syncMenuForViewport);
+  } else if (typeof desktopChromeMq.addListener === "function") {
+    desktopChromeMq.addListener(syncMenuForViewport);
+  }
+
+  syncMenuForViewport();
 }
 
 document.querySelectorAll(".mobile-acc__trigger").forEach((btn) => {
@@ -1100,7 +1132,6 @@ const initLoopingCardCarousel = ({
   prev,
   next,
   items,
-  doubleCardMq,
   singleCardMq,
 }) => {
   if (!track || !viewport || !prev || !next || items.length < 2) {
@@ -1139,15 +1170,6 @@ const initLoopingCardCarousel = ({
     const gap = secondRect ? secondRect.left - firstRect.left - itemWidth : 0;
     const step = itemWidth + gap;
 
-    if (doubleCardMq?.matches) {
-      const pairStartIndex = firstVisibleIndex + 1;
-      const offset =
-        viewport.clientWidth / 2 -
-        (pairStartIndex * step + itemWidth + gap / 2);
-
-      return { offset };
-    }
-
     const middleVisibleIndex = firstVisibleIndex + 2;
     const offset =
       viewport.clientWidth / 2 -
@@ -1160,17 +1182,10 @@ const initLoopingCardCarousel = ({
     Array.from(track.children).forEach((item) => {
       item.classList.remove("is-edge-visible");
       item.classList.remove("is-mobile-current");
-      item.classList.remove("is-tablet-current");
     });
 
     if (singleCardMq.matches) {
       track.children[firstVisibleIndex + 2]?.classList.add("is-mobile-current");
-      return;
-    }
-
-    if (doubleCardMq?.matches) {
-      track.children[firstVisibleIndex + 1]?.classList.add("is-tablet-current");
-      track.children[firstVisibleIndex + 2]?.classList.add("is-tablet-current");
       return;
     }
 
@@ -1302,9 +1317,6 @@ const initLoopingCardCarousel = ({
   if (!sections.length) return;
 
   const singleCardMq = window.matchMedia("(max-width: 767px)");
-  const doubleCardMq = window.matchMedia(
-    "(min-width: 768px) and (max-width: 1200px)",
-  );
 
   sections.forEach((section) => {
     const track = section.querySelector(".reviews__track");
@@ -1327,7 +1339,6 @@ const initLoopingCardCarousel = ({
       prev,
       next,
       items: originalItems.map((item) => item.cloneNode(true)),
-      doubleCardMq,
       singleCardMq,
     });
   });
@@ -1458,9 +1469,6 @@ const initLoopingCardCarousel = ({
       prev,
       next,
       items,
-      doubleCardMq: window.matchMedia(
-        "(min-width: 768px) and (max-width: 1200px)",
-      ),
       singleCardMq: window.matchMedia("(max-width: 767px)"),
     });
   });
@@ -1471,9 +1479,6 @@ const initLoopingCardCarousel = ({
   if (!sections.length) return;
 
   const singleCardMq = window.matchMedia("(max-width: 767px)");
-  const doubleCardMq = window.matchMedia(
-    "(min-width: 768px) and (max-width: 1200px)",
-  );
 
   sections.forEach((section) => {
     const track = section.querySelector(".blog-carousel__track");
@@ -1496,7 +1501,6 @@ const initLoopingCardCarousel = ({
       prev,
       next,
       items: originalItems.map((item) => item.cloneNode(true)),
-      doubleCardMq,
       singleCardMq,
     });
   });

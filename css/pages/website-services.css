@@ -557,7 +557,12 @@ main
 
 .website-services__hero-wrap {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
   isolation: isolate;
+  min-height: 100vh;
+  min-height: 100svh;
   margin-top: calc(-1 * var(--service-hero-header-overlap, 90px));
   padding-top: var(--service-hero-header-overlap, 90px);
   overflow: hidden;
@@ -601,21 +606,10 @@ main
 }
 
 .website-services__hero-portrait--front {
-  right: clamp(4.5rem, 10vw, 8.5rem);
-  width: min(78%, 32rem);
-  z-index: 2;
-}
-
-body.service-page:not(.service-page--nested):is(
-    .seo-page,
-    .google-ads-page,
-    .hosting-page,
-    .brand-design-page
-  )
-  .website-services__hero-portrait--front {
   right: clamp(0.5rem, 2.4vw, 2.5rem);
   width: clamp(24rem, 36vw, 40rem);
   max-width: 46vw;
+  z-index: 2;
 }
 
 .website-services__hero-portrait--back {
@@ -662,10 +656,6 @@ body.web-design-page {
   --service-hero-back-image: url("/assets/images/Habibur-Ramahan.webp");
 }
 
-body.web-design-page .website-services__hero-portrait--front {
-  right: clamp(5.75rem, 11vw, 9.75rem);
-}
-
 body.web-design-page .website-services__hero-portrait--back {
   width: min(72%, 30rem);
 }
@@ -697,8 +687,6 @@ body.service-page .website-services__hero .page-hero__content {
 }
 
 body.service-page .website-services__hero .page-hero__title {
-  width: 100%;
-  max-width: none;
   letter-spacing: -0.03em;
   word-break: normal;
   overflow-wrap: normal;
@@ -708,7 +696,7 @@ body.service-page .website-services__hero .page-hero__title {
 body.service-page .website-services__hero .page-hero__sub {
   width: min(100%, 40rem);
   max-width: 40rem;
-  font-size: clamp(1.16rem, 1vw + 1rem, 1.88rem);
+  font-size: clamp(1.04rem, 0.82vw + 0.92rem, 1.56rem);
   line-height: 1.28;
 }
 
@@ -804,6 +792,12 @@ body.service-page .services__label--before {
 
 body.service-page .faq__inner {
   width: min(calc(100vw - 1rem), 78rem);
+}
+
+@media (min-width: 768px) and (max-width: 1366px) {
+  body.service-page .faq__inner {
+    width: min(calc(100vw - clamp(4rem, 8vw, 8rem)), 78rem);
+  }
 }
 
 .home-maxx--insta .home-maxx__inner {
@@ -963,6 +957,12 @@ body.service-page .faq__inner {
     -webkit-mask-image: none;
     mask-image: none;
   }
+
+  body.service-page .website-services__hero .page-hero__title,
+  .website-services__hero .page-hero__title {
+    width: 80%;
+    max-width: 80%;
+  }
 }
 
 @media (max-width: 899px) {
@@ -1061,7 +1061,7 @@ body.service-page .faq__inner {
   }
 }
 
-@media (max-width: 1366px) {
+@media (max-width: 1023px) {
   body.service-page {
     --service-hero-header-overlap: 74px;
   }
@@ -1116,7 +1116,42 @@ body.service-page .faq__inner {
   }
 }
 
-@media (min-width: 721px) and (max-width: 1366px) {
+@media (min-width: 1024px) and (max-width: 1366px) {
+  body.service-page {
+    --service-hero-header-overlap: 90px;
+  }
+
+  body.service-page .website-services__hero .page-hero__sub {
+    width: min(100%, 35rem);
+    max-width: 35rem;
+    font-size: clamp(0.96rem, 0.34vw + 0.9rem, 1.14rem);
+    line-height: 1.22;
+  }
+
+  body.service-page .website-services__hero .page-hero__actions {
+    --page-hero-cta-width: clamp(10.9rem, 15vw, 12rem);
+    gap: 0.72rem;
+  }
+
+  .website-services__hero .page-hero__cta {
+    min-height: 3rem;
+    padding: 0.72rem 1rem;
+    font-size: 0.94rem;
+  }
+
+  .home-maxx--insta .home-maxx__media {
+    align-self: start;
+    align-content: start;
+    justify-items: center;
+    min-height: 0;
+  }
+
+  .home-maxx--insta .insta-card {
+    align-self: start;
+  }
+}
+
+@media (min-width: 721px) and (max-width: 1023px) {
   .home-maxx--insta .home-maxx__inner {
     justify-items: start;
   }
@@ -1648,6 +1683,13 @@ body.web-design-page
   .website-services__hero .page-hero__sub {
     margin-top: auto;
     margin-bottom: auto;
+  }
+}
+
+@media (min-width: 721px) and (max-width: 1366px) {
+  body.web-design-page .pricing-grid2--service-web-design .pricing-grid2__title {
+    margin-inline: auto;
+    text-align: center;
   }
 }
 

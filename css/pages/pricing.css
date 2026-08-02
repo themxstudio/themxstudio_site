@@ -407,3 +407,10 @@ main {
   }
 
 }
+
+@media (min-width: 721px) and (max-width: 1366px) {
+  .pricing-page .pricing-grid2__title {
+    margin-inline: auto;
+    text-align: center;
+  }
+}

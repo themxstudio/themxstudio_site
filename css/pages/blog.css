@@ -21,6 +21,12 @@ body.blog-index-page {
   width: var(--blog-post-width, var(--site-width));
 }
 
+@media (min-width: 768px) and (max-width: 1366px) {
+  .blog-post-page .faq__inner {
+    width: min(calc(100vw - clamp(4rem, 8vw, 8rem)), 72rem);
+  }
+}
+
 .blog-article__inner {
   max-width: none;
   margin-inline: auto;
@@ -37,14 +43,15 @@ body.blog-index-page {
 
 .blog-inline-form {
   display: grid;
-  width: min(90vw, 480px);
+  box-sizing: border-box;
+  width: min(100%, 480px);
   max-width: none;
   margin: clamp(2.4rem, 4vw, 3.25rem) 0 0;
   margin-inline: 0;
   padding: clamp(1.35rem, 2.2vw, 1.75rem);
   align-self: start;
   justify-self: start;
-  overflow: visible;
+  overflow: hidden;
 }
 
 .blog-inline-form .form-modal__header {
@@ -91,7 +98,7 @@ body.blog-index-page {
 
 @media (min-width: 960px) {
   .blog-inline-form {
-    width: min(90vw, 560px);
+    width: min(100%, 560px);
   }
 }
 
@@ -267,6 +274,7 @@ body.blog-index-page {
   .blog-article__rail {
     grid-column: 1;
     grid-row: 1;
+    min-width: 0;
     width: 100%;
     justify-self: stretch;
     gap: 2.3rem;
@@ -284,6 +292,7 @@ body.blog-index-page {
 
   .blog-article__rail > .blog-inline-form.blog-rail-form {
     display: grid;
+    min-width: 0;
     width: 100%;
     max-width: none;
     margin: 0;
@@ -663,7 +672,7 @@ body.blog-index-page .about-instagram {
 }
 
 body.blog-index-page .about-instagram__inner {
-  width: min(calc(100vw - 2rem), 84rem);
+  width: min(calc(100vw - clamp(2rem, 4vw, 4rem)), 78rem);
   max-width: none;
   margin-inline: auto;
   display: grid;
@@ -673,6 +682,9 @@ body.blog-index-page .about-instagram__inner {
 body.blog-index-page .about-instagram__shell {
   position: relative;
   overflow: visible;
+  width: 100%;
+  padding-inline: clamp(0.35rem, 0.9vw, 0.7rem);
+  box-sizing: border-box;
 }
 
 body.blog-index-page .about-instagram__viewport {
@@ -681,13 +693,15 @@ body.blog-index-page .about-instagram__viewport {
 
 body.blog-index-page .about-instagram__track {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: clamp(0.65rem, 1vw, 0.95rem);
+  grid-template-columns: repeat(5, minmax(0, clamp(11.5rem, 14.2vw, 12.9rem)));
+  justify-content: center;
+  gap: clamp(0.75rem, 0.95vw, 0.95rem);
   align-items: start;
 }
 
 body.blog-index-page .about-instagram__item {
   min-width: 0;
+  width: 100%;
 }
 
 body.blog-index-page .about-instagram__arrow {
@@ -698,7 +712,7 @@ body.blog-index-page .about-instagram__post {
   width: 100%;
   max-width: none;
   min-width: 0;
-  margin-inline: 0;
+  margin-inline: auto;
   color: inherit;
   text-decoration: none;
   transition:

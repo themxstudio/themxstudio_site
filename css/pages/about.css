@@ -599,7 +599,7 @@ body.about-page .about-instagram {
 }
 
 body.about-page .about-instagram__inner {
-  width: min(calc(100vw - 2rem), 84rem);
+  width: min(calc(100vw - clamp(2rem, 4vw, 4rem)), 78rem);
   max-width: none;
   margin-inline: auto;
   display: grid;
@@ -620,6 +620,9 @@ body.about-page .about-instagram .services__label {
 body.about-page .about-instagram__shell {
   position: relative;
   overflow: visible;
+  width: 100%;
+  padding-inline: clamp(0.35rem, 0.9vw, 0.7rem);
+  box-sizing: border-box;
 }
 
 body.about-page .about-instagram__viewport {
@@ -628,13 +631,15 @@ body.about-page .about-instagram__viewport {
 
 body.about-page .about-instagram__track {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: clamp(0.65rem, 1vw, 0.95rem);
+  grid-template-columns: repeat(5, minmax(0, clamp(11.5rem, 14.2vw, 12.9rem)));
+  justify-content: center;
+  gap: clamp(0.75rem, 0.95vw, 0.95rem);
   align-items: start;
 }
 
 body.about-page .about-instagram__item {
   min-width: 0;
+  width: 100%;
 }
 
 body.about-page .about-instagram__arrow {
@@ -645,7 +650,7 @@ body.about-page .about-instagram__post {
   width: 100%;
   max-width: none;
   min-width: 0;
-  margin-inline: 0;
+  margin-inline: auto;
   color: inherit;
   text-decoration: none;
   transition:
@@ -716,7 +721,7 @@ body.about-page .about-instagram__post .insta-card__photo {
   }
 
   body.about-page .about-instagram__inner {
-    width: min(calc(100vw - 2rem), 84rem);
+    width: min(calc(100vw - clamp(2rem, 4vw, 4rem)), 78rem);
     margin-inline: auto;
   }
 

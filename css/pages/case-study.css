@@ -267,14 +267,15 @@ body.results-case-study-page main section.case-study-hero {
 
 .case-study-inline-form {
   display: grid;
-  width: min(90vw, 480px);
+  box-sizing: border-box;
+  width: min(100%, 480px);
   max-width: none;
   margin: clamp(2.4rem, 4vw, 3.25rem) 0 0;
   margin-inline: 0;
   padding: clamp(1.35rem, 2.2vw, 1.75rem);
   align-self: start;
   justify-self: start;
-  overflow: visible;
+  overflow: hidden;
 }
 
 .case-study-inline-form .form-modal__header {
@@ -331,6 +332,7 @@ body.results-case-study-page main section.case-study-hero {
   .case-study-article .blog-article__rail {
     grid-column: 1;
     grid-row: 1;
+    min-width: 0;
     width: 100%;
     justify-self: stretch;
     gap: 2.3rem;
@@ -351,6 +353,7 @@ body.results-case-study-page main section.case-study-hero {
 
   .case-study-article .blog-article__rail > .blog-inline-form.blog-rail-form {
     display: grid;
+    min-width: 0;
     width: 100%;
     max-width: none;
     margin: 0;
@@ -465,6 +468,7 @@ body.results-case-study-page main section.case-study-hero {
   .case-study-article__rail {
     grid-column: 1;
     grid-row: 1;
+    min-width: 0;
     width: 100%;
     justify-self: stretch;
     gap: 2.3rem;
@@ -496,11 +500,14 @@ body.results-case-study-page main section.case-study-hero {
   }
 
   .case-study-inline-form {
-    width: min(90vw, 560px);
+    width: min(100%, 560px);
   }
 
   .case-study-article__rail > .case-study-inline-form.case-study-form--rail {
+    min-width: 0;
+    width: 100%;
     margin: 0;
+    max-width: none;
     padding: clamp(1.05rem, 1.3vw, 1.3rem);
     justify-self: stretch;
   }
@@ -593,6 +600,12 @@ body.results-case-study-page main section.case-study-hero {
 @media (max-width: 1366px) {
   body.results-case-study-page main section.case-study-hero {
     --case-study-hero-header-overlap: 74px;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1366px) {
+  body.results-case-study-page main section.case-study-hero {
+    --case-study-hero-header-overlap: 90px;
   }
 }
 
