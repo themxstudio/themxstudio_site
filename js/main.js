@@ -2281,6 +2281,35 @@ const initCountGroup = ({
 })();
 
 (() => {
+  const normalizeCtaLabel = (text) => text?.replace(/\s+/g, " ").trim() || "";
+
+  const hasFooterCtaAction = (cta) => {
+    if (!cta) return false;
+    if (cta.matches("[data-open-discovery]")) return true;
+    if (cta instanceof HTMLAnchorElement) {
+      const href = cta.getAttribute("href")?.trim();
+      return Boolean(href && href !== "#");
+    }
+    if (cta instanceof HTMLButtonElement) {
+      return cta.type === "submit" || Boolean(cta.getAttribute("form"));
+    }
+    return false;
+  };
+
+  document.querySelectorAll(".site-footer .home-footer__lead").forEach((lead) => {
+    const footer = lead.closest(".site-footer");
+    const cta = lead.querySelector(".home-footer__cta");
+    const label = normalizeCtaLabel(cta?.textContent);
+    const showCta = Boolean(cta && label && hasFooterCtaAction(cta));
+
+    if (cta) cta.hidden = !showCta;
+
+    lead.classList.toggle("home-footer__lead--no-cta", !showCta);
+    footer?.classList.toggle("site-footer--no-cta", !showCta);
+  });
+})();
+
+(() => {
   const syncModalScrollLock = () => {
     document.documentElement.style.overflow = document.querySelector(
       ".form-modal.is-open",

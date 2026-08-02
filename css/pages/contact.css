@@ -187,9 +187,7 @@ main section.contact-split:not(.hero):not(.page-hero):not(.section-accent-tail) 
   .contact-split__title {
     width: min(100%, 31rem);
     max-width: 31rem;
-    margin-inline-start: calc(
-      (var(--contact-detail-icon-size) + var(--contact-detail-gap)) * -1
-    );
+    margin-inline-start: 0;
   }
 
   .contact-split__form-col .contact-inline-form {
