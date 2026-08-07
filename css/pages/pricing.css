@@ -139,7 +139,7 @@ main {
 }
 
 .pricing-page .pricing-grid2__card:is(:hover, :focus-within) {
-  --pricing-card-translate-y: calc(var(--button-translate) * -2);
+  --pricing-card-translate-y: var(--pricing-hover-lift, -0.4rem);
   border-color: var(--accent);
   box-shadow:
     0 18px 38px rgba(0, 0, 0, 0.28),
@@ -152,7 +152,7 @@ main {
 }
 
 .pricing-page .pricing-grid2__col--featured:is(:hover, :focus-within) {
-  --pricing-featured-lift: calc(var(--button-translate) * -2);
+  --pricing-featured-lift: var(--pricing-hover-lift, -0.4rem);
 }
 
 .pricing-page
@@ -247,7 +247,7 @@ main {
   content: "";
 }
 
-@media (max-width: 999px) {
+@media (max-width: 767px) {
   .pricing-page .pricing-grid2__title {
     margin-inline: 0;
     text-align: left;
@@ -297,105 +297,94 @@ main {
   }
 }
 
-@media (min-width: 700px) and (max-width: 999px) {
+@media (min-width: 768px) {
   .pricing-page .pricing-grid2__inner {
-    justify-items: start;
+    justify-items: center;
+    width: min(var(--site-width), 106rem);
+    gap: clamp(1.7rem, 2.8vw, 3.3rem);
   }
 
   .pricing-page .pricing-grid2__title {
-    margin-inline: 0;
-  }
-
-  .pricing-page .pricing-grid2__cols {
-    justify-content: start;
-  }
-
-  .pricing-page .pricing-grid2__col {
-    margin-inline: 0;
-  }
-}
-
-@media (min-width: 1000px) and (max-width: 1499px) {
-  .pricing-page .pricing-grid2__inner {
-    justify-items: start;
-    gap: clamp(2.1rem, 3vw, 3rem);
-  }
-
-  .pricing-page .pricing-grid2__card {
-    border-radius: 16px;
-  }
-
-  .pricing-page .pricing-grid2__title {
-    margin-inline: 0;
-    text-align: left;
+    width: min(100%, 74rem);
+    margin-inline: auto;
+    text-align: center;
     white-space: normal;
   }
 
   .pricing-page .pricing-grid2__cols {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    justify-content: start;
-    align-items: center;
-    width: min(100%, 69rem);
-    max-width: 100%;
-    margin-inline: 0;
-    gap: clamp(1.2rem, 1.8vw, 1.6rem);
-  }
-
-  .pricing-page .pricing-grid2__badge {
-    right: calc(var(--pricing-featured-badge-size) * -0.44);
-    transform: translateY(var(--pricing-featured-lift)) rotate(18deg);
+    align-items: stretch;
+    justify-self: center;
+    width: min(100%, 84rem);
+    max-width: min(100%, 84rem);
+    margin-inline: auto;
+    gap: clamp(0.85rem, 1.8vw, 1.75rem);
   }
 
   .pricing-page .pricing-grid2__col {
     width: 100%;
     min-width: 0;
-  }
-
-  .pricing-page .pricing-grid2__col .pricing-grid2__card {
-    transform-origin: left center;
-  }
-
-  .pricing-page .pricing-grid2__col--featured .pricing-grid2__card {
-    --pricing-card-scale: 1.02;
-  }
-
-}
-
-@media (min-width: 1500px) {
-  .pricing-page .pricing-grid2__inner {
-    justify-items: center;
-    gap: clamp(2.35rem, 3.4vw, 3.3rem);
+    margin-inline: 0;
   }
 
   .pricing-page .pricing-grid2__card {
-    border-radius: 18px;
+    border-radius: clamp(15px, 1vw + 10px, 18px);
+    padding-block: clamp(0.88rem, 0.4vw + 0.8rem, 1.15rem);
+    padding-inline-start: clamp(0.72rem, 0.5vw + 0.62rem, 1rem);
+    padding-inline-end: clamp(0.8rem, 0.55vw + 0.69rem, 1.2rem);
   }
 
-  .pricing-page .pricing-grid2__title {
-    text-align: center;
+  .pricing-page .pricing-grid2__card-title {
+    font-size: clamp(1.1rem, 0.5vw + 0.95rem, 1.72rem);
+  }
+
+  .pricing-page .pricing-grid2__card-copy {
+    margin-top: 0.12rem;
+    font-size: clamp(0.86rem, 0.24vw + 0.78rem, 1.08rem);
+    line-height: 1.48;
+  }
+
+  .pricing-page .pricing-grid2__card-list {
+    gap: clamp(0.45rem, 0.08vw + 0.43rem, 0.5rem);
+  }
+
+  .pricing-page .pricing-grid2__card-list li {
+    align-items: start;
+    gap: 0.46rem;
+    font-size: clamp(0.62rem, 0.22vw + 0.58rem, 0.86rem);
+    line-height: 1.2;
     white-space: normal;
   }
 
-  .pricing-page .pricing-grid2__cols {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    width: fit-content;
-    max-width: 100%;
-    margin-inline: auto;
-    gap: clamp(1.35rem, 1.8vw, 1.75rem);
+  .pricing-page .pricing-grid2__card-list li::before {
+    width: clamp(0.9rem, 0.1vw + 0.88rem, 1rem);
+    height: clamp(0.9rem, 0.1vw + 0.88rem, 1rem);
+    margin-top: 0.12rem;
+  }
+
+  .pricing-page .pricing-grid2__card-price {
+    margin-top: 0.5rem;
+    font-size: clamp(1rem, 0.4vw + 0.92rem, 1.5rem);
+  }
+
+  .pricing-page .pricing-grid2__card-cta {
+    margin-top: clamp(0.75rem, 0.25vw + 0.7rem, 0.9rem);
+    padding: 0.42rem 0.62rem;
+    font-size: clamp(0.92rem, 0.08vw + 0.9rem, 1rem);
   }
 
   .pricing-page .pricing-grid2__badge {
-    right: calc(var(--pricing-featured-badge-size) * -0.5);
+    --pricing-featured-badge-size: clamp(5.4rem, 1vw + 5rem, 6.35rem);
+    top: calc(var(--pricing-featured-badge-size) * -0.42);
+    right: calc(var(--pricing-featured-badge-size) * -0.4);
+    padding: clamp(0.8rem, 0.2vw + 0.76rem, 0.95rem);
     transform: translateY(var(--pricing-featured-lift)) rotate(18deg);
   }
 
-  .pricing-page .pricing-grid2__col {
-    flex: 0 0 min(100%, 27.5rem);
-    width: min(100%, 27.5rem);
+  .pricing-page .pricing-grid2__badge-label {
+    max-width: clamp(3.15rem, 0.5vw + 3rem, 3.7rem);
+    font-size: clamp(0.5rem, 0.04vw + 0.49rem, 0.54rem);
   }
 
   .pricing-page .pricing-grid2__col .pricing-grid2__card {
@@ -403,14 +392,6 @@ main {
   }
 
   .pricing-page .pricing-grid2__col--featured .pricing-grid2__card {
-    --pricing-card-scale: 1.08;
-  }
-
-}
-
-@media (min-width: 721px) and (max-width: 1366px) {
-  .pricing-page .pricing-grid2__title {
-    margin-inline: auto;
-    text-align: center;
+    --pricing-card-scale: 1.06;
   }
 }

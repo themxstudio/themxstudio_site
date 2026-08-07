@@ -5495,11 +5495,11 @@ main section.discovery-call:not(.hero):not(.page-hero):not(.section-accent-tail)
 }
 @media screen and (orientation: landscape) and (max-width: 1366px) and (min-width: 1024px) {
   .reviews__track > * {
-    flex-basis: 100% !important;
+    flex-basis: calc((100% - var(--reviews-carousel-gap)) / 2) !important;
   }
   .reviews__item {
-    min-width: 100%;
-    flex-basis: 100% !important;
+    min-width: calc((100% - var(--reviews-carousel-gap)) / 2);
+    flex-basis: calc((100% - var(--reviews-carousel-gap)) / 2) !important;
   }
   .faq__inner,
   .faq-two {
@@ -8318,6 +8318,13 @@ main
   }
 }
 
+@media (min-width: 768px) and (max-width: 1024px) {
+  .reviews .reviews__item {
+    min-width: calc((100% - var(--reviews-carousel-gap)) / 2);
+    flex-basis: calc((100% - var(--reviews-carousel-gap)) / 2) !important;
+  }
+}
+
 @media (max-width: 767px) {
   .reviews .reviews__title {
     margin-bottom: 1rem;
@@ -8525,4 +8532,84 @@ body.home-page .hero {
 body.home-page .hero::after,
 body.home-page .hero__bg-image {
   display: block !important;
+}
+
+/* Shared pricing-grid behavior: mobile stacks, non-mobile centers. */
+@media (max-width: 767px) {
+  .pricing-grid2__title,
+  .pricing-grid__title {
+    margin-inline: 0;
+    text-align: left;
+    white-space: normal;
+  }
+  .pricing-grid2__cols,
+  .pricing-grid__cols {
+    grid-template-columns: minmax(0, 1fr);
+    justify-content: center;
+    gap: clamp(1rem, 2vw, 1.5rem);
+  }
+  .pricing-grid2__col,
+  .pricing-grid__col {
+    width: min(100%, 26rem);
+    margin-inline: auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .pricing-grid2__inner,
+  .pricing-grid__inner {
+    justify-items: center;
+  }
+  .pricing-grid2__title,
+  .pricing-grid__title {
+    margin-inline: auto;
+    text-align: center;
+    white-space: normal;
+  }
+  .pricing-grid2__cols,
+  .pricing-grid__cols {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    justify-self: center;
+    justify-content: center;
+    width: min(100%, 84rem);
+    max-width: min(100%, 84rem);
+    margin-inline: auto;
+    gap: clamp(1rem, 1.8vw, 1.75rem);
+  }
+  .pricing-grid2__col,
+  .pricing-grid__col {
+    width: 100%;
+    margin-inline: 0;
+  }
+  .pricing-grid2__col--featured,
+  .pricing-grid__col--featured {
+    z-index: 1;
+    --pricing-featured-lift: 0px;
+  }
+  .pricing-grid2__card,
+  .pricing-grid__card {
+    --pricing-hover-lift: -0.4rem;
+    --pricing-card-scale: 1;
+    --pricing-card-translate-y: 0px;
+    transform: translateY(var(--pricing-card-translate-y))
+      scale(var(--pricing-card-scale));
+    transition:
+      transform 160ms ease,
+      border-color 160ms ease,
+      box-shadow 160ms ease;
+    transform-origin: center center;
+  }
+  .pricing-grid2__card:is(:hover, :focus-within),
+  .pricing-grid__card:is(:hover, :focus-within) {
+    --pricing-card-translate-y: var(--pricing-hover-lift);
+  }
+  .pricing-grid2__col--featured .pricing-grid2__card,
+  .pricing-grid__col--featured .pricing-grid__card {
+    --pricing-card-scale: 1.04;
+    --pricing-card-translate-y: var(--pricing-featured-lift);
+  }
+  .pricing-grid2__col--featured:is(:hover, :focus-within),
+  .pricing-grid__col--featured:is(:hover, :focus-within) {
+    --pricing-featured-lift: var(--pricing-hover-lift);
+  }
 }

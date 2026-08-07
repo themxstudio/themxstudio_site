@@ -854,64 +854,36 @@ body.about-page .about-instagram__post .insta-card__photo {
   }
 }
 
-@media (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
+  body.about-page .about-instagram__inner {
+    width: min(calc(100vw - 2rem), 42rem);
+  }
+
   body.about-page .about-instagram__shell {
-    --about-instagram-gap: 0.75rem;
-    padding-inline: 2.75rem;
+    padding-inline: 0;
   }
 
   body.about-page .about-instagram__viewport {
-    width: min(calc(100vw - 7rem), 21rem);
-    margin-inline: auto;
-    position: relative;
-    overflow: hidden;
-    touch-action: pan-y;
-    overscroll-behavior-x: contain;
-    padding-block: 0.4rem 0.65rem;
+    width: 100%;
+    margin-inline: 0;
+    overflow: visible;
+    padding-block: 0;
   }
 
   body.about-page .about-instagram__track {
-    display: flex;
-    gap: var(--about-instagram-gap);
-    will-change: transform;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 16rem));
+    justify-content: center;
+    gap: 0.85rem;
   }
 
   body.about-page .about-instagram__item {
-    flex: 0 0 100%;
+    min-width: 0;
+    width: 100%;
   }
 
-  body.about-page .about-instagram--home-carousel.is-carousel-active .about-instagram__arrow {
-    position: absolute;
-    top: 50%;
-    z-index: 1;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 3.1rem;
-    height: 3.1rem;
-    padding: 0;
-    border: 0;
-    border-radius: 0;
-    background: transparent;
-    color: var(--accent);
-    transform: translateY(-50%);
-  }
-
-  body.about-page
-    .about-instagram--home-carousel.is-carousel-active
-    .about-instagram__arrow[data-direction="prev"] {
-    left: 0;
-  }
-
-  body.about-page
-    .about-instagram--home-carousel.is-carousel-active
-    .about-instagram__arrow[data-direction="next"] {
-    right: 0;
-  }
-
-  body.about-page .about-instagram--home-carousel.is-carousel-active .about-instagram__arrow svg {
-    width: 2.2rem;
-    height: 2.2rem;
+  body.about-page .about-instagram__arrow {
+    display: none;
   }
 
   body.about-page .team--home .team__inner {
