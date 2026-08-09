@@ -8613,3 +8613,38 @@ body.home-page .hero__bg-image {
     --pricing-featured-lift: var(--pricing-hover-lift);
   }
 }
+
+@media (pointer: coarse) {
+  .portfolio-carousel__arrow,
+  .blog-carousel__arrow,
+  .reviews .reviews__arrow,
+  .about-instagram__arrow {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+}
+
+@media (max-width: 767px) and (pointer: coarse) {
+  .portfolio-carousel__arrow,
+  .blog-carousel__arrow,
+  .reviews .reviews__arrow,
+  body.home-page .about-instagram--home-carousel.is-carousel-active .about-instagram__arrow,
+  body.about-page .about-instagram--home-carousel.is-carousel-active .about-instagram__arrow,
+  body.blog-index-page .about-instagram--home-carousel.is-carousel-active .about-instagram__arrow {
+    min-width: 4rem;
+    min-height: 4rem;
+  }
+
+  .portfolio-carousel__arrow::before,
+  .blog-carousel__arrow::before,
+  .reviews .reviews__arrow::before,
+  body.home-page .about-instagram--home-carousel.is-carousel-active .about-instagram__arrow::before,
+  body.about-page .about-instagram--home-carousel.is-carousel-active .about-instagram__arrow::before,
+  body.blog-index-page .about-instagram--home-carousel.is-carousel-active .about-instagram__arrow::before {
+    content: "";
+    position: absolute;
+    inset: -0.5rem;
+  }
+}

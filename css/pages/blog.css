@@ -973,16 +973,49 @@ body.blog-index-page .about-instagram__post .insta-card__photo {
 
   body.blog-index-page .about-instagram__shell {
     --about-instagram-gap: 0.6rem;
+    --about-instagram-card-width: min(calc(100vw - 1rem), 19.5rem);
+    width: min(calc(100vw - 1rem), 26rem);
+    margin-inline: auto;
     padding-inline: 0;
   }
 
   body.blog-index-page .about-instagram__viewport {
-    width: min(calc(100vw - 1rem), 19.5rem);
+    width: var(--about-instagram-card-width);
+    max-width: 100%;
+    margin-inline: auto;
+    position: relative;
+    overflow: hidden;
+    touch-action: pan-y;
+    overscroll-behavior-x: contain;
+    padding-block: 0.4rem 0.65rem;
+  }
+
+  body.blog-index-page .about-instagram__track {
+    display: flex;
+    gap: var(--about-instagram-gap);
+    align-items: stretch;
+    will-change: transform;
+  }
+
+  body.blog-index-page .about-instagram__item {
+    flex: 0 0 var(--about-instagram-card-width);
   }
 
   body.blog-index-page
     .about-instagram--home-carousel.is-carousel-active
     .about-instagram__arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: var(--accent);
+    transform: translateY(-50%);
     width: 3.5rem;
     height: 3.5rem;
   }

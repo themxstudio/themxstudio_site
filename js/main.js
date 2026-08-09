@@ -1243,6 +1243,13 @@ const initLoopingCardCarousel = ({
   let firstVisibleIndex = itemCount;
   let isAnimating = false;
   let transitionFallback = null;
+  let layoutSyncFrame = null;
+
+  const clearLayoutSyncFrame = () => {
+    if (!layoutSyncFrame) return;
+    cancelAnimationFrame(layoutSyncFrame);
+    layoutSyncFrame = null;
+  };
 
   const clearTransitionState = () => {
     if (!transitionFallback) return;
@@ -1391,6 +1398,17 @@ const initLoopingCardCarousel = ({
     applyTransform({ animate: false });
   };
 
+  const queueLayoutSync = () => {
+    clearLayoutSyncFrame();
+    layoutSyncFrame = window.requestAnimationFrame(() => {
+      layoutSyncFrame = null;
+      handleResize();
+    });
+  };
+
+  const resizeObserver =
+    "ResizeObserver" in window ? new ResizeObserver(queueLayoutSync) : null;
+
   track.addEventListener("transitionend", handleTransitionEnd);
   prev.addEventListener("click", handlePrevClick);
   next.addEventListener("click", handleNextClick);
@@ -1404,15 +1422,22 @@ const initLoopingCardCarousel = ({
     passive: true,
   });
   window.addEventListener("resize", handleResize);
+  window.addEventListener("load", queueLayoutSync);
 
   buildTrack();
   syncVisibleState();
   applyTransform({ animate: false });
+  queueLayoutSync();
+
+  resizeObserver?.observe(viewport);
+  document.fonts?.ready?.then(queueLayoutSync).catch(() => {});
 
   return () => {
     clearTransitionState();
+    clearLayoutSyncFrame();
     isTouchTracking = false;
     isAnimating = false;
+    resizeObserver?.disconnect();
     track.removeEventListener("transitionend", handleTransitionEnd);
     prev.removeEventListener("click", handlePrevClick);
     next.removeEventListener("click", handleNextClick);
@@ -1420,6 +1445,7 @@ const initLoopingCardCarousel = ({
     viewport.removeEventListener("touchend", handleTouchEnd);
     viewport.removeEventListener("touchcancel", handleTouchCancel);
     window.removeEventListener("resize", handleResize);
+    window.removeEventListener("load", queueLayoutSync);
     track.style.transition = "";
     track.style.transform = "";
   };
@@ -1626,16 +1652,13 @@ const initLoopingCardCarousel = ({
   );
   if (!sections.length) return;
 
-  const mobileCarouselMq = window.matchMedia("(max-width: 1024px)");
+  const mobileCarouselMq = window.matchMedia(
+    document.body.classList.contains("home-page")
+      ? "(max-width: 1024px)"
+      : "(max-width: 767px)",
+  );
   const activeClass = "is-carousel-active";
   const states = new WeakMap();
-
-  const restoreItems = (track, items) => {
-    track.innerHTML = "";
-    items.forEach((item) => {
-      track.appendChild(item.cloneNode(true));
-    });
-  };
 
   const activate = (section) => {
     if (states.has(section)) return;
@@ -1648,29 +1671,97 @@ const initLoopingCardCarousel = ({
     const next = section.querySelector(
       '.about-instagram__arrow[data-direction="next"]',
     );
-    const originalItems = Array.from(
-      track?.querySelectorAll(".about-instagram__item") || [],
-    ).map((item) => item.cloneNode(true));
+    const items = Array.from(track?.querySelectorAll(".about-instagram__item") || []);
 
-    if (!track || !viewport || originalItems.length < 2 || !prev || !next) {
+    if (!track || !viewport || items.length < 2 || !prev || !next) {
       return;
     }
 
-    section.classList.add(activeClass);
+    let currentIndex = 0;
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let isTouchTracking = false;
+    const swipeThreshold = 36;
 
-    const destroyCarousel = initLoopingCardCarousel({
-      track,
-      viewport,
-      prev,
-      next,
-      items: originalItems.map((item) => item.cloneNode(true)),
-      singleCardMq: mobileCarouselMq,
+    const syncVisibleItem = () => {
+      items.forEach((item, index) => {
+        const isCurrent = index === currentIndex;
+        item.hidden = !isCurrent;
+        item.classList.toggle("is-mobile-current", isCurrent);
+        item.setAttribute("aria-hidden", String(!isCurrent));
+      });
+      track.style.transform = "none";
+      track.style.transition = "none";
+    };
+
+    const move = (direction) => {
+      currentIndex = (currentIndex + direction + items.length) % items.length;
+      syncVisibleItem();
+    };
+
+    const handlePrevClick = () => move(-1);
+    const handleNextClick = () => move(1);
+
+    const handleTouchStart = (event) => {
+      const touch = event.changedTouches?.[0];
+      if (!touch) return;
+      isTouchTracking = true;
+      touchStartX = touch.clientX;
+      touchStartY = touch.clientY;
+    };
+
+    const handleTouchEnd = (event) => {
+      if (!isTouchTracking) return;
+      isTouchTracking = false;
+
+      const touch = event.changedTouches?.[0];
+      if (!touch) return;
+
+      const dx = touch.clientX - touchStartX;
+      const dy = touch.clientY - touchStartY;
+
+      if (Math.abs(dx) < swipeThreshold) return;
+      if (Math.abs(dx) <= Math.abs(dy) * 1.15) return;
+
+      move(dx < 0 ? 1 : -1);
+    };
+
+    const handleTouchCancel = () => {
+      isTouchTracking = false;
+    };
+
+    prev.addEventListener("click", handlePrevClick);
+    next.addEventListener("click", handleNextClick);
+    viewport.addEventListener("touchstart", handleTouchStart, {
+      passive: true,
+    });
+    viewport.addEventListener("touchend", handleTouchEnd, {
+      passive: true,
+    });
+    viewport.addEventListener("touchcancel", handleTouchCancel, {
+      passive: true,
     });
 
+    section.classList.add(activeClass);
+    syncVisibleItem();
+
     states.set(section, {
-      destroyCarousel,
-      originalItems,
+      cleanup: () => {
+        prev.removeEventListener("click", handlePrevClick);
+        next.removeEventListener("click", handleNextClick);
+        viewport.removeEventListener("touchstart", handleTouchStart);
+        viewport.removeEventListener("touchend", handleTouchEnd);
+        viewport.removeEventListener("touchcancel", handleTouchCancel);
+        items.forEach((item) => {
+          item.hidden = false;
+          item.classList.remove("is-mobile-current");
+          item.removeAttribute("aria-hidden");
+        });
+        track.style.transform = "";
+        track.style.transition = "";
+      },
       track,
+      items,
     });
   };
 
@@ -1678,8 +1769,7 @@ const initLoopingCardCarousel = ({
     const state = states.get(section);
     if (!state) return;
 
-    state.destroyCarousel();
-    restoreItems(state.track, state.originalItems);
+    state.cleanup();
     section.classList.remove(activeClass);
     states.delete(section);
   };
@@ -2342,7 +2432,8 @@ const initCountGroup = ({
 (() => {
   const body = document.body;
   const shell = document.querySelector(".home-offer-float-shell");
-  if (!body || !shell) return;
+  const footer = document.querySelector(".site-footer");
+  if (!body || !shell || !footer) return;
 
   let lastY = Math.max(window.scrollY || window.pageYOffset || 0, 0);
   let stopTimer = 0;
@@ -2359,7 +2450,16 @@ const initCountGroup = ({
     shell.classList.remove("is-entering");
   };
 
+  const isFooterInView = () => {
+    const footerRect = footer.getBoundingClientRect();
+    return footerRect.top <= window.innerHeight;
+  };
+
   const showCta = (force = false) => {
+    if (isFooterInView()) {
+      hideCta();
+      return;
+    }
     if (!force && !shell.classList.contains("is-scroll-hidden")) return;
     if (enterTimer) clearTimeout(enterTimer);
     shell.classList.add("is-entering");
@@ -2378,6 +2478,12 @@ const initCountGroup = ({
     const deltaY = nextY - lastY;
     lastY = nextY;
 
+    if (isFooterInView()) {
+      hideCta();
+      if (stopTimer) clearTimeout(stopTimer);
+      return;
+    }
+
     if (deltaY > 0.5) {
       hideCta();
     }
@@ -2389,7 +2495,9 @@ const initCountGroup = ({
   };
 
   window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll, { passive: true });
   requestAnimationFrame(() => {
+    onScroll();
     showCta(true);
   });
 })();

@@ -4,7 +4,7 @@
   --home-offer-enter-duration: 1500ms;
   position: fixed;
   left: 50%;
-  bottom: max(0.85rem, env(safe-area-inset-bottom, 0px));
+  bottom: max(1.4rem, calc(env(safe-area-inset-bottom, 0px) + 0.4rem));
   display: flex;
   justify-content: flex-end;
   width: min(96vw, var(--content-max-width));
