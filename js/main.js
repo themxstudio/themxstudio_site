@@ -1510,9 +1510,9 @@ const initLoopingCardCarousel = ({
       alt: "Animo Studio website project preview",
     },
     {
-      filename: "still-waters.webp",
-      src: "/assets/images/still-waters.webp",
-      alt: "Still Waters website project preview",
+      filename: "metro-rags.webp",
+      src: "/assets/images/metro-rags.webp",
+      alt: "Metro Rags website project preview",
     },
   ];
 

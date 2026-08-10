@@ -202,10 +202,14 @@ body.home-page .about-instagram {
 
 body.home-page .portfolio-carousel {
   --section-padding-bottom: 0;
+  --section-padding-top: 0;
+  border-radius: 0 !important;
+  padding-top: 0;
   padding-bottom: 0;
 }
 
 body.home-page main section.portfolio-carousel {
+  padding-top: 0 !important;
   padding-bottom: 0 !important;
 }
 

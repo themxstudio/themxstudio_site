@@ -44,6 +44,18 @@
   </url>
 
   <url>
+    <loc>https://www.themxstudio.com.au/results/metro-rags/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://www.themxstudio.com.au/results/meridian-camera/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
     <loc>https://www.themxstudio.com.au/services/web-design-brisbane/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

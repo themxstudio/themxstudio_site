@@ -6315,6 +6315,14 @@ main section.discovery-call:not(.hero):not(.page-hero):not(.section-accent-tail)
   background: var(--bg);
 }
 
+.gap-fill + .portfolio-carousel {
+  position: relative;
+  z-index: 2;
+  border-radius: var(--section-radius) var(--section-radius) 0 0;
+  overflow: hidden;
+  background: #fff;
+}
+
 /* ── Team section ── */
 .team {
   margin-top: 0;

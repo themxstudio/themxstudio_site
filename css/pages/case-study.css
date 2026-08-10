@@ -142,7 +142,27 @@ body.results-case-study-page main section.case-study-hero {
   max-width: none;
   font-size: clamp(1.08rem, 0.4vw + 1rem, 1.22rem);
   line-height: 1.78;
+  opacity: 1;
+}
+
+.case-study-lead__copy {
   opacity: 0.82;
+}
+
+.case-study-lead__site-line {
+  display: inline;
+  opacity: 1;
+  color: inherit !important;
+}
+
+.case-study-article .case-study-lead .case-study-lead__site-line .case-study-lead__site-link,
+.case-study-article .case-study-lead .case-study-lead__site-line .case-study-lead__site-link:visited,
+.case-study-article .case-study-lead .case-study-lead__site-line .case-study-lead__site-link:hover,
+.case-study-article .case-study-lead .case-study-lead__site-line .case-study-lead__site-link:focus-visible,
+.case-study-article .case-study-lead .case-study-lead__site-line .case-study-lead__site-link:active {
+  color: var(--accent) !important;
+  font-weight: 900;
+  text-decoration: none !important;
 }
 
 .case-study-toc {

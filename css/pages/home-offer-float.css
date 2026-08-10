@@ -1,6 +1,6 @@
 .home-offer-float-shell {
-  --home-offer-card-height: 8rem;
-  --home-offer-card-width: 23rem;
+  --home-offer-card-height: 10.15rem;
+  --home-offer-card-width: 27rem;
   --home-offer-enter-duration: 1500ms;
   position: fixed;
   left: 50%;
@@ -41,10 +41,16 @@ body:has(.site-header.site-header--desktop-fit) .home-offer-float-shell {
   display: inline-flex;
   align-items: stretch;
   gap: clamp(0.45rem, 0.8vw, 0.75rem);
+  padding: 0;
+  border: 0;
+  background: none;
   color: inherit;
+  font: inherit;
+  text-align: left;
   text-decoration: none;
   will-change: transform, opacity;
   pointer-events: auto;
+  cursor: pointer;
 }
 
 body:has(.form-modal.is-open) .home-offer-float-shell {
@@ -86,11 +92,11 @@ body:has(.form-modal.is-open) .home-offer-float {
   z-index: 1;
   display: grid;
   align-content: center;
-  justify-items: start;
-  gap: 0.34rem;
+  justify-items: stretch;
+  gap: clamp(1.2rem, 1.15vw, 1.45rem);
   width: var(--home-offer-card-width);
   height: var(--home-offer-card-height);
-  padding: clamp(0.8rem, 1vw, 0.96rem) clamp(0.95rem, 1.2vw, 1.08rem);
+  padding: clamp(0.88rem, 1vw, 1rem) clamp(0.95rem, 1.2vw, 1.08rem);
   box-sizing: border-box;
   overflow: hidden;
   border: 1px solid var(--site-header-border);
@@ -125,19 +131,37 @@ body:has(.form-modal.is-open) .home-offer-float {
 }
 
 .home-offer-float__title {
+  margin: 0;
+  width: 100%;
   color: #fff;
-  font-size: clamp(0.96rem, 0.26vw + 0.92rem, 1.06rem);
+  max-width: none;
+  font-size: clamp(1.02rem, 0.34vw + 0.96rem, 1.18rem);
   font-weight: 900;
   font-variation-settings: "wght" 900;
-  line-height: 1.04;
-  text-wrap: balance;
+  line-height: 1.02;
+  text-wrap: pretty;
 }
 
 .home-offer-float__copy {
+  margin: 0;
   color: rgba(255, 255, 255, 0.76);
-  font-size: clamp(0.82rem, 0.14vw + 0.8rem, 0.9rem);
-  line-height: 1.28;
+  max-width: 30ch;
+  font-size: clamp(0.83rem, 0.16vw + 0.8rem, 0.92rem);
+  line-height: 1.32;
   text-wrap: pretty;
+}
+
+.home-offer-float__field {
+  width: 100%;
+  min-height: 2.5rem;
+  padding: 0.66rem 0.76rem;
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  background: var(--form-field-bg);
+  color: color-mix(in srgb, #fff 68%, transparent);
+  font-size: 0.88rem;
+  line-height: 1.2;
 }
 
 .home-offer-float:is(:hover, :focus-visible) {
