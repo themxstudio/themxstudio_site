@@ -2589,6 +2589,8 @@ const initCountGroup = ({
 })();
 
 (() => {
+  const UNIVERSAL_FORM_SUCCESS_URL = "/thank-you/";
+
   const syncModalScrollLock = () => {
     document.documentElement.style.overflow = document.querySelector(
       ".form-modal.is-open",
@@ -2613,11 +2615,19 @@ const initCountGroup = ({
 
   const bindAsyncForm = ({ form, thanks, heading = null }) => {
     if (!form) return;
+    if (form.dataset.asyncFormBound === "true") return;
+    form.dataset.asyncFormBound = "true";
 
     const successUrl =
-      form.dataset.successUrl?.trim() ||
-      form.getAttribute("action")?.trim() ||
-      "/thank-you/";
+      form.dataset.successUrl?.trim() || UNIVERSAL_FORM_SUCCESS_URL;
+    const usesMultipartSubmission =
+      form.enctype === "multipart/form-data" ||
+      Boolean(form.querySelector('input[type="file"]'));
+
+    form.dataset.successUrl = successUrl;
+    form.setAttribute("action", successUrl);
+
+    if (usesMultipartSubmission) return;
 
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
@@ -2730,5 +2740,18 @@ const initCountGroup = ({
     const thanks = shell?.querySelector("[data-inline-discovery-thanks]") || null;
 
     bindAsyncForm({ form, thanks });
+  });
+
+  document.querySelectorAll('form[data-netlify="true"]').forEach((form) => {
+    const shell =
+      form.closest(
+        ".blog-inline-form, .contact-inline-form, .contact-forms__card, .form-modal__panel",
+      ) || form.parentElement;
+    const thanks =
+      shell?.querySelector("[data-inline-discovery-thanks], .form-thanks") || null;
+    const heading =
+      shell?.querySelector(".form-modal__heading, .contact-forms__head") || null;
+
+    bindAsyncForm({ form, thanks, heading });
   });
 })();
