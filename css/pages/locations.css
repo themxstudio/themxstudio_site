@@ -4,6 +4,14 @@
   font-variation-settings: "wght" 900;
 }
 
+.locations-page .page-hero--simple .page-hero__content {
+  gap: clamp(1.15rem, 2vw, 1.6rem);
+}
+
+.locations-page .page-hero__sub {
+  display: none;
+}
+
 .locations-hub {
   width: var(--site-width);
   max-width: none;

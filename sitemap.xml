@@ -140,6 +140,12 @@
   </url>
 
   <url>
+    <loc>https://www.themxstudio.com.au/locations/web-design-eagle-farm/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
     <loc>https://www.themxstudio.com.au/locations/web-design-ipswich/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -188,6 +194,12 @@
   </url>
 
   <url>
+    <loc>https://www.themxstudio.com.au/locations/brand-design-west-end/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
     <loc>https://www.themxstudio.com.au/terms/</loc>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
@@ -199,41 +211,65 @@
     <priority>0.7</priority>
   </url>
 
-  <url>
-    <loc>https://www.themxstudio.com.au/blog/affordable-web-design-agency-brisbane/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
+<url>
+  <loc>https://www.themxstudio.com.au/blog/best-web-design-agencies-brisbane/</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
 
-  <url>
-    <loc>https://www.themxstudio.com.au/blog/websites-for-small-business/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
+<url>
+  <loc>https://www.themxstudio.com.au/blog/how-much-does-a-website-cost-brisbane/</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
 
-  <url>
-    <loc>https://www.themxstudio.com.au/blog/local-seo-brisbane-guide/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
+<url>
+  <loc>https://www.themxstudio.com.au/blog/questions-to-ask-a-web-agency-before-you-sign-anything/</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
 
-  <url>
-    <loc>https://www.themxstudio.com.au/blog/seo-vs-google-ads-brisbane/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
+<url>
+  <loc>https://www.themxstudio.com.au/blog/web-design-vs-web-design-seo/</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
 
-  <url>
-    <loc>https://www.themxstudio.com.au/blog/how-much-does-a-website-cost-brisbane/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
+<url>
+  <loc>https://www.themxstudio.com.au/blog/why-your-web-designer-disappeared-after-launch/</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
 
-  <url>
-    <loc>https://www.themxstudio.com.au/blog/why-most-brisbane-businesses-websites-dont-rank/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
+<url>
+  <loc>https://www.themxstudio.com.au/blog/why-most-brisbane-businesses-websites-dont-rank/</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+
+<url>
+  <loc>https://www.themxstudio.com.au/blog/affordable-web-design-agency-brisbane/</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+
+<url>
+  <loc>https://www.themxstudio.com.au/blog/websites-for-small-business/</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+
+<url>
+  <loc>https://www.themxstudio.com.au/blog/local-seo-brisbane-guide/</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+
+<url>
+  <loc>https://www.themxstudio.com.au/blog/seo-vs-google-ads-brisbane/</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
 
   <url>
     <loc>https://www.themxstudio.com.au/contact/</loc>

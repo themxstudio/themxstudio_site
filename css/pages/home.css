@@ -201,16 +201,13 @@ body.home-page .about-instagram {
 }
 
 body.home-page .portfolio-carousel {
-  --section-padding-bottom: 0;
-  --section-padding-top: 0;
-  border-radius: 0 !important;
-  padding-top: 0;
-  padding-bottom: 0;
+  --section-padding-top: clamp(1.1rem, 3vw, 2.2rem);
+  border-radius: var(--section-radius) var(--section-radius) 0 0 !important;
+  padding-top: clamp(1.1rem, 3vw, 2.2rem);
 }
 
 body.home-page main section.portfolio-carousel {
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
+  padding-top: clamp(1.1rem, 3vw, 2.2rem) !important;
 }
 
 body.home-page .portfolio-carousel__viewport {
@@ -819,6 +816,10 @@ body.home-page .home-links-grid {
   padding-top: 0;
 }
 
+body.home-page .gap-fill {
+  z-index: 0;
+}
+
 @media (min-width: 768px) and (max-width: 1024px) {
   body.home-page .about-instagram__inner {
     width: min(calc(100vw - 2rem), 42rem);
@@ -959,6 +960,15 @@ body.home-page .home-links-grid {
 }
 
 @media (max-width: 767px) {
+  body.home-page .portfolio-carousel {
+    --section-padding-top: 2.5rem;
+    padding-top: 2.5rem;
+  }
+
+  body.home-page main section.portfolio-carousel {
+    padding-top: 2.5rem !important;
+  }
+
   body.home-page .about-instagram {
     padding: 0;
   }

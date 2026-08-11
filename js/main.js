@@ -1273,17 +1273,14 @@ const initLoopingCardCarousel = ({
         : 1;
     const visibleCount = singleCardMq.matches
       ? 1
-      : Math.max(1, Math.min(3, rawVisibleCount || 1));
-    const activeIndex = firstVisibleIndex + 2;
-    const visibleStartIndex =
-      activeIndex - Math.ceil((visibleCount - 1) / 2);
+      : Math.max(1, Math.min(itemCount, 3, rawVisibleCount || 1));
+    const visibleStartIndex = firstVisibleIndex;
     const bandLeft = visibleStartIndex * step;
     const bandWidth =
       visibleCount * itemWidth + Math.max(0, visibleCount - 1) * gap;
     const offset = viewport.clientWidth / 2 - (bandLeft + bandWidth / 2);
 
     return {
-      activeIndex,
       offset,
       visibleCount,
       visibleStartIndex,
@@ -1300,18 +1297,18 @@ const initLoopingCardCarousel = ({
     });
 
     if (layout.visibleCount === 1) {
-      track.children[layout.activeIndex]?.classList.add("is-mobile-current");
+      track.children[layout.visibleStartIndex]?.classList.add(
+        "is-mobile-current",
+      );
       return;
     }
 
-    if (layout.visibleCount >= 3) {
-      track.children[layout.visibleStartIndex - 1]?.classList.add(
-        "is-edge-visible",
-      );
-      track.children[layout.visibleStartIndex + layout.visibleCount]?.classList.add(
-        "is-edge-visible",
-      );
-    }
+    track.children[layout.visibleStartIndex - 1]?.classList.add(
+      "is-edge-visible",
+    );
+    track.children[layout.visibleStartIndex + layout.visibleCount]?.classList.add(
+      "is-edge-visible",
+    );
   };
 
   const applyTransform = ({ animate }) => {
@@ -1490,9 +1487,9 @@ const initLoopingCardCarousel = ({
 
   const desiredProjects = [
     {
-      filename: "metro-rags.webp",
-      src: "/assets/images/metro-rags.webp",
-      alt: "Metro Rags website project preview",
+      filename: "still-waters.webp",
+      src: "/assets/images/still-waters.webp",
+      alt: "Still Waters brand and website project preview",
     },
     {
       filename: "everything-just-for-you.webp",

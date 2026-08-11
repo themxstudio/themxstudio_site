@@ -152,17 +152,17 @@ body.results-case-study-page main section.case-study-hero {
 .case-study-lead__site-line {
   display: inline;
   opacity: 1;
-  color: inherit !important;
+  color: inherit;
 }
 
-.case-study-article .case-study-lead .case-study-lead__site-line .case-study-lead__site-link,
-.case-study-article .case-study-lead .case-study-lead__site-line .case-study-lead__site-link:visited,
-.case-study-article .case-study-lead .case-study-lead__site-line .case-study-lead__site-link:hover,
-.case-study-article .case-study-lead .case-study-lead__site-line .case-study-lead__site-link:focus-visible,
-.case-study-article .case-study-lead .case-study-lead__site-line .case-study-lead__site-link:active {
-  color: var(--accent) !important;
+.case-study-lead a.case-study-lead__site-link,
+.case-study-lead a.case-study-lead__site-link:visited,
+.case-study-lead a.case-study-lead__site-link:hover,
+.case-study-lead a.case-study-lead__site-link:focus-visible,
+.case-study-lead a.case-study-lead__site-link:active {
+  color: var(--accent);
   font-weight: 900;
-  text-decoration: none !important;
+  text-decoration: none;
 }
 
 .case-study-toc {

@@ -6,7 +6,6 @@
 .customer-review--meridian {
   background: #000;
   color: #fff;
-  --section-padding-top: clamp(1.5rem, 3vw, 2.2rem);
   --section-padding-bottom: var(--site-gap);
 }
 
