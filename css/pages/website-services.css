@@ -570,11 +570,25 @@ main
   background: #000;
 }
 
+.website-services__hero-bg {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(1) contrast(1.05) brightness(0.92);
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
 .website-services__hero-wrap::before {
   content: "";
   position: absolute;
   inset: 0;
-  z-index: 0;
+  z-index: 1;
   pointer-events: none;
   background: radial-gradient(
     ellipse 95% 135% at 100% 0%,
@@ -594,7 +608,7 @@ main
   border-radius: inherit;
   pointer-events: none;
   user-select: none;
-  z-index: 1;
+  z-index: 2;
 }
 
 .website-services__hero-portrait {
@@ -668,7 +682,7 @@ body.brand-design-page {
 
 body.service-page .website-services__hero {
   position: relative;
-  z-index: 1;
+  z-index: 3;
   isolation: isolate;
   overflow: visible;
   background-color: transparent;

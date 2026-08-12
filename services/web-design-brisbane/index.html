@@ -71,6 +71,12 @@
       rel="manifest"
       href="/site.webmanifest?v=20260504-favicon-refresh-2"
     />
+    <link
+      rel="preload"
+      href="/assets/hero-second.webp"
+      as="image"
+      type="image/webp"
+    />
     <meta property="og:site_name" content="The MX Studio" />
     <meta property="og:title" content="Web Design Brisbane | The MX Studio" />
     <meta
@@ -957,6 +963,16 @@
 
     <main>
       <div class="website-services__hero-wrap">
+        <img
+          class="website-services__hero-bg"
+          src="/assets/hero-second.webp"
+          alt=""
+          aria-hidden="true"
+          width="1118"
+          height="1986"
+          fetchpriority="high"
+          decoding="async"
+        />
         <section
           class="page-hero website-services__hero"
           aria-labelledby="website-services-h1"

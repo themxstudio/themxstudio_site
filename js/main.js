@@ -1487,19 +1487,14 @@ const initLoopingCardCarousel = ({
 
   const desiredProjects = [
     {
-      filename: "still-waters.webp",
-      src: "/assets/images/still-waters.webp",
-      alt: "Still Waters brand and website project preview",
+      filename: "meridian-camera.webp",
+      src: "/assets/images/meridian-camera.webp",
+      alt: "Meridian Camera website project preview",
     },
     {
       filename: "everything-just-for-you.webp",
       src: "/assets/images/everything-just-for-you.webp",
       alt: "Everything Just For You website project preview",
-    },
-    {
-      filename: "meridian-camera.webp",
-      src: "/assets/images/meridian-camera.webp",
-      alt: "Meridian Camera website project preview",
     },
     {
       filename: "animo-studio.webp",
