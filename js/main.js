@@ -2615,6 +2615,7 @@ const initCountGroup = ({
 
     const successUrl =
       form.dataset.successUrl?.trim() || UNIVERSAL_FORM_SUCCESS_URL;
+    const submitUrl = form.dataset.submitUrl?.trim() || "/";
     const usesMultipartSubmission =
       form.enctype === "multipart/form-data" ||
       Boolean(form.querySelector('input[type="file"]'));
@@ -2622,15 +2623,30 @@ const initCountGroup = ({
     form.dataset.successUrl = successUrl;
     form.setAttribute("action", successUrl);
 
-    if (usesMultipartSubmission) return;
+    if (
+      usesMultipartSubmission ||
+      typeof window.fetch !== "function" ||
+      typeof URLSearchParams !== "function"
+    ) {
+      return;
+    }
 
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
       const data = new FormData(form);
       const body = new URLSearchParams(data).toString();
 
+      const submitNatively = () => {
+        try {
+          HTMLFormElement.prototype.submit.call(form);
+        } catch (nativeError) {
+          console.error(nativeError);
+          if (successUrl) window.location.assign(successUrl);
+        }
+      };
+
       try {
-        const response = await fetch("/", {
+        const response = await fetch(submitUrl, {
           method: "POST",
           headers: {
             "Content-Type": "application/x-www-form-urlencoded",
@@ -2651,6 +2667,7 @@ const initCountGroup = ({
         if (thanks) thanks.hidden = false;
       } catch (error) {
         console.error(error);
+        submitNatively();
       }
     });
   };

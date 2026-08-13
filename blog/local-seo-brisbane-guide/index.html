@@ -1392,6 +1392,8 @@
               data-netlify="true"
               netlify-honeypot="bot-field"
               data-inline-discovery-form
+              action="/thank-you/"
+              data-success-url="/thank-you/"
             >
               <input type="hidden" name="form-name" value="discovery-call" />
               <p style="display: none">
@@ -1773,7 +1775,7 @@
             </div>
             <button class="form-modal__close" id="discovery-modal-close" aria-label="Close">&times;</button>
           </div>
-          <form class="discovery-form" id="discovery-form" name="discovery-call" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <form class="discovery-form" id="discovery-form" name="discovery-call" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you/" data-success-url="/thank-you/">
             <input type="hidden" name="form-name" value="discovery-call" />
             <p style="display: none"><label>Don't fill this out <input name="bot-field" /></label></p>
             <input type="text" name="name" placeholder="Your Name" required />
