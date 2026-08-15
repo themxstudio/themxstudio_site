@@ -67,8 +67,8 @@
 }
 
 .book-a-call-main__form .form-modal__title {
-  font-size: clamp(1.8rem, 0.9vw + 1.45rem, 2.35rem);
-  line-height: 1;
+  font-size: clamp(1.64rem, 0.72vw + 1.38rem, 2.08rem);
+  line-height: 1.02;
 }
 
 .book-a-call-main__form .form-modal__desc {

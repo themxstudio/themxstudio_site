@@ -8,6 +8,7 @@
   display: none;
   position: fixed;
   inset: 0;
+  max-height: 100dvh;
   z-index: 70;
   align-items: center;
   justify-content: center;
@@ -48,10 +49,12 @@ body:has(.form-modal.is-open) .site-header {
 .form-modal > .form-modal__panel {
   width: min(calc(100vw - 1.25rem), 25rem);
   max-width: 25rem;
-  max-height: calc(100dvh - clamp(1rem, 4vh, 2rem));
+  min-height: 0;
+  max-height: min(100dvh, calc(100dvh - clamp(1rem, 4vh, 2rem)));
   overflow-x: hidden;
   overflow-y: auto;
   overscroll-behavior: contain;
+  scrollbar-gutter: stable;
   padding: clamp(1.16rem, 0.95vw + 0.94rem, 1.48rem)
     clamp(1.08rem, 1.45vw, 1.34rem)
     clamp(1.2rem, 1vw + 0.98rem, 1.54rem);
@@ -81,15 +84,15 @@ body:has(.form-modal.is-open) .site-header {
 
 .form-modal__title {
   margin: 0;
-  font-size: clamp(1.48rem, 0.72vw + 1.2rem, 2.08rem);
+  font-size: clamp(1.34rem, 0.58vw + 1.12rem, 1.86rem);
   font-weight: 900;
   color: var(--form-text);
-  line-height: 1.05;
+  line-height: 1.04;
 }
 
 .form-modal .form-modal__title {
-  font-size: clamp(1.9rem, 1.1vw + 1.34rem, 2.6rem);
-  line-height: 0.98;
+  font-size: clamp(1.72rem, 0.92vw + 1.22rem, 2.24rem);
+  line-height: 1;
 }
 
 .form-modal__desc {
@@ -250,7 +253,7 @@ body:has(.form-modal.is-open) .site-header {
     width: min(calc(100vw - 1.5rem), 24.5rem);
     max-width: 24.5rem;
     min-height: 0;
-    max-height: calc(100dvh - 1.5rem);
+    max-height: min(100dvh, calc(100dvh - 1.5rem));
     border-radius: 18px;
   }
 
@@ -270,7 +273,7 @@ body:has(.form-modal.is-open) .site-header {
   }
 
   .form-modal .discovery-form textarea {
-    min-height: 6.5rem;
+    min-height: 5.8rem;
   }
 
   .form-modal .discovery-form__submit {
@@ -296,7 +299,7 @@ body:has(.form-modal.is-open) .site-header {
   }
 
   .form-modal .form-modal__title {
-    font-size: clamp(1.88rem, 0.78vw + 1.64rem, 2.42rem);
+    font-size: clamp(1.68rem, 0.68vw + 1.48rem, 2.16rem);
   }
 
   .form-modal .form-modal__desc {
@@ -327,7 +330,7 @@ body:has(.form-modal.is-open) .site-header {
   }
 
   .form-modal .discovery-form textarea {
-    min-height: 5.8rem;
+    min-height: 5.25rem;
   }
 
   .form-modal .discovery-form__submit {
@@ -352,7 +355,7 @@ body:has(.form-modal.is-open) .site-header {
   }
 
   .form-modal .form-modal__title {
-    font-size: clamp(2rem, 0.7vw + 1.74rem, 2.74rem);
+    font-size: clamp(1.82rem, 0.62vw + 1.58rem, 2.46rem);
   }
 
   .form-modal .form-modal__desc {
@@ -385,7 +388,7 @@ body:has(.form-modal.is-open) .site-header {
   }
 
   .form-modal .discovery-form textarea {
-    min-height: 6rem;
+    min-height: 5.45rem;
   }
 
   .form-modal .discovery-form__submit {
@@ -415,7 +418,7 @@ body:has(.form-modal.is-open) .site-header {
   }
 
   .form-modal .form-modal__title {
-    font-size: clamp(2.3rem, 0.62vw + 2rem, 3.15rem);
+    font-size: clamp(2.08rem, 0.54vw + 1.84rem, 2.78rem);
   }
 
   .form-modal .form-modal__desc {
@@ -433,7 +436,7 @@ body:has(.form-modal.is-open) .site-header {
   }
 
   .form-modal .discovery-form textarea {
-    min-height: 6.8rem;
+    min-height: 6.15rem;
   }
 
   .form-modal .discovery-form__submit {
