@@ -1,3 +1,11 @@
+.location-page {
+  --service-hero-back-image: none;
+}
+
+.location-page .website-services__hero-portrait--back {
+  display: none;
+}
+
 .locations-page .page-hero--simple .page-hero__eyebrow {
   color: var(--accent) !important;
   font-weight: 900;
