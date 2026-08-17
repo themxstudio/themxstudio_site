@@ -29,14 +29,22 @@
 }
 
 .book-a-call-main {
-  width: var(--content-wide-width);
+  width: 100vw;
   max-width: none;
-  margin: 0 auto;
+  margin: 0 calc(50% - 50vw);
+  position: relative;
+  z-index: 3;
   padding-top: clamp(0.35rem, 0.9vw, 0.7rem);
   padding-bottom: clamp(3.5rem, 7vw, 5.5rem);
+  background: var(--bg) !important;
+  border-radius: var(--section-radius) var(--section-radius) 0 0 !important;
+  overflow: hidden !important;
 }
 
 .book-a-call-main__inner {
+  width: var(--content-wide-width);
+  max-width: none;
+  margin-inline: auto;
   display: grid;
   justify-content: center;
   gap: clamp(0.75rem, 1.8vw, 1.15rem);

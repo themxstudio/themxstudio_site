@@ -3,6 +3,13 @@
   --accent-hover: #b8e9ff;
 }
 
+body.blog-index-page .page-hero,
+body.blog-index-page .page-hero::before,
+body.blog-post-page:not(.results-case-study-page) .page-hero,
+body.blog-post-page:not(.results-case-study-page) .page-hero::before {
+  border-radius: 0;
+}
+
 body.blog-post-page {
   --blog-post-width: var(--site-width);
 }
@@ -11,8 +18,15 @@ body.blog-index-page {
   background-image: none;
 }
 
-.blog-article {
-  margin-top: var(--site-gap);
+body.blog-post-page:not(.results-case-study-page) .blog-article {
+  width: 100vw;
+  max-width: none;
+  margin: 0 calc(50% - 50vw) !important;
+  position: relative;
+  z-index: 3;
+  background: var(--bg) !important;
+  border-radius: var(--section-radius) var(--section-radius) 0 0 !important;
+  overflow: hidden !important;
 }
 
 .blog-article__inner,
@@ -495,8 +509,15 @@ body.blog-index-page {
   margin-inline: 0;
 }
 
-.card-grid {
-  margin-top: var(--site-gap);
+body.blog-index-page .card-grid {
+  width: 100vw;
+  max-width: none;
+  margin: 0 calc(50% - 50vw) !important;
+  position: relative;
+  z-index: 3;
+  background: var(--bg) !important;
+  border-radius: var(--section-radius) var(--section-radius) 0 0 !important;
+  overflow: hidden !important;
 }
 
 .card-grid__grid {
@@ -665,10 +686,14 @@ body.blog-index-page .about-instagram {
   margin: clamp(3rem, 5vw, 4.5rem) calc(50% - 50vw) 0;
   padding: clamp(2rem, 3vw, 2.45rem) 0 clamp(2.35rem, 3.8vw, 3rem);
   background: #fff;
-  border-radius: var(--section-radius) var(--section-radius) 0 0;
+  border-radius: 0;
   overflow: hidden;
   position: relative;
   z-index: 2;
+}
+
+body.blog-post-page:not(.results-case-study-page) section.faq {
+  border-radius: 0;
 }
 
 body.blog-index-page .about-instagram__inner {

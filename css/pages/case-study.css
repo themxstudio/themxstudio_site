@@ -12,17 +12,20 @@ body.results-case-study-page main {
 body.results-case-study-page main section.case-study-hero {
   --case-study-hero-header-overlap: 90px;
   margin: calc(-1 * var(--case-study-hero-header-overlap))
-    calc(50% - 50vw) 0 !important;
+    calc(50% - 50vw) calc(-1 * var(--hero-section-overlap)) !important;
   padding-top: calc(var(--case-study-hero-header-overlap) + 2rem) !important;
-  padding-bottom: clamp(3rem, 6vw, 4.6rem) !important;
+  padding-bottom: calc(
+    clamp(3rem, 6vw, 4.6rem) + var(--hero-section-overlap)
+  ) !important;
 }
 
 .case-study-hero {
   position: relative;
+  z-index: 0;
   width: 100vw;
   max-width: none;
-  overflow: hidden;
-  border-radius: 0 0 var(--section-radius) var(--section-radius);
+  overflow: visible;
+  border-radius: 0;
   background: #000;
   isolation: isolate;
 }
@@ -45,6 +48,18 @@ body.results-case-study-page main section.case-study-hero {
     linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 44%);
 }
 
+.case-study-hero::after {
+  content: "";
+  position: absolute;
+  top: calc(100% - var(--hero-section-overlap));
+  left: 0;
+  right: 0;
+  height: var(--hero-underlay-height);
+  z-index: -1;
+  pointer-events: none;
+  background: #000;
+}
+
 .case-study-hero__content.page-hero__content {
   position: relative;
   z-index: 1;
@@ -52,6 +67,7 @@ body.results-case-study-page main section.case-study-hero {
   min-block-size: 0;
   justify-items: start;
   text-align: left;
+  gap: clamp(0.85rem, 1.4vw, 1.1rem);
 }
 
 .case-study-hero__desk {
@@ -93,7 +109,12 @@ body.results-case-study-page main section.case-study-hero {
 }
 
 .case-study-article {
-  margin-top: var(--site-gap);
+  position: relative;
+  z-index: 2;
+  margin-top: 0;
+  overflow: hidden;
+  border-radius: var(--section-radius) var(--section-radius) 0 0;
+  background: var(--bg);
 }
 
 .case-study-article .blog-toc__title {
@@ -632,7 +653,7 @@ body.results-case-study-page main section.case-study-hero {
 @media (max-width: 767px) {
   body.results-case-study-page main section.case-study-hero {
     padding-top: calc(var(--case-study-hero-header-overlap) + 1.4rem) !important;
-    padding-bottom: 2.5rem !important;
+    padding-bottom: calc(2.5rem + var(--hero-section-overlap)) !important;
   }
 
   .case-study-hero__desk,

@@ -1,4 +1,5 @@
 .home-offer-float-shell {
+  display: none !important;
   --home-offer-card-height: 10.15rem;
   --home-offer-card-width: 27rem;
   --home-offer-enter-duration: 1500ms;

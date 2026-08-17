@@ -3,6 +3,15 @@
   --accent-hover: #ffb08d;
 }
 
+body.about-page .page-hero,
+body.about-page .page-hero::before {
+  border-radius: 0;
+}
+
+body.about-page .page-hero__content {
+  gap: clamp(0.55rem, 0.9vw, 0.75rem);
+}
+
 .about-landing {
   display: flex;
   flex-direction: column;
@@ -28,7 +37,7 @@
   width: min(var(--site-width), 52rem);
   max-width: min(var(--site-width), 52rem);
   margin-inline: 0;
-  margin-top: 2rem;
+  margin-top: 0;
 }
 
 .hero-stats__item {
@@ -65,14 +74,19 @@
 }
 
 body.about-page .hero-points--about {
-  width: var(--site-width);
+  width: 100vw;
   max-width: none;
-  margin: 0 auto;
+  margin: 0 calc(50% - 50vw);
+  position: relative;
+  z-index: 3;
   padding: clamp(2.4rem, 5vw, 4rem) 0 0;
+  background: var(--bg) !important;
+  border-radius: var(--section-radius) var(--section-radius) 0 0 !important;
+  overflow: hidden !important;
 }
 
 body.about-page .hero-points--about .hero-points__inner {
-  width: 100%;
+  width: var(--site-width);
   gap: 0;
 }
 
@@ -422,7 +436,7 @@ body.about-page .team--home {
   margin-top: clamp(2.8rem, 5vw, 4rem);
   padding-block: clamp(3rem, 5vw, 4rem) clamp(3.2rem, 5.4vw, 4.4rem);
   background: #000;
-  border-radius: clamp(2rem, 3.8vw, 3rem) clamp(2rem, 3.8vw, 3rem) 0 0;
+  border-radius: var(--section-radius) var(--section-radius) 0 0;
   overflow: hidden;
 }
 

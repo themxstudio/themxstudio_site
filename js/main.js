@@ -2426,6 +2426,7 @@ const initCountGroup = ({
   const shell = document.querySelector(".home-offer-float-shell");
   const footer = document.querySelector(".site-footer");
   if (!body || !shell || !footer) return;
+  if (window.getComputedStyle(shell).display === "none") return;
 
   let lastY = Math.max(window.scrollY || window.pageYOffset || 0, 0);
   let stopTimer = 0;

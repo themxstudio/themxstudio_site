@@ -211,7 +211,7 @@ body:has(.form-modal.is-open) .site-header {
 }
 
 .discovery-form textarea {
-  resize: vertical;
+  resize: none;
   min-height: clamp(4.35rem, 7.2vw, 5.25rem);
 }
 
@@ -288,9 +288,11 @@ body:has(.form-modal.is-open) .site-header {
 
 @media (min-width: 768px) {
   .form-modal > .form-modal__panel {
-    width: min(calc(100vw - 2.25rem), 27.75rem);
-    max-width: 27.75rem;
-    padding: 1.42rem 1.36rem 1.48rem;
+    width: min(calc(100vw - 2.5rem), clamp(27.75rem, 30vw, 31.75rem));
+    max-width: 31.75rem;
+    padding: clamp(1.42rem, 0.7vw + 1.22rem, 1.56rem)
+      clamp(1.36rem, 0.8vw + 1.12rem, 1.5rem)
+      clamp(1.48rem, 0.8vw + 1.26rem, 1.64rem);
   }
 
   .form-modal .form-modal__header {
@@ -341,12 +343,8 @@ body:has(.form-modal.is-open) .site-header {
 
 @media (min-width: 960px) {
   .form-modal > .form-modal__panel {
-    width: min(calc(100vw - 3rem), clamp(28.25rem, 33vw, 31.75rem));
+    width: min(calc(100vw - 2.5rem), clamp(27.75rem, 30vw, 31.75rem));
     max-width: 31.75rem;
-  }
-
-  .form-modal > .form-modal__panel {
-    padding: 1.48rem 1.44rem 1.56rem;
   }
 
   .form-modal .form-modal__header {
@@ -412,9 +410,8 @@ body:has(.form-modal.is-open) .site-header {
 
 @media (min-width: 1440px) {
   .form-modal > .form-modal__panel {
-    width: min(calc(100vw - 4rem), clamp(31rem, 32vw, 35rem));
-    max-width: 35rem;
-    padding: 1.72rem 1.68rem 1.84rem;
+    width: min(calc(100vw - 2.5rem), clamp(27.75rem, 30vw, 31.75rem));
+    max-width: 31.75rem;
   }
 
   .form-modal .form-modal__title {

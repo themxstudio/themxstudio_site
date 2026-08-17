@@ -8,11 +8,25 @@ body[class~="404body"] .error-page__main {
 }
 
 body[class~="404body"] .error-links {
-  margin-top: var(--site-gap);
+  width: 100vw;
+  max-width: none;
+  margin: 0 calc(50% - 50vw) !important;
+  position: relative;
+  z-index: 3;
+  background: var(--bg) !important;
+  border-radius: var(--section-radius) var(--section-radius) 0 0 !important;
+  overflow: hidden !important;
 }
 
 .error-links {
-  margin-top: var(--site-gap);
+  width: 100vw;
+  max-width: none;
+  margin: 0 calc(50% - 50vw) !important;
+  position: relative;
+  z-index: 3;
+  background: var(--bg) !important;
+  border-radius: var(--section-radius) var(--section-radius) 0 0 !important;
+  overflow: hidden !important;
 }
 
 .error-links__inner {
@@ -85,6 +99,14 @@ body.terms-page .page-hero__sub {
 
 .terms {
   --section-padding-top: clamp(1.35rem, 3vw, 2.25rem);
+  width: 100vw;
+  max-width: none;
+  margin: 0 calc(50% - 50vw) !important;
+  position: relative;
+  z-index: 3;
+  background: var(--bg) !important;
+  border-radius: var(--section-radius) var(--section-radius) 0 0 !important;
+  overflow: hidden !important;
 }
 
 .terms__inner {

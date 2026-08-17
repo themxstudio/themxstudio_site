@@ -152,10 +152,6 @@ body.results-page main section.results-spotlight {
   padding-bottom: 4rem !important;
 }
 
-body.results-page main .results-spotlight-wrap + section.results-spotlight--light {
-  padding-top: 0 !important;
-}
-
 .results-spotlight--light {
   margin-top: 0 !important;
   background: #fff;

@@ -357,21 +357,6 @@ body.ultimate-brand-and-web-page .hospitality-comparison__post {
   padding-top: clamp(0.6rem, 1vw, 0.9rem);
 }
 
-.hospitality-reviews {
-  background: #000 !important;
-  border-radius: var(--section-radius) var(--section-radius) 0 0 !important;
-}
-
-.hospitality-reviews .reviews__inner {
-  --reviews-pill-bg: rgba(92, 92, 92, 0.3);
-}
-
-.hospitality-reviews .reviews__title,
-.hospitality-reviews .reviews__quote,
-.hospitality-reviews .reviews__name {
-  color: #fff;
-}
-
 .hospitality-portfolio-gap {
   height: clamp(2.25rem, 5vw, 4rem);
   margin-bottom: calc(clamp(2.25rem, 5vw, 4rem) * -1);
@@ -1122,10 +1107,6 @@ main
     justify-self: start;
     align-self: start;
     width: clamp(8.5rem, 14vw, 10rem);
-  }
-
-  .hospitality-reviews .reviews__title {
-    max-width: min(100%, 32rem);
   }
 
   .hospitality-portfolio__inner {
