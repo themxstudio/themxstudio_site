@@ -21,11 +21,12 @@ main {
   width: 100vw;
   max-width: none;
   margin: 0 calc(50% - 50vw) !important;
+  padding-top: clamp(0.95rem, 1.8vw, 1.4rem);
   position: relative;
   z-index: 3;
   background: var(--bg) !important;
   border-radius: var(--section-radius) var(--section-radius) 0 0 !important;
-  overflow: hidden !important;
+  overflow: visible !important;
 }
 
 .pricing-page .pricing-grid2--supporting {

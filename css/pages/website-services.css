@@ -740,7 +740,6 @@ body.service-page .website-services__hero .page-hero__sub {
 
 body.service-page .website-services__hero .page-hero__title .accent {
   display: inline;
-  white-space: nowrap;
 }
 
 body.service-page .comparison__inner {
@@ -932,8 +931,10 @@ body.service-page .faq__inner {
   }
 
   .comparison__intro {
-    width: 100%;
-    max-width: none;
+    width: min(100%, 60rem);
+    max-width: 60rem;
+    justify-self: center;
+    margin-inline: auto;
     justify-items: center;
     text-align: center;
   }
@@ -1000,6 +1001,11 @@ body.service-page .faq__inner {
   .website-services__hero .page-hero__title {
     width: 80%;
     max-width: 80%;
+  }
+
+  body.web-design-page .website-services__hero .page-hero__title {
+    width: min(100%, 16.5ch);
+    max-width: 16.5ch;
   }
 }
 
@@ -1274,7 +1280,7 @@ body.web-design-page main section.pricing-grid2.pricing-grid2--service-web-desig
   width: var(--full-bleed-width);
   max-width: none;
   margin: 0 var(--full-bleed-margin) !important;
-  padding-bottom: clamp(1.75rem, 2.8vw, 2.35rem) !important;
+  padding-bottom: clamp(3.4rem, 5.4vw, 4.8rem) !important;
   background: var(--bg);
   border-radius: var(--section-radius) var(--section-radius) 0 0;
   overflow: hidden;
