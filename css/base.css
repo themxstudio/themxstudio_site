@@ -652,8 +652,8 @@ main > .section-accent-tail {
   max-height: 80dvh;
   z-index: 130;
   border: none;
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   overflow-x: hidden;
   overflow-y: auto;
   overscroll-behavior: contain;
@@ -680,8 +680,8 @@ main > .section-accent-tail {
   inset: 0;
   z-index: 55;
   background: rgba(255, 255, 255, 0.18);
-  backdrop-filter: blur(22px);
-  -webkit-backdrop-filter: blur(22px);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   transform: translateZ(0);
   will-change: backdrop-filter;
   opacity: 0;

@@ -179,11 +179,11 @@ main {
 }
 
 .pricing-page .pricing-grid2__card-title {
-  font-size: clamp(1rem, 0.3vw + 0.96rem, 1.18rem);
+  font-size: clamp(1.65rem, 0.72vw + 1.38rem, 2.1rem);
   font-weight: 900;
   font-variation-settings: "wght" 900;
-  line-height: 1.2;
-  letter-spacing: -0.03em;
+  line-height: 0.98;
+  letter-spacing: -0.04em;
 }
 
 .pricing-page .pricing-grid2__card-copy {
@@ -216,7 +216,7 @@ main {
 .pricing-page .pricing-grid2__card-list .strong {
   font-weight: 900;
   font-style: normal;
-  color: #fff;
+  color: var(--accent);
 }
 
 .pricing-page .pricing-grid2__card-price {
@@ -349,7 +349,7 @@ main {
   }
 
   .pricing-page .pricing-grid2__card-title {
-    font-size: clamp(0.98rem, 0.22vw + 0.92rem, 1.12rem);
+    font-size: clamp(1.7rem, 0.6vw + 1.46rem, 2rem);
   }
 
   .pricing-page .pricing-grid2__card-copy {

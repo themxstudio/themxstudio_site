@@ -1,6 +1,8 @@
 .customer-review--metro-rags {
   background: #fff;
   color: var(--text);
+  border-radius: var(--section-radius) var(--section-radius) 0 0;
+  overflow: hidden;
 }
 
 .customer-review--meridian {
@@ -212,6 +214,7 @@
   :is(.customer-review--metro-rags, .customer-review--meridian)
     .metro-rags-spotlight__head {
     gap: 0.8rem;
+    order: 1;
   }
 
   :is(.customer-review--metro-rags, .customer-review--meridian)
@@ -230,6 +233,7 @@
     .metro-rags-spotlight__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0.75rem;
+    order: 2;
   }
 
   :is(.customer-review--metro-rags, .customer-review--meridian)
@@ -241,6 +245,7 @@
     .metro-rags-spotlight__stats {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+    order: 3;
   }
 
   :is(.customer-review--metro-rags, .customer-review--meridian)

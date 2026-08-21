@@ -601,14 +601,19 @@ main
   inset: 0;
   z-index: 1;
   pointer-events: none;
-  background: radial-gradient(
-    ellipse 95% 135% at 100% 0%,
-    #fff 0%,
-    rgba(255, 255, 255, 0.78) 16%,
-    rgba(255, 255, 255, 0.34) 36%,
-    rgba(255, 255, 255, 0.08) 56%,
-    transparent 74%
-  );
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.88) 0%,
+      rgba(0, 0, 0, 0.78) 38%,
+      rgba(0, 0, 0, 0.52) 64%,
+      rgba(0, 0, 0, 0.24) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.16) 0%,
+      rgba(0, 0, 0, 0.52) 100%
+    );
 }
 
 .website-services__hero-wrap::after {
@@ -987,7 +992,7 @@ body.service-page .faq__inner {
   }
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 820px) {
   .website-services__hero-portraits {
     display: block;
   }
@@ -1009,7 +1014,7 @@ body.service-page .faq__inner {
   }
 }
 
-@media (max-width: 899px) {
+@media (max-width: 819px) {
   .website-services__hero,
   .comparison {
     --website-services-mobile-cta-width: min(100%, 13.25rem);
@@ -1105,7 +1110,7 @@ body.service-page .faq__inner {
   }
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 819px) {
   body.service-page {
     --service-hero-header-overlap: 74px;
   }
@@ -1160,7 +1165,7 @@ body.service-page .faq__inner {
   }
 }
 
-@media (min-width: 1024px) and (max-width: 1366px) {
+@media (min-width: 820px) and (max-width: 1366px) {
   body.service-page {
     --service-hero-header-overlap: 90px;
   }
@@ -1208,6 +1213,18 @@ body.service-page .faq__inner {
 
   .home-maxx--insta .insta-card {
     margin-inline: 0;
+  }
+}
+
+@media (max-width: 819px) {
+  .website-services__hero-wrap::before {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.74) 0%,
+        rgba(0, 0, 0, 0.66) 44%,
+        rgba(0, 0, 0, 0.82) 100%
+      );
   }
 }
 
@@ -1508,11 +1525,11 @@ body.web-design-page
 body.web-design-page
   .pricing-grid2--service-web-design
   .pricing-grid2__card-title {
-  font-size: clamp(1rem, 0.3vw + 0.96rem, 1.18rem);
+  font-size: clamp(1.65rem, 0.72vw + 1.38rem, 2.1rem);
   font-weight: 900;
   font-variation-settings: "wght" 900;
-  line-height: 1.2;
-  letter-spacing: -0.03em;
+  line-height: 0.98;
+  letter-spacing: -0.04em;
 }
 
 body.web-design-page
@@ -1555,7 +1572,7 @@ body.web-design-page
   .strong {
   font-weight: 900;
   font-style: normal;
-  color: #fff;
+  color: var(--accent);
 }
 
 body.web-design-page
@@ -1726,7 +1743,7 @@ body.web-design-page
   body.web-design-page
     .pricing-grid2--service-web-design
     .pricing-grid2__card-title {
-    font-size: clamp(0.98rem, 0.22vw + 0.92rem, 1.12rem);
+    font-size: clamp(1.7rem, 0.6vw + 1.46rem, 2rem);
   }
 
   body.web-design-page

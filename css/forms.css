@@ -15,8 +15,8 @@
   padding: clamp(0.9rem, 3vh, 2rem) clamp(0.75rem, 2vw, 1.5rem);
   overflow: hidden;
   background: rgba(255, 255, 255, 0.18);
-  backdrop-filter: blur(22px);
-  -webkit-backdrop-filter: blur(22px);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   transform: translateZ(0);
   will-change: backdrop-filter;
 }
@@ -182,6 +182,107 @@ body:has(.form-modal.is-open) .site-header {
   color: var(--form-text);
 }
 
+.discovery-form__budget {
+  display: grid;
+  gap: 0.7rem;
+  margin-bottom: 0.15rem;
+  width: 100%;
+  min-width: 0;
+}
+
+.discovery-form__budget-heading-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 0.9rem;
+  box-sizing: border-box;
+  width: 100%;
+  margin-inline: 0;
+  min-width: 0;
+}
+
+.discovery-form .discovery-form__budget-heading {
+  display: block;
+  position: relative;
+  z-index: 1;
+  visibility: visible !important;
+  opacity: 1 !important;
+  margin: 0;
+  margin-top: 0 !important;
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  overflow: visible !important;
+  color: var(--form-text) !important;
+  font-size: clamp(1.05rem, 0.45vw + 0.96rem, 1.2rem) !important;
+  font-weight: 800 !important;
+  font-variation-settings: "wght" 800 !important;
+  letter-spacing: -0.03em !important;
+  line-height: 1.05 !important;
+  text-align: left !important;
+  text-transform: none !important;
+  white-space: normal !important;
+  text-wrap: balance;
+}
+
+.discovery-form__budget-row {
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  min-width: 0;
+  overflow: visible;
+}
+
+.discovery-form__budget-shell {
+  position: relative;
+  display: block;
+  width: calc(100% - var(--slider-thumb-size));
+  max-width: calc(100% - var(--slider-thumb-size));
+  min-width: 0;
+  box-sizing: border-box;
+  height: 1.2rem;
+  margin-inline: calc(var(--slider-thumb-size) / 2);
+  --slider-progress: 0%;
+  --slider-muted: #5c5c5c;
+  --slider-thumb-size: 1.25rem;
+  --slider-thumb-radius: calc(var(--slider-thumb-size) / 2);
+}
+
+.discovery-form__budget-shell::before {
+  content: "";
+  position: absolute;
+  inset: 50% 0 auto;
+  height: 0.4rem;
+  border-radius: 999px;
+  background: var(--slider-muted);
+  z-index: 0;
+  transform: translateY(-50%);
+}
+
+.discovery-form__budget-shell::after {
+  content: "";
+  position: absolute;
+  inset: 50% auto auto 0;
+  width: var(--slider-progress);
+  height: 0.4rem;
+  border-radius: 999px;
+  background: var(--accent);
+  z-index: 1;
+  transform: translateY(-50%);
+}
+
+.discovery-form__budget-output {
+  flex: 0 0 auto;
+  color: var(--form-text);
+  font-size: clamp(1.15rem, 0.55vw + 1.02rem, 1.35rem);
+  font-weight: 800;
+  font-variation-settings: "wght" 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  text-align: right;
+  white-space: nowrap;
+}
+
 .discovery-form input,
 .discovery-form textarea {
   width: 100%;
@@ -196,6 +297,92 @@ body:has(.form-modal.is-open) .site-header {
   font-size: clamp(0.92rem, 0.12vw + 0.9rem, 1rem);
   font-family: var(--font);
   line-height: 1.35;
+}
+
+.discovery-form input.discovery-form__budget-input {
+  -webkit-appearance: none;
+  appearance: none;
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  width: 100%;
+  height: 1.2rem;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.discovery-form input.discovery-form__budget-input:focus {
+  outline: none;
+  border-color: transparent;
+}
+
+.discovery-form__budget-input::-webkit-slider-runnable-track {
+  height: 0.4rem;
+  background: transparent;
+}
+
+.discovery-form__budget-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: var(--slider-thumb-size);
+  height: var(--slider-thumb-size);
+  margin-top: calc((0.4rem - var(--slider-thumb-size)) / 2);
+  border: 0;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: none;
+}
+
+.discovery-form__budget-input::-moz-range-track {
+  height: 0.4rem;
+  background: transparent;
+  border: 0;
+}
+
+.discovery-form__budget-input::-moz-range-progress {
+  height: 0.4rem;
+  background: transparent;
+  border-radius: 999px;
+}
+
+.discovery-form__budget-input::-moz-range-thumb {
+  width: var(--slider-thumb-size);
+  height: var(--slider-thumb-size);
+  border: 0;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: none;
+}
+
+.discovery-form__budget-milestones {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.discovery-form__budget-milestone {
+  position: absolute;
+  left: calc(
+    var(--slider-thumb-radius) +
+      (100% - (var(--slider-thumb-radius) * 2)) * var(--slider-stop)
+  );
+  top: 50%;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  background: var(--slider-muted);
+  transform: translate(-50%, -50%);
+}
+
+.discovery-form__budget-milestone.is-active {
+  background: var(--accent);
 }
 
 .discovery-form input::placeholder,
@@ -265,7 +452,7 @@ body:has(.form-modal.is-open) .site-header {
     gap: 0.86rem;
   }
 
-  .form-modal .discovery-form input,
+  .form-modal .discovery-form input:not(.discovery-form__budget-input),
   .form-modal .discovery-form textarea {
     min-height: 3.08rem;
     padding: 0.86rem 0.9rem;
@@ -324,7 +511,7 @@ body:has(.form-modal.is-open) .site-header {
     gap: 0.74rem;
   }
 
-  .form-modal .discovery-form input,
+  .form-modal .discovery-form input:not(.discovery-form__budget-input),
   .form-modal .discovery-form textarea {
     min-height: 2.82rem;
     padding: 0.76rem 0.84rem;
@@ -378,7 +565,7 @@ body:has(.form-modal.is-open) .site-header {
     gap: 0.76rem;
   }
 
-  .form-modal .discovery-form input,
+  .form-modal .discovery-form input:not(.discovery-form__budget-input),
   .form-modal .discovery-form textarea {
     min-height: 2.88rem;
     padding: 0.78rem 0.86rem;
@@ -426,7 +613,7 @@ body:has(.form-modal.is-open) .site-header {
     gap: 0.9rem;
   }
 
-  .form-modal .discovery-form input,
+  .form-modal .discovery-form input:not(.discovery-form__budget-input),
   .form-modal .discovery-form textarea {
     min-height: 3.12rem;
     font-size: 1rem;

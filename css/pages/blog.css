@@ -354,7 +354,10 @@ body.blog-post-page:not(.results-case-study-page) .blog-article {
     gap: 0.72rem;
   }
 
-  .blog-article__rail > .blog-inline-form.blog-rail-form .discovery-form input,
+  .blog-article__rail
+    > .blog-inline-form.blog-rail-form
+    .discovery-form
+    input:not(.discovery-form__budget-input),
   .blog-article__rail > .blog-inline-form.blog-rail-form .discovery-form textarea {
     padding: 0.78rem 0.8rem;
     font-size: 0.95rem;

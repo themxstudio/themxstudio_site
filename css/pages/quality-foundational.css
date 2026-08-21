@@ -1,0 +1,3220 @@
+body.quality-foundational-page {
+  --accent: #ea2556;
+  --accent-hover: #ffb4c7;
+  --mx-green: #ea2556;
+  --mx-green-hover: #ffb4c7;
+  background-image: none;
+}
+
+body.brisbane-smb-landing-page {
+  --brisbane-check-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9.2 12.6l1.9 1.9 4.7-5' fill='none' stroke='%23ffffff' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  --brisbane-cta-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5.5 12h12.5m-5-5 5 5-5 5' fill='none' stroke='%23ea2556' stroke-width='2.35' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+html:has(body.brisbane-smb-landing-page) {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body.quality-foundational-page main {
+  background: var(--bg);
+}
+
+body.brisbane-smb-landing-page main {
+  display: flex;
+  flex-direction: column;
+}
+
+body.brisbane-smb-landing-page main > * {
+  order: 20;
+}
+
+body.brisbane-smb-landing-page .website-services__hero-wrap {
+  order: 1;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__selling-points {
+  order: 2;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__proof-strip {
+  order: 3;
+}
+
+body.brisbane-smb-landing-page .customer-review--meridian {
+  order: 4;
+  --section-padding-bottom: calc(var(--site-gap) + var(--section-radius));
+}
+
+body.brisbane-smb-landing-page .customer-review--metro-rags {
+  order: 5;
+  --section-padding-bottom: calc(var(--site-gap) + var(--section-radius));
+  border-radius: var(--section-radius) var(--section-radius) 0 0 !important;
+  overflow: hidden !important;
+  margin-top: calc(-1 * var(--section-radius)) !important;
+  padding-top: calc(var(--site-gap) + var(--section-radius)) !important;
+  position: relative;
+  z-index: 4;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__maxx-pass-through {
+  order: 10;
+  --section-padding-top: 0;
+  --section-padding-bottom: 0;
+  min-height: auto;
+  display: block;
+  padding: 0 clamp(1.25rem, 3vw, 2rem) !important;
+  background: #000;
+  color: #fff;
+  border-radius: var(--section-radius) var(--section-radius) 0 0;
+  border-top: 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 4;
+  margin-top: calc(-1 * var(--section-radius)) !important;
+}
+
+body.brisbane-smb-landing-page .pricing-grid2--service-web-design {
+  order: 6;
+  width: 100vw;
+  max-width: none;
+  margin: 0 calc(50% - 50vw) var(--site-gap) !important;
+  padding: 0 0 clamp(2rem, 3.5vw, 2.75rem);
+  position: relative;
+  z-index: 1;
+  background: var(--bg) !important;
+  border-radius: var(--section-radius) var(--section-radius) 0 0 !important;
+  overflow: hidden !important;
+}
+
+body.brisbane-smb-landing-page .pricing-grid2--service-web-design .pricing-grid2__inner {
+  margin-top: 0;
+  padding-top: 0;
+  background: transparent;
+  border-radius: 0;
+  overflow: visible;
+  position: static;
+  z-index: auto;
+}
+
+body.brisbane-smb-landing-page
+  .pricing-grid2--service-web-design
+  .pricing-grid2__card {
+  background: #000 !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  color: #fff !important;
+}
+
+body.brisbane-smb-landing-page
+  .pricing-grid2--service-web-design
+  .pricing-grid2__col--featured
+  .pricing-grid2__card {
+  border-color: var(--accent) !important;
+  border-width: 3px;
+}
+
+body.brisbane-smb-landing-page
+  .pricing-grid2--service-web-design
+  .pricing-grid2__card-title {
+  color: #fff !important;
+}
+
+body.brisbane-smb-landing-page
+  .pricing-grid2--service-web-design
+  .pricing-grid2__card-cta {
+  width: 100%;
+  justify-content: center;
+}
+
+body.brisbane-smb-landing-page
+  .pricing-grid2--service-web-design
+  .pricing-grid2__card-list {
+  margin-top: clamp(1.45rem, 2.2vw, 1.9rem);
+  gap: clamp(0.7rem, 1.1vw, 0.95rem);
+  padding-left: 0;
+  list-style: none;
+}
+
+body.brisbane-smb-landing-page
+  .pricing-grid2--service-web-design
+  .pricing-grid2__card-list
+  li {
+  position: relative;
+  padding-left: 1.95rem;
+  font-weight: 300;
+  font-variation-settings: "wght" 300;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+body.brisbane-smb-landing-page
+  .pricing-grid2--service-web-design
+  .pricing-grid2__card-list
+  li::before {
+  content: "";
+  position: absolute;
+  top: 0.18rem;
+  left: 0;
+  width: 1.22rem;
+  height: 1.22rem;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9.2 12.6l1.9 1.9 4.7-5' fill='none' stroke='%23ea2556' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+}
+
+body.brisbane-smb-landing-page
+  .pricing-grid2--service-web-design
+  .pricing-grid2__card-list
+  .strong {
+  color: #fff !important;
+  font-weight: 900;
+  font-variation-settings: "wght" 900;
+}
+
+body.brisbane-smb-landing-page .section-accent-wrap {
+  order: 9;
+}
+
+body.brisbane-smb-landing-page .home-maxx--maxx-intro {
+  order: 13;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__maxx-pass-through-inner {
+  width: min(82rem, var(--content-shell-width));
+  margin-inline: auto;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  gap: 0;
+  min-height: auto;
+  padding: clamp(5.5rem, 8vw, 7.4rem) 0 clamp(6.2rem, 9vw, 8.4rem);
+  box-sizing: border-box;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__maxx-pass-through-copy {
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  min-width: 0;
+  text-align: center;
+  width: 100%;
+  max-width: 76rem;
+  margin-inline: auto;
+  margin-bottom: 6.5rem;
+  padding-left: 0;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__maxx-pass-through-form-section {
+  width: min(100%, 52rem);
+  margin-inline: auto;
+  margin-top: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  --slider-muted: #5c5c5c;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__slider-form {
+  width: 100%;
+  min-width: 0;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__slider-heading {
+  width: min(100%, 35rem);
+  margin: 0 auto 2rem;
+  color: #fff;
+  font-size: clamp(1.65rem, 0.85vw + 1.38rem, 2.1rem);
+  font-weight: 800;
+  font-variation-settings: "wght" 800;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  text-align: center;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__slider-row {
+  display: block;
+  width: min(100%, 35rem);
+  margin-inline: auto;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__slider-total {
+  display: flex;
+  justify-content: center;
+  width: min(100%, 35rem);
+  margin: 0.65rem auto 0;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__slider-reveal {
+  width: min(100%, 35rem);
+  margin: 0 auto 0;
+  overflow: hidden;
+  opacity: 0;
+  max-height: 0;
+  transform: translateY(-1.25rem);
+  transition:
+    max-height 520ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 360ms ease,
+    transform 520ms cubic-bezier(0.22, 1, 0.36, 1),
+    margin-top 520ms cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__slider-reveal.is-visible {
+  margin-top: 1.5rem;
+  opacity: 1;
+  max-height: 40rem;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__slider-field-grid {
+  display: grid;
+  gap: 0.9rem;
+  opacity: 0;
+  transform: translateY(-0.85rem) scale(0.985);
+  transition:
+    opacity 420ms ease,
+    transform 520ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+body.brisbane-smb-landing-page
+  .brisbane-smb-landing-page__slider-reveal.is-visible
+  .brisbane-smb-landing-page__slider-field-grid {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__slider-field {
+  display: block;
+  width: 100%;
+  min-height: 3.5rem;
+  padding: 0 0 0.9rem;
+  border: 0;
+  border-bottom: 0.48rem solid var(--slider-muted);
+  border-radius: 0;
+  background: transparent;
+  color: #fff;
+  -webkit-appearance: none;
+  appearance: none;
+  font-size: clamp(1.65rem, 1.2vw + 1.28rem, 2.45rem);
+  font-weight: 800;
+  font-variation-settings: "wght" 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__slider-field::placeholder {
+  color: #8e8e8e;
+  font-size: clamp(1.65rem, 0.85vw + 1.38rem, 2.1rem);
+  font-weight: 800;
+  font-variation-settings: "wght" 800;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  opacity: 1;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__slider-field:focus {
+  outline: none;
+  border-bottom-color: var(--accent);
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__slider-field:focus::placeholder {
+  color: transparent;
+  opacity: 0;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__slider-field--message {
+  min-height: 6rem;
+  padding-top: 0;
+  resize: vertical;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__slider-submit {
+  min-height: 3.75rem;
+  margin-top: 0.35rem;
+  border: 0;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-size: clamp(1.1rem, 0.45vw + 1rem, 1.3rem);
+  font-weight: 800;
+  font-variation-settings: "wght" 800;
+  letter-spacing: -0.03em;
+  cursor: pointer;
+  transition:
+    transform 180ms ease;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__slider-submit:focus {
+  outline: none;
+}
+
+body.brisbane-smb-landing-page
+  .brisbane-smb-landing-page__slider-submit:is(:hover, :focus-visible) {
+  transform: translateY(-0.12rem);
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__slider-shell {
+  position: relative;
+  width: 100%;
+  height: 1.45rem;
+  --slider-progress: 0%;
+  --slider-muted: #5c5c5c;
+  --slider-thumb-size: 1.5rem;
+  --slider-thumb-radius: calc(var(--slider-thumb-size) / 2);
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__slider-shell::before {
+  content: "";
+  position: absolute;
+  inset: 50% 0 auto;
+  height: 0.48rem;
+  border-radius: 999px;
+  background: var(--slider-muted);
+  z-index: 0;
+  transform: translateY(-50%);
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__slider-shell::after {
+  content: "";
+  position: absolute;
+  inset: 50% auto auto 0;
+  width: var(--slider-progress);
+  height: 0.48rem;
+  border-radius: 999px;
+  background: var(--accent);
+  z-index: 1;
+  transform: translateY(-50%);
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__slider-output {
+  color: #fff;
+  font-size: clamp(1.65rem, 1.2vw + 1.28rem, 2.45rem);
+  font-weight: 800;
+  font-variation-settings: "wght" 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  text-align: right;
+  white-space: nowrap;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__slider-input {
+  -webkit-appearance: none;
+  appearance: none;
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  width: 100%;
+  height: 1.45rem;
+  margin: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__slider-input:focus {
+  outline: none;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__slider-input::-webkit-slider-runnable-track {
+  height: 0.48rem;
+  background: transparent;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__slider-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: var(--slider-thumb-size);
+  height: var(--slider-thumb-size);
+  margin-top: calc((0.48rem - var(--slider-thumb-size)) / 2);
+  border: 0;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__slider-input::-moz-range-track {
+  height: 0.48rem;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__slider-input::-moz-range-progress {
+  height: 0.48rem;
+  border-radius: 999px;
+  background: transparent;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__slider-input::-moz-range-thumb {
+  width: var(--slider-thumb-size);
+  height: var(--slider-thumb-size);
+  border: 0;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__slider-milestones {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__slider-milestone {
+  position: absolute;
+  top: 50%;
+  left: calc(
+    var(--slider-thumb-radius) +
+      (100% - (var(--slider-thumb-radius) * 2)) * var(--slider-stop)
+  );
+  width: 1.14rem;
+  height: 1.14rem;
+  border-radius: 50%;
+  background: var(--slider-muted);
+  transform: translate(-50%, -50%);
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__slider-milestone.is-active {
+  background: var(--accent);
+}
+
+body.brisbane-smb-landing-page .form-modal .brisbane-smb-landing-page__modal-slider {
+  display: grid;
+  gap: 0.7rem;
+  margin-bottom: 0.8rem;
+}
+
+body.brisbane-smb-landing-page .form-modal .brisbane-smb-landing-page__modal-slider-heading-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.9rem;
+  box-sizing: border-box;
+  width: calc(100% - 1.25rem);
+  margin-inline: auto;
+}
+
+body.brisbane-smb-landing-page .form-modal .brisbane-smb-landing-page__modal-slider-heading {
+  margin: 0;
+  color: var(--form-text);
+  font-size: clamp(1.05rem, 0.45vw + 0.96rem, 1.2rem);
+  font-weight: 800;
+  font-variation-settings: "wght" 800;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  text-align: left;
+}
+
+body.brisbane-smb-landing-page .form-modal .brisbane-smb-landing-page__slider-row,
+body.brisbane-smb-landing-page .form-modal .brisbane-smb-landing-page__slider-total {
+  width: calc(100% - 1.25rem);
+  margin-inline: auto;
+  box-sizing: border-box;
+  padding-inline: 0;
+}
+
+body.brisbane-smb-landing-page .form-modal .brisbane-smb-landing-page__slider-shell {
+  width: 100%;
+  height: 1.2rem;
+  margin-inline: 0;
+  --slider-muted: #5c5c5c;
+  --slider-thumb-size: 1.25rem;
+}
+
+body.brisbane-smb-landing-page .form-modal input.brisbane-smb-landing-page__slider-input {
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+body.brisbane-smb-landing-page .form-modal .brisbane-smb-landing-page__slider-shell::before,
+body.brisbane-smb-landing-page .form-modal .brisbane-smb-landing-page__slider-shell::after,
+body.brisbane-smb-landing-page .form-modal .brisbane-smb-landing-page__slider-input::-webkit-slider-runnable-track,
+body.brisbane-smb-landing-page .form-modal .brisbane-smb-landing-page__slider-input::-moz-range-track,
+body.brisbane-smb-landing-page .form-modal .brisbane-smb-landing-page__slider-input::-moz-range-progress {
+  height: 0.4rem;
+}
+
+body.brisbane-smb-landing-page .form-modal .brisbane-smb-landing-page__slider-input::-webkit-slider-thumb {
+  margin-top: calc((0.4rem - var(--slider-thumb-size)) / 2);
+}
+
+body.brisbane-smb-landing-page .form-modal .brisbane-smb-landing-page__slider-milestone {
+  width: 0.8rem;
+  height: 0.8rem;
+}
+
+body.brisbane-smb-landing-page .form-modal .brisbane-smb-landing-page__slider-output {
+  color: var(--form-text);
+  font-size: clamp(1.15rem, 0.55vw + 1.02rem, 1.35rem);
+  text-align: right;
+  white-space: nowrap;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__maxx-pass-through-title {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1.65rem, 2.85vw, 3.2rem);
+  font-weight: 900;
+  font-variation-settings: "wght" 900;
+  line-height: 1.02;
+  letter-spacing: -0.05em;
+  text-align: center;
+  text-wrap: pretty;
+  max-width: 28ch;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__maxx-pass-through-line,
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__maxx-pass-through-emphasis {
+  display: inline;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__maxx-pass-through-line {
+  color: #fff;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__maxx-pass-through-emphasis {
+  color: #fff;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__maxx-pass-through-identity {
+  display: inline-grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  gap: 0.8rem;
+  width: min(100%, 19rem);
+  justify-self: center;
+  align-self: center;
+  justify-content: center;
+  margin-top: clamp(0.1rem, 0.35vw, 0.3rem);
+  margin-inline: auto;
+  transform: translateX(clamp(0.7rem, 1vw, 1rem));
+  text-align: left;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__maxx-pass-through-mark {
+  width: clamp(2.9rem, 3.3vw, 3.3rem);
+  height: clamp(2.9rem, 3.3vw, 3.3rem);
+  background: url("/assets/icons/graphic.png") center / contain no-repeat;
+  flex: 0 0 auto;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__maxx-pass-through-quote {
+  margin: 0;
+  width: min(100%, 19rem);
+  max-width: 28ch;
+  color: #fff;
+  font-size: clamp(1.02rem, 0.5vw + 0.92rem, 1.18rem);
+  font-weight: 300;
+  font-variation-settings: "wght" 300;
+  line-height: 1.14;
+  text-align: center;
+  text-wrap: balance;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__maxx-pass-through-identity-copy {
+  display: grid;
+  gap: 0.18rem;
+  justify-items: start;
+  width: max-content;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__maxx-pass-through-name {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1.45rem, 0.85vw + 1.12rem, 1.95rem);
+  font-weight: 900;
+  font-variation-settings: "wght" 900;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  white-space: nowrap;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__maxx-pass-through-role {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: clamp(0.98rem, 0.38vw + 0.9rem, 1.1rem);
+  line-height: 1.1;
+}
+
+body.brisbane-smb-landing-page .gap-fill:not(.brisbane-smb-landing-page__faq-gap) {
+  display: none !important;
+  height: 0 !important;
+  margin: 0 !important;
+  order: 6;
+  z-index: 0;
+}
+
+body.brisbane-smb-landing-page .gap-fill + .pricing-grid2--service-web-design {
+  z-index: 1;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__faq-gap {
+  order: 11;
+  display: block !important;
+  height: 30vh !important;
+  margin: 0 0 -30vh !important;
+  background: #000 !important;
+  position: relative;
+  z-index: -9999;
+}
+
+.quality-foundational-header .site-header__contacts,
+.quality-foundational-header .site-header__nav,
+.quality-foundational-header .site-header__burger,
+.quality-foundational-header .mobile-overlay,
+.quality-foundational-header .mobile-panel {
+  display: none !important;
+}
+
+.quality-foundational-header .site-header__actions {
+  display: inline-flex !important;
+  align-items: center;
+  margin-left: auto;
+}
+
+.quality-foundational-header .site-header__actions .site-header__cta {
+  margin-left: 0;
+}
+
+.quality-foundational-header__cta {
+  font-size: clamp(0.92rem, 0.45vw + 0.88rem, 1.05rem);
+}
+
+body.brisbane-smb-landing-page .website-services__hero-portraits {
+  display: none !important;
+}
+
+body.brisbane-smb-landing-page .website-services__hero-wrap::before {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+body.brisbane-smb-landing-page .website-services__hero-wrap {
+  height: calc(105vh + var(--hero-section-overlap));
+  min-height: calc(105vh + var(--hero-section-overlap));
+}
+
+body.brisbane-smb-landing-page .website-services__hero .page-hero__content {
+  width: min(92vw, 84rem);
+}
+
+body.brisbane-smb-landing-page .website-services__hero .page-hero__content {
+  align-items: center;
+  justify-content: flex-start;
+  gap: clamp(1.25rem, 2vw, 1.8rem);
+  padding-top: clamp(0.9rem, 1.8vw, 1.5rem);
+  padding-bottom: clamp(2rem, 4vw, 3.2rem);
+  text-align: center;
+}
+
+body.brisbane-smb-landing-page
+  .website-services__hero
+  .page-hero__content
+  > :is(.page-hero__title, .brisbane-smb-landing-page__hero-lower) {
+  align-self: center !important;
+  margin-inline: auto !important;
+}
+
+body.brisbane-smb-landing-page
+  :is(
+    .website-services__hero .page-hero__title,
+    .home-maxx--maxx-intro .brisbane-smb-landing-page__intro-title
+  ) {
+  width: min(100%, 76rem);
+  max-width: 76rem;
+  margin: 0;
+  min-width: 0;
+  font-size: clamp(3.15rem, 5.35vw, 5.95rem);
+  font-weight: 900 !important;
+  font-variation-settings: "wght" 900 !important;
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  white-space: normal;
+  text-wrap: balance;
+  text-transform: none;
+  word-break: normal;
+  overflow-wrap: normal;
+}
+
+body.brisbane-smb-landing-page .website-services__hero .page-hero__title {
+  font-size: clamp(2.85rem, 4.9vw, 5.35rem);
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__hero-lower {
+  width: min(100%, 44rem);
+  max-width: 44rem;
+  display: grid;
+  gap: clamp(1.55rem, 2.35vw, 2.15rem);
+  justify-items: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+body.brisbane-smb-landing-page .website-services__hero {
+  position: relative;
+  z-index: 3;
+  padding-bottom: 0;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__hero-scroll {
+  --brisbane-hero-scroll-x: -50%;
+  --brisbane-hero-scroll-bottom-gap: clamp(1.05rem, 2.2vw, 2rem);
+  position: fixed;
+  left: 50%;
+  bottom: calc(
+    var(--brisbane-hero-scroll-bottom-offset, 0px) +
+      var(--brisbane-hero-scroll-bottom-gap)
+  );
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(2.5rem, 3.3vw, 3rem);
+  height: clamp(2.5rem, 3.3vw, 3rem);
+  color: #fff;
+  transform: translateX(var(--brisbane-hero-scroll-x)) translateY(0);
+  z-index: 5;
+  animation: brisbaneHeroArrowBob 1.55s ease-in-out infinite;
+  text-decoration: none;
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease,
+    visibility 0s linear 180ms;
+}
+
+body.brisbane-smb-landing-page
+  .brisbane-smb-landing-page__hero-scroll:is(
+    .is-dismissed,
+    .is-content-blocked
+  ) {
+  animation: none;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(var(--brisbane-hero-scroll-x)) translateY(0.85rem);
+  transition-delay: 0s;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__hero-scroll svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__hero-scroll:focus-visible,
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__hero-scroll:hover {
+  color: rgba(255, 255, 255, 0.86);
+}
+
+@keyframes brisbaneHeroArrowBob {
+  0%,
+  100% {
+    transform: translateX(var(--brisbane-hero-scroll-x)) translateY(0);
+  }
+
+  50% {
+    transform: translateX(var(--brisbane-hero-scroll-x)) translateY(0.45rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.brisbane-smb-landing-page .brisbane-smb-landing-page__hero-scroll {
+    animation: none;
+  }
+}
+
+body.brisbane-smb-landing-page .website-services__hero .page-hero__sub {
+  display: block !important;
+  margin-inline: auto;
+  width: 100%;
+  max-width: none;
+  font-size: clamp(1.18rem, 0.95vw + 1rem, 1.8rem);
+  line-height: 1.28;
+  text-align: center;
+}
+
+body.brisbane-smb-landing-page .website-services__hero .page-hero__sub::before {
+  content: none !important;
+  display: none !important;
+}
+
+body.brisbane-smb-landing-page .website-services__hero .page-hero__sub-icon {
+  display: none !important;
+}
+
+body.brisbane-smb-landing-page .website-services__hero .page-hero__actions,
+body.brisbane-smb-landing-page .website-services__hero .page-hero__google-proof {
+  justify-content: center;
+}
+
+body.brisbane-smb-landing-page .website-services__hero .page-hero__actions {
+  width: auto;
+  margin-top: clamp(1.65rem, 2.8vw, 2.9rem);
+}
+
+body.brisbane-smb-landing-page .website-services__hero .page-hero__google-proof {
+  max-width: none !important;
+  margin-top: 0;
+  justify-self: center;
+  align-self: center;
+  margin-inline: auto !important;
+}
+
+body.brisbane-smb-landing-page
+  :is(
+    .website-services__hero .page-hero__cta,
+    .home-maxx__cta,
+    .metro-rags-spotlight__project-link.portfolio-cta,
+    .pricing-grid2__card-cta
+  ) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.82rem;
+}
+
+body.brisbane-smb-landing-page
+  :is(
+    .website-services__hero .page-hero__cta,
+    .home-maxx__cta,
+    .metro-rags-spotlight__project-link.portfolio-cta,
+    .pricing-grid2__card-cta
+  )::after {
+  content: "";
+  width: 1.82rem;
+  height: 1.82rem;
+  flex: 0 0 1.82rem;
+  border-radius: 999px;
+  background:
+    var(--brisbane-cta-arrow) center / 1rem 1rem no-repeat,
+    #fff;
+}
+
+body.brisbane-smb-landing-page .pricing-grid2__card-cta svg {
+  display: none !important;
+}
+
+body.brisbane-smb-landing-page
+  .pricing-grid2--service-web-design
+  .pricing-grid2__card-cta,
+body.brisbane-smb-landing-page .metro-rags-spotlight__project-link.portfolio-cta,
+body.brisbane-smb-landing-page .home-maxx__cta {
+  padding-right: 0.92rem;
+}
+
+body.brisbane-smb-landing-page
+  :is(
+    .website-services__hero .page-hero__cta--primary,
+    .home-maxx__cta,
+    .metro-rags-spotlight__project-link.portfolio-cta,
+    .pricing-grid2__card-cta
+  ):is(:hover, :focus-visible) {
+  background: var(--accent) !important;
+  border-color: var(--accent) !important;
+  box-shadow: none !important;
+  color: #fff !important;
+}
+
+body.brisbane-smb-landing-page
+  .website-services__hero
+  .page-hero__cta--secondary:is(:hover, :focus-visible) {
+  background: transparent !important;
+  border-color: #fff !important;
+  box-shadow: none !important;
+  color: #fff !important;
+}
+
+body.brisbane-smb-landing-page
+  :is(
+    .website-services__hero .page-hero__cta,
+    .home-maxx__cta,
+    .metro-rags-spotlight__project-link.portfolio-cta,
+    .pricing-grid2__card-cta
+  ):is(:hover, :focus-visible)::after {
+  background:
+    var(--brisbane-cta-arrow) center / 1rem 1rem no-repeat,
+    #fff;
+}
+
+body.brisbane-smb-landing-page .website-services__hero .page-hero__cta--secondary {
+  gap: 0.45rem;
+  flex: 0 0 auto;
+  min-height: auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+body.brisbane-smb-landing-page
+  .website-services__hero
+  .page-hero__cta--secondary::after {
+  width: 1rem;
+  height: 1rem;
+  flex: 0 0 1rem;
+  border-radius: 0;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5.5 12h12.5m-5-5 5 5-5 5' fill='none' stroke='%23ffffff' stroke-width='2.1' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+      center / 1rem 1rem no-repeat;
+}
+
+body.brisbane-smb-landing-page
+  .website-services__hero
+  .page-hero__cta--secondary:is(:hover, :focus-visible)::after {
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5.5 12h12.5m-5-5 5 5-5 5' fill='none' stroke='%23ffffff' stroke-width='2.1' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+      center / 1rem 1rem no-repeat;
+}
+
+body.brisbane-smb-landing-page .website-services__hero .page-hero__sub-text {
+  display: block;
+  text-align: center;
+}
+
+body.brisbane-smb-landing-page
+  :is(.website-services__hero, .home-maxx--maxx-intro)
+  .brisbane-smb-landing-page__sub-highlight {
+  display: inline;
+  padding: 0.06em 0.18em 0.12em;
+  border-radius: 0.14em;
+  color: #fff;
+  background: rgba(234, 37, 86, 0.88);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+body.brisbane-smb-landing-page .website-services__hero .page-hero__title .accent {
+  display: inline;
+  white-space: normal;
+  color: #fff !important;
+}
+
+body.brisbane-smb-landing-page
+  .website-services__hero
+  .brisbane-smb-landing-page__title-main {
+  display: inline;
+}
+
+body.brisbane-smb-landing-page
+  .website-services__hero
+  .brisbane-smb-landing-page__title-accent {
+  display: inline;
+  color: #fff !important;
+  text-decoration: none;
+}
+
+body.brisbane-smb-landing-page .comparison__point {
+  --comparison-graphic-length: clamp(1.28rem, 1.45vw, 1.42rem);
+  --comparison-graphic-span: clamp(1.28rem, 1.45vw, 1.42rem);
+  min-height: 0;
+  padding-left: calc(
+    var(--comparison-graphic-span) + clamp(0.72rem, 0.9vw, 0.82rem)
+  );
+}
+
+body.brisbane-smb-landing-page .comparison__point::before {
+  top: 0.16rem;
+  left: 0;
+  width: var(--comparison-graphic-length);
+  height: var(--comparison-graphic-span);
+  border-radius: 999px;
+  background:
+    var(--brisbane-check-icon) center / 0.92rem 0.92rem no-repeat,
+    var(--accent);
+  transform: none;
+}
+
+body.brisbane-smb-landing-page .comparison__point-copy {
+  gap: 0;
+}
+
+body.brisbane-smb-landing-page .comparison__point-text {
+  color: #fff !important;
+  font-weight: 900 !important;
+  font-variation-settings: "wght" 900 !important;
+}
+
+body.brisbane-smb-landing-page .home-maxx--maxx-intro {
+  background: var(--bg) !important;
+  margin-top: 0;
+  margin-bottom: 0;
+  border-radius: var(--section-radius) var(--section-radius) 0 0 !important;
+  overflow: hidden !important;
+  color: var(--text);
+  position: relative;
+  z-index: 3;
+}
+
+body.brisbane-smb-landing-page .comparison {
+  background: #000 !important;
+  border-radius: var(--section-radius) var(--section-radius) 0 0 !important;
+  overflow: hidden !important;
+  z-index: 3;
+}
+
+body.brisbane-smb-landing-page .faq {
+  order: 12;
+  background: #fff;
+  border-radius: var(--section-radius) var(--section-radius) 0 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 5;
+}
+
+body.brisbane-smb-landing-page
+  main
+  section.faq:not(.hero):not(.page-hero):not(.section-accent-tail) {
+  padding-top: var(--site-gap) !important;
+  padding-bottom: var(--site-gap) !important;
+  border-radius: var(--section-radius) var(--section-radius) 0 0 !important;
+  overflow: hidden !important;
+  position: relative;
+  z-index: 5;
+}
+
+body.brisbane-smb-landing-page
+  main
+  > section.client-logo-deck:not(.hero):not(.page-hero):not(
+    .section-accent-tail
+  ) {
+  --client-logo-deck-visible-width: 100vw;
+  --client-logo-deck-gap: 7rem;
+  width: 100vw;
+  max-width: none;
+  margin: 0 calc(50% - 50vw) !important;
+  padding: 1.35rem 0 2rem !important;
+  background: transparent;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+}
+
+body.brisbane-smb-landing-page .website-services__hero-wrap + .home-maxx--maxx-intro {
+  background: var(--bg) !important;
+  border-radius: var(--section-radius) var(--section-radius) 0 0 !important;
+}
+
+body.brisbane-smb-landing-page .comparison .comparison__heading {
+  color: #fff !important;
+}
+
+body.brisbane-smb-landing-page
+  .comparison
+  .comparison__heading-accent {
+  color: var(--accent) !important;
+}
+
+body.brisbane-smb-landing-page .home-maxx--maxx-intro .home-maxx__inner {
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(2rem, 3vw, 2.8rem);
+  align-items: start;
+  justify-items: center;
+  min-height: 0;
+}
+
+body.brisbane-smb-landing-page .home-maxx--maxx-intro .home-maxx__copy {
+  order: 1;
+  grid-column: auto;
+  width: 100%;
+  max-width: 72rem;
+  min-height: 0;
+  margin-inline: auto;
+  padding-inline-start: 0;
+  gap: clamp(1.2rem, 2vw, 1.75rem);
+  justify-items: center;
+  text-align: center;
+}
+
+body.brisbane-smb-landing-page .home-maxx--maxx-intro .home-maxx__copy-grid {
+  grid-template-rows: none;
+  flex: 0 0 auto;
+  gap: clamp(1rem, 1.6vw, 1.25rem);
+  justify-items: center;
+}
+
+body.brisbane-smb-landing-page .home-maxx--maxx-intro .home-maxx__feature {
+  height: auto;
+  gap: 0.9rem;
+}
+
+body.brisbane-smb-landing-page .home-maxx--maxx-intro .home-maxx__feature-head {
+  text-align: center;
+}
+
+body.brisbane-smb-landing-page
+  .home-maxx--maxx-intro
+  .brisbane-smb-landing-page__intro-title {
+  margin-inline: auto;
+  color: var(--text) !important;
+  text-align: center;
+  font-size: clamp(2.55rem, 4.2vw, 4.6rem);
+}
+
+body.brisbane-smb-landing-page
+  .home-maxx--maxx-intro
+  .brisbane-smb-landing-page__intro-title
+  * {
+  font-weight: 900 !important;
+  font-variation-settings: "wght" 900 !important;
+}
+
+body.brisbane-smb-landing-page
+  .home-maxx--maxx-intro
+  .brisbane-smb-landing-page__intro-title::before {
+  content: none;
+}
+
+body.brisbane-smb-landing-page
+  .home-maxx--maxx-intro
+  .brisbane-smb-landing-page__intro-italic {
+  font-style: italic;
+  color: var(--accent);
+  font-weight: 900 !important;
+  font-variation-settings: "wght" 900 !important;
+}
+
+body.brisbane-smb-landing-page .home-maxx--maxx-intro .home-maxx__feature-copy {
+  width: min(100%, 60rem);
+  margin-inline: 0;
+  color: color-mix(in srgb, var(--text) 78%, transparent) !important;
+  font-size: clamp(1.02rem, 0.38vw + 0.98rem, 1.14rem);
+  line-height: 1.42;
+  text-align: left;
+  text-wrap: pretty;
+  opacity: 1;
+}
+
+body.brisbane-smb-landing-page .home-maxx--maxx-intro .brisbane-smb-landing-page__comparison-list {
+  width: min(100%, 52rem);
+  margin: clamp(0.55rem, 1.3vw, 1rem) auto 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: minmax(0, 21.5rem) minmax(0, 23.5rem);
+  justify-content: center;
+  justify-items: stretch;
+  gap: clamp(1.3rem, 1.9vw, 1.65rem) clamp(2.2rem, 4vw, 3.4rem);
+}
+
+body.brisbane-smb-landing-page .home-maxx--maxx-intro .brisbane-smb-landing-page__comparison-item {
+  position: relative;
+  margin: 0;
+  padding-top: 0;
+  padding-left: 1.95rem;
+  max-width: none;
+  color: var(--text);
+  font-size: clamp(1.08rem, 0.5vw + 1rem, 1.26rem);
+  font-weight: 700;
+  line-height: 1.32;
+  text-align: left;
+  text-wrap: pretty;
+}
+
+body.brisbane-smb-landing-page
+  .home-maxx--maxx-intro
+  .brisbane-smb-landing-page__comparison-item::before {
+  content: "";
+  position: absolute;
+  top: 0.12em;
+  left: 0;
+  width: 1.22rem;
+  height: 1.22rem;
+  border-radius: 999px;
+  transform: none;
+  background:
+    var(--brisbane-check-icon) center / 0.9rem 0.9rem no-repeat,
+    var(--accent);
+}
+
+body.brisbane-smb-landing-page .home-maxx--maxx-intro .home-maxx__contact {
+  justify-items: center;
+  justify-self: center;
+  align-content: start;
+  gap: 1rem;
+  padding-top: 0;
+}
+
+body.brisbane-smb-landing-page .home-maxx--maxx-intro .home-maxx__contact-copy {
+  max-width: 54rem;
+  margin-inline: auto;
+  color: color-mix(in srgb, var(--text) 84%, transparent) !important;
+  font-weight: 400;
+  font-variation-settings: "wght" 400;
+  text-align: center;
+  opacity: 1;
+}
+
+body.brisbane-smb-landing-page .home-maxx--maxx-intro .home-maxx__cta {
+  min-height: 3.35rem;
+  margin-top: 0;
+  padding: 0.8rem 1.2rem;
+  border-radius: var(--site-radius);
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.1;
+  text-transform: none;
+}
+
+body.brisbane-smb-landing-page .web-design-copy__title {
+  width: min(100%, 52rem);
+  max-width: 52rem;
+  font-size: clamp(2.2rem, 3.1vw + 1rem, 4rem);
+  line-height: 0.98;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__selling-points {
+  background: #fff;
+  color: #000;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__selling-points .web-design-copy__inner {
+  grid-template-columns: minmax(0, 1fr) clamp(21rem, 28vw, 26rem);
+  align-items: start;
+  column-gap: clamp(1.65rem, 3vw, 3rem);
+  row-gap: clamp(1.35rem, 2vw, 2rem);
+  padding-right: 0;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__selling-points .web-design-copy__inner::before {
+  content: none;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__selling-points .web-design-copy__row {
+  grid-column: 1;
+  gap: 0;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__selling-points .web-design-copy__title {
+  width: min(76%, 68rem);
+  max-width: 76%;
+  margin-inline: 0;
+  min-width: 0;
+  padding-left: clamp(2.55rem, 3.15vw, 3.45rem);
+  color: #000;
+  font-size: clamp(1.55rem, 2.35vw, 2.7rem);
+  font-weight: 1000 !important;
+  font-variation-settings: "wght" 1000 !important;
+  font-style: normal;
+  line-height: 1.02;
+  letter-spacing: -0.08em;
+  text-transform: uppercase;
+  text-wrap: balance;
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: normal;
+  position: relative;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__selling-points .web-design-copy__title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.14em;
+  width: clamp(1.55rem, 1.65vw, 1.9rem);
+  height: clamp(1.55rem, 1.65vw, 1.9rem);
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5.5 12h12.5m-5-5 5 5-5 5' fill='none' stroke='%23000000' stroke-width='2.3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__selling-points .web-design-copy__title-strong {
+  display: block;
+  font-weight: 1000 !important;
+  font-variation-settings: "wght" 1000 !important;
+  font-style: normal;
+  letter-spacing: inherit;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__selling-points-accent {
+  display: inline;
+  position: relative;
+  z-index: 0;
+  isolation: isolate;
+  padding: 0 0.02em;
+  border-radius: 0.06em;
+  background: rgba(234, 37, 86, 0.88);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  font-weight: 1000 !important;
+  font-variation-settings: "wght" 1000 !important;
+  font-style: normal;
+  letter-spacing: inherit;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__selling-points-accent-text {
+  position: relative;
+  z-index: 1;
+  display: inline;
+  color: #fff;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__selling-points-cta {
+  display: grid;
+  grid-column: 1;
+  justify-items: start;
+  width: min(70%, 64rem);
+  max-width: 70%;
+  justify-self: start;
+  margin-inline: 0;
+  padding-left: clamp(2.5rem, 3vw, 3.3rem);
+  gap: 1rem;
+  padding-top: clamp(0.45rem, 1vw, 0.8rem);
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__selling-points-media {
+  grid-column: 2;
+  grid-row: 1 / span 4;
+  justify-self: center;
+  align-self: center;
+  width: min(100%, 26rem);
+  min-width: 0;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__selling-points-media .team__member {
+  display: grid;
+  grid-template-rows: auto auto;
+  justify-items: center;
+  gap: 1rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__selling-points-media .team__member-visual {
+  display: flex;
+  justify-content: center;
+  width: min(100%, 18rem);
+  margin: 0 auto;
+  background: transparent;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__selling-points-media .team__member-visual::after {
+  content: none;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__selling-points-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center top;
+  background: transparent;
+  border-radius: 1.4rem 1.4rem 0 0;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__selling-points-media .team__member-info {
+  display: grid;
+  gap: 0.8rem;
+  width: 100%;
+  justify-items: center;
+  text-align: center;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__selling-points-media .team__member-quote,
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__selling-points-media .team__member-quote--featured {
+  margin: 0;
+  max-width: 26ch;
+  color: #000;
+  padding-top: 0;
+  font-size: clamp(1.02rem, 0.5vw + 0.92rem, 1.18rem);
+  font-weight: 300;
+  font-variation-settings: "wght" 300;
+  line-height: 1.14;
+  text-align: center;
+  text-wrap: balance;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__selling-points-media .team__member-quote::before,
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__selling-points-media .team__member-quote--featured::before {
+  content: none;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__selling-points-media .team__member-meta {
+  display: inline-grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 0.35rem;
+  justify-self: center;
+  text-align: left;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__selling-points-media .team__member-mark {
+  width: clamp(2.4rem, 3vw, 2.85rem);
+  height: clamp(2.4rem, 3vw, 2.85rem);
+  background: url("/assets/icons/graphic.png") center / contain no-repeat;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__selling-points-media .team__member-heading {
+  display: grid;
+  gap: 0.18rem;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__selling-points-media .team__member-name {
+  margin: 0;
+  color: #000;
+  font-size: clamp(1.42rem, 0.85vw + 1.08rem, 1.82rem);
+  font-weight: 900;
+  font-variation-settings: "wght" 900;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  white-space: nowrap;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__selling-points-media .team__member-desc {
+  margin: -0.08rem 0 0;
+  color: #000;
+  font-size: clamp(0.96rem, 0.35vw + 0.9rem, 1.06rem);
+  line-height: 1.2;
+  opacity: 0.78;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__selling-points-kicker {
+  margin: 0;
+  color: #000;
+  font-size: clamp(1.9rem, 2vw + 1rem, 3rem);
+  font-weight: 400;
+  font-variation-settings: "wght" 400;
+  font-style: normal;
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  text-align: left;
+  text-transform: none;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__proof-strip {
+  --section-padding-top: 0;
+  --section-padding-bottom: 0;
+  width: var(--full-bleed-width);
+  max-width: none;
+  margin: 0 var(--full-bleed-margin) !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  padding-inline: 0 !important;
+  background: transparent;
+  border-radius: 0;
+  color: #111;
+  overflow: visible;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__proof-strip-inner {
+  width: min(74rem, var(--content-shell-width));
+  margin-inline: auto;
+  display: grid;
+  gap: 0;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__proof-strip-title {
+  margin: 0;
+  color: #ea2556 !important;
+  -webkit-text-fill-color: #ea2556 !important;
+  font-size: clamp(2rem, 2.3vw + 1rem, 3.35rem);
+  font-weight: 800;
+  font-variation-settings: "wght" 800;
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+  text-align: left;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__proof-strip-kicker {
+  margin: 0;
+  justify-self: end;
+  color: #ea2556 !important;
+  -webkit-text-fill-color: #ea2556 !important;
+  font-size: clamp(2rem, 2.3vw + 1rem, 3.35rem);
+  font-weight: 800;
+  font-variation-settings: "wght" 800;
+  line-height: 1.06;
+  letter-spacing: -0.045em;
+  padding-bottom: 0.12em;
+  text-align: right;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__proof-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.5rem);
+  align-items: end;
+  align-self: end;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__proof-card {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  align-self: end;
+  border-radius: 0;
+  overflow: visible;
+  background: transparent;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__proof-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+body.brisbane-smb-landing-page .home-maxx--maxx-intro .home-maxx__team-grid {
+  order: 2;
+  grid-column: auto;
+  width: 100%;
+  max-width: 22rem;
+  margin: 0 0 0 auto;
+  grid-template-columns: minmax(0, 1fr);
+  column-gap: 0;
+  row-gap: 0;
+  align-items: start;
+  justify-items: stretch;
+  justify-content: end;
+}
+
+body.brisbane-smb-landing-page .home-maxx--maxx-intro .home-maxx__team-grid .team__member {
+  display: grid;
+  grid-template-rows: clamp(18rem, 22vw, 20.5rem) auto;
+  justify-items: start;
+  align-items: start;
+  gap: 0;
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
+}
+
+body.brisbane-smb-landing-page
+  .home-maxx--maxx-intro
+  .home-maxx__team-grid
+  .team__member-visual {
+  display: flex;
+  align-items: end;
+  justify-content: flex-start;
+  width: min(100%, 19rem);
+  height: clamp(18rem, 22vw, 20.5rem);
+  margin: 0;
+  align-self: end;
+}
+
+body.brisbane-smb-landing-page
+  .home-maxx--maxx-intro
+  .home-maxx__team-grid
+  .team__member
+  img {
+  width: auto;
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+}
+
+body.brisbane-smb-landing-page
+  .home-maxx--maxx-intro
+  .home-maxx__team-grid
+  .team__member-info {
+  display: grid;
+  width: min(100%, 19rem);
+  gap: 0.8rem;
+  justify-items: start;
+  text-align: left;
+  margin-inline: 0;
+  padding-block: clamp(1rem, 1.5vw, 1.2rem) 0;
+}
+
+body.brisbane-smb-landing-page
+  .home-maxx--maxx-intro
+  .home-maxx__team-grid
+  .team__member-quote,
+body.brisbane-smb-landing-page
+  .home-maxx--maxx-intro
+  .home-maxx__team-grid
+  .team__member-quote--featured {
+  margin: 0;
+  color: #000;
+  width: 100%;
+  max-width: 28ch;
+  padding-top: 0;
+  font-size: clamp(1.02rem, 0.5vw + 0.92rem, 1.18rem);
+  font-weight: 300;
+  font-variation-settings: "wght" 300;
+  line-height: 1.14;
+  opacity: 1;
+  text-align: left;
+  text-wrap: balance;
+}
+
+body.brisbane-smb-landing-page
+  .home-maxx--maxx-intro
+  .home-maxx__team-grid
+  .team__member-quote::before,
+body.brisbane-smb-landing-page
+  .home-maxx--maxx-intro
+  .home-maxx__team-grid
+  .team__member-quote--featured::before {
+  content: none;
+}
+
+body.brisbane-smb-landing-page
+  .home-maxx--maxx-intro
+  .home-maxx__team-grid
+  .team__member-meta {
+  display: inline-grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 0.35rem;
+  justify-self: start;
+  text-align: left;
+  transform: none;
+}
+
+body.brisbane-smb-landing-page
+  .home-maxx--maxx-intro
+  .home-maxx__team-grid
+  .team__member-mark {
+  width: clamp(2.4rem, 3vw, 2.85rem);
+  height: clamp(2.4rem, 3vw, 2.85rem);
+  background: url("/assets/icons/graphic.png") center / contain no-repeat;
+}
+
+body.brisbane-smb-landing-page
+  .home-maxx--maxx-intro
+  .home-maxx__team-grid
+  .team__member-heading {
+  display: grid;
+  gap: 0.18rem;
+  min-width: max-content;
+}
+
+body.brisbane-smb-landing-page
+  .home-maxx--maxx-intro
+  .home-maxx__team-grid
+  .team__member-name {
+  margin: 0;
+  color: #000;
+  font-size: clamp(1.42rem, 0.85vw + 1.08rem, 1.82rem);
+  font-weight: 900;
+  font-variation-settings: "wght" 900;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  white-space: nowrap;
+}
+
+body.brisbane-smb-landing-page
+  .home-maxx--maxx-intro
+  .home-maxx__team-grid
+  .team__member-desc {
+  margin: -0.08rem 0 0;
+  color: #000;
+  font-size: clamp(0.96rem, 0.35vw + 0.9rem, 1.06rem);
+  line-height: 1.2;
+  opacity: 0.78;
+}
+
+@media (min-width: 820px) {
+  body.brisbane-smb-landing-page
+    :is(
+      .website-services__hero .page-hero__title,
+      .home-maxx--maxx-intro .brisbane-smb-landing-page__intro-title
+    ) {
+    width: min(100%, 76rem) !important;
+    max-width: 76rem !important;
+  }
+}
+
+@media (max-width: 1023px) {
+  body.brisbane-smb-landing-page .home-maxx--maxx-intro .home-maxx__inner {
+    grid-template-columns: 1fr;
+    gap: clamp(2.4rem, 8vw, 3.4rem);
+    justify-items: center;
+  }
+
+  body.brisbane-smb-landing-page .home-maxx--maxx-intro .home-maxx__copy {
+    width: min(100%, 76rem);
+    margin-inline: auto;
+    justify-items: center;
+    text-align: center;
+  }
+
+  body.brisbane-smb-landing-page .home-maxx--maxx-intro .home-maxx__team-grid {
+    width: min(100%, 26rem);
+    max-width: 26rem;
+    margin: 0 auto;
+    grid-template-columns: 1fr;
+    gap: clamp(2.4rem, 6vw, 3rem);
+    justify-content: center;
+  }
+
+  body.brisbane-smb-landing-page .home-maxx--maxx-intro .home-maxx__team-grid .team__member {
+    grid-template-rows: auto auto;
+    width: 100%;
+    justify-items: center;
+  }
+
+  body.brisbane-smb-landing-page .home-maxx--maxx-intro .home-maxx__team-grid .team__member-visual {
+    width: min(100%, 18rem);
+    height: auto;
+    margin: 0 auto;
+    justify-content: center;
+  }
+
+  body.brisbane-smb-landing-page .home-maxx--maxx-intro .home-maxx__team-grid .team__member-info {
+    width: 100%;
+    justify-items: center;
+    text-align: center;
+  }
+
+  body.brisbane-smb-landing-page .brisbane-smb-landing-page__maxx-pass-through-inner {
+    gap: clamp(1rem, 4vw, 1.6rem);
+    min-height: auto;
+  }
+
+  body.brisbane-smb-landing-page .brisbane-smb-landing-page__maxx-pass-through-copy {
+    display: grid;
+    justify-items: center;
+    width: min(100%, 44rem);
+  }
+
+  body.brisbane-smb-landing-page .brisbane-smb-landing-page__maxx-pass-through-form-section {
+    width: min(100%, 44rem);
+  }
+
+  body.brisbane-smb-landing-page .brisbane-smb-landing-page__maxx-pass-through-title {
+    max-width: 18ch;
+    font-size: clamp(1.45rem, 4.8vw, 2.2rem);
+  }
+
+}
+
+@media (max-width: 767px) {
+  body.brisbane-smb-landing-page .brisbane-smb-landing-page__maxx-pass-through-form-section {
+    width: 100%;
+  }
+
+  body.brisbane-smb-landing-page
+    :is(
+      .brisbane-smb-landing-page__slider-heading,
+      .brisbane-smb-landing-page__slider-row,
+      .brisbane-smb-landing-page__slider-total,
+      .brisbane-smb-landing-page__slider-reveal
+    ) {
+    width: min(100%, 28rem);
+  }
+
+  body.brisbane-smb-landing-page .brisbane-smb-landing-page__slider-output {
+    font-size: clamp(1.75rem, 6.2vw, 2.45rem);
+    text-align: center;
+  }
+
+  body.brisbane-smb-landing-page .brisbane-smb-landing-page__slider-heading {
+    text-align: center;
+  }
+
+  body.brisbane-smb-landing-page .brisbane-smb-landing-page__slider-total {
+    justify-content: center;
+  }
+
+  body.brisbane-smb-landing-page .brisbane-smb-landing-page__slider-field-grid {
+    justify-items: stretch;
+  }
+
+  body.brisbane-smb-landing-page
+    main
+    > section.client-logo-deck:not(.hero):not(.page-hero):not(
+      .section-accent-tail
+    ) {
+    --client-logo-deck-visible-width: 100vw;
+    --client-logo-deck-gap: 3rem;
+    padding-block: 1.2rem 1.6rem !important;
+  }
+
+  body.brisbane-smb-landing-page .home-maxx--maxx-intro .brisbane-smb-landing-page__intro-title {
+    max-width: 76rem;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  body.brisbane-smb-landing-page .brisbane-smb-landing-page__maxx-pass-through-copy {
+    justify-items: center;
+  }
+
+  body.brisbane-smb-landing-page .home-maxx--maxx-intro .home-maxx__copy,
+  body.brisbane-smb-landing-page .home-maxx--maxx-intro .home-maxx__feature-copy,
+  body.brisbane-smb-landing-page .home-maxx--maxx-intro .home-maxx__contact-copy {
+    width: 100%;
+  }
+
+  body.brisbane-smb-landing-page .home-maxx--maxx-intro .brisbane-smb-landing-page__comparison-list {
+    width: min(100%, 30rem);
+    margin-top: 0.2rem;
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+    justify-content: center;
+    justify-items: center;
+  }
+
+  body.brisbane-smb-landing-page .comparison__point {
+    --comparison-graphic-length: 1.28rem;
+    --comparison-graphic-span: 1.28rem;
+    padding-top: 0;
+    padding-left: calc(var(--comparison-graphic-span) + 0.72rem);
+  }
+
+  body.brisbane-smb-landing-page .comparison__point::before {
+    top: 0.16rem;
+    left: 0;
+    width: var(--comparison-graphic-length);
+    height: var(--comparison-graphic-span);
+    border-radius: 999px;
+    background:
+      var(--brisbane-check-icon) center / 0.9rem 0.9rem no-repeat,
+      var(--accent);
+  }
+
+  body.brisbane-smb-landing-page .brisbane-smb-landing-page__maxx-pass-through-title {
+    max-width: 24ch;
+    font-size: clamp(2.05rem, 7.8vw, 2.85rem);
+    text-align: center;
+  }
+
+  body.brisbane-smb-landing-page .brisbane-smb-landing-page__selling-points-cta {
+    order: 4;
+  }
+
+  body.brisbane-smb-landing-page .brisbane-smb-landing-page__selling-points-media {
+    display: none;
+    order: 5;
+  }
+
+  body.brisbane-smb-landing-page .brisbane-smb-landing-page__selling-points .web-design-copy__inner {
+    row-gap: 1.35rem;
+  }
+
+  body.brisbane-smb-landing-page .brisbane-smb-landing-page__selling-points .web-design-copy__title {
+    width: 95%;
+    max-width: 95%;
+    font-size: clamp(2.18rem, 8.2vw, 3rem);
+    line-height: 1.04;
+    text-align: left;
+  }
+}
+
+.quality-foundational-hero-wrap {
+  min-height: 0;
+}
+
+.quality-foundational-hero {
+  min-height: auto;
+  padding-top: clamp(2.6rem, 4.5vw, 4.2rem) !important;
+  padding-bottom: clamp(2.5rem, 4vw, 3.75rem) !important;
+  overflow: hidden;
+}
+
+.quality-foundational-hero .page-hero__content {
+  gap: clamp(1.25rem, 2vw, 1.75rem);
+}
+
+.quality-foundational-hero
+  :is(.page-hero__eyebrow, .page-hero__title, .page-hero__sub) {
+  width: 100%;
+  max-width: none;
+}
+
+.quality-foundational-hero .page-hero__title {
+  width: min(100%, 70rem);
+  max-width: 70rem;
+  font-size: clamp(3.2rem, 4.9vw, 5.55rem);
+  line-height: 0.92;
+  word-break: normal;
+  overflow-wrap: normal;
+  text-wrap: balance;
+}
+
+.quality-foundational-hero .page-hero__title .accent {
+  display: inline;
+  white-space: inherit;
+  color: var(--accent) !important;
+  font-family: inherit !important;
+  font-weight: inherit !important;
+  font-variation-settings: inherit !important;
+  font-style: inherit !important;
+  letter-spacing: inherit !important;
+}
+
+.quality-foundational-hero .page-hero__title .accent,
+.quality-foundational-hero
+  .page-hero__title
+  .page-hero__title-word--accent,
+.quality-foundational-hero
+  .page-hero__title
+  .page-hero__title-word--accent
+  .page-hero__title-char {
+  color: var(--accent) !important;
+  font-family: inherit !important;
+  font-weight: inherit !important;
+  font-variation-settings: inherit !important;
+  font-style: inherit !important;
+  letter-spacing: inherit !important;
+}
+
+body.ultimate-brand-and-web-page.service-page
+  .website-services__hero.quality-foundational-hero
+  .page-hero__title
+  .accent {
+  display: inline !important;
+  white-space: normal !important;
+}
+
+body.ultimate-brand-and-web-page .hospitality-comparison__body {
+  grid-template-columns:
+    minmax(0, 22.75rem)
+    minmax(0, 22.75rem)
+    minmax(0, 18.9rem);
+}
+
+body.ultimate-brand-and-web-page .hospitality-comparison__post {
+  width: min(100%, 18.9rem);
+}
+
+.quality-foundational-hero .page-hero__sub {
+  display: block !important;
+  width: min(100%, 37rem);
+  max-width: 37rem;
+  font-size: clamp(1.08rem, 0.38vw + 1rem, 1.34rem);
+  line-height: 1.18;
+}
+
+.quality-foundational-hero .page-hero__sub::before {
+  content: none !important;
+  display: none !important;
+}
+
+.quality-foundational-hero .page-hero__actions {
+  flex-wrap: wrap;
+}
+
+.quality-foundational-hero__visual {
+  z-index: 1;
+}
+
+.quality-foundational-hero__image {
+  right: clamp(3rem, 7vw, 7.5rem);
+  bottom: -0.35rem;
+  width: clamp(17rem, 21vw, 22rem);
+  max-width: 28vw;
+}
+
+.hospitality-comparison .comparison__intro {
+  justify-items: center;
+  text-align: center;
+  width: min(100%, 66rem);
+  margin-inline: auto;
+}
+
+.hospitality-comparison .comparison__inner {
+  display: grid;
+  gap: clamp(1.65rem, 2.6vw, 2.2rem);
+}
+
+.hospitality-comparison .comparison__heading {
+  margin-bottom: 0;
+  text-align: center;
+  max-width: 58rem;
+}
+
+.hospitality-comparison__body {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns:
+    minmax(0, 22.75rem)
+    minmax(0, 22.75rem)
+    minmax(0, 16.5rem);
+  align-items: stretch;
+  justify-content: center;
+  gap: clamp(1.2rem, 1.8vw, 1.45rem) clamp(1.9rem, 3vw, 2.6rem);
+}
+
+.hospitality-comparison__column {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: clamp(1.15rem, 1.8vw, 1.45rem);
+  height: 100%;
+  padding-block: clamp(0.45rem, 0.9vw, 0.8rem);
+  min-width: 0;
+}
+
+.hospitality-comparison__item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  gap: 0.82rem;
+  min-width: 0;
+  width: 100%;
+  text-align: left;
+}
+
+.hospitality-comparison__balloon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.65rem;
+  height: 2.65rem;
+  flex: 0 0 2.65rem;
+  margin-top: 0.08rem;
+}
+
+.hospitality-comparison__balloon img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hospitality-comparison__copy {
+  display: grid;
+  gap: 0.24rem;
+  align-content: start;
+  min-width: 0;
+}
+
+.hospitality-comparison__item-text {
+  margin: 0;
+  color: var(--text);
+  font-size: clamp(1.12rem, 0.42vw + 1.04rem, 1.28rem);
+  font-weight: 900;
+  font-variation-settings: "wght" 900;
+  line-height: 1.12;
+  text-wrap: balance;
+}
+
+.hospitality-comparison__item-desc {
+  margin: 0;
+  color: rgba(17, 17, 17, 0.72);
+  font-size: clamp(0.98rem, 0.22vw + 0.94rem, 1.06rem);
+  line-height: 1.42;
+  text-wrap: pretty;
+}
+
+.hospitality-comparison__post {
+  width: min(100%, 16.5rem);
+}
+
+.hospitality-comparison__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  border-radius: 22px;
+}
+
+.hospitality-home-maxx {
+  margin-top: 0;
+  background: #fff;
+  color: var(--text);
+  border-radius: var(--section-radius) var(--section-radius) 0 0;
+  padding-block: clamp(2rem, 2.8vw, 2.5rem);
+}
+
+.hospitality-home-maxx .home-maxx__media {
+  align-self: start;
+  align-items: start;
+  justify-items: start;
+  min-height: 0;
+}
+
+.hospitality-home-maxx .home-maxx__copy {
+  align-self: start;
+  min-height: 0;
+  padding-inline-start: 0;
+}
+
+.hospitality-home-maxx .home-maxx__copy-grid {
+  grid-template-rows: none;
+  align-content: start;
+  gap: clamp(1.2rem, 1.6vw, 1.55rem);
+}
+
+.hospitality-home-maxx .home-maxx__feature-title::before {
+  content: none;
+}
+
+.hospitality-home-maxx__form-panel {
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
+}
+
+.hospitality-home-maxx__balloon {
+  justify-self: start;
+  align-self: start;
+  width: clamp(9rem, 12vw, 12.5rem);
+  max-width: 100%;
+  pointer-events: none;
+}
+
+.hospitality-home-maxx__balloon-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hospitality-home-maxx .home-maxx__feature:not(:last-of-type) {
+  border-bottom-color: rgba(17, 17, 17, 0.12);
+}
+
+.hospitality-home-maxx .home-maxx__feature-title,
+.hospitality-home-maxx .home-maxx__feature-copy,
+.hospitality-home-maxx .home-maxx__contact-copy {
+  color: var(--text);
+  max-width: none;
+}
+
+.hospitality-home-maxx__selling-points {
+  list-style: none;
+  display: grid;
+  gap: 0.55rem;
+  margin: 0;
+  padding: 0;
+}
+
+.hospitality-home-maxx__selling-point {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  gap: 0.65rem;
+  color: var(--text);
+  font-size: clamp(0.95rem, 0.16vw + 0.92rem, 1rem);
+  line-height: 1.45;
+}
+
+.hospitality-home-maxx__selling-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.22rem;
+  height: 1.22rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  flex: 0 0 1.22rem;
+  margin-top: 0.05rem;
+}
+
+.hospitality-home-maxx__selling-icon svg {
+  display: block;
+  width: 0.94rem;
+  height: 0.94rem;
+}
+
+.hospitality-home-maxx__selling-icon path {
+  stroke-width: 3.4;
+}
+
+.hospitality-home-maxx .home-maxx__feature-copy,
+.hospitality-home-maxx .home-maxx__contact-copy {
+  opacity: 1;
+}
+
+.hospitality-home-maxx .home-maxx__contact {
+  padding-top: clamp(0.6rem, 1vw, 0.9rem);
+}
+
+.hospitality-portfolio-gap {
+  height: clamp(2.25rem, 5vw, 4rem);
+  margin-bottom: calc(clamp(2.25rem, 5vw, 4rem) * -1);
+  z-index: 0;
+}
+
+.hospitality-portfolio {
+  width: 100vw;
+  max-width: none;
+  margin: 0 calc(50% - 50vw) !important;
+  padding: clamp(1.6rem, 3vw, 2.25rem) 0 clamp(2.2rem, 4vw, 3rem);
+  background: #000;
+  border-radius: var(--section-radius) var(--section-radius) 0 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.hospitality-portfolio__inner {
+  width: min(calc(100vw - 1rem), 84rem);
+  max-width: none;
+  margin-inline: auto;
+  display: grid;
+  gap: clamp(1.2rem, 2vw, 1.7rem);
+}
+
+.hospitality-portfolio__title {
+  margin: 0 auto clamp(1.15rem, 2vw, 1.5rem);
+  color: #fff;
+  font-family: var(--font);
+  font-size: clamp(1.95rem, 3.6vw, 3.1rem);
+  font-weight: 400;
+  line-height: 0.98;
+  text-align: center;
+  width: 100%;
+  max-width: none;
+}
+
+.hospitality-portfolio__title-accent {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--accent);
+  font-weight: 900;
+  font-variation-settings: "wght" 900;
+  text-wrap: balance;
+}
+
+.hospitality-portfolio__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 15rem));
+  justify-content: center;
+  gap: clamp(0.85rem, 1.25vw, 1.05rem);
+}
+
+.hospitality-portfolio__item {
+  display: grid;
+  gap: 0.8rem;
+  align-content: start;
+  width: min(100%, 15rem);
+}
+
+.hospitality-portfolio__card {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 1.35rem;
+  background: transparent;
+  isolation: isolate;
+}
+
+.hospitality-portfolio__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+.hospitality-portfolio__image--default {
+  object-fit: cover;
+  object-position: top center;
+}
+
+.hospitality-portfolio__image--hover {
+  position: absolute;
+  inset: 0;
+  padding: clamp(0.85rem, 1.4vw, 1rem);
+  background: transparent;
+  object-fit: contain;
+  object-position: center;
+  opacity: 0;
+  transform: scale(0.985);
+}
+
+.hospitality-portfolio__item:is(:hover, :focus-within)
+  .hospitality-portfolio__image--default {
+  opacity: 0;
+}
+
+.hospitality-portfolio__item:is(:hover, :focus-within)
+  .hospitality-portfolio__image--hover {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.hospitality-portfolio__label {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1.05rem, 1.15vw, 1.2rem);
+  font-weight: 900;
+  font-variation-settings: "wght" 900;
+  line-height: 1.05;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.hospitality-team {
+  margin-bottom: 0;
+  background: #000;
+  border-radius: 0;
+}
+
+.hospitality-team .team__inner {
+  width: min(100%, 80rem);
+  padding-inline: clamp(1rem, 2.4vw, 2rem);
+}
+
+.hospitality-team .team__header {
+  width: 100%;
+  max-width: none;
+  margin-inline: auto;
+}
+
+.hospitality-team .team__title {
+  width: 100%;
+  max-width: none;
+  margin-inline: auto;
+  color: #fff;
+}
+
+.hospitality-team .team__title-accent {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--accent);
+  font-style: normal;
+  font-weight: 900;
+  font-variation-settings: "wght" 900;
+}
+
+.hospitality-team .team__desc,
+.hospitality-team .team__member-name,
+.hospitality-team .team__member-desc,
+.hospitality-team .team__member-quote {
+  color: #fff;
+}
+
+.hospitality-team .team__desc {
+  opacity: 0.8;
+}
+
+.hospitality-team .team__member-desc {
+  opacity: 0.72;
+}
+
+.hospitality-team .team__member-quote {
+  opacity: 0.82;
+}
+
+.hospitality-team .team__member-info {
+  display: grid;
+  gap: 0.7rem;
+  justify-items: center;
+}
+
+.hospitality-team .team__member-quote {
+  margin-top: 0;
+}
+
+.hospitality-team .team__member-meta {
+  display: inline-grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 0.32rem;
+  justify-self: center;
+  text-align: left;
+}
+
+.hospitality-team .team__member-mark {
+  width: clamp(2.2rem, 2.9vw, 2.65rem);
+  height: clamp(2.2rem, 2.9vw, 2.65rem);
+  background: url("/assets/icons/graphic.png") center / contain no-repeat;
+}
+
+.hospitality-team .team__member-heading {
+  display: grid;
+  gap: 0.18rem;
+}
+
+.hospitality-faq .faq__inner {
+  width: min(var(--content-wide-width), 80rem);
+}
+
+main
+  section.hospitality-faq:not(.hero):not(.page-hero):not(.section-accent-tail) {
+  padding-bottom: 2rem !important;
+}
+
+.hospitality-post-faq {
+  width: 100vw;
+  max-width: none;
+  margin: 0 calc(50% - 50vw) !important;
+  padding: 0 0 var(--site-gap);
+  background: #fff;
+  position: relative;
+  z-index: 2;
+}
+
+main
+  section.hospitality-post-faq:not(.hero):not(.page-hero):not(.section-accent-tail) {
+  padding-top: 0 !important;
+  padding-bottom: var(--site-gap) !important;
+}
+
+.hospitality-post-faq__inner {
+  width: min(var(--content-wide-width), 80rem);
+  max-width: none;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 31rem));
+  justify-content: center;
+  gap: clamp(0.7rem, 1.2vw, 0.95rem);
+  align-items: stretch;
+}
+
+.hospitality-post-faq__form-col,
+.hospitality-post-faq__media {
+  display: grid;
+}
+
+.hospitality-post-faq__form {
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
+  height: 100%;
+}
+
+.hospitality-post-faq__media {
+  justify-items: stretch;
+}
+
+.hospitality-post-faq__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 22px;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.hospitality-faq-gap {
+  height: clamp(2.25rem, 5vw, 4rem);
+  margin-bottom: calc(clamp(2.25rem, 5vw, 4rem) * -1);
+  z-index: 0;
+}
+
+@media (min-width: 768px) and (max-width: 1366px) {
+  .hospitality-faq .faq__inner {
+    width: min(calc(100vw - clamp(4rem, 8vw, 8rem)), 80rem);
+  }
+
+  .hospitality-post-faq__inner {
+    width: min(calc(100vw - clamp(4rem, 8vw, 8rem)), 80rem);
+  }
+}
+
+.quality-foundational-footer {
+  --footer-accent-radius: var(--site-radius);
+}
+
+.quality-foundational-footer .site-footer__container {
+  grid-template-rows: auto;
+  gap: 0;
+  padding-bottom: 0;
+}
+
+.quality-foundational-footer .site-footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-inline: clamp(0.4rem, 1vw, 0.7rem);
+  padding-top: clamp(1rem, 2vw, 1.25rem);
+  padding-bottom: clamp(1rem, 2vw, 1.25rem);
+  border-top: 0;
+}
+
+.quality-foundational-footer .site-footer__bottom-brand {
+  flex: 0 0 auto;
+  width: auto;
+  margin: 0;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.quality-foundational-footer .home-footer__brand {
+  flex: 0 0 auto;
+  align-self: auto;
+}
+
+.quality-foundational-footer__cta {
+  min-width: 0;
+  width: auto;
+  min-height: 3.35rem;
+  padding: 0.8rem 1.2rem;
+  gap: 0.7rem;
+  font-size: 1rem;
+}
+
+.quality-foundational-footer__cta::after {
+  width: 1.55rem;
+  height: 1.55rem;
+  background-size:
+    0.9rem 0.9rem,
+    auto;
+}
+
+@media (min-width: 1025px) {
+  .hospitality-comparison__body {
+    grid-template-columns:
+      minmax(0, clamp(22rem, 23vw, 24.25rem))
+      minmax(0, clamp(22rem, 23vw, 24.25rem))
+      minmax(0, 16.5rem);
+    gap: clamp(1rem, 1.5vw, 1.2rem) clamp(1.5rem, 2vw, 2rem);
+  }
+
+  .hospitality-comparison__column {
+    gap: 0.95rem;
+    padding-block: 0;
+  }
+
+  .hospitality-comparison__item-text {
+    font-size: clamp(1.05rem, 0.34vw + 1rem, 1.2rem);
+    line-height: 1.08;
+  }
+
+  .hospitality-comparison__item-desc {
+    font-size: clamp(0.94rem, 0.16vw + 0.91rem, 1rem);
+    line-height: 1.34;
+  }
+
+  .hospitality-home-maxx .home-maxx__inner {
+    width: min(calc(100% - 4rem), 69rem);
+    grid-template-columns: minmax(0, 31.5rem) minmax(0, 34rem);
+    justify-content: center;
+    gap: clamp(2.5rem, 3.2vw, 3.25rem);
+    align-items: start;
+    min-height: 0;
+  }
+
+  .hospitality-home-maxx .home-maxx__media {
+    align-self: stretch;
+    min-height: 100%;
+  }
+
+  .quality-foundational-hero {
+    min-height: clamp(31rem, 38vw, 37rem);
+  }
+
+  body.quality-foundational-page
+    .website-services__hero.quality-foundational-hero
+    .page-hero__title {
+    width: min(100%, 70rem);
+    max-width: 70rem;
+    font-size: clamp(3rem, 4.85vw, 5rem);
+  }
+
+  .quality-foundational-hero .page-hero__content {
+    padding-right: clamp(2.5rem, 7vw, 7rem);
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1366px) {
+  .quality-foundational-hero .page-hero__title {
+    width: min(100%, 60rem);
+    max-width: 60rem;
+    font-size: clamp(3rem, 4.85vw, 5rem);
+  }
+
+  .quality-foundational-hero .page-hero__sub {
+    width: min(100%, 33rem);
+    max-width: 33rem;
+  }
+}
+
+@media (max-width: 767px) {
+  body.brisbane-smb-landing-page .website-services__hero .page-hero__content {
+    gap: clamp(2.45rem, 8vw, 2.95rem);
+  }
+
+  body.brisbane-smb-landing-page .website-services__hero .page-hero__title {
+    flex: 0 0 auto;
+  }
+
+  body.brisbane-smb-landing-page .brisbane-smb-landing-page__hero-lower {
+    width: min(100%, 27rem);
+    max-width: 27rem;
+    gap: 0;
+    justify-items: start;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  body.brisbane-smb-landing-page
+    :is(
+      .website-services__hero .page-hero__title,
+      .home-maxx--maxx-intro .brisbane-smb-landing-page__intro-title
+    ) {
+    width: min(100%, 27rem);
+    max-width: 27rem;
+    font-size: clamp(3.1rem, 11.9vw, 4.35rem);
+  }
+
+  body.brisbane-smb-landing-page .website-services__hero .page-hero__sub {
+    width: 100%;
+    max-width: 70%;
+    font-size: clamp(1.05rem, 1.1vw + 0.98rem, 1.32rem);
+    margin: 0 0 clamp(2.45rem, 8vw, 2.95rem);
+  }
+
+  body.brisbane-smb-landing-page .brisbane-smb-landing-page__maxx-pass-through-title {
+    max-width: 22ch;
+    font-size: clamp(1.85rem, 7vw, 2.55rem);
+  }
+
+  .quality-foundational-hero {
+    --website-services-mobile-cta-width: min(100%, 13.25rem);
+  }
+
+  .hospitality-comparison .comparison__heading {
+    max-width: 88%;
+  }
+
+  .quality-foundational-hero .page-hero__title {
+    width: 100%;
+    max-width: 100%;
+    font-size: clamp(2.45rem, 11.1vw, 3.7rem);
+  }
+
+  .quality-foundational-hero .page-hero__sub {
+    width: min(100%, 29rem);
+  }
+
+  .quality-foundational-hero .page-hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: var(--website-services-mobile-cta-width);
+    gap: 0.75rem;
+  }
+
+  body.brisbane-smb-landing-page .website-services__hero .page-hero__actions {
+    order: 3;
+    margin-top: 0;
+  }
+
+  body.brisbane-smb-landing-page .website-services__hero .page-hero__google-proof {
+    order: 2;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+  }
+
+  .quality-foundational-hero .page-hero__cta {
+    flex: 0 0 auto;
+    width: 100%;
+    min-height: 3rem;
+    padding: 0.72rem 1rem;
+    font-size: 0.94rem;
+  }
+
+  body.brisbane-smb-landing-page .website-services__hero-wrap {
+    height: auto;
+    min-height: calc(105vh + var(--hero-section-overlap));
+  }
+
+  body.brisbane-smb-landing-page .website-services__hero .page-hero__content {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  body.brisbane-smb-landing-page .brisbane-smb-landing-page__hero-scroll {
+    --brisbane-hero-scroll-x: 0;
+    --brisbane-hero-scroll-bottom-gap: 1rem;
+    left: clamp(1.2rem, 5vw, 2rem);
+  }
+
+  body.brisbane-smb-landing-page
+    .website-services__hero
+    .page-hero__content
+    > :is(.page-hero__title, .brisbane-smb-landing-page__hero-lower) {
+    align-self: flex-start !important;
+    margin-inline: 0 !important;
+  }
+
+  body.brisbane-smb-landing-page .website-services__hero .page-hero__title,
+  body.brisbane-smb-landing-page .home-maxx--maxx-intro .brisbane-smb-landing-page__intro-title {
+    margin-inline: 0;
+    text-align: left;
+  }
+
+  body.brisbane-smb-landing-page .website-services__hero .page-hero__title {
+    font-size: clamp(2.45rem, 9.8vw, 3.6rem);
+    width: 80%;
+    max-width: 80%;
+  }
+
+  body.brisbane-smb-landing-page .brisbane-smb-landing-page__hero-lower {
+    justify-items: start;
+  }
+
+  body.brisbane-smb-landing-page .website-services__hero .page-hero__sub,
+  body.brisbane-smb-landing-page .website-services__hero .page-hero__sub-text {
+    margin-inline: 0;
+    text-align: left;
+  }
+
+  body.brisbane-smb-landing-page .website-services__hero .page-hero__actions,
+  body.brisbane-smb-landing-page .website-services__hero .page-hero__google-proof {
+    justify-content: flex-start;
+    justify-self: start;
+    align-self: start;
+    margin-inline: 0 !important;
+  }
+
+  body.brisbane-smb-landing-page .website-services__hero .page-hero__cta--secondary {
+    width: auto;
+    align-self: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  body.brisbane-smb-landing-page .home-maxx--maxx-intro .home-maxx__copy {
+    margin-inline: auto;
+  }
+
+  body.brisbane-smb-landing-page .reviews__title,
+  body.brisbane-smb-landing-page .metro-rags-spotlight__title,
+  body.brisbane-smb-landing-page .web-design-copy__title,
+  body.brisbane-smb-landing-page .faq__title {
+    margin-inline: 0;
+    text-align: left;
+  }
+
+  body.brisbane-smb-landing-page .home-maxx--maxx-intro .home-maxx__feature-head,
+  body.brisbane-smb-landing-page .home-maxx--maxx-intro .home-maxx__feature-copy,
+  body.brisbane-smb-landing-page .home-maxx--maxx-intro .home-maxx__contact-copy {
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  body.brisbane-smb-landing-page .home-maxx--maxx-intro .home-maxx__contact,
+  body.brisbane-smb-landing-page .reviews :is(.reviews__inner, .reviews__shell) > .page-hero__google-proof {
+    justify-items: center;
+    justify-content: center;
+  }
+
+  body.brisbane-smb-landing-page .home-maxx--maxx-intro .brisbane-smb-landing-page__comparison-list {
+    width: min(100%, 44rem);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  body.brisbane-smb-landing-page .web-design-copy__title {
+    width: min(100%, 30rem);
+    max-width: 30rem;
+    font-size: clamp(2.2rem, 8.9vw, 3.2rem);
+    line-height: 0.98;
+  }
+
+  body.brisbane-smb-landing-page .brisbane-smb-landing-page__selling-points .web-design-copy__title {
+    width: 95%;
+    max-width: 95%;
+    padding-left: 2.2rem;
+    font-size: clamp(1.55rem, 5.9vw, 2.1rem);
+    line-height: 1.04;
+    letter-spacing: -0.06em;
+  }
+
+  body.brisbane-smb-landing-page .brisbane-smb-landing-page__selling-points .web-design-copy__title::before {
+    top: 0.12em;
+    width: 1.28rem;
+    height: 1.28rem;
+  }
+
+  body.brisbane-smb-landing-page .brisbane-smb-landing-page__selling-points-cta {
+    width: 80%;
+    max-width: 80%;
+    margin-inline: 0;
+    padding-left: 2.2rem;
+    gap: 0.85rem;
+    padding-top: 0.45rem;
+  }
+
+  body.brisbane-smb-landing-page .brisbane-smb-landing-page__selling-points .web-design-copy__inner {
+    grid-template-columns: 1fr;
+    row-gap: clamp(1rem, 4vw, 1.45rem);
+    padding-top: 0;
+  }
+
+  body.brisbane-smb-landing-page .brisbane-smb-landing-page__selling-points-media {
+    grid-column: 1;
+    grid-row: auto;
+    justify-self: start;
+    align-self: start;
+    width: min(calc(80% - 1.2rem), 23.5rem);
+    max-width: calc(100% - 2.2rem);
+    margin-left: 2.2rem;
+  }
+
+  body.brisbane-smb-landing-page
+    main
+    section.faq:not(.hero):not(.page-hero):not(.section-accent-tail) {
+    padding-top: clamp(1.75rem, 6vw, 2.3rem) !important;
+  }
+
+  body.brisbane-smb-landing-page .brisbane-smb-landing-page__selling-points-kicker {
+    font-size: clamp(1.15rem, 5.2vw, 1.7rem);
+    letter-spacing: -0.06em;
+  }
+
+  body.brisbane-smb-landing-page .brisbane-smb-landing-page__proof-strip-inner {
+    gap: 0.55rem;
+  }
+
+  body.brisbane-smb-landing-page .brisbane-smb-landing-page__proof-strip-title {
+    font-size: clamp(1.8rem, 7vw, 2.65rem);
+  }
+
+  body.brisbane-smb-landing-page .brisbane-smb-landing-page__proof-strip-kicker {
+    font-size: clamp(1.8rem, 7vw, 2.65rem);
+  }
+
+  body.brisbane-smb-landing-page .brisbane-smb-landing-page__proof-grid {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+
+  .hospitality-comparison__body {
+    width: min(100%, 25rem);
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .hospitality-comparison__column {
+    gap: 0.9rem;
+  }
+
+  .hospitality-comparison__post {
+    width: min(100%, 22.5rem);
+    height: auto;
+    margin-inline: auto;
+  }
+
+  .hospitality-comparison__image {
+    height: auto;
+  }
+
+  .hospitality-home-maxx__form-panel {
+    width: 100%;
+  }
+
+  .hospitality-portfolio-gap {
+    height: 1.5rem;
+    margin-bottom: -1.5rem;
+  }
+
+  .hospitality-portfolio {
+    padding-top: 1.1rem;
+    padding-bottom: 1.8rem;
+  }
+
+  .hospitality-portfolio__inner {
+    width: var(--site-width);
+    justify-items: center;
+  }
+
+  .hospitality-portfolio__title {
+    width: min(100%, 17.5rem);
+    max-width: 17.5rem;
+    margin-bottom: 1rem;
+    margin-inline: auto;
+    text-align: left;
+  }
+
+  .hospitality-portfolio__title-accent {
+    margin-top: 0.2rem;
+  }
+
+  .hospitality-portfolio__grid {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .hospitality-portfolio__item {
+    width: min(100%, 17.5rem);
+  }
+
+  .hospitality-team .team__inner {
+    padding-inline: 1rem;
+  }
+
+  .hospitality-post-faq__inner {
+    width: var(--site-width);
+    grid-template-columns: 1fr;
+  }
+
+  .hospitality-post-faq__form-col {
+    order: 2;
+  }
+
+  .hospitality-post-faq__media {
+    justify-items: stretch;
+    order: 1;
+  }
+
+  .hospitality-post-faq__image {
+    height: auto;
+  }
+
+  .hospitality-faq-gap {
+    height: 1.5rem;
+    margin-bottom: -1.5rem;
+  }
+
+  .quality-foundational-footer .site-footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .quality-foundational-footer__cta {
+    width: 100%;
+  }
+}
+
+@media (min-width: 744px) and (max-width: 1366px) {
+  .hospitality-comparison__body,
+  body.quality-foundational-page .hospitality-comparison__body {
+    width: min(100%, 68rem);
+    max-width: 100%;
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(0, 1fr)
+      minmax(0, clamp(12.5rem, 20vw, 16rem));
+    align-items: stretch;
+    justify-content: center;
+    gap: clamp(0.9rem, 1.6vw, 1.25rem);
+  }
+
+  .hospitality-comparison__column,
+  body.quality-foundational-page .hospitality-comparison__column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    padding-block: 0;
+  }
+
+  .hospitality-comparison__item,
+  body.quality-foundational-page .hospitality-comparison__item {
+    width: 100%;
+  }
+
+  .hospitality-comparison__item-text {
+    font-size: clamp(0.98rem, 0.28vw + 0.95rem, 1.12rem);
+    line-height: 1.08;
+  }
+
+  .hospitality-comparison__item-desc {
+    font-size: clamp(0.88rem, 0.14vw + 0.86rem, 0.98rem);
+    line-height: 1.36;
+  }
+
+  .hospitality-comparison__post,
+  body.quality-foundational-page .hospitality-comparison__post {
+    grid-column: auto;
+    grid-row: auto;
+    justify-self: center;
+    align-self: start;
+    width: min(100%, clamp(12.5rem, 20vw, 16rem));
+    max-width: clamp(12.5rem, 20vw, 16rem);
+    margin-inline: 0;
+  }
+
+  .hospitality-comparison__image,
+  body.quality-foundational-page .hospitality-comparison__image {
+    height: auto;
+  }
+}
+
+@media (max-width: 743px) {
+  body.quality-foundational-page .hospitality-comparison__body {
+    width: min(100%, 25rem);
+    grid-template-columns: 1fr;
+    align-items: stretch;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  body.quality-foundational-page .hospitality-comparison__column {
+    display: contents;
+  }
+
+  body.quality-foundational-page .hospitality-comparison__item {
+    width: 100%;
+  }
+
+  body.quality-foundational-page .hospitality-comparison__post {
+    grid-column: auto;
+    grid-row: auto;
+    justify-self: center;
+    align-self: start;
+    width: min(100%, 22.5rem);
+    max-width: 22.5rem;
+    margin-inline: auto;
+  }
+
+  body.quality-foundational-page .hospitality-comparison__image {
+    height: auto;
+  }
+}
+
+@media (min-width: 744px) and (max-width: 1024px) {
+  body.quality-foundational-page {
+    --hospitality-tablet-shell-width: var(--site-width);
+  }
+
+  .quality-foundational-hero {
+    min-height: clamp(33rem, 70vw, 39rem);
+    padding-top: clamp(2.75rem, 4.8vw, 3.35rem) !important;
+    padding-bottom: clamp(2.35rem, 4vw, 3rem) !important;
+  }
+
+  .quality-foundational-hero .page-hero__content {
+    width: var(--hospitality-tablet-shell-width);
+    padding-right: clamp(8rem, 18vw, 11.5rem);
+    gap: clamp(1.25rem, 1.8vw, 1.55rem);
+  }
+
+  .quality-foundational-hero .page-hero__title {
+    width: min(100%, 34rem);
+    max-width: 34rem;
+    font-size: clamp(3rem, 5.8vw, 4.15rem);
+    line-height: 0.94;
+  }
+
+  .quality-foundational-hero .page-hero__sub {
+    width: min(100%, 24rem);
+    max-width: 24rem;
+    font-size: clamp(1rem, 0.3vw + 0.96rem, 1.12rem);
+    line-height: 1.24;
+  }
+
+  .quality-foundational-hero .page-hero__actions {
+    flex-direction: row;
+    align-items: center;
+    width: auto;
+    gap: 0.8rem;
+  }
+
+  .quality-foundational-hero .page-hero__cta {
+    width: auto;
+    min-width: 12rem;
+  }
+
+  .quality-foundational-hero__visual {
+    display: block;
+  }
+
+  .quality-foundational-hero__image {
+    right: clamp(-1.4rem, -0.5vw, 0.4rem);
+    bottom: 0;
+    width: clamp(12rem, 23vw, 15.5rem);
+    max-width: 32vw;
+  }
+
+  .hospitality-comparison .comparison__inner {
+    width: var(--hospitality-tablet-shell-width);
+  }
+
+  .hospitality-comparison .comparison__heading {
+    max-width: 35rem;
+  }
+
+  .hospitality-comparison__body {
+    width: min(100%, 68rem);
+    max-width: 100%;
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(0, 1fr)
+      minmax(0, clamp(12.5rem, 20vw, 15rem));
+    align-items: stretch;
+    justify-content: center;
+    gap: clamp(0.9rem, 1.6vw, 1.15rem);
+  }
+
+  .hospitality-comparison__column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    padding-block: 0;
+  }
+
+  .hospitality-comparison__post {
+    grid-column: auto;
+    grid-row: auto;
+    justify-self: center;
+    align-self: start;
+    width: min(100%, clamp(12.5rem, 20vw, 15rem));
+    max-width: clamp(12.5rem, 20vw, 15rem);
+  }
+
+  .hospitality-home-maxx .home-maxx__inner {
+    width: var(--hospitality-tablet-shell-width);
+    grid-template-columns: minmax(0, 23.5rem) minmax(0, 1fr);
+    justify-content: center;
+    gap: 1rem;
+    align-items: start;
+    min-height: 0;
+  }
+
+  .hospitality-home-maxx .home-maxx__media {
+    grid-column: 1;
+    order: initial;
+    justify-self: stretch;
+    place-items: stretch;
+    min-height: 0;
+  }
+
+  .hospitality-home-maxx .home-maxx__copy {
+    grid-column: 2;
+    order: initial;
+    display: grid;
+    width: 100%;
+    max-width: none;
+    min-height: 0;
+  }
+
+  .hospitality-home-maxx .home-maxx__copy-grid {
+    gap: 1rem;
+  }
+
+  .hospitality-home-maxx__form-panel {
+    height: 100%;
+  }
+
+  .hospitality-home-maxx .home-maxx__feature-title {
+    font-size: clamp(1.45rem, 1.2vw + 1.1rem, 1.8rem);
+  }
+
+  .hospitality-home-maxx__selling-point {
+    gap: 0.55rem;
+    font-size: 0.94rem;
+    line-height: 1.4;
+  }
+
+  .hospitality-home-maxx__balloon {
+    justify-self: start;
+    align-self: start;
+    width: clamp(8.5rem, 14vw, 10rem);
+  }
+
+  .hospitality-portfolio__inner {
+    width: var(--hospitality-tablet-shell-width);
+  }
+
+  .hospitality-portfolio__grid {
+    grid-template-columns: repeat(2, minmax(0, 15rem));
+    justify-content: center;
+  }
+
+  .hospitality-portfolio__item:last-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: min(100%, 15rem);
+  }
+
+  .hospitality-team .team__inner,
+  .hospitality-faq .faq__inner,
+  .hospitality-post-faq__inner {
+    width: var(--hospitality-tablet-shell-width);
+  }
+
+  .hospitality-post-faq__inner {
+    grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
+    gap: 0.85rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  .hospitality-portfolio__title {
+    max-width: none;
+  }
+}

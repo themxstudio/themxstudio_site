@@ -1993,6 +1993,93 @@ if (header) {
 })();
 
 (() => {
+  const body = document.body;
+  const scrollCue = document.querySelector(
+    ".brisbane-smb-landing-page__hero-scroll",
+  );
+  const heroWrap = document.querySelector(".website-services__hero-wrap");
+  const primaryCta = document.querySelector(
+    ".website-services__hero .page-hero__cta--primary",
+  );
+  if (
+    !body?.classList.contains("brisbane-smb-landing-page") ||
+    !scrollCue
+  ) {
+    return;
+  }
+
+  const viewport = window.visualViewport;
+  let dismissed = false;
+
+  const syncViewportBottomOffset = () => {
+    const layoutHeight =
+      window.innerHeight || document.documentElement.clientHeight || 0;
+    const viewportHeight = viewport?.height || layoutHeight;
+    const viewportOffsetTop = viewport?.offsetTop || 0;
+    const bottomOffset = Math.max(
+      layoutHeight - viewportHeight - viewportOffsetTop,
+      0,
+    );
+
+    scrollCue.style.setProperty(
+      "--brisbane-hero-scroll-bottom-offset",
+      `${bottomOffset.toFixed(2)}px`,
+    );
+  };
+
+  const syncContentOverlapState = () => {
+    if (!heroWrap || !primaryCta) {
+      scrollCue.classList.remove("is-content-blocked");
+      return;
+    }
+
+    const heroRect = heroWrap.getBoundingClientRect();
+    const ctaRect = primaryCta.getBoundingClientRect();
+    const lowerQuarterStart = heroRect.top + heroRect.height * 0.75;
+    const isContentBlocked = ctaRect.bottom >= lowerQuarterStart;
+
+    scrollCue.classList.toggle("is-content-blocked", isContentBlocked);
+  };
+
+  const teardown = () => {
+    window.removeEventListener("scroll", syncState);
+    window.removeEventListener("resize", syncState);
+    window.removeEventListener("load", syncState);
+    viewport?.removeEventListener("resize", syncState);
+    viewport?.removeEventListener("scroll", syncState);
+  };
+
+  function dismiss() {
+    if (dismissed) return;
+    dismissed = true;
+    scrollCue.classList.add("is-dismissed");
+    teardown();
+  }
+
+  function syncState() {
+    if (dismissed) return;
+    if ((window.scrollY || window.pageYOffset || 0) > 0.5) {
+      dismiss();
+      return;
+    }
+    syncViewportBottomOffset();
+    syncContentOverlapState();
+  }
+
+  scrollCue.addEventListener("click", dismiss, { once: true });
+  window.addEventListener("scroll", syncState, { passive: true });
+  window.addEventListener("resize", syncState, { passive: true });
+  window.addEventListener("load", syncState, { once: true });
+  viewport?.addEventListener("resize", syncState);
+  viewport?.addEventListener("scroll", syncState);
+  document.fonts?.ready.then(() => {
+    syncState();
+  });
+
+  requestAnimationFrame(syncState);
+})();
+
+(() => {
   const titles = Array.from(document.querySelectorAll(".page-hero__title"));
   if (!titles.length) return;
   const ACCENT_START = "__PAGE_HERO_ACCENT_START__";
@@ -2021,7 +2108,8 @@ if (header) {
   const buildReveal = (titleEl) => {
     if (
       titleEl.dataset.pageHeroTitleEnhanced === "true" ||
-      titleEl.dataset.pageHeroTitleStatic === "true"
+      titleEl.dataset.pageHeroTitleStatic === "true" ||
+      titleEl.classList.contains("brisbane-smb-landing-page__intro-title")
     ) {
       return;
     }
@@ -2585,7 +2673,307 @@ const initCountGroup = ({
 })();
 
 (() => {
+  const numberFormatter = new Intl.NumberFormat("en-AU");
+  const revealTimers = new WeakMap();
+  const draggingInputs = new WeakSet();
+  const initializedInputs = new WeakSet();
+  const parseMilestones = (input) =>
+    (input.dataset.sliderMilestones || "")
+      .split(",")
+      .map((value) => Number.parseFloat(value))
+      .filter((value) => Number.isFinite(value));
+
+  const getMagnetizedValue = (input, value, min, max) => {
+    const milestones = parseMilestones(input);
+    if (!milestones.length) return value;
+
+    const range = Math.max(max - min, 1);
+    const snapThreshold = Math.max(range * 0.03, 220);
+    let nearest = value;
+    let nearestDistance = snapThreshold + 1;
+
+    milestones.forEach((milestone) => {
+      const distance = Math.abs(milestone - value);
+      if (distance < nearestDistance) {
+        nearest = milestone;
+        nearestDistance = distance;
+      }
+    });
+
+    return nearestDistance <= snapThreshold ? nearest : value;
+  };
+
+  const syncSlider = (input) => {
+    if (!(input instanceof HTMLInputElement)) return;
+
+    const min = Number.parseFloat(input.min || "0");
+    const max = Number.parseFloat(input.max || "100");
+    const rawValue = Number.parseFloat(input.value || "0");
+    const value = getMagnetizedValue(input, rawValue, min, max);
+    const safeMax = max > min ? max : min + 1;
+    const progress = ((value - min) / (safeMax - min)) * 100;
+    const sliderShell =
+      input.closest(".brisbane-smb-landing-page__slider-shell") ||
+      input.closest(".discovery-form__budget-shell");
+    const shell = input.closest("form");
+    const output = shell?.querySelector("[data-range-output]");
+    const submitFieldName = input.dataset.rangeSubmitTarget?.trim();
+    const submitField =
+      submitFieldName &&
+      shell?.querySelector(`[data-range-submit-value][name="${submitFieldName}"]`);
+
+    if (value !== rawValue) {
+      input.value = `${value}`;
+    }
+
+    sliderShell?.style.setProperty("--slider-progress", `${progress}%`);
+    input.setAttribute("aria-valuetext", numberFormatter.format(value));
+
+    if (output) {
+      output.textContent = `$${numberFormatter.format(value)}`;
+    }
+
+    if (submitField instanceof HTMLInputElement) {
+      submitField.value = `${Math.round(value)}`;
+    }
+
+    input.setCustomValidity(value <= min ? "Please select a budget." : "");
+
+    sliderShell
+      ?.querySelectorAll(
+        ".brisbane-smb-landing-page__slider-milestone, .discovery-form__budget-milestone",
+      )
+      .forEach((mark, index) => {
+        const milestoneValue = parseMilestones(input)[index];
+        mark.classList.toggle(
+          "is-active",
+          Number.isFinite(milestoneValue) && value >= milestoneValue,
+        );
+      });
+  };
+
+  const showReveal = (input) => {
+    const shell = input.closest("form");
+    const reveal = shell?.querySelector("[data-slider-reveal]");
+    const min = Number.parseFloat(input.min || "0");
+    const value = Number.parseFloat(input.value || "0");
+    if (!reveal) return;
+    if (value <= min) return;
+
+    const pendingTimer = revealTimers.get(reveal);
+    if (pendingTimer) {
+      window.clearTimeout(pendingTimer);
+      revealTimers.delete(reveal);
+    }
+
+    if (reveal.classList.contains("is-visible")) {
+      reveal.classList.add("is-visible");
+      reveal.setAttribute("aria-hidden", "false");
+      return;
+    }
+
+    window.requestAnimationFrame(() => {
+      reveal.classList.add("is-visible");
+      reveal.setAttribute("aria-hidden", "false");
+    });
+  };
+
+  const hideReveal = (input) => {
+    const shell = input.closest("form");
+    const reveal = shell?.querySelector("[data-slider-reveal]");
+    if (!reveal) return;
+
+    const pendingTimer = revealTimers.get(reveal);
+    if (pendingTimer) {
+      window.clearTimeout(pendingTimer);
+    }
+
+    reveal.classList.remove("is-visible");
+    reveal.setAttribute("aria-hidden", "true");
+    const timer = window.setTimeout(() => {
+      revealTimers.delete(reveal);
+    }, 320);
+    revealTimers.set(reveal, timer);
+  };
+
+  const bindSliderInput = (input) => {
+    if (!(input instanceof HTMLInputElement)) return;
+    if (initializedInputs.has(input)) {
+      syncSlider(input);
+      return;
+    }
+
+    initializedInputs.add(input);
+
+    syncSlider(input);
+
+    const revealOnRelease = () => {
+      draggingInputs.delete(input);
+      syncSlider(input);
+      showReveal(input);
+    };
+
+    input.addEventListener("input", () => {
+      syncSlider(input);
+    });
+
+    input.addEventListener("pointerdown", () => {
+      draggingInputs.add(input);
+    });
+
+    input.addEventListener("mousedown", () => {
+      draggingInputs.add(input);
+    });
+
+    input.addEventListener("touchstart", () => {
+      draggingInputs.add(input);
+    });
+
+    input.addEventListener("pointerup", revealOnRelease);
+    input.addEventListener("mouseup", revealOnRelease);
+    input.addEventListener("touchend", revealOnRelease);
+
+    input.addEventListener("keyup", (event) => {
+      if (
+        event.key === "ArrowLeft" ||
+        event.key === "ArrowRight" ||
+        event.key === "ArrowUp" ||
+        event.key === "ArrowDown" ||
+        event.key === "Home" ||
+        event.key === "End" ||
+        event.key === "PageUp" ||
+        event.key === "PageDown"
+      ) {
+        revealOnRelease();
+      }
+    });
+
+    input.addEventListener("change", () => {
+      if (!draggingInputs.has(input)) {
+        revealOnRelease();
+      }
+    });
+
+    input.form?.addEventListener("reset", () => {
+      draggingInputs.delete(input);
+      hideReveal(input);
+      window.requestAnimationFrame(() => syncSlider(input));
+    });
+  };
+
+  const initDiscoveredSliders = (scope = document) => {
+    scope
+      .querySelectorAll(
+        ".brisbane-smb-landing-page__slider-input, .discovery-form__budget-input",
+      )
+      .forEach((input) => {
+        bindSliderInput(input);
+      });
+  };
+
+  window.mxStudioInitBudgetSliders = initDiscoveredSliders;
+
+  initDiscoveredSliders();
+})();
+
+(() => {
   const UNIVERSAL_FORM_SUCCESS_URL = "/thank-you/";
+
+  const enhanceStandardDiscoveryForms = () => {
+    const buildBudgetSlider = () => {
+      const sliderId = `discovery-budget-${Math.random().toString(36).slice(2, 10)}`;
+      const headingId = `${sliderId}-title`;
+      const outputId = `${sliderId}-output`;
+      const wrapper = document.createElement("div");
+      wrapper.className = "discovery-form__budget";
+      wrapper.innerHTML = `
+        <input type="hidden" name="budget" value="0" data-range-submit-value>
+        <div class="discovery-form__budget-heading-row">
+          <div class="discovery-form__budget-heading">What's your budget?</div>
+          <output
+            class="discovery-form__budget-output"
+            id="${outputId}"
+            for="${sliderId}"
+            data-range-output
+          >$0</output>
+        </div>
+        <div class="discovery-form__budget-row">
+          <label class="visually-hidden" id="${headingId}" for="${sliderId}">
+            Your budget
+          </label>
+          <div class="discovery-form__budget-shell">
+            <input
+              class="discovery-form__budget-input"
+              id="${sliderId}"
+              type="range"
+              min="0"
+              max="7000"
+              step="50"
+              value="0"
+              data-slider-milestones="1750,3500,5500"
+              data-range-submit-target="budget"
+              aria-labelledby="${headingId}"
+              aria-describedby="${outputId}"
+            />
+            <div class="discovery-form__budget-milestones" aria-hidden="true">
+              <span class="discovery-form__budget-milestone" style="--slider-stop: 0.25"></span>
+              <span class="discovery-form__budget-milestone" style="--slider-stop: 0.5"></span>
+              <span class="discovery-form__budget-milestone" style="--slider-stop: 0.785714"></span>
+            </div>
+          </div>
+        </div>
+      `;
+      return wrapper;
+    };
+
+    document.querySelectorAll(".discovery-form").forEach((form) => {
+      const formTitle = form
+        .closest(".form-modal__panel, .contact-forms__card, .blog-inline-form, .contact-inline-form")
+        ?.querySelector(".form-modal__title, .contact-forms__card-title");
+      if (formTitle) {
+        formTitle.innerHTML = "Book A Free<br>Discovery Call";
+      }
+
+      const formDesc = form
+        .closest(".form-modal__panel, .contact-forms__card, .blog-inline-form, .contact-inline-form")
+        ?.querySelector(".form-modal__desc span, .form-modal__desc");
+      if (formDesc) {
+        formDesc.textContent = "Pop in a few details and we'll email you back ASAP.";
+      }
+
+      const submitButton = form.querySelector(".discovery-form__submit");
+      if (submitButton) {
+        submitButton.textContent = "Book My Call";
+      }
+
+      if (form.dataset.standardBudgetEnhanced === "true") return;
+      if (form.classList.contains("brisbane-smb-landing-page__slider-form")) return;
+      if (form.querySelector(".brisbane-smb-landing-page__modal-slider")) return;
+      if (form.querySelector(".brisbane-smb-landing-page__slider-input")) return;
+      if (document.body?.classList.contains("apply-page")) return;
+
+      form.dataset.standardBudgetEnhanced = "true";
+
+      const projectField = form.querySelector('textarea[name="project"]');
+      if (projectField) {
+        projectField.placeholder = "Tell us a little about your project";
+      }
+
+      form.querySelector('textarea[name="availability"]')?.remove();
+      form.querySelector('input[data-range-submit-value][name="budget"]')?.remove();
+      form.querySelector(".discovery-form__budget")?.remove();
+
+      const firstField = form.querySelector(
+        'input:not([type="hidden"]):not([name="bot-field"]), textarea, select',
+      );
+
+      if (firstField) {
+        const slider = buildBudgetSlider();
+        firstField.insertAdjacentElement("beforebegin", slider);
+        window.mxStudioInitBudgetSliders?.(form);
+      }
+    });
+  };
 
   const syncModalScrollLock = () => {
     document.documentElement.style.overflow = document.querySelector(
@@ -2609,20 +2997,25 @@ const initCountGroup = ({
     }
   }
 
+  enhanceStandardDiscoveryForms();
+
   const bindAsyncForm = ({ form, thanks, heading = null }) => {
     if (!form) return;
     if (form.dataset.asyncFormBound === "true") return;
     form.dataset.asyncFormBound = "true";
 
+    const configuredAction = form.getAttribute("action")?.trim() || "";
     const successUrl =
-      form.dataset.successUrl?.trim() || UNIVERSAL_FORM_SUCCESS_URL;
+      form.dataset.successUrl?.trim() ||
+      configuredAction ||
+      UNIVERSAL_FORM_SUCCESS_URL;
     const submitUrl = form.dataset.submitUrl?.trim() || "/";
+    const nativeSubmitUrl = submitUrl || configuredAction || "/";
     const usesMultipartSubmission =
       form.enctype === "multipart/form-data" ||
       Boolean(form.querySelector('input[type="file"]'));
 
     form.dataset.successUrl = successUrl;
-    form.setAttribute("action", successUrl);
 
     if (
       usesMultipartSubmission ||
@@ -2639,6 +3032,9 @@ const initCountGroup = ({
 
       const submitNatively = () => {
         try {
+          if (nativeSubmitUrl) {
+            form.setAttribute("action", nativeSubmitUrl);
+          }
           HTMLFormElement.prototype.submit.call(form);
         } catch (nativeError) {
           console.error(nativeError);

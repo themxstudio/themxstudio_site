@@ -1259,13 +1259,19 @@ body.home-page .hero + .services {
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background: radial-gradient(
-    ellipse 115% 165% at 110% -5%,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(255, 255, 255, 0.78) 22%,
-    rgba(255, 255, 255, 0.35) 48%,
-    transparent 67%
-  );
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.9) 0%,
+      rgba(0, 0, 0, 0.8) 36%,
+      rgba(0, 0, 0, 0.56) 64%,
+      rgba(0, 0, 0, 0.32) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.18) 0%,
+      rgba(0, 0, 0, 0.54) 100%
+    );
 }
 
 .hero__bg-image {
@@ -1563,7 +1569,7 @@ body.home-page .hero + .services {
   transform: translateY(calc(var(--button-translate) * -1));
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 819px) {
   .hero {
     --hero-cta-width: clamp(11.5rem, 22vw, 13rem);
     height: auto;
@@ -1652,7 +1658,7 @@ body.home-page .hero + .services {
   }
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 820px) {
   .hero {
     height: auto;
     min-height: 100vh;
@@ -1871,7 +1877,7 @@ body.home-page .hero__sub-text {
   display: inline;
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 820px) {
   body.home-page .hero__meta {
     grid-row: 3;
     height: auto;
@@ -1894,7 +1900,7 @@ body.home-page .hero__sub-text {
   }
 }
 
-@media (min-width: 1024px) and (max-width: 1366px) {
+@media (min-width: 820px) and (max-width: 1366px) {
   .hero {
     --hero-cta-width: clamp(10.75rem, 15vw, 11.85rem);
     --hero-cta-gap: 0.72rem;
@@ -1922,14 +1928,19 @@ body.home-page .hero {
 
 body.home-page .hero::after {
   display: block !important;
-  background: radial-gradient(
-    ellipse 95% 135% at 100% 0%,
-    #fff 0%,
-    rgba(255, 255, 255, 0.78) 16%,
-    rgba(255, 255, 255, 0.34) 36%,
-    rgba(255, 255, 255, 0.08) 56%,
-    transparent 74%
-  ) !important;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.9) 0%,
+      rgba(0, 0, 0, 0.8) 36%,
+      rgba(0, 0, 0, 0.56) 64%,
+      rgba(0, 0, 0, 0.32) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.18) 0%,
+      rgba(0, 0, 0, 0.54) 100%
+    ) !important;
 }
 
 body.home-page .hero__bg-image {
@@ -1946,7 +1957,17 @@ body.home-page .hero__bg-image {
   transform-origin: center;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 819px) {
+  body.home-page .hero::after {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.72) 0%,
+        rgba(0, 0, 0, 0.64) 44%,
+        rgba(0, 0, 0, 0.8) 100%
+      ) !important;
+  }
+
   body.home-page .hero__bg-image {
     inset: 0;
     top: auto;
