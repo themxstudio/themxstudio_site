@@ -1262,15 +1262,15 @@ body.home-page .hero + .services {
   background:
     linear-gradient(
       90deg,
-      rgba(0, 0, 0, 0.9) 0%,
-      rgba(0, 0, 0, 0.8) 36%,
-      rgba(0, 0, 0, 0.56) 64%,
-      rgba(0, 0, 0, 0.32) 100%
+      rgba(0, 0, 0, 0.88) 0%,
+      rgba(0, 0, 0, 0.78) 38%,
+      rgba(0, 0, 0, 0.52) 64%,
+      rgba(0, 0, 0, 0.24) 100%
     ),
     linear-gradient(
       180deg,
-      rgba(0, 0, 0, 0.18) 0%,
-      rgba(0, 0, 0, 0.54) 100%
+      rgba(0, 0, 0, 0.16) 0%,
+      rgba(0, 0, 0, 0.52) 100%
     );
 }
 
@@ -1754,10 +1754,6 @@ body.home-page .hero + .services {
     align-self: flex-start;
   }
 
-  .hero__headshot {
-    display: block;
-  }
-
   .hero .page-hero__google-proof {
     width: fit-content;
     margin-top: 0;
@@ -1931,15 +1927,15 @@ body.home-page .hero::after {
   background:
     linear-gradient(
       90deg,
-      rgba(0, 0, 0, 0.9) 0%,
-      rgba(0, 0, 0, 0.8) 36%,
-      rgba(0, 0, 0, 0.56) 64%,
-      rgba(0, 0, 0, 0.32) 100%
+      rgba(0, 0, 0, 0.88) 0%,
+      rgba(0, 0, 0, 0.78) 38%,
+      rgba(0, 0, 0, 0.52) 64%,
+      rgba(0, 0, 0, 0.24) 100%
     ),
     linear-gradient(
       180deg,
-      rgba(0, 0, 0, 0.18) 0%,
-      rgba(0, 0, 0, 0.54) 100%
+      rgba(0, 0, 0, 0.16) 0%,
+      rgba(0, 0, 0, 0.52) 100%
     ) !important;
 }
 
@@ -1962,9 +1958,9 @@ body.home-page .hero__bg-image {
     background:
       linear-gradient(
         180deg,
-        rgba(0, 0, 0, 0.72) 0%,
-        rgba(0, 0, 0, 0.64) 44%,
-        rgba(0, 0, 0, 0.8) 100%
+        rgba(0, 0, 0, 0.74) 0%,
+        rgba(0, 0, 0, 0.66) 44%,
+        rgba(0, 0, 0, 0.82) 100%
       ) !important;
   }
 
