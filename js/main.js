@@ -2737,7 +2737,7 @@ const initCountGroup = ({
       submitField.value = `${Math.round(value)}`;
     }
 
-    input.setCustomValidity(value <= min ? "Please select a budget." : "");
+    input.setCustomValidity("");
 
     sliderShell
       ?.querySelectorAll(

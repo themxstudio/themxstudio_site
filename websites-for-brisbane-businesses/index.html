@@ -745,6 +745,12 @@
                 name="form-name"
                 value="brisbane-slider-number"
               />
+              <input
+                type="hidden"
+                name="budget"
+                value="0"
+                data-range-submit-value
+              />
               <p style="display: none">
                 <label>Don't fill this out <input name="bot-field" /></label>
               </p>
@@ -767,12 +773,12 @@
                     class="brisbane-smb-landing-page__slider-input"
                     id="brisbane-slider-input"
                     type="range"
-                    name="number"
                     min="0"
                     max="7000"
                     step="50"
                     value="0"
                     data-slider-milestones="1750,3500,5500"
+                    data-range-submit-target="budget"
                     aria-labelledby="brisbane-slider-form-title"
                     aria-describedby="brisbane-slider-output"
                   />
@@ -809,9 +815,9 @@
               </div>
 
               <div
-                class="brisbane-smb-landing-page__slider-reveal"
+                class="brisbane-smb-landing-page__slider-reveal is-visible"
                 data-slider-reveal
-                aria-hidden="true"
+                aria-hidden="false"
               >
                 <div class="brisbane-smb-landing-page__slider-field-grid">
                   <label class="visually-hidden" for="brisbane-slider-name">
@@ -847,8 +853,8 @@
                     class="brisbane-smb-landing-page__slider-field"
                     id="brisbane-slider-company"
                     type="text"
-                    name="company"
-                    placeholder="Company name"
+                    name="business"
+                    placeholder="Business / company name"
                     autocomplete="organization"
                     required
                   />
@@ -859,9 +865,10 @@
                   <textarea
                     class="brisbane-smb-landing-page__slider-field brisbane-smb-landing-page__slider-field--message"
                     id="brisbane-slider-message"
-                    name="message"
-                    placeholder="Short message"
+                    name="project"
+                    placeholder="Tell us a little about your project"
                     rows="1"
+                    required
                   ></textarea>
 
                   <button
