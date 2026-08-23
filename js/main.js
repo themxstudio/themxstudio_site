@@ -2878,6 +2878,15 @@ const initCountGroup = ({
 
 (() => {
   const UNIVERSAL_FORM_SUCCESS_URL = "/thank-you/";
+  const FORM_NAMES = {
+    apply: "apply",
+    discovery: "discovery-call",
+    landingSlider: "brisbane-slider-number",
+  };
+  const getFormName = (form) =>
+    form.querySelector('input[name="form-name"]')?.value?.trim() ||
+    form.getAttribute("name")?.trim() ||
+    "";
 
   const enhanceStandardDiscoveryForms = () => {
     const buildBudgetSlider = () => {
@@ -2927,6 +2936,8 @@ const initCountGroup = ({
     };
 
     document.querySelectorAll(".discovery-form").forEach((form) => {
+      if (getFormName(form) !== FORM_NAMES.discovery) return;
+
       const formTitle = form
         .closest(".form-modal__panel, .contact-forms__card, .blog-inline-form, .contact-inline-form")
         ?.querySelector(".form-modal__title, .contact-forms__card-title");
@@ -2947,10 +2958,6 @@ const initCountGroup = ({
       }
 
       if (form.dataset.standardBudgetEnhanced === "true") return;
-      if (form.classList.contains("brisbane-smb-landing-page__slider-form")) return;
-      if (form.querySelector(".brisbane-smb-landing-page__modal-slider")) return;
-      if (form.querySelector(".brisbane-smb-landing-page__slider-input")) return;
-      if (document.body?.classList.contains("apply-page")) return;
 
       form.dataset.standardBudgetEnhanced = "true";
 
@@ -2962,6 +2969,7 @@ const initCountGroup = ({
       form.querySelector('textarea[name="availability"]')?.remove();
       form.querySelector('input[data-range-submit-value][name="budget"]')?.remove();
       form.querySelector(".discovery-form__budget")?.remove();
+      form.querySelector(".brisbane-smb-landing-page__modal-slider")?.remove();
 
       const firstField = form.querySelector(
         'input:not([type="hidden"]):not([name="bot-field"]), textarea, select',
