@@ -2739,15 +2739,23 @@ const initCountGroup = ({
 
     input.setCustomValidity("");
 
+    const milestoneValues = parseMilestones(input);
+
     sliderShell
       ?.querySelectorAll(
         ".brisbane-smb-landing-page__slider-milestone, .discovery-form__budget-milestone",
       )
       .forEach((mark, index) => {
-        const milestoneValue = parseMilestones(input)[index];
+        const visualStop = Number.parseFloat(
+          mark.style.getPropertyValue("--slider-stop") || "",
+        );
+        const milestoneValue = milestoneValues[index];
+        const activationValue = Number.isFinite(visualStop)
+          ? min + (safeMax - min) * visualStop
+          : milestoneValue;
         mark.classList.toggle(
           "is-active",
-          Number.isFinite(milestoneValue) && value >= milestoneValue,
+          Number.isFinite(activationValue) && value >= activationValue,
         );
       });
   };
@@ -2755,10 +2763,7 @@ const initCountGroup = ({
   const showReveal = (input) => {
     const shell = input.closest("form");
     const reveal = shell?.querySelector("[data-slider-reveal]");
-    const min = Number.parseFloat(input.min || "0");
-    const value = Number.parseFloat(input.value || "0");
     if (!reveal) return;
-    if (value <= min) return;
 
     const pendingTimer = revealTimers.get(reveal);
     if (pendingTimer) {
@@ -2896,7 +2901,7 @@ const initCountGroup = ({
       const wrapper = document.createElement("div");
       wrapper.className = "discovery-form__budget";
       wrapper.innerHTML = `
-        <input type="hidden" name="budget" value="0" data-range-submit-value>
+        <input type="hidden" name="budget" value="1000" data-range-submit-value>
         <div class="discovery-form__budget-heading-row">
           <div class="discovery-form__budget-heading">What's your budget?</div>
           <output
@@ -2904,7 +2909,7 @@ const initCountGroup = ({
             id="${outputId}"
             for="${sliderId}"
             data-range-output
-          >$0</output>
+          >$1,000</output>
         </div>
         <div class="discovery-form__budget-row">
           <label class="visually-hidden" id="${headingId}" for="${sliderId}">
@@ -2915,10 +2920,10 @@ const initCountGroup = ({
               class="discovery-form__budget-input"
               id="${sliderId}"
               type="range"
-              min="0"
+              min="1000"
               max="7000"
               step="50"
-              value="0"
+              value="1000"
               data-slider-milestones="1750,3500,5500"
               data-range-submit-target="budget"
               aria-labelledby="${headingId}"
@@ -2927,7 +2932,7 @@ const initCountGroup = ({
             <div class="discovery-form__budget-milestones" aria-hidden="true">
               <span class="discovery-form__budget-milestone" style="--slider-stop: 0.25"></span>
               <span class="discovery-form__budget-milestone" style="--slider-stop: 0.5"></span>
-              <span class="discovery-form__budget-milestone" style="--slider-stop: 0.785714"></span>
+              <span class="discovery-form__budget-milestone" style="--slider-stop: 0.75"></span>
             </div>
           </div>
         </div>
