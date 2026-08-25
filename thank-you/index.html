@@ -172,20 +172,39 @@
           return;
         }
 
-        if (hostname !== "scheduler.zoom.us" && !hostname.endsWith(".zoom.us")) {
+        if (
+          hostname !== "scheduler.zoom.us" &&
+          !hostname.endsWith(".zoom.us") &&
+          hostname !== "www.recaptcha.net"
+        ) {
           return;
         }
 
-        var data = event.data || {};
-        var type = data.type || "";
-        var payload = data.payload || {};
+        var data = event.data;
+        if (!data || typeof data !== "object") return;
 
-        if (type === "bookingForm") {
-          window.dataLayer = window.dataLayer || [];
-          window.dataLayer.push({
-            event: "zoom_scheduler_booked",
-            scheduledEventId: payload.scheduledEventId || "",
-            attendeeId: payload.attendeeId || "",
+        var appointmentId = data.appointmentId || data.scheduledEventId || "";
+        var attendees = Array.isArray(data.attendees) ? data.attendees : [];
+        var firstAttendee = attendees[0] || {};
+        var attendeeId =
+          data.attendeeId || firstAttendee.id || firstAttendee.email || "";
+
+        if (!appointmentId) return;
+        if (window.__zoomBookingConversionSent) return;
+        window.__zoomBookingConversionSent = true;
+
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: "zoom_scheduler_booked",
+          scheduledEventId: appointmentId,
+          attendeeId: attendeeId,
+        });
+
+        if (typeof gtag === "function") {
+          gtag("event", "conversion", {
+            send_to: "AW-18039650926/NvN5CKnG0uccEO70_JID",
+            value: 200,
+            currency: "AUD",
           });
         }
       });
