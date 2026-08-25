@@ -162,6 +162,34 @@
       </section>
     </main>
 
+    <script>
+      window.addEventListener("message", function (event) {
+        var hostname = "";
+
+        try {
+          hostname = new URL(event.origin).hostname;
+        } catch (error) {
+          return;
+        }
+
+        if (hostname !== "scheduler.zoom.us" && !hostname.endsWith(".zoom.us")) {
+          return;
+        }
+
+        var data = event.data || {};
+        var type = data.type || "";
+        var payload = data.payload || {};
+
+        if (type === "bookingForm") {
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: "zoom_scheduler_booked",
+            scheduledEventId: payload.scheduledEventId || "",
+            attendeeId: payload.attendeeId || "",
+          });
+        }
+      });
+    </script>
     <script src="/js/main.js?v=20260823b" defer></script>
   </body>
 </html>
