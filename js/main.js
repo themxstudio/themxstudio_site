@@ -1,6 +1,65 @@
 const dropdowns = Array.from(document.querySelectorAll(".nav__item--dropdown"));
 
 (() => {
+  const body = document.body;
+  if (!body?.classList.contains("thank-you-page")) return;
+
+  const layer = document.createElement("div");
+  layer.className = "thank-you-page__celebration";
+  layer.setAttribute("aria-hidden", "true");
+
+  const totalPieces = Math.min(72, Math.max(42, Math.round(window.innerWidth / 22)));
+
+  for (let index = 0; index < totalPieces; index += 1) {
+    const piece = document.createElement("span");
+    const driftX = `${(Math.random() - 0.5) * 30}vw`;
+    const duration = 1400 + Math.random() * 1000;
+    const delay = Math.random() * 180;
+    const scale = (1 + Math.random() * 1.1).toFixed(2);
+    const rotate = `${-320 + Math.random() * 640}deg`;
+
+    piece.className = "thank-you-page__celebration-piece";
+    piece.textContent = "🎉";
+    piece.style.left = `${Math.random() * 100}vw`;
+    piece.style.animationDelay = `${delay}ms`;
+    piece.style.setProperty("--party-x", driftX);
+    piece.style.setProperty("--party-duration", `${duration}ms`);
+    piece.style.setProperty("--party-scale", scale);
+    piece.style.setProperty("--party-rotate", rotate);
+    layer.appendChild(piece);
+  }
+
+  document.body.appendChild(layer);
+
+  window.setTimeout(() => {
+    layer.remove();
+  }, 3200);
+})();
+
+(() => {
+  const body = document.body;
+  if (!body?.classList.contains("thank-you-page")) return;
+
+  const arrow = document.querySelector("[data-thank-you-scroll]");
+  const target = document.querySelector("#thank-you-scheduler");
+  if (!arrow || !target) return;
+
+  const sync = () => {
+    const shouldDismiss = (window.scrollY || window.pageYOffset || 0) > 24;
+    arrow.classList.toggle("is-dismissed", shouldDismiss);
+  };
+
+  arrow.addEventListener("click", (event) => {
+    event.preventDefault();
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+
+  sync();
+  window.addEventListener("scroll", sync, { passive: true });
+  window.addEventListener("resize", sync, { passive: true });
+})();
+
+(() => {
   const root = document.documentElement;
   if (!root) return;
 
@@ -2677,14 +2736,85 @@ const initCountGroup = ({
   const revealTimers = new WeakMap();
   const draggingInputs = new WeakSet();
   const initializedInputs = new WeakSet();
-  const parseMilestones = (input) =>
+  const sharedBudgetSliderMilestones = "1750,3500,5500";
+  const parseMilestoneLabels = (input) =>
     (input.dataset.sliderMilestones || "")
       .split(",")
+      .map((value) => value.trim())
+      .filter((value) => value.length);
+  const parseMilestones = (input) =>
+    parseMilestoneLabels(input)
       .map((value) => Number.parseFloat(value))
       .filter((value) => Number.isFinite(value));
+  const getSliderShell = (input) =>
+    input.closest(".brisbane-smb-landing-page__slider-shell") ||
+    input.closest(".discovery-form__budget-shell");
+  const getMilestoneMarks = (input) =>
+    Array.from(
+      getSliderShell(input)?.querySelectorAll(
+        ".brisbane-smb-landing-page__slider-milestone, .discovery-form__budget-milestone",
+      ) || [],
+    );
+  const getMilestoneRawPositions = (input, min, max) => {
+    const safeMax = max > min ? max : min + 1;
+
+    return getMilestoneMarks(input)
+      .map((mark) => Number.parseFloat(mark.style.getPropertyValue("--slider-stop") || ""))
+      .filter((stop) => Number.isFinite(stop))
+      .map((stop) => min + (safeMax - min) * stop);
+  };
+  const getDisplayedValueStep = (input) => {
+    const step = Number.parseFloat(input.step || "50");
+    return Number.isFinite(step) && step > 0 ? step : 50;
+  };
+  const roundDisplayedValue = (value, step) => {
+    if (!Number.isFinite(value)) return value;
+    if (!Number.isFinite(step) || step <= 0) return Math.round(value);
+    return Math.round(value / step) * step;
+  };
+  const getDisplayedSliderValue = (input, rawValue, min, max) => {
+    const milestonePositions = getMilestoneRawPositions(input, min, max);
+    const milestoneValues = parseMilestones(input);
+    const rawAnchors = [min];
+    const displayAnchors = [min];
+    const anchorCount = Math.min(milestonePositions.length, milestoneValues.length);
+
+    for (let index = 0; index < anchorCount; index += 1) {
+      const rawAnchor = milestonePositions[index];
+      const displayAnchor = milestoneValues[index];
+      if (!Number.isFinite(rawAnchor) || !Number.isFinite(displayAnchor)) continue;
+      rawAnchors.push(rawAnchor);
+      displayAnchors.push(displayAnchor);
+    }
+
+    rawAnchors.push(max);
+    displayAnchors.push(max);
+
+    const step = getDisplayedValueStep(input);
+
+    for (let index = 0; index < rawAnchors.length - 1; index += 1) {
+      const rawStart = rawAnchors[index];
+      const rawEnd = rawAnchors[index + 1];
+      const displayStart = displayAnchors[index];
+      const displayEnd = displayAnchors[index + 1];
+      const isLastSegment = index === rawAnchors.length - 2;
+
+      if (rawValue > rawEnd && !isLastSegment) continue;
+
+      const segmentRange = rawEnd - rawStart;
+      const ratio =
+        segmentRange === 0 ? 0 : Math.min(Math.max((rawValue - rawStart) / segmentRange, 0), 1);
+      const interpolatedValue =
+        displayStart + (displayEnd - displayStart) * ratio;
+      const roundedValue = roundDisplayedValue(interpolatedValue, step);
+      return Math.min(Math.max(roundedValue, min), max);
+    }
+
+    return rawValue;
+  };
 
   const getMagnetizedValue = (input, value, min, max) => {
-    const milestones = parseMilestones(input);
+    const milestones = getMilestoneRawPositions(input, min, max);
     if (!milestones.length) return value;
 
     const range = Math.max(max - min, 1);
@@ -2710,11 +2840,10 @@ const initCountGroup = ({
     const max = Number.parseFloat(input.max || "100");
     const rawValue = Number.parseFloat(input.value || "0");
     const value = getMagnetizedValue(input, rawValue, min, max);
+    const displayedValue = getDisplayedSliderValue(input, value, min, max);
     const safeMax = max > min ? max : min + 1;
     const progress = ((value - min) / (safeMax - min)) * 100;
-    const sliderShell =
-      input.closest(".brisbane-smb-landing-page__slider-shell") ||
-      input.closest(".discovery-form__budget-shell");
+    const sliderShell = getSliderShell(input);
     const shell = input.closest("form");
     const output = shell?.querySelector("[data-range-output]");
     const submitFieldName = input.dataset.rangeSubmitTarget?.trim();
@@ -2727,32 +2856,27 @@ const initCountGroup = ({
     }
 
     sliderShell?.style.setProperty("--slider-progress", `${progress}%`);
-    input.setAttribute("aria-valuetext", numberFormatter.format(value));
+    input.setAttribute("aria-valuetext", numberFormatter.format(displayedValue));
 
     if (output) {
-      output.textContent = `$${numberFormatter.format(value)}`;
+      output.textContent = `$${numberFormatter.format(displayedValue)}`;
     }
 
     if (submitField instanceof HTMLInputElement) {
-      submitField.value = `${Math.round(value)}`;
+      submitField.value = `${Math.round(displayedValue)}`;
     }
 
     input.setCustomValidity("");
 
-    const milestoneValues = parseMilestones(input);
+    const milestonePositions = getMilestoneRawPositions(input, min, max);
 
     sliderShell
       ?.querySelectorAll(
         ".brisbane-smb-landing-page__slider-milestone, .discovery-form__budget-milestone",
       )
       .forEach((mark, index) => {
-        const visualStop = Number.parseFloat(
-          mark.style.getPropertyValue("--slider-stop") || "",
-        );
-        const milestoneValue = milestoneValues[index];
-        const activationValue = Number.isFinite(visualStop)
-          ? min + (safeMax - min) * visualStop
-          : milestoneValue;
+        const activationValue = milestonePositions[index];
+
         mark.classList.toggle(
           "is-active",
           Number.isFinite(activationValue) && value >= activationValue,
@@ -2803,6 +2927,15 @@ const initCountGroup = ({
 
   const bindSliderInput = (input) => {
     if (!(input instanceof HTMLInputElement)) return;
+
+    if (
+      input.matches(
+        ".brisbane-smb-landing-page__slider-input, .discovery-form__budget-input",
+      )
+    ) {
+      input.dataset.sliderMilestones = sharedBudgetSliderMilestones;
+    }
+
     if (initializedInputs.has(input)) {
       syncSlider(input);
       return;
@@ -2888,6 +3021,7 @@ const initCountGroup = ({
     discovery: "discovery-call",
     landingSlider: "brisbane-slider-number",
   };
+  const discoveryBudgetSliderMilestones = "1750,3500,5500";
   const getFormName = (form) =>
     form.querySelector('input[name="form-name"]')?.value?.trim() ||
     form.getAttribute("name")?.trim() ||
@@ -2924,7 +3058,7 @@ const initCountGroup = ({
               max="7000"
               step="50"
               value="1000"
-              data-slider-milestones="1750,3500,5500"
+              data-slider-milestones="${discoveryBudgetSliderMilestones}"
               data-range-submit-target="budget"
               aria-labelledby="${headingId}"
               aria-describedby="${outputId}"

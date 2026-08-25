@@ -23,9 +23,11 @@ body.thank-you-page main {
 }
 
 .thank-you-stage {
+  position: relative;
   width: min(var(--site-width), 40rem);
   margin: 0 auto;
   padding: 0;
+  overflow: hidden;
 }
 
 .thank-you-stage__inner {
@@ -67,6 +69,221 @@ body.thank-you-page main {
 .thank-you-stage__desc a:focus-visible {
   color: var(--accent);
   text-decoration: none;
+}
+
+body.thank-you-page--strategy-call main {
+  display: block;
+  padding: 0;
+}
+
+body.thank-you-page--strategy-call .thank-you-stage {
+  width: min(var(--site-width), 72rem);
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow: visible;
+  display: grid;
+  place-items: center;
+}
+
+body.thank-you-page--strategy-call .thank-you-stage__title {
+  font-size: clamp(3rem, 5.8vw, 5.4rem);
+}
+
+body.thank-you-page--strategy-call .thank-you-stage__balloon {
+  --thank-you-balloon-size: clamp(42rem, 66vw, 68rem);
+  position: absolute;
+  top: calc(var(--thank-you-balloon-size) / -2 + 2rem);
+  right: calc(((100vw - 100%) / -2) - (var(--thank-you-balloon-size) / 2));
+  width: var(--thank-you-balloon-size);
+  pointer-events: none;
+  z-index: 0;
+}
+
+body.thank-you-page--strategy-call .thank-you-stage__balloon-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+body.thank-you-page--strategy-call .thank-you-stage__inner {
+  position: relative;
+  z-index: 1;
+  width: min(60vw, calc(100vw - 2rem));
+  justify-items: center;
+  text-align: center;
+  gap: clamp(0.9rem, 1.8vw, 1.3rem);
+}
+
+body.thank-you-page--strategy-call .thank-you-stage__desc {
+  max-width: 36rem;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: clamp(1.2rem, 1.6vw, 1.5rem);
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+body.thank-you-page--strategy-call .thank-you-stage__scroll {
+  --thank-you-scroll-x: -50%;
+  position: fixed;
+  left: 50%;
+  bottom: clamp(1.35rem, 3vw, 2.4rem);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(4.8rem, 7.5vw, 6.75rem);
+  height: clamp(4.8rem, 7.5vw, 6.75rem);
+  color: #fff;
+  transform: translateX(var(--thank-you-scroll-x)) translateY(0);
+  z-index: 8;
+  animation: thankYouArrowBob 1.55s ease-in-out infinite;
+  text-decoration: none;
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease,
+    visibility 0s linear 180ms;
+}
+
+body.thank-you-page--strategy-call .thank-you-stage__scroll.is-dismissed {
+  animation: none;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(var(--thank-you-scroll-x)) translateY(1rem);
+  transition-delay: 0s;
+}
+
+body.thank-you-page--strategy-call .thank-you-stage__scroll svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+body.thank-you-page--strategy-call .thank-you-stage__scroll:hover,
+body.thank-you-page--strategy-call .thank-you-stage__scroll:focus-visible {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+body.thank-you-page--strategy-call .thank-you-scheduler {
+  min-height: auto;
+  display: block;
+  background: #000;
+}
+
+body.thank-you-page--strategy-call .thank-you-stage__embed {
+  display: grid;
+  place-items: center;
+  padding: 0 0 0.75rem;
+  background: #000;
+}
+
+body.thank-you-page--strategy-call .thank-you-stage__iframe {
+  width: min(1120px, calc(100vw - 1.5rem));
+  height: 700px;
+  border: 0;
+  background: transparent;
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+
+body.thank-you-page--strategy-call .thank-you-scheduler__footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+  padding: 0 1rem max(1rem, env(safe-area-inset-bottom));
+  background: #000;
+}
+
+body.thank-you-page--strategy-call .thank-you-scheduler__back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--accent);
+  font-size: clamp(1rem, 1.2vw, 1.2rem);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+body.thank-you-page--strategy-call .thank-you-scheduler__back-link:hover,
+body.thank-you-page--strategy-call
+  .thank-you-scheduler__back-link:focus-visible {
+  color: var(--accent);
+}
+
+body.thank-you-page--strategy-call .thank-you-scheduler__back-arrow {
+  font-size: 1.1em;
+  line-height: 1;
+}
+
+.thank-you-page__celebration {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 30;
+  overflow: hidden;
+}
+
+.thank-you-page__celebration-piece {
+  position: absolute;
+  top: -12vh;
+  left: 0;
+  font-size: clamp(2rem, 3.2vw, 3.6rem);
+  line-height: 1;
+  opacity: 0;
+  transform: translate3d(0, 0, 0) scale(0.7) rotate(0deg);
+  animation: thank-you-party-burst var(--party-duration, 1800ms) ease-out forwards;
+  will-change: transform, opacity;
+}
+
+@keyframes thank-you-party-burst {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -6vh, 0) scale(0.7) rotate(0deg);
+  }
+
+  12% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(var(--party-x, 0), 120vh, 0)
+      scale(var(--party-scale, 1.1)) rotate(var(--party-rotate, 220deg));
+  }
+}
+
+@keyframes thankYouArrowBob {
+  0%,
+  100% {
+    transform: translateX(var(--thank-you-scroll-x)) translateY(0);
+  }
+
+  50% {
+    transform: translateX(var(--thank-you-scroll-x)) translateY(0.55rem);
+  }
+}
+
+@media (max-width: 767px) {
+  body.thank-you-page--strategy-call .thank-you-stage__inner {
+    width: min(calc(100vw - 2rem), 32rem);
+  }
+
+  body.thank-you-page--strategy-call .thank-you-stage__desc {
+    font-size: 1.05rem;
+  }
+
+  body.thank-you-page--strategy-call .thank-you-stage__iframe {
+    width: calc(100vw - 1rem);
+    height: 78vh;
+    min-height: 42rem;
+    border-radius: 1rem;
+  }
+
+  body.thank-you-page--strategy-call .thank-you-stage__embed {
+    padding: 0 0.5rem 0.6rem;
+  }
 }
 
 .thank-you-page .site-footer,

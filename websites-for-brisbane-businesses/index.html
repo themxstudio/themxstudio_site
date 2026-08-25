@@ -825,14 +825,14 @@
                   />
 
                   <label class="visually-hidden" for="brisbane-slider-company">
-                    Company name
+                    Business name
                   </label>
                   <input
                     class="brisbane-smb-landing-page__slider-field"
                     id="brisbane-slider-company"
                     type="text"
                     name="business"
-                    placeholder="Business / company name"
+                    placeholder="Business name"
                     autocomplete="organization"
                     required
                   />
@@ -844,7 +844,7 @@
                     class="brisbane-smb-landing-page__slider-field brisbane-smb-landing-page__slider-field--message"
                     id="brisbane-slider-message"
                     name="project"
-                    placeholder="Tell us a little about your project"
+                    placeholder="How can we help?"
                     rows="1"
                     required
                   ></textarea>
@@ -853,7 +853,7 @@
                     class="brisbane-smb-landing-page__slider-submit"
                     type="submit"
                   >
-                    Submit
+                    Book My Call
                   </button>
                 </div>
               </div>
@@ -1201,105 +1201,83 @@
       aria-labelledby="discovery-modal-title"
     >
       <div class="form-modal__panel">
-        <div class="form-modal__header">
-          <div class="form-modal__heading">
-            <h2 class="form-modal__title" id="discovery-modal-title">
-              Book A Free<br />Discovery Call
-            </h2>
-            <p class="form-modal__desc">
-              <span
-                >Tell us about what you need from your website. We&rsquo;ll talk
-                through your project and recommend the right next step.</span
+        <aside class="brisbane-smb-landing-page__modal-aside" aria-label="Client testimonial">
+          <figure class="brisbane-smb-landing-page__modal-testimonial">
+            <blockquote class="brisbane-smb-landing-page__modal-testimonial-quote">
+              <p>
+                "The MX Studio handled our website clearly and professionally. Our
+                new website is stronger, easier to manage, and better aligned with
+                how we operate."
+              </p>
+            </blockquote>
+            <figcaption class="brisbane-smb-landing-page__modal-testimonial-meta">
+              <div class="brisbane-smb-landing-page__modal-testimonial-heading">
+                <p class="brisbane-smb-landing-page__modal-testimonial-company">
+                  Metro Rags
+                </p>
+                <p class="brisbane-smb-landing-page__modal-testimonial-name">
+                  Jeanne Evans
+                </p>
+              </div>
+            </figcaption>
+            <div class="brisbane-smb-landing-page__modal-testimonial-proof">
+              <svg
+                class="page-hero__google-logo"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
               >
-            </p>
-            <ul
-              class="form-modal__trust"
-              aria-label="Website project trust points"
-            >
-              <li class="form-modal__trust-item">
-                <span class="form-modal__trust-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" focusable="false">
-                    <path
-                      d="M9.2 12.6l1.9 1.9 4.7-5"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2.4"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    ></path>
-                  </svg>
-                </span>
-                <span>Founder-led agency</span>
-              </li>
-              <li class="form-modal__trust-item">
-                <span class="form-modal__trust-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" focusable="false">
-                    <path
-                      d="M9.2 12.6l1.9 1.9 4.7-5"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2.4"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    ></path>
-                  </svg>
-                </span>
-                <span>No pushy sales</span>
-              </li>
-              <li class="form-modal__trust-item">
-                <span class="form-modal__trust-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" focusable="false">
-                    <path
-                      d="M9.2 12.6l1.9 1.9 4.7-5"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2.4"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    ></path>
-                  </svg>
-                </span>
-                <span>Custom strategy for your business</span>
-              </li>
-            </ul>
-          </div>
-          <button
-            class="form-modal__close"
-            id="discovery-modal-close"
-            aria-label="Close"
-          >
-            &times;
-          </button>
-        </div>
-        <form
-          class="discovery-form"
-          id="discovery-form"
-          name="discovery-call"
-          method="POST"
-          data-netlify="true"
-          netlify-honeypot="bot-field"
-          action="/thank-you/"
-          data-success-url="/thank-you/"
-        >
-          <input type="hidden" name="form-name" value="discovery-call" />
-          <input type="hidden" name="budget" value="1000" data-range-submit-value />
-          <p style="display: none">
-            <label>Don't fill this out <input name="bot-field" /></label>
-          </p>
-          <div class="brisbane-smb-landing-page__modal-slider">
-            <div class="brisbane-smb-landing-page__modal-slider-heading-row">
-              <h3 class="brisbane-smb-landing-page__modal-slider-heading">
-                What&apos;s your budget?
-              </h3>
-              <output
-                class="brisbane-smb-landing-page__slider-output"
-                id="discovery-budget-output"
-                for="discovery-budget-input"
-                data-range-output
-              >
-                $1,000
-              </output>
+                <path
+                  fill="#4285F4"
+                  d="M23.49 12.27c0-.79-.07-1.54-.2-2.27H12v4.3h6.46a5.53 5.53 0 0 1-2.4 3.63v3.01h3.88c2.27-2.09 3.55-5.17 3.55-8.67Z"
+                ></path>
+                <path
+                  fill="#34A853"
+                  d="M12 24c3.24 0 5.95-1.07 7.94-2.91l-3.88-3.01c-1.07.72-2.45 1.15-4.06 1.15-3.12 0-5.76-2.11-6.71-4.95H1.29v3.11A12 12 0 0 0 12 24Z"
+                ></path>
+                <path
+                  fill="#FBBC05"
+                  d="M5.29 14.28A7.2 7.2 0 0 1 4.91 12c0-.79.14-1.56.38-2.28V6.61H1.29A12 12 0 0 0 0 12c0 1.94.46 3.78 1.29 5.39l4-3.11Z"
+                ></path>
+                <path
+                  fill="#EA4335"
+                  d="M12 4.77c1.76 0 3.34.6 4.58 1.78l3.43-3.43C17.94 1.17 15.23 0 12 0A12 12 0 0 0 1.29 6.61l4 3.11c.95-2.84 3.59-4.95 6.71-4.95Z"
+                ></path>
+              </svg>
+              <span class="page-hero__google-stars" aria-hidden="true">
+                <svg viewBox="0 0 120 24" focusable="false">
+                  <path
+                    d="M12 2.5l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2L12 16.8 6.4 19.7l1.1-6.2L3 9.1l6.2-.9L12 2.5zm24 0l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2-4.5-4.4 6.2-.9L36 2.5zm24 0l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2-4.5-4.4 6.2-.9L60 2.5zm24 0l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2-4.5-4.4 6.2-.9L84 2.5zm24 0l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2-4.5-4.4 6.2-.9L108 2.5z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+              </span>
             </div>
+          </figure>
+        </aside>
+        <div class="brisbane-smb-landing-page__modal-form-column">
+          <form
+            class="brisbane-smb-landing-page__slider-form brisbane-smb-landing-page__slider-form--modal"
+            id="discovery-form"
+            name="discovery-call"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            action="/thank-you/"
+            data-success-url="/thank-you/"
+          >
+            <input type="hidden" name="form-name" value="discovery-call" />
+            <input
+              type="hidden"
+              name="budget"
+              value="1000"
+              data-range-submit-value
+            />
+            <p style="display: none">
+              <label>Don't fill this out <input name="bot-field" /></label>
+            </p>
+            <h2 class="brisbane-smb-landing-page__slider-heading" id="discovery-modal-title">
+              What&apos;s your budget?
+            </h2>
             <div class="brisbane-smb-landing-page__slider-row">
               <label
                 class="visually-hidden"
@@ -1341,26 +1319,73 @@
                 </div>
               </div>
             </div>
+            <div class="brisbane-smb-landing-page__slider-total">
+              <output
+                class="brisbane-smb-landing-page__slider-output"
+                id="discovery-budget-output"
+                for="discovery-budget-input"
+                data-range-output
+              >
+                $1,000
+              </output>
+            </div>
+            <div class="brisbane-smb-landing-page__slider-field-grid brisbane-smb-landing-page__slider-field-grid--modal">
+              <label class="visually-hidden" for="discovery-name">Name</label>
+              <input
+                class="brisbane-smb-landing-page__slider-field"
+                id="discovery-name"
+                type="text"
+                name="name"
+                placeholder="Name"
+                autocomplete="name"
+                required
+              />
+              <label class="visually-hidden" for="discovery-email">Email</label>
+              <input
+                class="brisbane-smb-landing-page__slider-field"
+                id="discovery-email"
+                type="email"
+                name="email"
+                placeholder="Email"
+                autocomplete="email"
+                required
+              />
+              <label class="visually-hidden" for="discovery-company">Business name</label>
+              <input
+                class="brisbane-smb-landing-page__slider-field"
+                id="discovery-company"
+                type="text"
+                name="business"
+                placeholder="Business name"
+                autocomplete="organization"
+              />
+              <label class="visually-hidden" for="discovery-project">How can we help?</label>
+              <textarea
+                class="brisbane-smb-landing-page__slider-field brisbane-smb-landing-page__slider-field--message"
+                id="discovery-project"
+                name="project"
+                placeholder="How can we help?"
+                rows="1"
+                required
+              ></textarea>
+              <button type="submit" class="brisbane-smb-landing-page__slider-submit">
+                Book My Call
+              </button>
+            </div>
+          </form>
+          <div class="form-thanks" id="discovery-thanks" hidden>
+            <p class="form-thanks__message">
+              Thank you! We'll be in touch sooner than you think.
+            </p>
           </div>
-          <input type="text" name="name" placeholder="Your Name" required />
-          <input type="email" name="email" placeholder="Your Email" required />
-          <input
-            type="text"
-            name="business"
-            placeholder="Business / company name"
-          />
-          <textarea
-            name="project"
-            placeholder="Tell us a little about your project"
-            required
-          ></textarea>
-          <button type="submit" class="discovery-form__submit">Submit</button>
-        </form>
-        <div class="form-thanks" id="discovery-thanks" hidden>
-          <p class="form-thanks__message">
-            Thank you! We'll be in touch sooner than you think.
-          </p>
         </div>
+        <button
+          class="form-modal__close"
+          id="discovery-modal-close"
+          aria-label="Close"
+        >
+          &times;
+        </button>
       </div>
     </div>
 
