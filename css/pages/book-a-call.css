@@ -13,13 +13,13 @@
 }
 
 .book-a-call-page main {
-  background: #000;
+  background: #fff;
   overflow: hidden;
 }
 
 .book-a-call-page .page-hero__title.page-hero__title--simple {
   width: 100%;
-  max-width: none;
+  max-width: 12ch;
   margin-inline: auto;
   text-align: center;
   font-size: clamp(3rem, 5.8vw, 5.4rem);
@@ -1081,6 +1081,38 @@ body.book-a-call-page .form-modal .brisbane-smb-landing-page__slider-form--modal
 }
 
 @media (max-width: 767px) {
+  .book-a-call-page .page-hero--simple .page-hero__content {
+    width: min(78vw, calc(100vw - 2rem));
+    padding-top: 8.5rem;
+  }
+
+  .book-a-call-page .book-a-call-instagram-shell .about-instagram__inner {
+    width: min(calc(100vw - 2rem), 24rem);
+  }
+
+  .book-a-call-page .book-a-call-instagram-shell .about-instagram__shell {
+    padding-inline: 0;
+  }
+
+  .book-a-call-page .book-a-call-instagram-shell .about-instagram__viewport {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .book-a-call-page .book-a-call-instagram-shell .about-instagram__track {
+    display: block;
+  }
+
+  .book-a-call-page .book-a-call-instagram-shell .about-instagram__item {
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  .book-a-call-page .book-a-call-instagram-shell .about-instagram__post {
+    width: 100%;
+    max-width: none;
+  }
+
   .book-a-call-page .page-hero__sub.book-a-call-hero__sub {
     width: 80% !important;
     max-width: 80% !important;

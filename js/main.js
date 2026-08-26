@@ -144,8 +144,11 @@ const dropdowns = Array.from(document.querySelectorAll(".nav__item--dropdown"));
     ["/404/", "Page Not Found"],
   ]);
 
+  const readHeadTitle = () =>
+    document.head.querySelector("title")?.textContent?.trim() || "";
+
   const getTitlePrefix = () =>
-    (document.title || "")
+    readHeadTitle()
       .split("|")[0]
       .replace(/\s+/g, " ")
       .trim();
@@ -262,8 +265,11 @@ const dropdowns = Array.from(document.querySelectorAll(".nav__item--dropdown"));
   }
 
   let hero = main.querySelector(".page-hero:not(.website-services__hero)");
-  const existingHeroTitleMarkup =
-    hero?.querySelector(".page-hero__title")?.innerHTML?.trim() || "";
+  const existingHeroTitle = hero?.querySelector(".page-hero__title");
+  const existingHeroTitleMarkup = existingHeroTitle?.innerHTML?.trim() || "";
+  const existingHeroTitleStatic =
+    existingHeroTitle?.dataset.pageHeroTitleStatic === "true";
+  const existingHeroEyebrow = hero?.dataset.pageHeroEyebrow?.trim() || "";
   const existingHeroSub =
     hero?.querySelector(".page-hero__sub")?.cloneNode(true) || null;
   const existingHeroActions =
@@ -285,6 +291,7 @@ const dropdowns = Array.from(document.querySelectorAll(".nav__item--dropdown"));
 
   const pageName = getPageName(hero);
   const heroTitleMarkup = existingHeroTitleMarkup || pageName;
+  const eyebrowText = existingHeroEyebrow || pageName;
   const heroId = `simple-page-hero-${pageName
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
@@ -299,11 +306,14 @@ const dropdowns = Array.from(document.querySelectorAll(".nav__item--dropdown"));
   const eyebrow = document.createElement("h1");
   eyebrow.className = "page-hero__eyebrow";
   eyebrow.id = heroId;
-  eyebrow.textContent = pageName;
+  eyebrow.textContent = eyebrowText;
 
   const title = document.createElement("p");
   title.className = "page-hero__title page-hero__title--simple";
   title.innerHTML = heroTitleMarkup;
+  if (existingHeroTitleStatic) {
+    title.dataset.pageHeroTitleStatic = "true";
+  }
 
   content.append(buildBreadcrumbs(pageName), eyebrow, title);
   if (existingBlogShare) content.append(existingBlogShare);
@@ -1875,7 +1885,7 @@ const initLoopingCardCarousel = ({
     const metaTitle =
       document.querySelector('meta[property="og:title"]')?.content ||
       document.querySelector('meta[name="twitter:title"]')?.content ||
-      document.title ||
+      document.head.querySelector("title")?.textContent ||
       document.querySelector(".page-hero__title")?.textContent ||
       "The MX Studio article";
 
