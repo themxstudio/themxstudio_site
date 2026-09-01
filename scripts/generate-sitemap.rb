@@ -19,7 +19,6 @@ EXACT_METADATA = {
   "/book-a-call/" => { changefreq: "monthly", priority: "0.7" },
   "/contact/" => { changefreq: "monthly", priority: "0.7" },
   "/locations/" => { changefreq: "monthly", priority: "0.6" },
-  "/pricing/" => { changefreq: "monthly", priority: "0.8" },
   "/results/" => { changefreq: "monthly", priority: "0.7" },
   "/terms/" => { changefreq: "yearly", priority: "0.2" },
   "/websites-for-brisbane-businesses/" => {

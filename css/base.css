@@ -42,9 +42,9 @@ button {
 :root {
   --bg: #ffffff;
   --text: #000000;
-  --accent: #ea2556 !important;
+  --accent: #fb336a !important;
   --accent-hover: #ffb4c7 !important;
-  --mx-green: #ea2556;
+  --mx-green: #fb336a;
   --mx-green-hover: #ffb4c7;
   --accent2: color-mix(in srgb, var(--bg) 30%, var(--accent) 55%);
   --secondary-bg: color-mix(in srgb, var(--bg) 72%, var(--accent) 28%);
@@ -416,7 +416,7 @@ main > .section-accent-tail {
 .site-header__cta:focus-visible::after,
 .site-header__cta:hover::after {
   background:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5.5 12h12.5m-5-5 5 5-5 5' fill='none' stroke='%23ea2556' stroke-width='2.35' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5.5 12h12.5m-5-5 5 5-5 5' fill='none' stroke='%23fb336a' stroke-width='2.35' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
       center / 1rem 1rem no-repeat,
     #fff;
   transform: translateX(1px);

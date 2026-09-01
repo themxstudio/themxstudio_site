@@ -3342,6 +3342,11 @@ main section.discovery-call:not(.hero):not(.page-hero):not(.section-accent-tail)
   background: var(--card-bg);
   min-width: 0;
 }
+
+body:not(.package-landing-page):not(.brisbane-smb-landing-page)
+  :is(.pricing-grid2__card, .pricing-grid__card) {
+  background: #000 url("/assets/images/background.webp") center / cover no-repeat;
+}
 .pricing-grid2__card,
 .pricing-grid__card {
   grid-template-rows: auto auto minmax(0, 1fr) auto;
@@ -3387,6 +3392,52 @@ main section.discovery-call:not(.hero):not(.page-hero):not(.section-accent-tail)
   color: var(--accent);
   font-style: normal;
   opacity: 1;
+}
+
+body:not(.package-landing-page):not(.brisbane-smb-landing-page)
+  :is(.pricing-grid2__card-list, .pricing-grid__card-list) {
+  padding-left: 0;
+  list-style: none;
+  gap: 0.58rem;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+body:not(.package-landing-page):not(.brisbane-smb-landing-page)
+  :is(.pricing-grid2__card-list li, .pricing-grid__card-list li) {
+  position: relative;
+  display: block;
+  min-height: 1.08rem;
+  padding-left: 1.72rem;
+  font-weight: 400;
+}
+
+body:not(.package-landing-page):not(.brisbane-smb-landing-page)
+  :is(.pricing-grid2__card-list li::before, .pricing-grid__card-list li::before) {
+  content: "";
+  position: absolute;
+  top: 0.14rem;
+  left: 0;
+  display: block;
+  width: 1.08rem;
+  height: 1.08rem;
+  border-radius: 999px;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6.8 12.4 10.2 15.8 17.4 8.6' fill='none' stroke='%23ffffff' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+      center / 0.72rem 0.72rem no-repeat,
+    var(--accent);
+}
+
+body:not(.package-landing-page):not(.brisbane-smb-landing-page)
+  :is(.pricing-grid2__card-list li::marker, .pricing-grid__card-list li::marker) {
+  content: none;
+}
+
+body:not(.package-landing-page):not(.brisbane-smb-landing-page)
+  :is(.pricing-grid2__card-list .strong, .pricing-grid__card-list .strong) {
+  color: #fff;
+  font-style: normal;
+  font-weight: 900;
+  font-variation-settings: "wght" 900;
 }
 .pricing-grid2__card-cta,
 .pricing-grid__card-cta {

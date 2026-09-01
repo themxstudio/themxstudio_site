@@ -1,14 +1,18 @@
 body.quality-foundational-page {
-  --accent: #ea2556;
+  --accent: #fb336a;
   --accent-hover: #ffb4c7;
-  --mx-green: #ea2556;
+  --mx-green: #fb336a;
   --mx-green-hover: #ffb4c7;
   background-image: none;
 }
 
 body.brisbane-smb-landing-page {
   --brisbane-check-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9.2 12.6l1.9 1.9 4.7-5' fill='none' stroke='%23ffffff' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  --brisbane-cta-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5.5 12h12.5m-5-5 5 5-5 5' fill='none' stroke='%23ea2556' stroke-width='2.35' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  --brisbane-cta-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5.5 12h12.5m-5-5 5 5-5 5' fill='none' stroke='%23fb336a' stroke-width='2.35' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+body.package-landing-page {
+  --brisbane-cta-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5.5 12h12.5m-5-5 5 5-5 5' fill='none' stroke='%23fb336a' stroke-width='2.35' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 }
 
 html:has(body.brisbane-smb-landing-page) {
@@ -66,7 +70,7 @@ body.brisbane-smb-landing-page .brisbane-smb-landing-page__maxx-pass-through {
   padding: 0 clamp(1.25rem, 3vw, 2rem) !important;
   background: #000;
   color: #fff;
-  border-radius: var(--section-radius) var(--section-radius) 0 0;
+  border-radius: 0;
   border-top: 0;
   overflow: hidden;
   position: relative;
@@ -157,7 +161,7 @@ body.brisbane-smb-landing-page
   width: 1.22rem;
   height: 1.22rem;
   background:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9.2 12.6l1.9 1.9 4.7-5' fill='none' stroke='%23ea2556' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9.2 12.6l1.9 1.9 4.7-5' fill='none' stroke='%23fb336a' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
     center / contain no-repeat;
 }
 
@@ -186,7 +190,7 @@ body.brisbane-smb-landing-page .brisbane-smb-landing-page__maxx-pass-through-inn
   align-items: center;
   gap: 0;
   min-height: auto;
-  padding: clamp(5.5rem, 8vw, 7.4rem) 0 clamp(6.2rem, 9vw, 8.4rem);
+  padding: clamp(3.8rem, 5.8vw, 5rem) 0 clamp(6.2rem, 9vw, 8.4rem);
   box-sizing: border-box;
 }
 
@@ -893,8 +897,8 @@ body.brisbane-smb-landing-page .brisbane-smb-landing-page__maxx-pass-through-tit
   margin: 0;
   color: #fff;
   font-size: clamp(1.65rem, 2.85vw, 3.2rem);
-  font-weight: 900;
-  font-variation-settings: "wght" 900;
+  font-weight: 400;
+  font-variation-settings: "wght" 400;
   line-height: 1.02;
   letter-spacing: -0.05em;
   text-align: center;
@@ -909,10 +913,14 @@ body.brisbane-smb-landing-page .brisbane-smb-landing-page__maxx-pass-through-emp
 
 body.brisbane-smb-landing-page .brisbane-smb-landing-page__maxx-pass-through-line {
   color: #fff;
+  font-weight: 400;
+  font-variation-settings: "wght" 400;
 }
 
 body.brisbane-smb-landing-page .brisbane-smb-landing-page__maxx-pass-through-emphasis {
   color: #fff;
+  font-weight: 900;
+  font-variation-settings: "wght" 900;
 }
 
 body.brisbane-smb-landing-page .brisbane-smb-landing-page__maxx-pass-through-identity {
@@ -975,7 +983,10 @@ body.brisbane-smb-landing-page .brisbane-smb-landing-page__maxx-pass-through-rol
   line-height: 1.1;
 }
 
-body.brisbane-smb-landing-page .gap-fill:not(.brisbane-smb-landing-page__faq-gap) {
+body.brisbane-smb-landing-page
+  .gap-fill:not(.brisbane-smb-landing-page__faq-gap):not(
+    .brisbane-smb-landing-page__metro-gap
+  ):not(.brisbane-smb-landing-page__reviews-gap) {
   display: none !important;
   height: 0 !important;
   margin: 0 !important;
@@ -1009,6 +1020,19 @@ body.brisbane-smb-landing-page .brisbane-smb-landing-page__faq-gap {
   display: inline-flex !important;
   align-items: center;
   margin-left: auto;
+  flex: 0 0 auto;
+}
+
+body.quality-foundational-page.package-landing-page
+  .quality-foundational-header
+  .site-header__left {
+  gap: clamp(0.45rem, 0.8vw, 0.7rem);
+}
+
+body.quality-foundational-page.package-landing-page
+  .quality-foundational-header
+  .site-header__brand {
+  width: clamp(5.8rem, 5vw, 6.5rem);
 }
 
 .quality-foundational-header .site-header__actions .site-header__cta {
@@ -1019,12 +1043,52 @@ body.brisbane-smb-landing-page .brisbane-smb-landing-page__faq-gap {
   font-size: clamp(0.92rem, 0.45vw + 0.88rem, 1.05rem);
 }
 
+body.quality-foundational-page.package-landing-page .quality-foundational-header__back[hidden] {
+  display: none !important;
+}
+
+body.quality-foundational-page.package-landing-page .quality-foundational-header__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex: 0 1 auto;
+  min-width: 0;
+  color: var(--accent);
+  text-decoration: none;
+  font-size: clamp(0.8rem, 0.24vw + 0.78rem, 0.94rem);
+  font-weight: 800;
+  font-variation-settings: "wght" 800;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+body.quality-foundational-page.package-landing-page .quality-foundational-header__back:is(:hover, :focus-visible) {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+body.quality-foundational-page.package-landing-page .quality-foundational-header__back-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 0.95rem;
+  height: 0.95rem;
+  flex: 0 0 0.95rem;
+}
+
+body.quality-foundational-page.package-landing-page .quality-foundational-header__back-icon svg {
+  width: 100%;
+  height: 100%;
+  transform: scaleX(-1);
+}
+
 body.brisbane-smb-landing-page .website-services__hero-portraits {
   display: none !important;
 }
 
 body.brisbane-smb-landing-page .website-services__hero-wrap::before {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.86);
 }
 
 body.brisbane-smb-landing-page .website-services__hero-wrap {
@@ -1316,7 +1380,7 @@ body.brisbane-smb-landing-page
   padding: 0.06em 0.18em 0.12em;
   border-radius: 0.14em;
   color: #fff;
-  background: rgba(234, 37, 86, 0.88);
+  background: rgba(251, 51, 106, 0.88);
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
@@ -1615,11 +1679,11 @@ body.brisbane-smb-landing-page .brisbane-smb-landing-page__selling-points {
 }
 
 body.brisbane-smb-landing-page .brisbane-smb-landing-page__selling-points .web-design-copy__inner {
-  width: min(74rem, 100%);
-  grid-template-columns: minmax(0, 42rem) minmax(20.5rem, 1fr);
-  justify-content: start;
+  width: min(80rem, var(--content-shell-width));
+  grid-template-columns: minmax(0, 1fr) minmax(18.5rem, 22.5rem);
+  justify-content: stretch;
   align-items: start;
-  column-gap: clamp(1.35rem, 1.9vw, 1.9rem);
+  column-gap: clamp(1.25rem, 2vw, 2rem);
   row-gap: clamp(1rem, 1.45vw, 1.4rem);
   padding-right: 0;
 }
@@ -1651,7 +1715,7 @@ body.brisbane-smb-landing-page .brisbane-smb-landing-page__selling-points .web-d
   min-width: 0;
   padding-left: clamp(2.55rem, 3.15vw, 3.45rem);
   color: #000;
-  font-size: clamp(1.55rem, 2.35vw, 2.7rem);
+  font-size: clamp(1.35rem, 1.45vw + 1rem, 2.2rem);
   font-weight: 400 !important;
   font-variation-settings: "wght" 400 !important;
   font-style: normal;
@@ -1701,7 +1765,7 @@ body.brisbane-smb-landing-page .brisbane-smb-landing-page__selling-points-cta {
 body.brisbane-smb-landing-page .brisbane-smb-landing-page__intro-gallery {
   grid-column: 2;
   grid-row: auto;
-  align-self: center;
+  align-self: start;
   justify-self: center;
   width: min(100%, 22.5rem);
   max-width: none;
@@ -1879,8 +1943,8 @@ body.brisbane-smb-landing-page .brisbane-smb-landing-page__proof-strip-inner {
 
 body.brisbane-smb-landing-page .brisbane-smb-landing-page__proof-strip-title {
   margin: 0;
-  color: #ea2556 !important;
-  -webkit-text-fill-color: #ea2556 !important;
+  color: #fb336a !important;
+  -webkit-text-fill-color: #fb336a !important;
   font-size: clamp(2rem, 2.3vw + 1rem, 3.35rem);
   font-weight: 800;
   font-variation-settings: "wght" 800;
@@ -1892,8 +1956,8 @@ body.brisbane-smb-landing-page .brisbane-smb-landing-page__proof-strip-title {
 body.brisbane-smb-landing-page .brisbane-smb-landing-page__proof-strip-kicker {
   margin: 0;
   justify-self: end;
-  color: #ea2556 !important;
-  -webkit-text-fill-color: #ea2556 !important;
+  color: #fb336a !important;
+  -webkit-text-fill-color: #fb336a !important;
   font-size: clamp(2rem, 2.3vw + 1rem, 3.35rem);
   font-weight: 800;
   font-variation-settings: "wght" 800;
@@ -2161,6 +2225,15 @@ body.brisbane-smb-landing-page
   body.brisbane-smb-landing-page
     :is(
       .brisbane-smb-landing-page__slider-heading,
+      .form-modal .brisbane-smb-landing-page__slider-form--modal .brisbane-smb-landing-page__slider-heading
+    ) {
+    font-weight: 900;
+    font-variation-settings: "wght" 900;
+  }
+
+  body.brisbane-smb-landing-page
+    :is(
+      .brisbane-smb-landing-page__slider-heading,
       .brisbane-smb-landing-page__slider-row,
       .brisbane-smb-landing-page__slider-total,
       .brisbane-smb-landing-page__slider-reveal
@@ -2336,14 +2409,54 @@ body.ultimate-brand-and-web-page.service-page
 }
 
 body.ultimate-brand-and-web-page .hospitality-comparison__body {
-  grid-template-columns:
-    minmax(0, 22.75rem)
-    minmax(0, 22.75rem)
-    minmax(0, 18.9rem);
+  width: min(100%, 66rem);
+  max-width: 66rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  justify-content: center;
+  justify-items: stretch;
+  gap: clamp(1.2rem, 1.9vw, 1.55rem) clamp(2.25rem, 3vw, 3.15rem);
+  justify-self: center;
+  margin-inline: auto;
 }
 
-body.ultimate-brand-and-web-page .hospitality-comparison__post {
-  width: min(100%, 18.9rem);
+body.ultimate-brand-and-web-page
+  main
+  section.hospitality-comparison:not(.hero):not(.page-hero):not(.section-accent-tail) {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+body.ultimate-brand-and-web-page .hospitality-comparison .comparison__inner {
+  width: min(calc(100vw - 1.25rem), 76rem);
+  max-width: none;
+  margin-inline: auto;
+  justify-items: center;
+  gap: clamp(1.35rem, 2.2vw, 1.9rem);
+}
+
+body.ultimate-brand-and-web-page .hospitality-comparison__column {
+  width: 100%;
+  max-width: 30rem;
+  margin-inline: auto;
+  justify-content: flex-start;
+  gap: clamp(1.35rem, 2vw, 1.75rem);
+  padding-block: 0;
+}
+
+body.ultimate-brand-and-web-page .hospitality-comparison__item {
+  gap: clamp(0.95rem, 1.2vw, 1.15rem);
+}
+
+body.ultimate-brand-and-web-page .hospitality-comparison__item-text {
+  text-wrap: pretty;
+}
+
+body.ultimate-brand-and-web-page .hospitality-comparison__balloon {
+  width: clamp(2.95rem, 2.8vw, 3.35rem);
+  height: clamp(2.95rem, 2.8vw, 3.35rem);
+  flex: 0 0 clamp(2.95rem, 2.8vw, 3.35rem);
+  margin-top: 0;
 }
 
 .quality-foundational-hero .page-hero__sub {
@@ -2482,7 +2595,94 @@ body.ultimate-brand-and-web-page .hospitality-comparison__post {
   border-radius: 22px;
 }
 
+body.ultimate-brand-and-web-page .ultimate-brand-and-web-team-strip {
+  --section-padding-top: clamp(1.9rem, 3.2vw, 2.7rem);
+  --section-padding-bottom: clamp(1.9rem, 3.2vw, 2.6rem);
+  width: 100vw;
+  max-width: none;
+  margin: 0 calc(50% - 50vw) !important;
+  background: #000;
+  color: #fff;
+  border-radius: var(--section-radius) var(--section-radius) 0 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+body.ultimate-brand-and-web-page .ultimate-brand-and-web-team-strip__inner {
+  width: min(calc(100vw - 1rem), 84rem);
+  max-width: none;
+  margin-inline: auto;
+}
+
+body.ultimate-brand-and-web-page
+  .ultimate-brand-and-web-team-strip
+  .about-instagram__shell {
+  position: relative;
+  overflow: visible;
+  width: 100%;
+  padding-inline: clamp(0.35rem, 0.9vw, 0.7rem);
+  box-sizing: border-box;
+}
+
+body.ultimate-brand-and-web-page
+  .ultimate-brand-and-web-team-strip
+  .about-instagram__viewport {
+  overflow: visible;
+}
+
+body.ultimate-brand-and-web-page
+  .ultimate-brand-and-web-team-strip
+  .about-instagram__track {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.75rem, 1.1vw, 1rem);
+  align-items: stretch;
+}
+
+body.ultimate-brand-and-web-page
+  .ultimate-brand-and-web-team-strip
+  .about-instagram__item {
+  min-width: 0;
+  width: 100%;
+}
+
+body.ultimate-brand-and-web-page
+  .ultimate-brand-and-web-team-strip
+  .about-instagram__arrow {
+  display: none;
+}
+
+body.ultimate-brand-and-web-page .ultimate-brand-and-web-team-strip__card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: clamp(1rem, 1.5vw, 1.35rem);
+  background: #111;
+}
+
+body.ultimate-brand-and-web-page .ultimate-brand-and-web-team-strip__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+body.ultimate-brand-and-web-page .ultimate-brand-and-web-meridian-gap {
+  height: clamp(2.25rem, 5vw, 4rem);
+  margin-bottom: calc(clamp(2.25rem, 5vw, 4rem) * -1);
+  z-index: 0;
+}
+
+body.ultimate-brand-and-web-page .ultimate-brand-and-web-meridian {
+  position: relative;
+  z-index: 2;
+}
+
 .hospitality-home-maxx {
+  --hospitality-home-maxx-copy-max-width: 29.5rem;
   margin-top: 0;
   background: #fff;
   color: var(--text);
@@ -2499,7 +2699,10 @@ body.ultimate-brand-and-web-page .hospitality-comparison__post {
 
 .hospitality-home-maxx .home-maxx__copy {
   align-self: start;
+  justify-self: start;
   min-height: 0;
+  width: min(100%, var(--hospitality-home-maxx-copy-max-width));
+  max-width: var(--hospitality-home-maxx-copy-max-width);
   padding-inline-start: 0;
 }
 
@@ -2519,22 +2722,100 @@ body.ultimate-brand-and-web-page .hospitality-comparison__post {
   margin-inline: 0;
 }
 
-.hospitality-home-maxx__balloon {
-  justify-self: start;
+.hospitality-inline-form {
+  width: 100%;
+  max-width: none;
+  display: grid;
+  align-content: start;
+  gap: 0;
+  padding: clamp(1.4rem, 1vw + 1.15rem, 1.9rem);
+  background: #000;
+  color: #fff;
+  border-radius: 28px;
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.34);
+  overflow: visible;
   align-self: start;
-  width: clamp(9rem, 12vw, 12.5rem);
-  max-width: 100%;
-  pointer-events: none;
 }
 
-.hospitality-home-maxx__balloon-image {
-  display: block;
-  width: 100%;
-  height: auto;
+.hospitality-inline-form .form-modal__header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: flex-start;
+  gap: 0;
+  margin-bottom: 2rem;
+}
+
+.hospitality-inline-form .form-modal__heading {
+  display: grid;
+  gap: 0.62rem;
+}
+
+.hospitality-inline-form .form-modal__title {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1.62rem, 0.7vw + 1.4rem, 2.02rem);
+  font-weight: 900 !important;
+  font-variation-settings: "wght" 900 !important;
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+}
+
+.hospitality-inline-form .form-modal__desc {
+  margin: 0;
+  max-width: 29ch;
+  color: #fff;
+  font-size: 0.94rem;
+  line-height: 1.42;
+  opacity: 0.74;
+}
+
+.hospitality-inline-form .discovery-form {
+  gap: 1.05rem;
+}
+
+.hospitality-inline-form
+  .discovery-form
+  input:not(.discovery-form__budget-input),
+.hospitality-inline-form .discovery-form textarea {
+  min-height: 3.5rem;
+  padding: 0 0 0.9rem;
+  border: 0;
+  border-bottom: 0.48rem solid #5c5c5c;
+  border-radius: 0;
+  background: transparent;
+  color: #fff;
+  font-size: 1rem;
+  box-shadow: none;
+}
+
+.hospitality-inline-form .discovery-form input::placeholder,
+.hospitality-inline-form .discovery-form textarea::placeholder {
+  color: #8e8e8e;
+  opacity: 1;
+}
+
+.hospitality-inline-form .discovery-form input:focus,
+.hospitality-inline-form .discovery-form textarea:focus {
+  border-bottom-color: var(--accent);
+}
+
+.hospitality-inline-form .discovery-form textarea {
+  min-height: 6rem;
+}
+
+.hospitality-inline-form .discovery-form__submit {
+  min-height: 3.18rem;
+  margin-top: 0.9rem;
+}
+
+.hospitality-inline-form .form-thanks {
+  min-height: 18rem;
 }
 
 .hospitality-home-maxx .home-maxx__feature:not(:last-of-type) {
-  border-bottom-color: rgba(17, 17, 17, 0.12);
+  padding-bottom: 0;
+  border-bottom: 0;
 }
 
 .hospitality-home-maxx .home-maxx__feature-title,
@@ -2542,6 +2823,12 @@ body.ultimate-brand-and-web-page .hospitality-comparison__post {
 .hospitality-home-maxx .home-maxx__contact-copy {
   color: var(--text);
   max-width: none;
+}
+
+.hospitality-home-maxx .home-maxx__feature-title {
+  font-weight: 900 !important;
+  font-variation-settings: "wght" 900 !important;
+  text-transform: uppercase;
 }
 
 .hospitality-home-maxx__selling-points {
@@ -2922,6 +3209,47 @@ main
 }
 
 @media (min-width: 1025px) {
+  body.ultimate-brand-and-web-page
+    main
+    section.hospitality-comparison:not(.hero):not(.page-hero):not(.section-accent-tail) {
+    padding-top: clamp(2.25rem, 3.6vw, 3.2rem) !important;
+    padding-bottom: clamp(2.4rem, 3.8vw, 3.3rem) !important;
+  }
+
+  body.ultimate-brand-and-web-page .hospitality-comparison .comparison__inner {
+    width: min(calc(100vw - 2rem), 80rem);
+    max-width: none;
+    justify-items: center;
+  }
+
+  body.ultimate-brand-and-web-page .hospitality-comparison__body {
+    width: min(100%, 69rem);
+    max-width: 69rem;
+    grid-template-columns: repeat(2, minmax(0, 31rem));
+    align-items: start;
+    justify-content: center;
+    justify-items: stretch;
+    justify-self: center;
+    margin-inline: auto;
+    gap: clamp(1.4rem, 2vw, 1.8rem) clamp(2.8rem, 3.4vw, 3.75rem);
+  }
+
+  body.ultimate-brand-and-web-page .hospitality-comparison__column {
+    max-width: 31rem;
+    gap: clamp(1.55rem, 2.3vw, 2rem);
+  }
+
+  body.ultimate-brand-and-web-page .hospitality-comparison__item {
+    gap: clamp(1.05rem, 1.35vw, 1.25rem);
+  }
+
+  body.ultimate-brand-and-web-page .hospitality-comparison__balloon {
+    width: clamp(3.55rem, 3.6vw, 4.05rem);
+    height: clamp(3.55rem, 3.6vw, 4.05rem);
+    flex: 0 0 clamp(3.55rem, 3.6vw, 4.05rem);
+    margin-top: 0;
+  }
+
   .hospitality-comparison__body {
     grid-template-columns:
       minmax(0, clamp(22rem, 23vw, 24.25rem))
@@ -3035,6 +3363,12 @@ main
 
   .hospitality-comparison .comparison__heading {
     max-width: 88%;
+  }
+
+  body.ultimate-brand-and-web-page .hospitality-comparison__body {
+    width: min(100%, 25rem);
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
   .quality-foundational-hero .page-hero__title {
@@ -3295,6 +3629,126 @@ main
     margin-bottom: -1.5rem;
   }
 
+  body.ultimate-brand-and-web-page .ultimate-brand-and-web-team-strip {
+    --section-padding-top: 1.15rem;
+    --section-padding-bottom: 1.45rem;
+  }
+
+  body.ultimate-brand-and-web-page .ultimate-brand-and-web-meridian-gap {
+    height: 1.5rem;
+    margin-bottom: -1.5rem;
+  }
+
+  body.ultimate-brand-and-web-page .ultimate-brand-and-web-team-strip__inner {
+    width: var(--site-width);
+    display: grid;
+    justify-items: center;
+  }
+
+  body.ultimate-brand-and-web-page
+    .ultimate-brand-and-web-team-strip
+    .about-instagram__shell {
+    --about-instagram-gap: 0.75rem;
+    --about-instagram-card-width: min(calc(100vw - 7.5rem), 17rem);
+    display: grid;
+    grid-template-columns: auto minmax(0, var(--about-instagram-card-width)) auto;
+    align-items: center;
+    justify-content: center;
+    column-gap: clamp(0.1rem, 0.9vw, 0.35rem);
+    width: min(100%, calc(var(--about-instagram-card-width) + 5.75rem));
+    max-width: calc(var(--about-instagram-card-width) + 5.75rem);
+    margin-inline: auto;
+    padding-inline: 0;
+    justify-self: center;
+  }
+
+  body.ultimate-brand-and-web-page
+    .ultimate-brand-and-web-team-strip
+    .about-instagram__viewport {
+    grid-column: 2;
+    width: 100%;
+    max-width: 100%;
+    margin-inline: 0;
+    position: relative;
+    overflow: hidden;
+    touch-action: pan-y;
+    overscroll-behavior-x: contain;
+    padding-block: 0.9rem 1.1rem;
+  }
+
+  body.ultimate-brand-and-web-page
+    .ultimate-brand-and-web-team-strip
+    .about-instagram__track {
+    display: flex;
+    gap: var(--about-instagram-gap);
+    align-items: stretch;
+    justify-content: center;
+    will-change: transform;
+  }
+
+  body.ultimate-brand-and-web-page
+    .ultimate-brand-and-web-team-strip
+    .about-instagram__item {
+    flex: 0 0 var(--about-instagram-card-width);
+  }
+
+  body.ultimate-brand-and-web-page
+    .ultimate-brand-and-web-team-strip.about-instagram--home-carousel.is-carousel-active
+    .about-instagram__arrow {
+    position: relative;
+    top: auto;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.9rem;
+    height: 2.9rem;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: var(--accent) !important;
+    transform: none;
+  }
+
+  body.ultimate-brand-and-web-page
+    .ultimate-brand-and-web-team-strip.about-instagram--home-carousel.is-carousel-active
+    .about-instagram__arrow[data-direction="prev"] {
+    grid-column: 1;
+    left: auto;
+  }
+
+  body.ultimate-brand-and-web-page
+    .ultimate-brand-and-web-team-strip.about-instagram--home-carousel.is-carousel-active
+    .about-instagram__arrow[data-direction="next"] {
+    grid-column: 3;
+    right: auto;
+  }
+
+  body.ultimate-brand-and-web-page
+    .ultimate-brand-and-web-team-strip.about-instagram--home-carousel.is-carousel-active
+    .about-instagram__arrow::before {
+    content: "";
+    position: absolute;
+    inset: -0.5rem;
+  }
+
+  body.ultimate-brand-and-web-page
+    .ultimate-brand-and-web-team-strip.about-instagram--home-carousel.is-carousel-active
+    .about-instagram__arrow
+    svg {
+    width: 2.25rem;
+    height: 2.25rem;
+    color: var(--accent) !important;
+  }
+
+  body.ultimate-brand-and-web-page
+    .ultimate-brand-and-web-team-strip.about-instagram--home-carousel.is-carousel-active
+    .about-instagram__arrow
+    path {
+    stroke: var(--accent) !important;
+  }
+
   .hospitality-portfolio {
     padding-top: 1.1rem;
     padding-bottom: 1.8rem;
@@ -3364,6 +3818,47 @@ main
 }
 
 @media (min-width: 744px) and (max-width: 1366px) {
+  body.ultimate-brand-and-web-page
+    main
+    section.hospitality-comparison:not(.hero):not(.page-hero):not(.section-accent-tail) {
+    padding-top: clamp(1.9rem, 4vw, 2.7rem) !important;
+    padding-bottom: clamp(2rem, 4.2vw, 2.8rem) !important;
+  }
+
+  body.ultimate-brand-and-web-page .hospitality-comparison .comparison__inner {
+    width: min(calc(100vw - 2rem), 72rem);
+    justify-items: center;
+  }
+
+  body.ultimate-brand-and-web-page .hospitality-comparison__body {
+    width: min(100%, 60rem);
+    max-width: 60rem;
+    grid-template-columns: repeat(2, minmax(0, 28.5rem));
+    gap: clamp(1.15rem, 1.9vw, 1.45rem) clamp(2rem, 2.7vw, 2.75rem);
+    align-items: start;
+    justify-content: center;
+    justify-items: stretch;
+    justify-self: center;
+    margin-inline: auto;
+  }
+
+  body.ultimate-brand-and-web-page .hospitality-comparison__column {
+    max-width: 28.5rem;
+    justify-content: flex-start;
+    gap: clamp(1.25rem, 1.95vw, 1.65rem);
+  }
+
+  body.ultimate-brand-and-web-page .hospitality-comparison__item {
+    gap: 1rem;
+  }
+
+  body.ultimate-brand-and-web-page .hospitality-comparison__balloon {
+    width: 3.35rem;
+    height: 3.35rem;
+    flex: 0 0 3.35rem;
+    margin-top: 0;
+  }
+
   .hospitality-comparison__body,
   body.quality-foundational-page .hospitality-comparison__body {
     width: min(100%, 68rem);
@@ -3601,8 +4096,9 @@ main
     grid-column: 2;
     order: initial;
     display: grid;
-    width: 100%;
-    max-width: none;
+    justify-self: start;
+    width: min(100%, var(--hospitality-home-maxx-copy-max-width));
+    max-width: var(--hospitality-home-maxx-copy-max-width);
     min-height: 0;
   }
 
@@ -3622,12 +4118,6 @@ main
     gap: 0.55rem;
     font-size: 0.94rem;
     line-height: 1.4;
-  }
-
-  .hospitality-home-maxx__balloon {
-    justify-self: start;
-    align-self: start;
-    width: clamp(8.5rem, 14vw, 10rem);
   }
 
   .hospitality-portfolio__inner {
@@ -3660,5 +4150,3478 @@ main
 @media (min-width: 1025px) {
   .hospitality-portfolio__title {
     max-width: none;
+  }
+}
+
+body.package-landing-page .quality-foundational-hero-wrap {
+  height: calc(105vh + var(--hero-section-overlap));
+  min-height: calc(105vh + var(--hero-section-overlap));
+}
+
+body.package-landing-page .quality-foundational-hero-wrap::before {
+  background: rgba(0, 0, 0, 0.86);
+}
+
+body.package-landing-page .website-services__hero-portraits {
+  display: none !important;
+}
+
+body.package-landing-page .quality-foundational-hero {
+  position: relative;
+  z-index: 3;
+  padding-bottom: 0 !important;
+}
+
+body.package-landing-page .quality-foundational-hero .page-hero__content {
+  width: min(92vw, 84rem);
+  justify-items: center;
+  align-items: center;
+  justify-content: flex-start;
+  gap: clamp(1.25rem, 2vw, 1.8rem);
+  padding-top: clamp(0.9rem, 1.8vw, 1.5rem);
+  padding-bottom: clamp(2rem, 4vw, 3.2rem);
+  padding-right: 0;
+  text-align: center;
+}
+
+body.package-landing-page
+  .quality-foundational-hero
+  .page-hero__content
+  > :is(.page-hero__title, .quality-foundational-hero__lower) {
+  align-self: center !important;
+  margin-inline: auto !important;
+}
+
+body.package-landing-page .quality-foundational-hero .page-hero__title {
+  flex: 0 0 auto;
+  align-self: center;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  min-width: 0;
+  font-size: clamp(2rem, 3.25vw, 3.65rem);
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: normal;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+body.package-landing-page .quality-foundational-hero__lower {
+  width: min(100%, 44rem);
+  max-width: 44rem;
+  display: grid;
+  gap: clamp(1.55rem, 2.35vw, 2.15rem);
+  justify-items: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+body.package-landing-page .quality-foundational-hero .page-hero__sub {
+  display: block !important;
+  width: 100%;
+  max-width: none;
+  margin-inline: auto;
+  font-size: clamp(1.18rem, 0.95vw + 1rem, 1.8rem);
+  line-height: 1.28;
+  text-align: center;
+}
+
+body.package-landing-page
+  .quality-foundational-hero
+  .page-hero__sub
+  .package-landing-page__sub-highlight {
+  display: inline;
+  padding: 0.06em 0.18em 0.12em;
+  border-radius: 0.14em;
+  color: #fff !important;
+  background: rgba(251, 51, 106, 0.88);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+body.package-landing-page .quality-foundational-hero .page-hero__actions {
+  width: auto;
+  align-self: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  margin-top: clamp(1.65rem, 2.8vw, 2.9rem);
+}
+
+body.package-landing-page .quality-foundational-hero .page-hero__google-proof {
+  max-width: none !important;
+  margin-top: 0;
+  justify-self: center;
+  align-self: center;
+  margin-inline: auto !important;
+}
+
+body.package-landing-page .quality-foundational-hero .page-hero__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.82rem;
+}
+
+body.package-landing-page .quality-foundational-hero .page-hero__cta::after {
+  content: "";
+  width: 1.82rem;
+  height: 1.82rem;
+  flex: 0 0 1.82rem;
+  border-radius: 999px;
+  background:
+    var(--brisbane-cta-arrow) center / 1rem 1rem no-repeat,
+    #fff;
+}
+
+body.package-landing-page
+  .quality-foundational-hero
+  .page-hero__cta--primary:is(:hover, :focus-visible) {
+  background: var(--accent) !important;
+  border-color: var(--accent) !important;
+  box-shadow: none !important;
+  color: #fff !important;
+}
+
+body.package-landing-page
+  .quality-foundational-hero
+  .page-hero__cta:is(:hover, :focus-visible)::after {
+  background:
+    var(--brisbane-cta-arrow) center / 1rem 1rem no-repeat,
+    #fff;
+}
+
+body.package-landing-page .quality-foundational-hero .page-hero__cta--secondary {
+  gap: 0.45rem;
+  flex: 0 0 auto;
+  min-height: auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+body.package-landing-page
+  .quality-foundational-hero
+  .page-hero__cta--secondary::after {
+  width: 1rem;
+  height: 1rem;
+  flex: 0 0 1rem;
+  border-radius: 0;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5.5 12h12.5m-5-5 5 5-5 5' fill='none' stroke='%23ffffff' stroke-width='2.1' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+      center / 1rem 1rem no-repeat;
+}
+
+body.package-landing-page
+  .quality-foundational-hero
+  .page-hero__cta--secondary:is(:hover, :focus-visible) {
+  background: transparent !important;
+  border-color: #fff !important;
+  box-shadow: none !important;
+  color: #fff !important;
+}
+
+body.package-landing-page
+  .quality-foundational-hero
+  .page-hero__cta--secondary:is(:hover, :focus-visible)::after {
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5.5 12h12.5m-5-5 5 5-5 5' fill='none' stroke='%23ffffff' stroke-width='2.1' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+      center / 1rem 1rem no-repeat;
+}
+
+body.package-landing-page .brisbane-smb-landing-page__modal-aside {
+  display: none;
+}
+
+body.package-landing-page .brisbane-smb-landing-page__modal-testimonial {
+  margin: 0;
+  width: min(100%, 24.5rem);
+  display: grid;
+  gap: 1.3rem;
+  justify-items: start;
+  align-content: center;
+  text-align: left;
+}
+
+body.package-landing-page .brisbane-smb-landing-page__modal-testimonial-quote {
+  margin: 0;
+  color: #fff;
+}
+
+body.package-landing-page .brisbane-smb-landing-page__modal-testimonial-quote p {
+  margin: 0;
+  color: inherit;
+  font-size: clamp(1.08rem, 0.48vw + 0.98rem, 1.42rem);
+  font-weight: 400;
+  font-variation-settings: "wght" 400;
+  line-height: 1.28;
+  text-wrap: pretty;
+}
+
+body.package-landing-page .brisbane-smb-landing-page__modal-testimonial-meta {
+  display: inline-grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 0.55rem;
+  justify-self: start;
+  text-align: left;
+}
+
+body.package-landing-page .brisbane-smb-landing-page__modal-testimonial-heading {
+  display: grid;
+  gap: 0.18rem;
+}
+
+body.package-landing-page .brisbane-smb-landing-page__modal-testimonial-company {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.74);
+  font-size: clamp(0.94rem, 0.3vw + 0.88rem, 1.02rem);
+  line-height: 1.2;
+}
+
+body.package-landing-page .brisbane-smb-landing-page__modal-testimonial-name {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1.36rem, 0.8vw + 1.04rem, 1.76rem);
+  font-weight: 900;
+  font-variation-settings: "wght" 900;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  white-space: nowrap;
+}
+
+body.package-landing-page .brisbane-smb-landing-page__modal-testimonial-proof {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  justify-content: flex-start;
+  justify-self: start;
+  width: fit-content;
+  max-width: 100%;
+  margin: 1.45rem 0 0;
+  padding: 0;
+  color: #fff;
+}
+
+body.package-landing-page .brisbane-smb-landing-page__modal-testimonial-proof .page-hero__google-stars {
+  color: #ffd54a;
+  line-height: 0;
+}
+
+body.package-landing-page .brisbane-smb-landing-page__modal-testimonial-proof .page-hero__google-stars svg {
+  display: block;
+  width: 8.9rem;
+  height: auto;
+}
+
+body.package-landing-page .brisbane-smb-landing-page__modal-testimonial-proof .page-hero__google-logo {
+  width: 1.72rem;
+  height: 1.72rem;
+  flex: 0 0 auto;
+}
+
+body.package-landing-page .brisbane-smb-landing-page__modal-form-column {
+  min-width: 0;
+}
+
+body.package-landing-page .form-modal > .form-modal__panel {
+  position: relative;
+}
+
+body.package-landing-page .form-modal .form-modal__header {
+  margin-bottom: 1.3rem;
+}
+
+body.package-landing-page .form-modal .form-modal__heading {
+  gap: 0.62rem;
+}
+
+body.package-landing-page .form-modal .form-modal__title {
+  font-size: clamp(1.62rem, 0.7vw + 1.4rem, 2.02rem);
+  font-weight: 900 !important;
+  font-variation-settings: "wght" 900 !important;
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+}
+
+body.package-landing-page .form-modal .form-modal__desc {
+  max-width: 29ch;
+  font-size: 0.94rem;
+  line-height: 1.42;
+  opacity: 0.74;
+}
+
+body.package-landing-page .discovery-form__submit {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  padding: 0.74rem 3.5rem 0.74rem 1rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 800;
+  font-variation-settings: "wght" 800;
+  letter-spacing: -0.03em;
+  transform: none;
+}
+
+body.package-landing-page .discovery-form__submit::after {
+  content: "";
+  position: absolute;
+  right: 0.92rem;
+  top: 50%;
+  width: 1.82rem;
+  height: 1.82rem;
+  border-radius: 999px;
+  background:
+    var(--brisbane-cta-arrow) center / 1rem 1rem no-repeat,
+    #fff;
+  transform: translateY(-50%);
+}
+
+body.package-landing-page .discovery-form__submit:is(:hover, :focus-visible) {
+  background: var(--accent);
+  color: #fff;
+  transform: translateY(-0.12rem);
+}
+
+body.package-landing-page .form-modal__close,
+body.package-landing-page .form-modal__close:hover,
+body.package-landing-page .form-modal__close:focus-visible {
+  display: none !important;
+}
+
+body.package-landing-page .quality-foundational-hero__scroll {
+  --package-hero-scroll-x: -50%;
+  --package-hero-scroll-bottom-gap: clamp(1.05rem, 2.2vw, 2rem);
+  position: fixed;
+  left: 50%;
+  bottom: calc(
+    var(--brisbane-hero-scroll-bottom-offset, 0px) +
+      var(--package-hero-scroll-bottom-gap)
+  );
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(2.5rem, 3.3vw, 3rem);
+  height: clamp(2.5rem, 3.3vw, 3rem);
+  color: #fff;
+  transform: translateX(var(--package-hero-scroll-x)) translateY(0);
+  z-index: 5;
+  animation: brisbaneHeroArrowBob 1.55s ease-in-out infinite;
+  text-decoration: none;
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease,
+    visibility 0s linear 180ms;
+}
+
+body.package-landing-page
+  .quality-foundational-hero__scroll:is(.is-dismissed, .is-content-blocked) {
+  animation: none;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(var(--package-hero-scroll-x)) translateY(0.85rem);
+  transition-delay: 0s;
+}
+
+body.package-landing-page .quality-foundational-hero__scroll svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+body.package-landing-page .quality-foundational-hero__scroll:focus-visible,
+body.package-landing-page .quality-foundational-hero__scroll:hover {
+  color: rgba(255, 255, 255, 0.86);
+}
+
+body:is(.brisbane-smb-landing-page, .package-landing-page)
+  :is(.brisbane-smb-landing-page__hero-scroll, .quality-foundational-hero__scroll).landing-hero-scroll {
+  flex-direction: column;
+  width: auto;
+  height: auto;
+  min-height: 0;
+  padding: 0;
+  gap: 0.24rem;
+  border-radius: 0;
+  background: transparent;
+  color: #fff;
+  box-shadow: none;
+  white-space: nowrap;
+}
+
+body:is(.brisbane-smb-landing-page, .package-landing-page)
+  :is(.brisbane-smb-landing-page__hero-scroll, .quality-foundational-hero__scroll).landing-hero-scroll
+  svg {
+  width: clamp(2.5rem, 3.3vw, 3rem);
+  height: clamp(2.5rem, 3.3vw, 3rem);
+  flex: 0 0 clamp(2.5rem, 3.3vw, 3rem);
+}
+
+body:is(.brisbane-smb-landing-page, .package-landing-page)
+  :is(.brisbane-smb-landing-page__hero-scroll, .quality-foundational-hero__scroll).landing-hero-scroll
+  .landing-hero-scroll__label {
+  display: inline-block;
+  color: currentColor;
+  font-size: 0.84rem;
+  font-weight: 800;
+  font-variation-settings: "wght" 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+body:is(.brisbane-smb-landing-page, .package-landing-page)
+  :is(.brisbane-smb-landing-page__hero-scroll, .quality-foundational-hero__scroll).landing-hero-scroll:focus-visible,
+body:is(.brisbane-smb-landing-page, .package-landing-page)
+  :is(.brisbane-smb-landing-page__hero-scroll, .quality-foundational-hero__scroll).landing-hero-scroll:hover {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.package-landing-page .quality-foundational-hero__scroll {
+    animation: none;
+  }
+}
+
+@media (min-width: 744px) and (max-width: 1024px) {
+  body.package-landing-page .quality-foundational-hero .page-hero__content {
+    gap: clamp(1.35rem, 3.6vh, 1.9rem);
+    padding-top: clamp(1.25rem, 4vh, 1.75rem);
+    padding-bottom: clamp(4.25rem, 12vh, 5.75rem);
+  }
+
+  body.package-landing-page .quality-foundational-hero .page-hero__title {
+    width: 100%;
+    max-width: none;
+    font-size: clamp(1.95rem, 4.15vw, 3rem);
+    line-height: 0.94;
+  }
+
+  body.package-landing-page .quality-foundational-hero__lower {
+    width: min(100%, 42rem);
+    max-width: 42rem;
+    gap: clamp(1.25rem, 3.2vh, 1.75rem);
+  }
+
+  body.package-landing-page .quality-foundational-hero .page-hero__sub {
+    font-size: clamp(1rem, 1.15vw + 0.82rem, 1.42rem);
+    line-height: 1.24;
+  }
+
+  body.package-landing-page .quality-foundational-hero .page-hero__actions {
+    --page-hero-cta-width: clamp(10.75rem, 23vw, 12.75rem);
+    --page-hero-cta-gap: 0.72rem;
+  }
+
+  body.package-landing-page .quality-foundational-hero .page-hero__cta {
+    min-height: 3.1rem;
+    padding: 0.72rem 1rem;
+    font-size: 0.94rem;
+  }
+}
+
+@media (max-width: 767px) {
+  body.package-landing-page .quality-foundational-hero-wrap {
+    height: auto;
+    min-height: calc(105vh + var(--hero-section-overlap));
+  }
+
+  body.package-landing-page .quality-foundational-hero .page-hero__content {
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: clamp(2.45rem, 8vw, 2.95rem);
+    text-align: left;
+  }
+
+  body.package-landing-page
+    .quality-foundational-hero
+    .page-hero__content
+    > :is(.page-hero__title, .quality-foundational-hero__lower) {
+    align-self: flex-start !important;
+    margin-inline: 0 !important;
+  }
+
+  body.package-landing-page .quality-foundational-hero .page-hero__title {
+    width: 100%;
+    max-width: none;
+    font-size: clamp(1.75rem, 6.8vw, 2.5rem);
+    text-align: left;
+  }
+
+  body.package-landing-page .quality-foundational-hero__lower {
+    width: min(100%, 27rem);
+    max-width: 27rem;
+    justify-items: start;
+    gap: 0;
+  }
+
+  body.package-landing-page .quality-foundational-hero .page-hero__sub {
+    width: 100%;
+    max-width: 70%;
+    margin: 0 0 clamp(2.45rem, 8vw, 2.95rem);
+    font-size: clamp(1.05rem, 1.1vw + 0.98rem, 1.32rem);
+    text-align: left;
+  }
+
+  body.package-landing-page .quality-foundational-hero .page-hero__actions {
+    order: 3;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    width: var(--website-services-mobile-cta-width);
+    gap: 0.75rem;
+    margin-top: 0;
+  }
+
+  body.package-landing-page .quality-foundational-hero .page-hero__cta--secondary {
+    width: auto;
+    align-self: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  body.package-landing-page .quality-foundational-hero .page-hero__google-proof {
+    order: 2;
+    justify-content: flex-start;
+    justify-self: start;
+    align-self: start;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    margin-inline: 0 !important;
+  }
+
+  body.package-landing-page .quality-foundational-hero__scroll {
+    --package-hero-scroll-x: 0;
+    --package-hero-scroll-bottom-gap: 1rem;
+    left: clamp(1.2rem, 5vw, 2rem);
+  }
+}
+
+@media (min-width: 900px) {
+  body.package-landing-page .brisbane-smb-landing-page__modal-testimonial {
+    transform: none;
+    position: relative;
+    z-index: 1;
+  }
+
+  body.package-landing-page .form-modal > .form-modal__panel {
+    width: min(calc(100vw - 2.5rem), 71rem);
+    max-width: 71rem;
+    min-height: 0;
+    max-height: none;
+    padding: 0;
+    overflow: visible;
+    display: grid;
+    grid-template-columns: 31.75rem minmax(0, 1fr);
+    background: #000;
+    border-radius: 28px;
+    box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.34);
+  }
+
+  body.package-landing-page .brisbane-smb-landing-page__modal-aside {
+    display: grid;
+    grid-column: 2;
+    grid-row: 1;
+    align-self: stretch;
+    place-items: center;
+    position: relative;
+    padding: 0 clamp(1.6rem, 2.2vw, 2.4rem);
+    min-width: 0;
+    overflow: hidden;
+    background: #000;
+    border-radius: 0 28px 28px 0;
+  }
+
+  body.package-landing-page .brisbane-smb-landing-page__modal-aside::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: clamp(9.5rem, 15vw, 13rem);
+    aspect-ratio: 4316 / 3591;
+    background:
+      url("/assets/images/balloon-graphic.webp") left bottom / 200% 200%
+        no-repeat;
+    pointer-events: none;
+  }
+
+  body.package-landing-page .brisbane-smb-landing-page__modal-aside::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: clamp(9.5rem, 15vw, 13rem);
+    aspect-ratio: 4316 / 3591;
+    background:
+      url("/assets/images/balloon-graphic.webp") right top / 200% 200%
+        no-repeat;
+    pointer-events: none;
+  }
+
+  body.package-landing-page .brisbane-smb-landing-page__modal-form-column {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: stretch;
+    display: grid;
+    align-content: start;
+    gap: 0;
+    width: 31.75rem;
+    min-width: 31.75rem;
+    max-width: 31.75rem;
+    padding: clamp(1.4rem, 1vw + 1.15rem, 1.9rem);
+    overflow: visible;
+    background: #000;
+    border-radius: 28px 0 0 28px;
+  }
+
+  body.package-landing-page .form-modal .form-modal__header {
+    margin-bottom: 2rem;
+  }
+
+  body.package-landing-page .form-modal .discovery-form {
+    gap: 1.05rem;
+  }
+
+  body.package-landing-page
+    .form-modal
+    .discovery-form
+    input:not(.discovery-form__budget-input),
+  body.package-landing-page .form-modal .discovery-form textarea {
+    min-height: 3.5rem;
+    padding: 0 0 0.9rem;
+    border: 0;
+    border-bottom: 0.48rem solid #5c5c5c;
+    border-radius: 0;
+    background: transparent;
+    color: #fff;
+    font-size: 1rem;
+  }
+
+  body.package-landing-page .form-modal .discovery-form input::placeholder,
+  body.package-landing-page .form-modal .discovery-form textarea::placeholder {
+    color: #8e8e8e;
+    opacity: 1;
+  }
+
+  body.package-landing-page .form-modal .discovery-form input:focus,
+  body.package-landing-page .form-modal .discovery-form textarea:focus {
+    border-bottom-color: var(--accent);
+  }
+
+body.package-landing-page .form-modal .discovery-form textarea {
+  min-height: 6rem;
+}
+
+body.package-landing-page .form-modal .discovery-form__submit {
+  min-height: 3.18rem;
+  margin-top: 0.9rem;
+}
+
+@media (min-width: 768px) {
+  body.package-landing-page
+    :is(
+      .hospitality-inline-form,
+      .form-modal .brisbane-smb-landing-page__modal-form-column
+    )
+    .discovery-form
+    input:not(.discovery-form__budget-input),
+  body.package-landing-page
+    :is(
+      .hospitality-inline-form,
+      .form-modal .brisbane-smb-landing-page__modal-form-column
+    )
+    .discovery-form
+    textarea {
+    font-size: clamp(1.65rem, 1.2vw + 1.28rem, 2.45rem);
+    font-weight: 800;
+    font-variation-settings: "wght" 800;
+    letter-spacing: -0.04em;
+    line-height: 1;
+  }
+
+  body.package-landing-page
+    :is(
+      .hospitality-inline-form,
+      .form-modal .brisbane-smb-landing-page__modal-form-column
+    )
+    .discovery-form
+    input::placeholder,
+  body.package-landing-page
+    :is(
+      .hospitality-inline-form,
+      .form-modal .brisbane-smb-landing-page__modal-form-column
+    )
+    .discovery-form
+    textarea::placeholder {
+    font-size: clamp(1.65rem, 0.85vw + 1.38rem, 2.1rem);
+    font-weight: 800;
+    font-variation-settings: "wght" 800;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+  }
+
+  body.package-landing-page
+    :is(
+      .hospitality-inline-form,
+      .form-modal .brisbane-smb-landing-page__modal-form-column
+    )
+    .discovery-form__submit {
+    min-height: 3.75rem;
+    padding: 0.7rem 3.5rem 0.7rem 1.2rem;
+    font-size: clamp(1.1rem, 0.45vw + 1rem, 1.3rem);
+  }
+}
+}
+
+body.ultimate-brand-and-web-page
+  .hospitality-inline-form.brisbane-smb-landing-page__modal-form-column {
+  width: 100%;
+  min-width: 0;
+  max-width: 31.75rem;
+  align-self: start;
+  border-radius: 28px;
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.34);
+}
+
+body.ultimate-brand-and-web-page .hospitality-home-maxx__form-panel,
+body.ultimate-brand-and-web-page .hospitality-post-faq__form {
+  height: auto;
+}
+
+body.ultimate-brand-and-web-page .hospitality-home-maxx .home-maxx__media,
+body.ultimate-brand-and-web-page .hospitality-post-faq__form-col {
+  align-items: start;
+  justify-items: start;
+}
+
+@media (min-width: 1025px) {
+  body.ultimate-brand-and-web-page .hospitality-comparison__item-text,
+  body.quality-foundational-page.package-landing-page
+    .hospitality-comparison__item-text {
+    font-size: clamp(1.34rem, 0.42vw + 1.24rem, 1.58rem);
+    line-height: 1.06;
+  }
+
+  body.ultimate-brand-and-web-page .hospitality-comparison__item-desc,
+  body.quality-foundational-page.package-landing-page
+    .hospitality-comparison__item-desc {
+    font-size: clamp(1.08rem, 0.18vw + 1.02rem, 1.16rem);
+    line-height: 1.38;
+  }
+
+  body.ultimate-brand-and-web-page
+    .hospitality-inline-form.brisbane-smb-landing-page__modal-form-column {
+    width: 31.75rem;
+    min-width: 31.75rem;
+    max-width: 31.75rem;
+    border-radius: 28px;
+  }
+
+  body.ultimate-brand-and-web-page .hospitality-home-maxx .home-maxx__inner {
+    width: min(calc(100vw - 2.5rem), 71rem);
+    grid-template-columns: 31.75rem minmax(0, 34rem);
+    gap: clamp(2.4rem, 3vw, 3.05rem);
+  }
+
+  body.ultimate-brand-and-web-page .hospitality-post-faq__inner {
+    width: min(calc(100vw - 2.5rem), 71rem);
+    grid-template-columns: repeat(2, minmax(0, 31.75rem));
+    justify-content: center;
+    gap: clamp(1rem, 1.6vw, 1.35rem);
+  }
+
+  body.ultimate-brand-and-web-page .hospitality-comparison .comparison__inner {
+    width: min(calc(100vw - 2.5rem), 71rem);
+    max-width: 71rem;
+    margin-inline: auto;
+    justify-items: center;
+  }
+
+  body.ultimate-brand-and-web-page .hospitality-comparison__body {
+    width: 100%;
+    max-width: none;
+    grid-template-columns: repeat(2, minmax(0, 28.75rem));
+    justify-content: center;
+    justify-items: stretch;
+    align-items: start;
+    column-gap: clamp(3rem, 3.6vw, 3.8rem);
+    row-gap: clamp(1.45rem, 2.1vw, 1.85rem);
+    margin-inline: auto;
+  }
+
+  body.ultimate-brand-and-web-page .hospitality-comparison__column {
+    width: 28.75rem;
+    max-width: 28.75rem;
+    margin-inline: 0;
+  }
+
+  body.ultimate-brand-and-web-page .hospitality-comparison__balloon {
+    width: 4.1rem;
+    height: 4.1rem;
+    flex: 0 0 4.1rem;
+  }
+
+  body.ultimate-brand-and-web-page
+    .hospitality-comparison__column:last-child
+    .hospitality-comparison__item:last-child
+    .hospitality-comparison__item-text {
+    white-space: normal;
+  }
+}
+
+@media (min-width: 744px) and (max-width: 1024px) {
+  body.ultimate-brand-and-web-page
+    .hospitality-inline-form.brisbane-smb-landing-page__modal-form-column {
+    width: min(100%, 25.75rem);
+    max-width: 25.75rem;
+    border-radius: 28px;
+  }
+
+  body.ultimate-brand-and-web-page .hospitality-home-maxx .home-maxx__inner {
+    grid-template-columns: minmax(0, 25.75rem) minmax(0, 1fr);
+    gap: 1.4rem;
+  }
+
+  body.ultimate-brand-and-web-page .hospitality-post-faq__inner {
+    grid-template-columns: minmax(0, 25.75rem) minmax(0, 1fr);
+    gap: 1rem;
+  }
+
+  body.ultimate-brand-and-web-page .hospitality-comparison .comparison__inner {
+    width: min(calc(100vw - 2rem), 63rem);
+    justify-items: center;
+  }
+
+  body.ultimate-brand-and-web-page .hospitality-comparison__body {
+    width: 100%;
+    max-width: none;
+    grid-template-columns: repeat(2, minmax(0, 24.5rem));
+    justify-content: center;
+    justify-items: stretch;
+    align-items: start;
+    column-gap: 2.5rem;
+    row-gap: 1.35rem;
+    margin-inline: auto;
+  }
+
+  body.ultimate-brand-and-web-page .hospitality-comparison__column {
+    width: 24.5rem;
+    max-width: 24.5rem;
+    margin-inline: 0;
+  }
+
+  body.ultimate-brand-and-web-page .hospitality-comparison__balloon {
+    width: 3.55rem;
+    height: 3.55rem;
+    flex: 0 0 3.55rem;
+  }
+}
+
+@media (max-width: 743px) {
+  body.ultimate-brand-and-web-page
+    main
+    section.hospitality-comparison:not(.hero):not(.page-hero):not(.section-accent-tail) {
+    padding-top: clamp(2.2rem, 8vw, 2.9rem) !important;
+    padding-bottom: clamp(2.35rem, 8.5vw, 3.1rem) !important;
+  }
+
+  body.ultimate-brand-and-web-page .hospitality-comparison .comparison__inner {
+    width: min(calc(100vw - 2rem), 31rem);
+    margin-inline: auto;
+    justify-items: start;
+    gap: clamp(1.35rem, 5vw, 1.75rem);
+  }
+
+  body.ultimate-brand-and-web-page .hospitality-comparison__body {
+    width: 100%;
+    max-width: none;
+    grid-template-columns: 1fr;
+    justify-content: start;
+    justify-items: stretch;
+    justify-self: start;
+    margin-inline: 0;
+    gap: clamp(1.15rem, 5vw, 1.55rem);
+  }
+
+  body.ultimate-brand-and-web-page .hospitality-comparison__column {
+    width: 100%;
+    max-width: none;
+    margin-inline: 0;
+    justify-content: flex-start;
+    gap: clamp(1.25rem, 5vw, 1.65rem);
+    padding-block: 0;
+  }
+
+  body.ultimate-brand-and-web-page .hospitality-comparison__item {
+    gap: 0.9rem;
+  }
+
+  body.ultimate-brand-and-web-page .hospitality-comparison__balloon {
+    width: 3rem;
+    height: 3rem;
+    flex: 0 0 3rem;
+    margin-top: 0.05rem;
+  }
+}
+
+@media (max-width: 767px) {
+  body.package-landing-page
+    :is(
+      .form-modal .form-modal__title,
+      .hospitality-inline-form .form-modal__title
+    ) {
+    font-weight: 900;
+    font-variation-settings: "wght" 900;
+  }
+
+  body.package-landing-page .hospitality-home-maxx .home-maxx__feature-title {
+    font-weight: 900;
+    font-variation-settings: "wght" 900;
+  }
+
+  body.ultimate-brand-and-web-page
+    .hospitality-inline-form.brisbane-smb-landing-page__modal-form-column {
+    width: min(100%, 24.5rem);
+    max-width: 24.5rem;
+    padding: 1.28rem 0.98rem 1.34rem;
+    border-radius: 18px;
+  }
+
+  body.ultimate-brand-and-web-page
+    .form-modal
+    .brisbane-smb-landing-page__modal-form-column {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+  }
+
+  body.ultimate-brand-and-web-page
+    :is(
+      .hospitality-inline-form,
+      .form-modal .brisbane-smb-landing-page__modal-form-column
+    )
+    .form-modal__header {
+    grid-template-columns: 1fr;
+    margin-bottom: 1.06rem;
+  }
+
+  body.ultimate-brand-and-web-page
+    :is(
+      .hospitality-inline-form,
+      .form-modal .brisbane-smb-landing-page__modal-form-column
+    )
+    .form-modal__title {
+    line-height: 1;
+  }
+
+  body.ultimate-brand-and-web-page
+    :is(
+      .hospitality-inline-form,
+      .form-modal .brisbane-smb-landing-page__modal-form-column
+    )
+    .form-modal__desc {
+    max-width: 35ch;
+  }
+
+  body.ultimate-brand-and-web-page
+    :is(
+      .hospitality-inline-form,
+      .form-modal .brisbane-smb-landing-page__modal-form-column
+    )
+    .discovery-form {
+    gap: 0.86rem;
+  }
+
+  body.ultimate-brand-and-web-page
+    :is(
+      .hospitality-inline-form,
+      .form-modal .brisbane-smb-landing-page__modal-form-column
+    )
+    .discovery-form
+    input:not(.discovery-form__budget-input),
+  body.ultimate-brand-and-web-page
+    :is(
+      .hospitality-inline-form,
+      .form-modal .brisbane-smb-landing-page__modal-form-column
+    )
+    .discovery-form
+    textarea {
+    min-height: 3.5rem;
+    padding: 0 0 0.9rem;
+    border: 0 !important;
+    border-bottom: 0.48rem solid #5c5c5c !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    color: #fff;
+    font-size: clamp(1.65rem, 0.85vw + 1.38rem, 2.1rem);
+    font-weight: 800;
+    font-variation-settings: "wght" 800;
+    letter-spacing: -0.04em;
+    line-height: 1;
+  }
+
+  body.ultimate-brand-and-web-page
+    :is(
+      .hospitality-inline-form,
+      .form-modal .brisbane-smb-landing-page__modal-form-column
+    )
+    .discovery-form
+    input::placeholder,
+  body.ultimate-brand-and-web-page
+    :is(
+      .hospitality-inline-form,
+      .form-modal .brisbane-smb-landing-page__modal-form-column
+    )
+    .discovery-form
+    textarea::placeholder {
+    color: #8e8e8e;
+    font-size: clamp(1.65rem, 0.85vw + 1.38rem, 2.1rem);
+    font-weight: 800;
+    font-variation-settings: "wght" 800;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    opacity: 1;
+  }
+
+  body.ultimate-brand-and-web-page
+    :is(
+      .hospitality-inline-form,
+      .form-modal .brisbane-smb-landing-page__modal-form-column
+    )
+    .discovery-form
+    input:focus,
+  body.ultimate-brand-and-web-page
+    :is(
+      .hospitality-inline-form,
+      .form-modal .brisbane-smb-landing-page__modal-form-column
+    )
+    .discovery-form
+    textarea:focus {
+    border-bottom-color: var(--accent) !important;
+  }
+
+  body.ultimate-brand-and-web-page
+    :is(
+      .hospitality-inline-form,
+      .form-modal .brisbane-smb-landing-page__modal-form-column
+    )
+    .discovery-form
+    input:focus::placeholder,
+  body.ultimate-brand-and-web-page
+    :is(
+      .hospitality-inline-form,
+      .form-modal .brisbane-smb-landing-page__modal-form-column
+    )
+    .discovery-form
+    textarea:focus::placeholder {
+    color: transparent;
+    opacity: 0;
+  }
+
+  body.ultimate-brand-and-web-page
+    :is(
+      .hospitality-inline-form,
+      .form-modal .brisbane-smb-landing-page__modal-form-column
+    )
+    .discovery-form
+    textarea {
+    min-height: 6rem;
+    padding-top: 0;
+    resize: vertical;
+  }
+
+  body.ultimate-brand-and-web-page
+    :is(
+      .hospitality-inline-form,
+      .form-modal .brisbane-smb-landing-page__modal-form-column
+    )
+    .discovery-form__submit {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+    min-height: 3.75rem;
+    margin-top: 0.35rem;
+    padding: 0.7rem 3.5rem 0.7rem 1.2rem;
+    border-radius: 999px;
+    background: var(--accent);
+    color: #fff;
+    font-size: clamp(1.1rem, 0.45vw + 1rem, 1.3rem);
+    font-weight: 800;
+    font-variation-settings: "wght" 800;
+    letter-spacing: -0.03em;
+    justify-self: stretch;
+    transform: none;
+  }
+
+  body.ultimate-brand-and-web-page
+    :is(
+      .hospitality-inline-form,
+      .form-modal .brisbane-smb-landing-page__modal-form-column
+    )
+    .discovery-form__submit::after {
+    content: "";
+    position: absolute;
+    right: 0.92rem;
+    top: 50%;
+    width: 1.82rem;
+    height: 1.82rem;
+    flex: 0 0 1.82rem;
+    border-radius: 999px;
+    background:
+      var(--brisbane-cta-arrow) center / 1rem 1rem no-repeat,
+      #fff;
+    transform: translateY(-50%);
+  }
+
+  body.ultimate-brand-and-web-page
+    :is(
+      .hospitality-inline-form,
+      .form-modal .brisbane-smb-landing-page__modal-form-column
+    )
+    .discovery-form__submit:is(:hover, :focus-visible) {
+    background: var(--accent);
+    color: #fff;
+    transform: translateY(-0.12rem);
+  }
+}
+
+@media (max-width: 767px) {
+  body.package-landing-page .form-modal {
+    padding: 1rem 0.5rem;
+    overflow-y: auto;
+  }
+
+  body.package-landing-page .form-modal > .form-modal__panel {
+    width: min(calc(100vw - 1rem), 24.5rem);
+    max-width: 24.5rem;
+    margin: auto;
+    padding: 0;
+    background: #000;
+    border-radius: 1.25rem;
+    overflow: hidden;
+  }
+
+  body.package-landing-page .form-modal .brisbane-smb-landing-page__modal-form-column {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    padding: 1.25rem 1rem 1.35rem;
+    background: #000;
+    border-radius: 1.25rem;
+    box-shadow: none;
+  }
+
+  body.package-landing-page
+    .form-modal
+    .brisbane-smb-landing-page__modal-form-column
+    .form-modal__header {
+    margin-bottom: 1rem;
+  }
+
+  body.package-landing-page
+    .form-modal
+    .brisbane-smb-landing-page__modal-form-column
+    .form-modal__heading {
+    gap: 0.55rem;
+  }
+
+  body.package-landing-page
+    .form-modal
+    .brisbane-smb-landing-page__modal-form-column
+    .form-modal__title {
+    max-width: none;
+    font-size: clamp(1.6rem, 6vw, 2rem);
+    line-height: 0.96;
+    text-wrap: balance;
+  }
+
+  body.package-landing-page
+    .form-modal
+    .brisbane-smb-landing-page__modal-form-column
+    .form-modal__desc {
+    max-width: none;
+    font-size: 0.95rem;
+    line-height: 1.35;
+  }
+
+  body.package-landing-page
+    .form-modal
+    .brisbane-smb-landing-page__modal-form-column
+    .discovery-form {
+    gap: 0.85rem;
+  }
+
+  body.package-landing-page
+    .form-modal
+    .brisbane-smb-landing-page__modal-form-column
+    .discovery-form
+    input:not(.discovery-form__budget-input),
+  body.package-landing-page
+    .form-modal
+    .brisbane-smb-landing-page__modal-form-column
+    .discovery-form
+    textarea {
+    min-height: 3.4rem;
+    padding: 0 0 0.8rem;
+    border: 0 !important;
+    border-bottom: 0.32rem solid #5c5c5c !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 400;
+    font-variation-settings: "wght" 400;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+
+  body.package-landing-page
+    .form-modal
+    .brisbane-smb-landing-page__modal-form-column
+    .discovery-form
+    input::placeholder,
+  body.package-landing-page
+    .form-modal
+    .brisbane-smb-landing-page__modal-form-column
+    .discovery-form
+    textarea::placeholder {
+    color: #8e8e8e;
+    font-size: 1rem;
+    font-weight: 400;
+    font-variation-settings: "wght" 400;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    opacity: 1;
+  }
+
+  body.package-landing-page
+    .form-modal
+    .brisbane-smb-landing-page__modal-form-column
+    .discovery-form
+    textarea {
+    min-height: 5.8rem;
+    padding-top: 0;
+    resize: vertical;
+  }
+
+  body.package-landing-page
+    .form-modal
+    .brisbane-smb-landing-page__modal-form-column
+    .discovery-form__submit {
+    min-height: 3.5rem;
+    margin-top: 0.35rem;
+    padding: 0.72rem 3.4rem 0.72rem 1rem;
+    font-size: 1rem;
+    justify-self: stretch;
+  }
+
+  body.package-landing-page
+    .form-modal
+    .brisbane-smb-landing-page__modal-form-column
+    .discovery-form__submit::after {
+    right: 0.88rem;
+    width: 1.72rem;
+    height: 1.72rem;
+  }
+}
+
+body.quality-foundational-page.package-landing-page .hospitality-comparison__body {
+  width: min(100%, 66rem);
+  max-width: 66rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  justify-content: center;
+  justify-items: stretch;
+  gap: clamp(1.2rem, 1.9vw, 1.55rem) clamp(2.25rem, 3vw, 3.15rem);
+  justify-self: center;
+  margin-inline: auto;
+}
+
+body.quality-foundational-page.package-landing-page
+  main
+  section.hospitality-comparison:not(.hero):not(.page-hero):not(.section-accent-tail) {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+body.quality-foundational-page.package-landing-page
+  .hospitality-comparison
+  .comparison__inner {
+  width: min(calc(100vw - 1.25rem), 76rem);
+  max-width: none;
+  margin-inline: auto;
+  justify-items: center;
+  gap: clamp(1.35rem, 2.2vw, 1.9rem);
+}
+
+body.quality-foundational-page.package-landing-page .hospitality-comparison__column {
+  width: 100%;
+  max-width: 30rem;
+  margin-inline: auto;
+  justify-content: flex-start;
+  gap: clamp(1.35rem, 2vw, 1.75rem);
+  padding-block: 0;
+}
+
+body.quality-foundational-page.package-landing-page .hospitality-comparison__item {
+  gap: clamp(0.95rem, 1.2vw, 1.15rem);
+  margin: 0;
+  align-items: flex-start;
+  text-align: left;
+}
+
+body.quality-foundational-page.package-landing-page
+  .hospitality-comparison__item-text {
+  text-wrap: pretty;
+}
+
+body.quality-foundational-page.package-landing-page .hospitality-comparison__balloon {
+  width: clamp(2.95rem, 2.8vw, 3.35rem);
+  height: clamp(2.95rem, 2.8vw, 3.35rem);
+  flex: 0 0 clamp(2.95rem, 2.8vw, 3.35rem);
+  margin-top: 0;
+}
+
+body.quality-foundational-page.package-landing-page .ultimate-brand-and-web-team-strip {
+  --section-padding-top: clamp(1.9rem, 3.2vw, 2.7rem);
+  --section-padding-bottom: clamp(1.9rem, 3.2vw, 2.6rem);
+  width: 100vw;
+  max-width: none;
+  margin: 0 calc(50% - 50vw) !important;
+  background: #000;
+  color: #fff;
+  border-radius: var(--section-radius) var(--section-radius) 0 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+body.quality-foundational-page.package-landing-page
+  .ultimate-brand-and-web-team-strip__inner {
+  width: min(calc(100vw - 1rem), 84rem);
+  max-width: none;
+  margin-inline: auto;
+}
+
+body.quality-foundational-page.package-landing-page
+  .ultimate-brand-and-web-team-strip
+  .about-instagram__shell {
+  position: relative;
+  overflow: visible;
+  width: 100%;
+  padding-inline: clamp(0.35rem, 0.9vw, 0.7rem);
+  box-sizing: border-box;
+}
+
+body.quality-foundational-page.package-landing-page
+  .ultimate-brand-and-web-team-strip
+  .about-instagram__viewport {
+  overflow: visible;
+}
+
+body.quality-foundational-page.package-landing-page
+  .ultimate-brand-and-web-team-strip
+  .about-instagram__track {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.75rem, 1.1vw, 1rem);
+  align-items: stretch;
+}
+
+body.quality-foundational-page.package-landing-page
+  .ultimate-brand-and-web-team-strip
+  .about-instagram__item {
+  min-width: 0;
+  width: 100%;
+}
+
+body.quality-foundational-page.package-landing-page
+  .ultimate-brand-and-web-team-strip
+  .about-instagram__arrow {
+  display: none;
+}
+
+body.quality-foundational-page.package-landing-page
+  .ultimate-brand-and-web-team-strip__card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: clamp(1rem, 1.5vw, 1.35rem);
+  background: #111;
+}
+
+body.quality-foundational-page.package-landing-page
+  .ultimate-brand-and-web-team-strip__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+body.quality-foundational-page.package-landing-page .ultimate-brand-and-web-meridian-gap {
+  height: clamp(2.25rem, 5vw, 4rem);
+  margin-bottom: calc(clamp(2.25rem, 5vw, 4rem) * -1);
+  z-index: 0;
+}
+
+body.quality-foundational-page.package-landing-page .ultimate-brand-and-web-meridian {
+  position: relative;
+  z-index: 2;
+}
+
+body.quality-foundational-page.package-landing-page .quality-foundational-offers-gap {
+  height: clamp(2.25rem, 5vw, 4rem);
+  margin-bottom: calc(clamp(2.25rem, 5vw, 4rem) * -1);
+  background: #000;
+  position: relative;
+  z-index: -9999;
+}
+
+body.quality-foundational-page.package-landing-page .quality-foundational-offers {
+  width: 100vw;
+  max-width: none;
+  margin: 0 calc(50% - 50vw) 0 !important;
+  padding: clamp(0.7rem, 1.2vw, 1rem) 0 clamp(2.55rem, 4vw, 3.2rem) !important;
+  background: #fff;
+  border-radius: var(--section-radius) var(--section-radius) 0 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+}
+
+body.quality-foundational-page.package-landing-page .quality-foundational-offers__inner {
+  width: min(calc(100vw - 1.25rem), 76rem);
+  max-width: none;
+  margin-inline: auto;
+}
+
+body.quality-foundational-page.package-landing-page .quality-foundational-offers__heading {
+  max-width: min(100%, 58rem);
+  margin: 0 auto clamp(2.1rem, 3.5vw, 2.9rem);
+  text-align: center;
+  font-size: clamp(1.95rem, 3.6vw, 3.1rem);
+  font-weight: 400;
+  font-variation-settings: "wght" 400;
+  line-height: 0.98;
+  letter-spacing: 0;
+}
+
+body.quality-foundational-page.package-landing-page .quality-foundational-offers__heading strong {
+  font-weight: 900;
+  font-variation-settings: "wght" 900;
+}
+
+body.quality-foundational-page.package-landing-page .quality-foundational-offers__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 31rem));
+  justify-content: center;
+  gap: clamp(1rem, 1.8vw, 1.35rem);
+}
+
+body.quality-foundational-page.package-landing-page .quality-foundational-offers__card {
+  min-width: 0;
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  align-content: stretch;
+  justify-items: start;
+  gap: clamp(0.85rem, 1.2vw, 1.05rem);
+  padding: clamp(1.55rem, 2vw, 2rem);
+  background: url("/assets/images/background.webp") center / cover no-repeat;
+  color: #fff;
+  border-radius: clamp(1.15rem, 1.5vw, 1.45rem);
+  box-shadow: 0 1.75rem 4rem rgba(0, 0, 0, 0.16);
+  text-align: left;
+}
+
+body.quality-foundational-page.package-landing-page .quality-foundational-offers__title {
+  margin: 0;
+  max-width: 24ch;
+  color: #fff;
+  -webkit-text-fill-color: #fff;
+  font-size: clamp(1.28rem, 0.7vw + 1.1rem, 1.7rem);
+  font-weight: 900;
+  font-variation-settings: "wght" 900;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  text-wrap: pretty;
+  text-transform: uppercase;
+}
+
+body.quality-foundational-page.package-landing-page .quality-foundational-offers__desc {
+  margin: 0;
+  max-width: 22ch;
+  color: rgba(255, 255, 255, 0.84);
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.84);
+  font-size: 0.95rem;
+  line-height: 1.42;
+  text-wrap: pretty;
+}
+
+body.quality-foundational-page.package-landing-page .quality-foundational-offers__list {
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  padding: 0.2rem 0 0;
+  display: grid;
+  gap: 0.7rem;
+}
+
+body.quality-foundational-page.package-landing-page .quality-foundational-offers__list-item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  gap: 0.75rem;
+  color: #fff;
+  font-size: 0.96rem;
+  line-height: 1.38;
+}
+
+body.quality-foundational-page.package-landing-page .quality-foundational-offers__list-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  flex: 0 0 1.8rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  transform: translateY(0.02rem);
+}
+
+body.quality-foundational-page.package-landing-page .quality-foundational-offers__list-icon svg {
+  width: 0.82rem;
+  height: 0.82rem;
+}
+
+body.quality-foundational-page.package-landing-page .quality-foundational-offers__cta {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-width: 0;
+  max-width: 100%;
+  margin-top: 0.55rem;
+  padding: 0.74rem 3.5rem 0.74rem 1rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 800;
+  font-variation-settings: "wght" 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  text-decoration: none;
+  transform: none;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease,
+    transform 160ms ease;
+}
+
+body.quality-foundational-page.package-landing-page .quality-foundational-offers__cta::after {
+  content: "";
+  position: absolute;
+  right: 0.92rem;
+  top: 50%;
+  width: 1.82rem;
+  height: 1.82rem;
+  border-radius: 999px;
+  background:
+    var(--brisbane-cta-arrow) center / 1rem 1rem no-repeat,
+    #fff;
+  transform: translateY(-50%);
+}
+
+body.quality-foundational-page.package-landing-page .quality-foundational-offers__cta:is(:hover, :focus-visible) {
+  background: var(--accent);
+  color: #fff;
+  transform: translateY(-0.12rem);
+  text-decoration: none;
+}
+
+body.package-landing-page
+  main
+  section.reviews:not(.hero):not(.page-hero):not(.section-accent-tail) {
+  border-radius: 0;
+}
+
+body.quality-foundational-page.package-landing-page
+  main
+  section.reviews:not(.hero):not(.page-hero):not(.section-accent-tail) {
+  border-radius: var(--section-radius) var(--section-radius) 0 0;
+}
+
+body.quality-foundational-page.package-landing-page
+  .hospitality-inline-form.brisbane-smb-landing-page__modal-form-column {
+  width: 100%;
+  min-width: 0;
+  max-width: 31.75rem;
+  align-self: start;
+  border-radius: 28px;
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.34);
+}
+
+body.quality-foundational-page.package-landing-page .hospitality-home-maxx__form-panel,
+body.quality-foundational-page.package-landing-page .hospitality-post-faq__form {
+  height: auto;
+}
+
+body.quality-foundational-page.package-landing-page
+  .hospitality-home-maxx
+  .home-maxx__media,
+body.quality-foundational-page.package-landing-page .hospitality-post-faq__form-col {
+  align-items: start;
+  justify-items: start;
+}
+
+@media (min-width: 1025px) {
+  body.quality-foundational-page.package-landing-page
+    main
+    section.hospitality-comparison:not(.hero):not(.page-hero):not(.section-accent-tail) {
+    padding-top: clamp(2.25rem, 3.6vw, 3.2rem) !important;
+    padding-bottom: clamp(2.4rem, 3.8vw, 3.3rem) !important;
+  }
+
+  body.quality-foundational-page.package-landing-page
+    .hospitality-inline-form.brisbane-smb-landing-page__modal-form-column {
+    width: 31.75rem;
+    min-width: 31.75rem;
+    max-width: 31.75rem;
+    border-radius: 28px;
+  }
+
+  body.quality-foundational-page.package-landing-page
+    .hospitality-home-maxx
+    .home-maxx__inner {
+    width: min(calc(100vw - 2.5rem), 71rem);
+    grid-template-columns: 31.75rem minmax(0, 34rem);
+    gap: clamp(2.4rem, 3vw, 3.05rem);
+  }
+
+  body.quality-foundational-page.package-landing-page .hospitality-post-faq__inner {
+    width: min(calc(100vw - 2.5rem), 71rem);
+    grid-template-columns: repeat(2, minmax(0, 31.75rem));
+    justify-content: center;
+    gap: clamp(1rem, 1.6vw, 1.35rem);
+  }
+
+  body.quality-foundational-page.package-landing-page
+    .hospitality-comparison
+    .comparison__inner {
+    width: min(calc(100vw - 2rem), 80rem);
+    max-width: none;
+    justify-items: center;
+  }
+
+  body.quality-foundational-page.package-landing-page .hospitality-comparison__body {
+    width: min(100%, 69rem);
+    max-width: 69rem;
+    grid-template-columns: repeat(2, minmax(0, 31rem));
+    align-items: start;
+    justify-content: center;
+    justify-items: stretch;
+    justify-self: center;
+    margin-inline: auto;
+    gap: clamp(1.4rem, 2vw, 1.8rem) clamp(2.8rem, 3.4vw, 3.75rem);
+  }
+
+  body.quality-foundational-page.package-landing-page .hospitality-comparison__column {
+    max-width: 31rem;
+    gap: clamp(1.55rem, 2.3vw, 2rem);
+  }
+
+  body.quality-foundational-page.package-landing-page .hospitality-comparison__item {
+    gap: clamp(1.05rem, 1.35vw, 1.25rem);
+  }
+
+  body.quality-foundational-page.package-landing-page .hospitality-comparison__balloon {
+    width: clamp(3.55rem, 3.6vw, 4.05rem);
+    height: clamp(3.55rem, 3.6vw, 4.05rem);
+    flex: 0 0 clamp(3.55rem, 3.6vw, 4.05rem);
+    margin-top: 0;
+  }
+
+  body.quality-foundational-page.package-landing-page .quality-foundational-offers__grid {
+    grid-template-columns: repeat(2, minmax(0, 30rem));
+    gap: clamp(1.15rem, 1.9vw, 1.5rem);
+  }
+}
+
+@media (min-width: 744px) and (max-width: 1024px) {
+  body.quality-foundational-page.package-landing-page
+    main
+    section.hospitality-comparison:not(.hero):not(.page-hero):not(.section-accent-tail) {
+    padding-top: clamp(1.9rem, 4vw, 2.7rem) !important;
+    padding-bottom: clamp(2rem, 4.2vw, 2.8rem) !important;
+  }
+
+  body.quality-foundational-page.package-landing-page
+    .hospitality-inline-form.brisbane-smb-landing-page__modal-form-column {
+    width: min(100%, 25.75rem);
+    max-width: 25.75rem;
+    border-radius: 28px;
+  }
+
+  body.quality-foundational-page.package-landing-page
+    .hospitality-home-maxx
+    .home-maxx__inner {
+    grid-template-columns: minmax(0, 25.75rem) minmax(0, 1fr);
+    gap: 1.4rem;
+  }
+
+  body.quality-foundational-page.package-landing-page .hospitality-post-faq__inner {
+    grid-template-columns: minmax(0, 25.75rem) minmax(0, 1fr);
+    gap: 1rem;
+  }
+
+  body.quality-foundational-page.package-landing-page
+    .hospitality-comparison
+    .comparison__inner {
+    width: min(calc(100vw - 2rem), 63rem);
+    justify-items: center;
+  }
+
+  body.quality-foundational-page.package-landing-page .hospitality-comparison__body {
+    width: 100%;
+    max-width: none;
+    grid-template-columns: repeat(2, minmax(0, 24.5rem));
+    justify-content: center;
+    justify-items: stretch;
+    align-items: start;
+    column-gap: 2.5rem;
+    row-gap: 1.35rem;
+    margin-inline: auto;
+  }
+
+  body.quality-foundational-page.package-landing-page .hospitality-comparison__column {
+    width: 24.5rem;
+    max-width: 24.5rem;
+    margin-inline: 0;
+  }
+
+  body.quality-foundational-page.package-landing-page .hospitality-comparison__balloon {
+    width: 3.55rem;
+    height: 3.55rem;
+    flex: 0 0 3.55rem;
+  }
+
+  body.quality-foundational-page.package-landing-page .quality-foundational-offers {
+    padding-top: clamp(0.65rem, 1.5vw, 0.95rem) !important;
+    padding-bottom: clamp(2.35rem, 4vw, 2.9rem) !important;
+  }
+
+  body.quality-foundational-page.package-landing-page .quality-foundational-offers__heading {
+    max-width: min(100%, 48rem);
+    margin-bottom: 2.1rem;
+    font-size: clamp(1.95rem, 3.6vw, 3.1rem);
+  }
+
+  body.quality-foundational-page.package-landing-page .quality-foundational-offers__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  body.quality-foundational-page.package-landing-page .quality-foundational-offers__card {
+    padding: 1.45rem 1.3rem 1.55rem;
+  }
+}
+
+@media (max-width: 743px) {
+  body.package-landing-page .results-spotlight__inner {
+    width: min(calc(100vw - 1rem), 31rem);
+    margin-inline: auto;
+    justify-items: start;
+    gap: clamp(1.35rem, 5vw, 1.75rem);
+  }
+
+  body.package-landing-page .results-spotlight__head {
+    width: 100%;
+    max-width: none;
+    justify-self: stretch;
+    gap: 0.8rem;
+  }
+
+  body.package-landing-page .results-spotlight__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    max-width: none;
+    justify-self: stretch;
+    margin-inline: 0;
+    gap: 0.75rem;
+  }
+
+  body.package-landing-page .results-spotlight__media {
+    width: 100%;
+    justify-self: stretch;
+  }
+
+  body.package-landing-page .results-spotlight__stats {
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: none;
+    justify-self: stretch;
+    gap: 1.5rem;
+  }
+
+  body.package-landing-page .results-spotlight__stat {
+    width: min(100%, 22rem);
+    justify-self: start;
+  }
+
+  body.quality-foundational-page.package-landing-page
+    main
+    section.hospitality-comparison:not(.hero):not(.page-hero):not(.section-accent-tail) {
+    padding-top: clamp(2.2rem, 8vw, 2.9rem) !important;
+    padding-bottom: clamp(2.35rem, 8.5vw, 3.1rem) !important;
+  }
+
+  body.quality-foundational-page.package-landing-page
+    .hospitality-comparison
+    .comparison__inner {
+    width: min(calc(100vw - 2rem), 31rem);
+    margin-inline: auto;
+    justify-items: start;
+    gap: clamp(1.35rem, 5vw, 1.75rem);
+  }
+
+  body.quality-foundational-page.package-landing-page .hospitality-comparison__body {
+    width: 100%;
+    max-width: none;
+    grid-template-columns: 1fr;
+    justify-content: start;
+    justify-items: stretch;
+    justify-self: start;
+    margin-inline: 0;
+    gap: clamp(1.15rem, 5vw, 1.55rem);
+  }
+
+  body.quality-foundational-page.package-landing-page .hospitality-comparison__column {
+    width: 100%;
+    max-width: none;
+    margin-inline: 0;
+    justify-content: flex-start;
+    gap: clamp(1.25rem, 5vw, 1.65rem);
+    padding-block: 0;
+  }
+
+  body.quality-foundational-page.package-landing-page .hospitality-comparison__item {
+    gap: 0.9rem;
+  }
+
+  body.quality-foundational-page.package-landing-page .hospitality-comparison__balloon {
+    width: 3rem;
+    height: 3rem;
+    flex: 0 0 3rem;
+    margin-top: 0.05rem;
+  }
+
+  body.quality-foundational-page.package-landing-page .quality-foundational-offers {
+    padding-top: clamp(0.6rem, 2.8vw, 0.9rem) !important;
+    padding-bottom: clamp(2.25rem, 7.8vw, 2.8rem) !important;
+  }
+
+  body.quality-foundational-page.package-landing-page .quality-foundational-offers__heading {
+    width: min(100%, 92%);
+    max-width: 24rem;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: left;
+    margin-bottom: 1.95rem;
+    font-size: clamp(2rem, 8vw, 2.75rem);
+    line-height: 0.96;
+    text-wrap: pretty;
+  }
+
+  body.quality-foundational-page.package-landing-page .quality-foundational-offers__inner {
+    width: min(calc(100vw - 1rem), 31rem);
+  }
+
+  body.quality-foundational-page.package-landing-page .quality-foundational-offers__grid {
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+  }
+
+  body.quality-foundational-page.package-landing-page .quality-foundational-offers__card {
+    padding: 1.35rem 1.05rem 1.45rem;
+    border-radius: 1.1rem;
+  }
+
+  body.quality-foundational-page.package-landing-page .quality-foundational-offers__title {
+    width: 100%;
+    max-width: 60%;
+    font-size: clamp(1.42rem, 1.15vw + 1.18rem, 1.8rem);
+    line-height: 0.96;
+    text-wrap: pretty;
+  }
+
+  body.quality-foundational-page.package-landing-page .quality-foundational-offers__desc {
+    max-width: 21ch;
+    font-size: 0.94rem;
+    line-height: 1.42;
+  }
+
+  body.quality-foundational-page.package-landing-page .quality-foundational-offers__list {
+    width: min(100%, 18.5rem);
+  }
+
+  body.quality-foundational-page.package-landing-page .quality-foundational-offers__list-item {
+    gap: 0.68rem;
+    font-size: 0.86rem;
+    line-height: 1.32;
+  }
+
+  body.quality-foundational-page.package-landing-page .quality-foundational-offers__list-icon {
+    width: 1.68rem;
+    height: 1.68rem;
+    flex-basis: 1.68rem;
+  }
+
+  body.quality-foundational-page.package-landing-page .quality-foundational-offers__list-icon svg {
+    width: 0.76rem;
+    height: 0.76rem;
+  }
+}
+
+@media (max-width: 767px) {
+  body.quality-foundational-page.package-landing-page
+    .quality-foundational-header
+    .site-header__wrap {
+    position: relative;
+    gap: 0.7rem;
+  }
+
+  body.quality-foundational-page.package-landing-page
+    .quality-foundational-header
+    .site-header__left {
+    gap: 0.45rem;
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  body.quality-foundational-page.package-landing-page
+    .quality-foundational-header
+    .site-header__brand,
+  body.quality-foundational-page.package-landing-page
+    .quality-foundational-header
+    .site-header__actions {
+    position: relative;
+    z-index: 2;
+  }
+
+  body.quality-foundational-page.package-landing-page
+    .quality-foundational-header
+    .site-header__brand {
+    width: 5.8rem;
+  }
+
+  body.quality-foundational-page.package-landing-page .quality-foundational-header__back {
+    position: static;
+    gap: 0.28rem;
+    margin: 0;
+    font-size: 0.74rem;
+    transform: none;
+    z-index: 2;
+  }
+
+  body.quality-foundational-page.package-landing-page .quality-foundational-header__back-icon {
+    width: 0.88rem;
+    height: 0.88rem;
+    flex-basis: 0.88rem;
+  }
+
+  body.quality-foundational-page.package-landing-page .quality-foundational-header__cta {
+    min-height: 2.3rem;
+    padding: 0.5rem 0.68rem 0.5rem 0.82rem;
+    gap: 0.5rem;
+    font-size: 0.84rem;
+    border-radius: 999px;
+  }
+
+  body.quality-foundational-page.package-landing-page .quality-foundational-header__cta::after {
+    width: 1.55rem;
+    height: 1.55rem;
+    background-size: 0.86rem 0.86rem, auto;
+  }
+
+  body.quality-foundational-page.package-landing-page .ultimate-brand-and-web-team-strip {
+    --section-padding-top: 1.15rem;
+    --section-padding-bottom: 1.45rem;
+  }
+
+  body.quality-foundational-page.package-landing-page .ultimate-brand-and-web-meridian-gap {
+    height: 1.5rem;
+    margin-bottom: -1.5rem;
+  }
+
+  body.quality-foundational-page.package-landing-page
+    .ultimate-brand-and-web-team-strip__inner {
+    width: var(--site-width);
+    display: grid;
+    justify-items: center;
+  }
+
+  body.quality-foundational-page.package-landing-page
+    .ultimate-brand-and-web-team-strip
+    .about-instagram__shell {
+    --about-instagram-gap: 0.75rem;
+    --about-instagram-card-width: min(calc(100vw - 7.5rem), 17rem);
+    display: grid;
+    grid-template-columns: auto minmax(0, var(--about-instagram-card-width)) auto;
+    align-items: center;
+    justify-content: center;
+    column-gap: clamp(0.1rem, 0.9vw, 0.35rem);
+    width: min(100%, calc(var(--about-instagram-card-width) + 5.75rem));
+    max-width: calc(var(--about-instagram-card-width) + 5.75rem);
+    margin-inline: auto;
+    padding-inline: 0;
+    justify-self: center;
+  }
+
+  body.quality-foundational-page.package-landing-page
+    .ultimate-brand-and-web-team-strip
+    .about-instagram__viewport {
+    grid-column: 2;
+    width: 100%;
+    max-width: 100%;
+    margin-inline: 0;
+    position: relative;
+    overflow: hidden;
+    touch-action: pan-y;
+    overscroll-behavior-x: contain;
+    padding-block: 0.9rem 1.1rem;
+  }
+
+  body.quality-foundational-page.package-landing-page
+    .ultimate-brand-and-web-team-strip
+    .about-instagram__track {
+    display: flex;
+    gap: var(--about-instagram-gap);
+    align-items: stretch;
+    justify-content: center;
+    will-change: transform;
+  }
+
+  body.quality-foundational-page.package-landing-page
+    .ultimate-brand-and-web-team-strip
+    .about-instagram__item {
+    flex: 0 0 var(--about-instagram-card-width);
+  }
+
+  body.quality-foundational-page.package-landing-page
+    .ultimate-brand-and-web-team-strip.about-instagram--home-carousel.is-carousel-active
+    .about-instagram__arrow {
+    position: relative;
+    top: auto;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.9rem;
+    height: 2.9rem;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: var(--accent) !important;
+    transform: none;
+  }
+
+  body.quality-foundational-page.package-landing-page
+    .ultimate-brand-and-web-team-strip.about-instagram--home-carousel.is-carousel-active
+    .about-instagram__arrow[data-direction="prev"] {
+    grid-column: 1;
+    left: auto;
+  }
+
+  body.quality-foundational-page.package-landing-page
+    .ultimate-brand-and-web-team-strip.about-instagram--home-carousel.is-carousel-active
+    .about-instagram__arrow[data-direction="next"] {
+    grid-column: 3;
+    right: auto;
+  }
+
+  body.quality-foundational-page.package-landing-page
+    .ultimate-brand-and-web-team-strip.about-instagram--home-carousel.is-carousel-active
+    .about-instagram__arrow::before {
+    content: "";
+    position: absolute;
+    inset: -0.5rem;
+  }
+
+  body.quality-foundational-page.package-landing-page
+    .ultimate-brand-and-web-team-strip.about-instagram--home-carousel.is-carousel-active
+    .about-instagram__arrow
+    svg {
+    width: 2.25rem;
+    height: 2.25rem;
+    color: var(--accent) !important;
+  }
+
+  body.quality-foundational-page.package-landing-page
+    .ultimate-brand-and-web-team-strip.about-instagram--home-carousel.is-carousel-active
+    .about-instagram__arrow
+    path {
+    stroke: var(--accent) !important;
+  }
+}
+
+@media (min-width: 1025px) {
+  body.quality-foundational-page.package-landing-page .hospitality-faq .faq__inner {
+    width: min(calc(100vw - 2.5rem), 64.85rem);
+    max-width: none;
+  }
+
+  body.quality-foundational-page.package-landing-page .hospitality-post-faq__inner {
+    width: min(calc(100vw - 2.5rem), 71rem);
+    max-width: none;
+    grid-template-columns: repeat(2, minmax(0, 31.75rem));
+    justify-content: center;
+    gap: clamp(1rem, 1.6vw, 1.35rem);
+    align-items: stretch;
+  }
+
+  body.quality-foundational-page.package-landing-page .hospitality-post-faq__form-col,
+  body.quality-foundational-page.package-landing-page .hospitality-post-faq__media {
+    min-width: 0;
+    align-self: stretch;
+    justify-self: stretch;
+    align-items: stretch;
+    justify-items: stretch;
+  }
+
+  body.quality-foundational-page.package-landing-page .hospitality-post-faq__form {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    height: 100%;
+    align-self: stretch;
+  }
+
+  body.quality-foundational-page.package-landing-page .hospitality-post-faq__image {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+  }
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__selling-points {
+  order: 2;
+  padding-bottom: clamp(2.2rem, 3.6vw, 3rem) !important;
+}
+
+body.brisbane-smb-landing-page
+  .brisbane-smb-landing-page__selling-points
+  .web-design-copy__inner {
+  width: min(77rem, calc(var(--content-shell-width) - 1.5rem));
+  grid-template-columns: minmax(0, 39.25rem) minmax(13rem, 17.75rem) !important;
+  justify-content: space-between;
+  justify-items: start;
+  align-items: start;
+  column-gap: clamp(1.15rem, 2vw, 1.9rem);
+  row-gap: clamp(1.15rem, 1.8vw, 1.65rem);
+  padding-right: 0;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__selling-points-copy {
+  grid-column: 1;
+  width: 100%;
+  max-width: none;
+  justify-self: start;
+  align-self: start;
+  justify-items: start;
+  text-align: left;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__selling-points-balloon {
+  grid-column: 2;
+  grid-row: 1 / span 4;
+  align-self: start;
+  justify-self: end;
+  width: min(100%, 17.75rem);
+  margin-top: clamp(0.15rem, 0.55vw, 0.45rem);
+  pointer-events: none;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__selling-points-balloon-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  background: transparent;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__post-faq {
+  order: 13;
+}
+
+body.brisbane-smb-landing-page
+  .brisbane-smb-landing-page__post-faq
+  .hospitality-post-faq__inner {
+  width: min(calc(100vw - 2.5rem), 64.5rem);
+  grid-template-columns: repeat(2, minmax(0, 31.75rem));
+  justify-content: center;
+  align-items: stretch;
+  gap: clamp(0.85rem, 1.4vw, 1rem);
+}
+
+body.brisbane-smb-landing-page
+  .brisbane-smb-landing-page__post-faq
+  .hospitality-post-faq__form-col,
+body.brisbane-smb-landing-page
+  .brisbane-smb-landing-page__post-faq
+  .hospitality-post-faq__media {
+  width: 100%;
+  min-width: 0;
+}
+
+body.brisbane-smb-landing-page
+  .hospitality-inline-form.brisbane-smb-landing-page__modal-form-column.brisbane-smb-landing-page__post-faq-form {
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  height: 100%;
+  border-radius: 28px;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__post-faq-form .form-thanks {
+  min-height: 100%;
+  display: grid;
+  align-content: center;
+  padding: 1rem 0;
+}
+
+body.brisbane-smb-landing-page
+  .brisbane-smb-landing-page__post-faq-form
+  .brisbane-smb-landing-page__slider-heading,
+body.brisbane-smb-landing-page
+  .brisbane-smb-landing-page__post-faq-form
+  .brisbane-smb-landing-page__slider-row,
+body.brisbane-smb-landing-page
+  .brisbane-smb-landing-page__post-faq-form
+  .brisbane-smb-landing-page__slider-total,
+body.brisbane-smb-landing-page
+  .brisbane-smb-landing-page__post-faq-form
+  .brisbane-smb-landing-page__slider-field-grid {
+  width: 100%;
+  max-width: none;
+}
+
+body.brisbane-smb-landing-page
+  .brisbane-smb-landing-page__post-faq-form
+  .brisbane-smb-landing-page__slider-heading {
+  margin: 0 0 2rem;
+  color: #fff;
+  font-size: clamp(1.65rem, 0.85vw + 1.38rem, 2.1rem);
+  text-align: left;
+}
+
+body.brisbane-smb-landing-page
+  .brisbane-smb-landing-page__post-faq-form
+  .brisbane-smb-landing-page__slider-row {
+  margin-inline: 0;
+}
+
+body.brisbane-smb-landing-page
+  .brisbane-smb-landing-page__post-faq-form
+  .brisbane-smb-landing-page__slider-total {
+  justify-content: flex-start;
+  margin: 2rem 0 0;
+}
+
+body.brisbane-smb-landing-page
+  .brisbane-smb-landing-page__post-faq-form
+  .brisbane-smb-landing-page__slider-output {
+  color: #fff;
+  font-size: clamp(1.65rem, 0.85vw + 1.38rem, 2.1rem);
+  font-weight: 800;
+  line-height: 1;
+  text-align: left;
+}
+
+body.brisbane-smb-landing-page
+  .brisbane-smb-landing-page__post-faq-form
+  .brisbane-smb-landing-page__slider-shell {
+  height: 1.45rem;
+  --slider-muted: #5c5c5c;
+  --slider-thumb-size: 1.5rem;
+}
+
+body.brisbane-smb-landing-page
+  .brisbane-smb-landing-page__post-faq-form
+  .brisbane-smb-landing-page__slider-shell::before,
+body.brisbane-smb-landing-page
+  .brisbane-smb-landing-page__post-faq-form
+  .brisbane-smb-landing-page__slider-shell::after,
+body.brisbane-smb-landing-page
+  .brisbane-smb-landing-page__post-faq-form
+  .brisbane-smb-landing-page__slider-input::-webkit-slider-runnable-track,
+body.brisbane-smb-landing-page
+  .brisbane-smb-landing-page__post-faq-form
+  .brisbane-smb-landing-page__slider-input::-moz-range-track,
+body.brisbane-smb-landing-page
+  .brisbane-smb-landing-page__post-faq-form
+  .brisbane-smb-landing-page__slider-input::-moz-range-progress {
+  height: 0.48rem;
+}
+
+body.brisbane-smb-landing-page
+  .brisbane-smb-landing-page__post-faq-form
+  .brisbane-smb-landing-page__slider-input::-webkit-slider-thumb {
+  width: var(--slider-thumb-size);
+  height: var(--slider-thumb-size);
+  margin-top: calc((0.48rem - var(--slider-thumb-size)) / 2);
+}
+
+body.brisbane-smb-landing-page
+  .brisbane-smb-landing-page__post-faq-form
+  .brisbane-smb-landing-page__slider-input::-moz-range-thumb {
+  width: var(--slider-thumb-size);
+  height: var(--slider-thumb-size);
+}
+
+body.brisbane-smb-landing-page
+  .brisbane-smb-landing-page__post-faq-form
+  .brisbane-smb-landing-page__slider-milestone {
+  width: 1.14rem;
+  height: 1.14rem;
+}
+
+body.brisbane-smb-landing-page
+  .brisbane-smb-landing-page__post-faq-form
+  .brisbane-smb-landing-page__slider-field-grid {
+  margin-top: 1.5rem;
+  opacity: 1;
+  transform: none;
+}
+
+body.brisbane-smb-landing-page
+  .brisbane-smb-landing-page__post-faq-form
+  .brisbane-smb-landing-page__slider-field {
+  min-height: 3.5rem;
+  padding: 0 0 0.9rem;
+  border: 0;
+  border-bottom: 0.48rem solid #5c5c5c;
+  border-radius: 0;
+  background: transparent;
+  color: #fff;
+}
+
+body.brisbane-smb-landing-page
+  .brisbane-smb-landing-page__post-faq-form
+  .brisbane-smb-landing-page__slider-field::placeholder {
+  color: #8e8e8e;
+  opacity: 1;
+}
+
+body.brisbane-smb-landing-page
+  .brisbane-smb-landing-page__post-faq-form
+  .brisbane-smb-landing-page__slider-field:focus {
+  border-bottom-color: var(--accent);
+}
+
+body.brisbane-smb-landing-page
+  .brisbane-smb-landing-page__post-faq-form
+  .brisbane-smb-landing-page__slider-field--message {
+  min-height: 6rem;
+}
+
+body.brisbane-smb-landing-page
+  .brisbane-smb-landing-page__post-faq-form
+  .brisbane-smb-landing-page__slider-submit {
+  margin-top: 0.9rem;
+}
+
+body.brisbane-smb-landing-page
+  .brisbane-smb-landing-page__post-faq
+  .hospitality-post-faq__media {
+  overflow: hidden;
+  border-radius: 28px;
+  justify-items: stretch;
+  align-items: stretch;
+}
+
+body.brisbane-smb-landing-page
+  .brisbane-smb-landing-page__post-faq
+  .hospitality-post-faq__image {
+  height: 100%;
+  border-radius: 28px;
+}
+
+body.brisbane-smb-landing-page .ultimate-brand-and-web-team-strip {
+  order: 3;
+  --section-padding-top: clamp(1.9rem, 3.2vw, 2.7rem);
+  --section-padding-bottom: clamp(1.9rem, 3.2vw, 2.6rem);
+  width: 100vw;
+  max-width: none;
+  margin: calc(-1 * var(--section-radius)) calc(50% - 50vw) 0 !important;
+  padding-top: calc(var(--site-gap) + var(--section-radius)) !important;
+  padding-bottom: var(--section-padding-bottom) !important;
+  background: #000;
+  color: #fff;
+  border-radius: var(--section-radius) var(--section-radius) 0 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 4;
+}
+
+body.brisbane-smb-landing-page .ultimate-brand-and-web-team-strip__inner {
+  width: min(calc(100vw - 1rem), 84rem);
+  max-width: none;
+  margin-inline: auto;
+}
+
+body.brisbane-smb-landing-page
+  .ultimate-brand-and-web-team-strip
+  .about-instagram__shell {
+  position: relative;
+  overflow: visible;
+  width: 100%;
+  padding-inline: clamp(0.35rem, 0.9vw, 0.7rem);
+  box-sizing: border-box;
+}
+
+body.brisbane-smb-landing-page
+  .ultimate-brand-and-web-team-strip
+  .about-instagram__viewport {
+  overflow: visible;
+}
+
+body.brisbane-smb-landing-page
+  .ultimate-brand-and-web-team-strip
+  .about-instagram__track {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.75rem, 1.1vw, 1rem);
+  align-items: stretch;
+}
+
+body.brisbane-smb-landing-page
+  .ultimate-brand-and-web-team-strip
+  .about-instagram__item {
+  min-width: 0;
+  width: 100%;
+}
+
+body.brisbane-smb-landing-page
+  .ultimate-brand-and-web-team-strip
+  .about-instagram__arrow {
+  display: none;
+}
+
+body.brisbane-smb-landing-page .ultimate-brand-and-web-team-strip__card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: clamp(1rem, 1.5vw, 1.35rem);
+  background: #111;
+}
+
+body.brisbane-smb-landing-page .ultimate-brand-and-web-team-strip__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__metro-gap {
+  order: 4;
+  display: block !important;
+  height: clamp(2.25rem, 5vw, 4rem) !important;
+  margin: 0 0 calc(clamp(2.25rem, 5vw, 4rem) * -1) !important;
+  background: #000 !important;
+  position: relative;
+  z-index: -9999;
+}
+
+body.brisbane-smb-landing-page .customer-review--metro-rags {
+  order: 5;
+  --section-padding-bottom: calc(var(--site-gap) + var(--section-radius));
+  border-radius: var(--section-radius) var(--section-radius) 0 0 !important;
+  overflow: hidden !important;
+  margin-top: 0 !important;
+  position: relative;
+  z-index: 4;
+}
+
+body.brisbane-smb-landing-page .customer-review--meridian {
+  order: 6;
+  --section-padding-bottom: calc(var(--site-gap) + var(--section-radius));
+  border-radius: var(--section-radius) var(--section-radius) 0 0 !important;
+  overflow: hidden !important;
+  margin-top: calc(-1 * var(--section-radius)) !important;
+  padding-top: calc(var(--site-gap) + var(--section-radius)) !important;
+  position: relative;
+  z-index: 4;
+}
+
+body.brisbane-smb-landing-page .quality-foundational-offers {
+  order: 7;
+  width: 100vw;
+  max-width: none;
+  margin: calc(-1 * var(--section-radius)) calc(50% - 50vw) 0 !important;
+  padding: calc(var(--site-gap) + var(--section-radius)) 0
+    clamp(2.55rem, 4vw, 3.2rem) !important;
+  background: #fff;
+  border-radius: var(--section-radius) var(--section-radius) 0 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 4;
+}
+
+body.brisbane-smb-landing-page .quality-foundational-offers__inner {
+  width: min(calc(100vw - 1.25rem), 82rem);
+  max-width: none;
+  margin-inline: auto;
+}
+
+body.brisbane-smb-landing-page .quality-foundational-offers__heading {
+  max-width: min(100%, 52rem);
+  margin: 0 auto clamp(2.1rem, 3.5vw, 2.9rem);
+  text-align: center;
+  font-size: clamp(1.95rem, 3.6vw, 3.1rem);
+  font-weight: 400;
+  font-variation-settings: "wght" 400;
+  line-height: 0.98;
+  letter-spacing: 0;
+}
+
+body.brisbane-smb-landing-page .quality-foundational-offers__heading strong {
+  font-weight: 900;
+  font-variation-settings: "wght" 900;
+}
+
+body.brisbane-smb-landing-page .quality-foundational-offers__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 1.8vw, 1.35rem);
+}
+
+body.brisbane-smb-landing-page .quality-foundational-offers__card {
+  min-width: 0;
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  align-content: stretch;
+  justify-items: start;
+  gap: clamp(0.85rem, 1.2vw, 1.05rem);
+  padding: clamp(1.55rem, 2vw, 2rem);
+  background: url("/assets/images/background.webp") center / cover no-repeat;
+  color: #fff;
+  border-radius: clamp(1.15rem, 1.5vw, 1.45rem);
+  box-shadow: 0 1.75rem 4rem rgba(0, 0, 0, 0.16);
+  text-align: left;
+}
+
+body.brisbane-smb-landing-page .quality-foundational-offers__title {
+  margin: 0;
+  max-width: 24ch;
+  color: #fff;
+  -webkit-text-fill-color: #fff;
+  font-size: clamp(1.28rem, 0.7vw + 1.1rem, 1.7rem);
+  font-weight: 900;
+  font-variation-settings: "wght" 900;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  text-wrap: pretty;
+  text-transform: uppercase;
+}
+
+body.brisbane-smb-landing-page .quality-foundational-offers__desc {
+  margin: 0;
+  max-width: 24ch;
+  color: rgba(255, 255, 255, 0.84);
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.84);
+  font-size: 0.95rem;
+  line-height: 1.42;
+  text-wrap: pretty;
+}
+
+body.brisbane-smb-landing-page .quality-foundational-offers__list {
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  padding: 0.2rem 0 0;
+  display: grid;
+  gap: 0.7rem;
+}
+
+body.brisbane-smb-landing-page .quality-foundational-offers__list-item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  gap: 0.75rem;
+  color: #fff;
+  font-size: 0.96rem;
+  line-height: 1.38;
+}
+
+body.brisbane-smb-landing-page .quality-foundational-offers__list-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  flex: 0 0 1.8rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  transform: translateY(0.02rem);
+}
+
+body.brisbane-smb-landing-page .quality-foundational-offers__list-icon svg {
+  width: 0.82rem;
+  height: 0.82rem;
+}
+
+body.brisbane-smb-landing-page .quality-foundational-offers__cta {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-width: 0;
+  max-width: 100%;
+  margin-top: 0.55rem;
+  padding: 0.74rem 3.5rem 0.74rem 1rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 800;
+  font-variation-settings: "wght" 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  text-decoration: none;
+  transform: none;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease,
+    transform 160ms ease;
+}
+
+body.brisbane-smb-landing-page .quality-foundational-offers__cta::after {
+  content: "";
+  position: absolute;
+  right: 0.92rem;
+  top: 50%;
+  width: 1.82rem;
+  height: 1.82rem;
+  border-radius: 999px;
+  background:
+    var(--brisbane-cta-arrow) center / 1rem 1rem no-repeat,
+    #fff;
+  transform: translateY(-50%);
+}
+
+body.brisbane-smb-landing-page
+  .quality-foundational-offers__cta:is(:hover, :focus-visible) {
+  background: var(--accent);
+  color: #fff;
+  transform: translateY(-0.12rem);
+  text-decoration: none;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__reviews-gap {
+  order: 8;
+  display: block !important;
+  height: clamp(2.25rem, 5vw, 4rem) !important;
+  margin: 0 0 calc(clamp(2.25rem, 5vw, 4rem) * -1) !important;
+  background: #fff !important;
+  position: relative;
+  z-index: -9999;
+}
+
+body.brisbane-smb-landing-page .reviews {
+  order: 9;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__maxx-pass-through {
+  order: 10;
+  margin-top: 0 !important;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__faq-gap {
+  order: 11;
+}
+
+body.brisbane-smb-landing-page .faq {
+  order: 12;
+}
+
+@media (min-width: 1025px) {
+  body.brisbane-smb-landing-page .quality-foundational-offers__inner {
+    width: min(calc(100vw - 2.5rem), 72rem);
+  }
+
+  body.brisbane-smb-landing-page .quality-foundational-offers__grid {
+    gap: clamp(0.7rem, 0.9vw, 0.85rem);
+  }
+
+  body.brisbane-smb-landing-page .quality-foundational-offers__card {
+    width: 100%;
+    max-width: none;
+    box-sizing: border-box;
+  }
+}
+
+@media (min-width: 744px) and (max-width: 1024px) {
+  body.brisbane-smb-landing-page .brisbane-smb-landing-page__selling-points {
+    padding-bottom: clamp(2rem, 4.4vw, 2.6rem) !important;
+  }
+
+  body.brisbane-smb-landing-page
+    .brisbane-smb-landing-page__post-faq
+    .hospitality-post-faq__inner {
+    width: var(--site-width);
+    grid-template-columns: 1fr;
+  }
+
+  body.brisbane-smb-landing-page
+    .brisbane-smb-landing-page__post-faq
+    .hospitality-post-faq__form-col {
+    order: 2;
+  }
+
+  body.brisbane-smb-landing-page
+    .brisbane-smb-landing-page__post-faq
+    .hospitality-post-faq__media {
+    order: 1;
+  }
+
+  body.brisbane-smb-landing-page
+    .brisbane-smb-landing-page__post-faq
+    .hospitality-post-faq__image {
+    height: auto;
+  }
+
+  body.brisbane-smb-landing-page
+    .brisbane-smb-landing-page__selling-points
+    .web-design-copy__inner {
+    width: min(71rem, calc(var(--content-shell-width) - 1rem));
+    grid-template-columns: minmax(0, 1fr) minmax(11rem, 13.75rem) !important;
+    justify-content: start;
+    column-gap: clamp(0.9rem, 1.6vw, 1.2rem);
+  }
+
+  body.brisbane-smb-landing-page .brisbane-smb-landing-page__selling-points-balloon {
+    width: min(100%, 13.5rem);
+    justify-self: end;
+  }
+
+  body.brisbane-smb-landing-page .quality-foundational-offers__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  body.brisbane-smb-landing-page .quality-foundational-offers__card {
+    padding: 1.45rem 1.3rem 1.55rem;
+  }
+}
+
+@media (max-width: 743px) {
+  body.brisbane-smb-landing-page .brisbane-smb-landing-page__selling-points {
+    padding-bottom: clamp(2rem, 7vw, 2.55rem) !important;
+  }
+
+  body.brisbane-smb-landing-page
+    .brisbane-smb-landing-page__selling-points
+    .web-design-copy__inner {
+    width: var(--site-width);
+    grid-template-columns: 1fr !important;
+    justify-content: start;
+  }
+
+  body.brisbane-smb-landing-page
+    .brisbane-smb-landing-page__post-faq
+    .hospitality-post-faq__inner {
+    width: var(--site-width);
+    grid-template-columns: 1fr;
+  }
+
+  body.brisbane-smb-landing-page
+    .brisbane-smb-landing-page__post-faq
+    .hospitality-post-faq__image {
+    height: auto;
+  }
+
+  body.brisbane-smb-landing-page .brisbane-smb-landing-page__selling-points-balloon {
+    display: block;
+    grid-column: 1;
+    grid-row: auto;
+    justify-self: start;
+    align-self: start;
+    width: min(100%, 12.5rem);
+    margin-top: clamp(0.8rem, 3vw, 1.2rem);
+  }
+
+  body.brisbane-smb-landing-page .ultimate-brand-and-web-team-strip {
+    --section-padding-bottom: 1.45rem;
+    padding-top: calc(var(--site-gap) + 1.15rem) !important;
+  }
+
+  body.brisbane-smb-landing-page .ultimate-brand-and-web-team-strip__inner {
+    width: var(--site-width);
+    display: grid;
+    justify-items: center;
+  }
+
+  body.brisbane-smb-landing-page
+    .ultimate-brand-and-web-team-strip
+    .about-instagram__shell {
+    --about-instagram-gap: 0.75rem;
+    --about-instagram-card-width: min(calc(100vw - 7.5rem), 17rem);
+    display: grid;
+    grid-template-columns: auto minmax(0, var(--about-instagram-card-width)) auto;
+    align-items: center;
+    justify-content: center;
+    column-gap: clamp(0.1rem, 0.9vw, 0.35rem);
+    width: min(100%, calc(var(--about-instagram-card-width) + 5.75rem));
+    max-width: calc(var(--about-instagram-card-width) + 5.75rem);
+    margin-inline: auto;
+    padding-inline: 0;
+    justify-self: center;
+  }
+
+  body.brisbane-smb-landing-page
+    .ultimate-brand-and-web-team-strip
+    .about-instagram__viewport {
+    grid-column: 2;
+    width: 100%;
+    max-width: 100%;
+    margin-inline: 0;
+    position: relative;
+    overflow: hidden;
+    touch-action: pan-y;
+    overscroll-behavior-x: contain;
+    padding-block: 0.9rem 1.1rem;
+  }
+
+  body.brisbane-smb-landing-page
+    .ultimate-brand-and-web-team-strip
+    .about-instagram__track {
+    display: flex;
+    gap: var(--about-instagram-gap);
+    align-items: stretch;
+    justify-content: center;
+    will-change: transform;
+  }
+
+  body.brisbane-smb-landing-page
+    .ultimate-brand-and-web-team-strip
+    .about-instagram__item {
+    flex: 0 0 var(--about-instagram-card-width);
+  }
+
+  body.brisbane-smb-landing-page
+    .ultimate-brand-and-web-team-strip.about-instagram--home-carousel.is-carousel-active
+    .about-instagram__arrow {
+    position: relative;
+    top: auto;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.9rem;
+    height: 2.9rem;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: var(--accent) !important;
+    transform: none;
+  }
+
+  body.brisbane-smb-landing-page
+    .ultimate-brand-and-web-team-strip.about-instagram--home-carousel.is-carousel-active
+    .about-instagram__arrow[data-direction="prev"] {
+    grid-column: 1;
+    left: auto;
+  }
+
+  body.brisbane-smb-landing-page
+    .ultimate-brand-and-web-team-strip.about-instagram--home-carousel.is-carousel-active
+    .about-instagram__arrow[data-direction="next"] {
+    grid-column: 3;
+    right: auto;
+  }
+
+  body.brisbane-smb-landing-page
+    .ultimate-brand-and-web-team-strip.about-instagram--home-carousel.is-carousel-active
+    .about-instagram__arrow::before {
+    content: "";
+    position: absolute;
+    inset: -0.5rem;
+  }
+
+  body.brisbane-smb-landing-page
+    .ultimate-brand-and-web-team-strip.about-instagram--home-carousel.is-carousel-active
+    .about-instagram__arrow
+    svg {
+    width: 2.25rem;
+    height: 2.25rem;
+    color: var(--accent) !important;
+  }
+
+  body.brisbane-smb-landing-page
+    .ultimate-brand-and-web-team-strip.about-instagram--home-carousel.is-carousel-active
+    .about-instagram__arrow
+    path {
+    stroke: var(--accent) !important;
+  }
+
+  body.brisbane-smb-landing-page .quality-foundational-offers {
+    padding-top: calc(var(--site-gap) + 0.8rem) !important;
+    padding-bottom: clamp(2.25rem, 7.8vw, 2.8rem) !important;
+  }
+
+  body.brisbane-smb-landing-page .quality-foundational-offers__heading {
+    width: min(100%, 92%);
+    max-width: 24rem;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: left;
+    margin-bottom: 1.95rem;
+    font-size: clamp(2rem, 8vw, 2.75rem);
+    line-height: 0.96;
+    text-wrap: pretty;
+  }
+
+  body.brisbane-smb-landing-page .quality-foundational-offers__inner {
+    width: min(calc(100vw - 1rem), 31rem);
+  }
+
+  body.brisbane-smb-landing-page .quality-foundational-offers__grid {
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+  }
+
+  body.brisbane-smb-landing-page .quality-foundational-offers__card {
+    padding: 1.35rem 1.05rem 1.45rem;
+    border-radius: 1.1rem;
+  }
+
+  body.brisbane-smb-landing-page .quality-foundational-offers__title {
+    width: 100%;
+    max-width: 60%;
+    font-size: clamp(1.42rem, 1.15vw + 1.18rem, 1.8rem);
+    line-height: 0.96;
+    text-wrap: pretty;
+  }
+
+  body.brisbane-smb-landing-page .quality-foundational-offers__desc {
+    max-width: 21ch;
+    font-size: 0.94rem;
+    line-height: 1.42;
+  }
+
+  body.brisbane-smb-landing-page .quality-foundational-offers__list {
+    width: min(100%, 18.5rem);
+  }
+
+  body.brisbane-smb-landing-page .quality-foundational-offers__list-item {
+    gap: 0.68rem;
+    font-size: 0.86rem;
+    line-height: 1.32;
+  }
+
+  body.brisbane-smb-landing-page .quality-foundational-offers__list-icon {
+    width: 1.68rem;
+    height: 1.68rem;
+    flex-basis: 1.68rem;
+  }
+
+  body.brisbane-smb-landing-page .quality-foundational-offers__list-icon svg {
+    width: 0.76rem;
+    height: 0.76rem;
+  }
+}
+
+body.brisbane-smb-landing-page
+  :is(
+    .quality-foundational-offers__heading,
+    .brisbane-smb-landing-page__maxx-pass-through-title
+  ) {
+  width: min(100%, 52rem);
+  max-width: 52rem;
+  margin-inline: auto;
+  text-align: center;
+  font-size: clamp(1.95rem, 3.6vw, 3.1rem);
+  line-height: 0.98;
+  letter-spacing: 0;
+  text-transform: none;
+  text-wrap: normal;
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: normal;
+}
+
+body.brisbane-smb-landing-page .quality-foundational-offers__heading {
+  margin-bottom: clamp(2.1rem, 3.5vw, 2.9rem);
+}
+
+@media (max-width: 767px) {
+  body.brisbane-smb-landing-page
+    .brisbane-smb-landing-page__maxx-pass-through-title {
+    width: min(100%, 80%);
+    max-width: 80%;
+    margin-inline: auto !important;
+    text-align: center;
+    font-size: clamp(2.5rem, 8.6vw, 3.5rem);
+    line-height: 0.98;
+  }
+
+  body.brisbane-smb-landing-page .quality-foundational-offers__heading {
+    width: min(100%, 80%);
+    max-width: 80%;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    text-align: left !important;
+  }
+}
+
+@media (max-width: 767px) {
+  body.package-landing-page .form-modal,
+  body.brisbane-smb-landing-page .form-modal {
+    padding: 0.75rem 0.5rem;
+  }
+
+  body.package-landing-page .form-modal > .form-modal__panel,
+  body.brisbane-smb-landing-page .form-modal > .form-modal__panel {
+    width: min(calc(100vw - 1rem), 26rem);
+    max-width: 26rem;
+    margin: auto;
+    padding: 0;
+    background: #000;
+    border-radius: 1.25rem;
+    overflow: hidden;
+    scrollbar-gutter: auto;
+  }
+
+  body.package-landing-page
+    :is(
+      .hospitality-inline-form.brisbane-smb-landing-page__modal-form-column,
+      .form-modal .brisbane-smb-landing-page__modal-form-column
+    ),
+  body.brisbane-smb-landing-page
+    :is(
+      .hospitality-inline-form.brisbane-smb-landing-page__modal-form-column,
+      .form-modal .brisbane-smb-landing-page__modal-form-column
+    ) {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    box-sizing: border-box;
+    padding: 1.5rem 1.1rem 1.6rem;
+    border-radius: 1.25rem;
+    box-shadow: none;
+  }
+
+  body.package-landing-page
+    :is(
+      .hospitality-inline-form,
+      .form-modal .brisbane-smb-landing-page__modal-form-column
+    )
+    .form-modal__header,
+  body.brisbane-smb-landing-page
+    :is(
+      .hospitality-inline-form,
+      .form-modal .brisbane-smb-landing-page__modal-form-column
+    )
+    .form-modal__header {
+    margin-bottom: 1.15rem;
+  }
+
+  body.package-landing-page
+    :is(
+      .hospitality-inline-form,
+      .form-modal .brisbane-smb-landing-page__modal-form-column
+    )
+    .form-modal__heading,
+  body.brisbane-smb-landing-page
+    :is(
+      .hospitality-inline-form,
+      .form-modal .brisbane-smb-landing-page__modal-form-column
+    )
+    .form-modal__heading {
+    gap: 0.65rem;
+  }
+
+  body.package-landing-page
+    :is(
+      .hospitality-inline-form,
+      .form-modal .brisbane-smb-landing-page__modal-form-column
+    )
+    .form-modal__title,
+  body.brisbane-smb-landing-page
+    :is(
+      .hospitality-inline-form,
+      .form-modal .brisbane-smb-landing-page__modal-form-column
+    )
+    .form-modal__title {
+    font-size: clamp(2.15rem, 8vw, 2.8rem);
+    line-height: 0.95;
+    text-wrap: pretty;
+  }
+
+  body.package-landing-page
+    :is(
+      .hospitality-inline-form,
+      .form-modal .brisbane-smb-landing-page__modal-form-column
+    )
+    .form-modal__desc,
+  body.brisbane-smb-landing-page
+    :is(
+      .hospitality-inline-form,
+      .form-modal .brisbane-smb-landing-page__modal-form-column
+    )
+    .form-modal__desc {
+    max-width: 32ch;
+    font-size: 1.16rem;
+    line-height: 1.42;
+  }
+
+  body.package-landing-page
+    :is(
+      .hospitality-inline-form,
+      .form-modal .brisbane-smb-landing-page__modal-form-column
+    )
+    .discovery-form,
+  body.brisbane-smb-landing-page
+    :is(
+      .hospitality-inline-form,
+      .form-modal .brisbane-smb-landing-page__modal-form-column
+    )
+    .discovery-form {
+    gap: 0.95rem;
+  }
+
+  body.package-landing-page
+    :is(
+      .hospitality-inline-form,
+      .form-modal .brisbane-smb-landing-page__modal-form-column
+    )
+    .discovery-form
+    input:not(.discovery-form__budget-input),
+  body.package-landing-page
+    :is(
+      .hospitality-inline-form,
+      .form-modal .brisbane-smb-landing-page__modal-form-column
+    )
+    .discovery-form
+    textarea,
+  body.brisbane-smb-landing-page
+    :is(
+      .hospitality-inline-form,
+      .form-modal .brisbane-smb-landing-page__modal-form-column
+    )
+    .discovery-form
+    input:not(.discovery-form__budget-input),
+  body.brisbane-smb-landing-page
+    :is(
+      .hospitality-inline-form,
+      .form-modal .brisbane-smb-landing-page__modal-form-column
+    )
+    .discovery-form
+    textarea {
+    min-height: 3.9rem;
+    padding: 0 0 1rem;
+    font-size: clamp(1.9rem, 1.6vw + 1.45rem, 2.55rem);
+    line-height: 1.02;
+  }
+
+  body.package-landing-page
+    :is(
+      .hospitality-inline-form,
+      .form-modal .brisbane-smb-landing-page__modal-form-column
+    )
+    .discovery-form
+    input:not(.discovery-form__budget-input),
+  body.package-landing-page
+    :is(
+      .hospitality-inline-form,
+      .form-modal .brisbane-smb-landing-page__modal-form-column
+    )
+    .discovery-form
+    textarea {
+    font-weight: 800;
+    font-variation-settings: "wght" 800;
+    letter-spacing: -0.04em;
+  }
+
+  body.package-landing-page
+    :is(
+      .hospitality-inline-form,
+      .form-modal .brisbane-smb-landing-page__modal-form-column
+    )
+    .discovery-form
+    input::placeholder,
+  body.package-landing-page
+    :is(
+      .hospitality-inline-form,
+      .form-modal .brisbane-smb-landing-page__modal-form-column
+    )
+    .discovery-form
+    textarea::placeholder,
+  body.brisbane-smb-landing-page
+    :is(
+      .hospitality-inline-form,
+      .form-modal .brisbane-smb-landing-page__modal-form-column
+    )
+    .discovery-form
+    input::placeholder,
+  body.brisbane-smb-landing-page
+    :is(
+      .hospitality-inline-form,
+      .form-modal .brisbane-smb-landing-page__modal-form-column
+    )
+    .discovery-form
+    textarea::placeholder {
+    font-size: clamp(1.9rem, 1.45vw + 1.48rem, 2.4rem);
+    line-height: 1.04;
+  }
+
+  body.package-landing-page
+    :is(
+      .hospitality-inline-form,
+      .form-modal .brisbane-smb-landing-page__modal-form-column
+    )
+    .discovery-form
+    input::placeholder,
+  body.package-landing-page
+    :is(
+      .hospitality-inline-form,
+      .form-modal .brisbane-smb-landing-page__modal-form-column
+    )
+    .discovery-form
+    textarea::placeholder {
+    font-weight: 800;
+    font-variation-settings: "wght" 800;
+    letter-spacing: -0.03em;
+  }
+
+  body.package-landing-page
+    :is(
+      .hospitality-inline-form,
+      .form-modal .brisbane-smb-landing-page__modal-form-column
+    )
+    .discovery-form
+    textarea,
+  body.brisbane-smb-landing-page
+    :is(
+      .hospitality-inline-form,
+      .form-modal .brisbane-smb-landing-page__modal-form-column
+    )
+    .discovery-form
+    textarea {
+    min-height: 6.9rem;
+  }
+
+  body.package-landing-page
+    :is(
+      .hospitality-inline-form,
+      .form-modal .brisbane-smb-landing-page__modal-form-column
+    )
+    .discovery-form__submit,
+  body.brisbane-smb-landing-page
+    :is(
+      .hospitality-inline-form,
+      .form-modal .brisbane-smb-landing-page__modal-form-column
+    )
+    .discovery-form__submit {
+    min-height: 4.05rem;
+    padding: 0.82rem 3.6rem 0.82rem 1.12rem;
+    font-size: 1.16rem;
+  }
+
+  body.package-landing-page
+    :is(
+      .hospitality-inline-form,
+      .form-modal .brisbane-smb-landing-page__modal-form-column
+    )
+    .discovery-form__submit::after,
+  body.brisbane-smb-landing-page
+    :is(
+      .hospitality-inline-form,
+      .form-modal .brisbane-smb-landing-page__modal-form-column
+    )
+    .discovery-form__submit::after {
+    right: 0.96rem;
+    width: 1.9rem;
+    height: 1.9rem;
+  }
+
+  body.brisbane-smb-landing-page
+    :is(
+      .brisbane-smb-landing-page__slider-heading,
+      .brisbane-smb-landing-page__slider-row,
+      .brisbane-smb-landing-page__slider-total,
+      .brisbane-smb-landing-page__slider-reveal
+    ) {
+    width: 100%;
+    max-width: none;
+  }
+
+  body.brisbane-smb-landing-page
+    :is(
+      .brisbane-smb-landing-page__slider-heading,
+      .form-modal
+        .brisbane-smb-landing-page__slider-form--modal
+        .brisbane-smb-landing-page__slider-heading,
+      .brisbane-smb-landing-page__post-faq-form
+        .brisbane-smb-landing-page__slider-heading
+    ) {
+    font-size: clamp(2.15rem, 8vw, 2.8rem);
+    line-height: 0.98;
+  }
+
+  body.brisbane-smb-landing-page
+    :is(
+      .brisbane-smb-landing-page__slider-field-grid,
+      .form-modal
+        .brisbane-smb-landing-page__slider-form--modal
+        .brisbane-smb-landing-page__slider-field-grid,
+      .brisbane-smb-landing-page__post-faq-form
+        .brisbane-smb-landing-page__slider-field-grid
+    ) {
+    gap: 1rem;
+  }
+
+  body.brisbane-smb-landing-page
+    :is(
+      .brisbane-smb-landing-page__slider-field,
+      .form-modal
+        .brisbane-smb-landing-page__slider-form--modal
+        .brisbane-smb-landing-page__slider-field,
+      .brisbane-smb-landing-page__post-faq-form
+        .brisbane-smb-landing-page__slider-field
+    ) {
+    min-height: 3.9rem;
+    padding: 0 0 1rem;
+    font-size: clamp(1.9rem, 1.6vw + 1.45rem, 2.55rem);
+    line-height: 1.02;
+  }
+
+  body.brisbane-smb-landing-page
+    :is(
+      .brisbane-smb-landing-page__slider-field--message,
+      .form-modal
+        .brisbane-smb-landing-page__slider-form--modal
+        .brisbane-smb-landing-page__slider-field--message,
+      .brisbane-smb-landing-page__post-faq-form
+        .brisbane-smb-landing-page__slider-field--message
+    ) {
+    min-height: 6.9rem;
+  }
+
+  body.brisbane-smb-landing-page
+    :is(
+      .brisbane-smb-landing-page__slider-submit,
+      .form-modal
+        .brisbane-smb-landing-page__slider-form--modal
+        .brisbane-smb-landing-page__slider-submit,
+      .brisbane-smb-landing-page__post-faq-form
+        .brisbane-smb-landing-page__slider-submit
+    ) {
+    min-height: 4.05rem;
+    padding: 0.82rem 1rem 0.82rem 1.2rem;
+    font-size: 1.16rem;
+  }
+
+  body.brisbane-smb-landing-page
+    :is(
+      .brisbane-smb-landing-page__slider-submit,
+      .form-modal
+        .brisbane-smb-landing-page__slider-form--modal
+        .brisbane-smb-landing-page__slider-submit,
+      .brisbane-smb-landing-page__post-faq-form
+        .brisbane-smb-landing-page__slider-submit
+    )::after {
+    width: 1.9rem;
+    height: 1.9rem;
+    flex-basis: 1.9rem;
+  }
+
+  body.brisbane-smb-landing-page
+    :is(
+      .brisbane-smb-landing-page__slider-field::placeholder,
+      .form-modal
+        .brisbane-smb-landing-page__slider-form--modal
+        .brisbane-smb-landing-page__slider-field::placeholder,
+      .brisbane-smb-landing-page__post-faq-form
+        .brisbane-smb-landing-page__slider-field::placeholder
+    ) {
+    font-size: clamp(1.9rem, 1.45vw + 1.48rem, 2.4rem);
+    line-height: 1.04;
+  }
+
+  body.brisbane-smb-landing-page
+    :is(
+      .brisbane-smb-landing-page__slider-output,
+      .form-modal
+        .brisbane-smb-landing-page__slider-form--modal
+        .brisbane-smb-landing-page__slider-output,
+      .brisbane-smb-landing-page__post-faq-form
+        .brisbane-smb-landing-page__slider-output,
+      .form-modal .brisbane-smb-landing-page__modal-slider-heading,
+      .form-modal .brisbane-smb-landing-page__modal-slider-output
+    ) {
+    font-size: clamp(1.9rem, 1.45vw + 1.48rem, 2.4rem);
+    line-height: 1.02;
+  }
+
+  body.package-landing-page
+    :is(
+      .site-header__cta,
+      .quality-foundational-header__cta,
+      .page-hero__cta,
+      .home-maxx__cta,
+      .portfolio-cta,
+      .pricing-grid__card-cta,
+      .pricing-grid2__card-cta,
+      .quality-foundational-offers__cta,
+      .quality-foundational-footer__cta,
+      .discovery-form__submit
+    ),
+  body.brisbane-smb-landing-page
+    :is(
+      .site-header__cta,
+      .page-hero__cta,
+      .home-maxx__cta,
+      .portfolio-cta,
+      .pricing-grid__card-cta,
+      .pricing-grid2__card-cta,
+      .quality-foundational-offers__cta,
+      .quality-foundational-footer__cta,
+      .discovery-form__submit,
+      .brisbane-smb-landing-page__slider-submit
+    ) {
+    border-radius: 10px !important;
   }
 }

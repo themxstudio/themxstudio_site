@@ -1292,17 +1292,183 @@ body.service-page main
   display: none !important;
 }
 
+body.web-design-page {
+  --brisbane-cta-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5.5 12h12.5m-5-5 5 5-5 5' fill='none' stroke='%23fb336a' stroke-width='2.35' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
 body.web-design-page main section.pricing-grid2.pricing-grid2--service-web-design {
   display: block !important;
   width: var(--full-bleed-width);
   max-width: none;
   margin: 0 var(--full-bleed-margin) !important;
+  padding-top: clamp(3rem, 5vw, 4rem) !important;
   padding-bottom: clamp(3.4rem, 5.4vw, 4.8rem) !important;
   background: var(--bg);
   border-radius: var(--section-radius) var(--section-radius) 0 0;
   overflow: hidden;
   position: relative;
+  scroll-margin-top: 8rem;
   z-index: 1;
+}
+
+body.web-design-page .quality-foundational-offers--web-design .quality-foundational-offers__inner {
+  width: min(calc(100vw - 1.25rem), 82rem);
+  max-width: none;
+  margin-inline: auto;
+}
+
+body.web-design-page .quality-foundational-offers--web-design .quality-foundational-offers__heading {
+  max-width: min(100%, 52rem);
+  margin: 0 auto clamp(2.1rem, 3.5vw, 2.9rem);
+  text-align: center;
+  font-size: clamp(1.95rem, 3.6vw, 3.1rem);
+  font-weight: 400;
+  font-variation-settings: "wght" 400;
+  line-height: 0.98;
+  letter-spacing: 0;
+}
+
+body.web-design-page
+  .quality-foundational-offers--web-design
+  .quality-foundational-offers__heading
+  strong {
+  font-weight: 900;
+  font-variation-settings: "wght" 900;
+}
+
+body.web-design-page .quality-foundational-offers--web-design .quality-foundational-offers__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 1.8vw, 1.35rem);
+}
+
+body.web-design-page .quality-foundational-offers--web-design .quality-foundational-offers__card {
+  min-width: 0;
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  align-content: stretch;
+  justify-items: start;
+  gap: clamp(0.85rem, 1.2vw, 1.05rem);
+  padding: clamp(1.55rem, 2vw, 2rem);
+  background: url("/assets/images/background.webp") center / cover no-repeat;
+  color: #fff;
+  border-radius: clamp(1.15rem, 1.5vw, 1.45rem);
+  box-shadow: 0 1.75rem 4rem rgba(0, 0, 0, 0.16);
+  text-align: left;
+}
+
+body.web-design-page .quality-foundational-offers--web-design .quality-foundational-offers__title {
+  margin: 0;
+  max-width: 24ch;
+  color: #fff;
+  -webkit-text-fill-color: #fff;
+  font-size: clamp(1.28rem, 0.7vw + 1.1rem, 1.7rem);
+  font-weight: 900;
+  font-variation-settings: "wght" 900;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  text-wrap: pretty;
+  text-transform: uppercase;
+}
+
+body.web-design-page .quality-foundational-offers--web-design .quality-foundational-offers__desc {
+  margin: 0;
+  max-width: 24ch;
+  color: rgba(255, 255, 255, 0.84);
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.84);
+  font-size: 0.95rem;
+  line-height: 1.42;
+  text-wrap: pretty;
+}
+
+body.web-design-page .quality-foundational-offers--web-design .quality-foundational-offers__list {
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  padding: 0.2rem 0 0;
+  display: grid;
+  gap: 0.7rem;
+}
+
+body.web-design-page .quality-foundational-offers--web-design .quality-foundational-offers__list-item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  gap: 0.75rem;
+  color: #fff;
+  font-size: 0.96rem;
+  line-height: 1.38;
+}
+
+body.web-design-page .quality-foundational-offers--web-design .quality-foundational-offers__list-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  flex: 0 0 1.8rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  transform: translateY(0.02rem);
+}
+
+body.web-design-page
+  .quality-foundational-offers--web-design
+  .quality-foundational-offers__list-icon
+  svg {
+  width: 0.82rem;
+  height: 0.82rem;
+}
+
+body.web-design-page .quality-foundational-offers--web-design .quality-foundational-offers__cta {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-width: 0;
+  max-width: 100%;
+  margin-top: 0.55rem;
+  padding: 0.74rem 3.5rem 0.74rem 1rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 800;
+  font-variation-settings: "wght" 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  text-decoration: none;
+  transform: none;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease,
+    transform 160ms ease;
+}
+
+body.web-design-page .quality-foundational-offers--web-design .quality-foundational-offers__cta::after {
+  content: "";
+  position: absolute;
+  right: 0.92rem;
+  top: 50%;
+  width: 1.82rem;
+  height: 1.82rem;
+  border-radius: 999px;
+  background:
+    var(--brisbane-cta-arrow) center / 1rem 1rem no-repeat,
+    #fff;
+  transform: translateY(-50%);
+}
+
+body.web-design-page
+  .quality-foundational-offers--web-design
+  .quality-foundational-offers__cta:is(:hover, :focus-visible) {
+  background: var(--accent);
+  color: #fff;
+  transform: translateY(-0.12rem);
+  text-decoration: none;
 }
 
 body.web-design-page .pricing-grid2--service-web-design .pricing-grid2__inner {
@@ -1448,15 +1614,7 @@ body.web-design-page .pricing-grid2--service-web-design .pricing-grid2__card {
   padding-block: clamp(1rem, 1.6vw, 1.35rem);
   padding-inline-start: clamp(0.88rem, 1vw, 1rem);
   padding-inline-end: clamp(1.16rem, 1.45vw, 1.34rem);
-  background:
-    linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0.68) 0%,
-      rgba(0, 0, 0, 0.82) 38%,
-      rgba(0, 0, 0, 0.93) 100%
-    ),
-    url("/assets/hero.webp") center / cover no-repeat,
-    #000;
+  background: #000 url("/assets/images/background.webp") center / cover no-repeat;
   border-width: 1px;
   border-color: var(--accent);
   border-radius: 9px;
@@ -1557,11 +1715,12 @@ body.web-design-page
   .pricing-grid2--service-web-design
   .pricing-grid2__card-list
   li {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  align-items: start;
-  gap: 0.62rem;
+  position: relative;
+  display: block;
+  min-height: 1.08rem;
+  padding-left: 1.72rem;
   font-size: clamp(0.9rem, 0.2vw + 0.86rem, 1.02rem);
+  font-weight: 400;
   line-height: 1.3;
   white-space: normal;
 }
@@ -1572,7 +1731,7 @@ body.web-design-page
   .strong {
   font-weight: 900;
   font-style: normal;
-  color: var(--accent);
+  color: #fff;
 }
 
 body.web-design-page
@@ -1598,12 +1757,17 @@ body.web-design-page
   .pricing-grid2__card-list
   li::before {
   content: "";
+  position: absolute;
+  top: 0.14rem;
+  left: 0;
   display: block;
   width: 1.08rem;
   height: 1.08rem;
-  margin-top: 0.14rem;
-  background: url("/assets/icons/graphic.png") center / contain no-repeat;
-  flex: 0 0 auto;
+  border-radius: 999px;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6.8 12.4 10.2 15.8 17.4 8.6' fill='none' stroke='%23ffffff' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+      center / 0.72rem 0.72rem no-repeat,
+    var(--accent);
 }
 
 body.web-design-page
@@ -1614,6 +1778,75 @@ body.web-design-page
 }
 
 @media (max-width: 767px) {
+  body.web-design-page main section.pricing-grid2.pricing-grid2--service-web-design {
+    padding-top: clamp(2.2rem, 7vw, 2.8rem) !important;
+    padding-bottom: clamp(2.25rem, 7.8vw, 2.8rem) !important;
+  }
+
+  body.web-design-page .quality-foundational-offers--web-design .quality-foundational-offers__heading {
+    width: min(100%, 92%);
+    max-width: 24rem;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 1.95rem;
+    text-align: left;
+    font-size: clamp(2rem, 8vw, 2.75rem);
+    line-height: 0.96;
+    text-wrap: pretty;
+  }
+
+  body.web-design-page .quality-foundational-offers--web-design .quality-foundational-offers__inner {
+    width: min(calc(100vw - 1rem), 31rem);
+  }
+
+  body.web-design-page .quality-foundational-offers--web-design .quality-foundational-offers__grid {
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+  }
+
+  body.web-design-page .quality-foundational-offers--web-design .quality-foundational-offers__card {
+    padding: 1.35rem 1.05rem 1.45rem;
+    border-radius: 1.1rem;
+  }
+
+  body.web-design-page .quality-foundational-offers--web-design .quality-foundational-offers__title {
+    width: 100%;
+    max-width: 60%;
+    font-size: clamp(1.42rem, 1.15vw + 1.18rem, 1.8rem);
+    line-height: 0.96;
+    text-wrap: pretty;
+  }
+
+  body.web-design-page .quality-foundational-offers--web-design .quality-foundational-offers__desc {
+    max-width: 21ch;
+    font-size: 0.94rem;
+    line-height: 1.42;
+  }
+
+  body.web-design-page .quality-foundational-offers--web-design .quality-foundational-offers__list {
+    width: min(100%, 18.5rem);
+  }
+
+  body.web-design-page .quality-foundational-offers--web-design .quality-foundational-offers__list-item {
+    gap: 0.68rem;
+    font-size: 0.86rem;
+    line-height: 1.32;
+  }
+
+  body.web-design-page .quality-foundational-offers--web-design .quality-foundational-offers__list-icon {
+    width: 1.68rem;
+    height: 1.68rem;
+    flex-basis: 1.68rem;
+  }
+
+  body.web-design-page
+    .quality-foundational-offers--web-design
+    .quality-foundational-offers__list-icon
+    svg {
+    width: 0.76rem;
+    height: 0.76rem;
+  }
+
   body.web-design-page .pricing-grid2--service-web-design .pricing-grid2__title {
     margin-inline: 0;
     text-align: left;
@@ -1683,6 +1916,33 @@ body.web-design-page
     .pricing-grid2--service-web-design
     .pricing-grid2__col:nth-child(1) {
     order: 3;
+  }
+}
+
+@media (min-width: 744px) and (max-width: 1024px) {
+  body.web-design-page .quality-foundational-offers--web-design .quality-foundational-offers__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  body.web-design-page .quality-foundational-offers--web-design .quality-foundational-offers__card {
+    padding: 1.45rem 1.3rem 1.55rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  body.web-design-page .quality-foundational-offers--web-design .quality-foundational-offers__inner {
+    width: min(calc(100vw - 2.5rem), 72rem);
+  }
+
+  body.web-design-page .quality-foundational-offers--web-design .quality-foundational-offers__grid {
+    gap: clamp(0.7rem, 0.9vw, 0.85rem);
+  }
+
+  body.web-design-page .quality-foundational-offers--web-design .quality-foundational-offers__card {
+    width: 100%;
+    max-width: none;
+    box-sizing: border-box;
   }
 }
 
@@ -1765,8 +2025,6 @@ body.web-design-page
     .pricing-grid2--service-web-design
     .pricing-grid2__card-list
     li {
-    align-items: start;
-    gap: 0.52rem;
     font-size: clamp(0.84rem, 0.22vw + 0.8rem, 0.98rem);
     line-height: 1.28;
     white-space: normal;
@@ -1778,7 +2036,7 @@ body.web-design-page
     li::before {
     width: clamp(0.98rem, 0.1vw + 0.96rem, 1.08rem);
     height: clamp(0.98rem, 0.1vw + 0.96rem, 1.08rem);
-    margin-top: 0.12rem;
+    top: 0.12rem;
   }
 
   body.web-design-page

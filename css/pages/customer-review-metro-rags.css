@@ -278,3 +278,103 @@
     font-size: clamp(1rem, 3.8vw, 1.14rem);
   }
 }
+
+body.brisbane-smb-landing-page
+  :is(.customer-review--metro-rags, .customer-review--meridian)
+  .metro-rags-spotlight {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  column-gap: clamp(0.92rem, 1.52vw, 1.22rem);
+  row-gap: clamp(0.92rem, 1.52vw, 1.22rem);
+  align-items: start;
+}
+
+body.brisbane-smb-landing-page
+  :is(.customer-review--metro-rags, .customer-review--meridian)
+  .metro-rags-spotlight__head {
+  grid-column: 1 / -1;
+  width: 100%;
+  margin-inline: 0;
+  justify-self: stretch;
+}
+
+body.brisbane-smb-landing-page
+  :is(.customer-review--metro-rags, .customer-review--meridian)
+  :is(.metro-rags-spotlight__grid, .metro-rags-spotlight__stats) {
+  display: contents;
+}
+
+body.brisbane-smb-landing-page
+  :is(.customer-review--metro-rags, .customer-review--meridian)
+  :is(.metro-rags-spotlight__media, .metro-rags-spotlight__stat) {
+  width: 95%;
+  justify-self: start;
+}
+
+body.brisbane-smb-landing-page
+  :is(.customer-review--metro-rags, .customer-review--meridian)
+  .metro-rags-spotlight__media--graphic {
+  align-self: start;
+}
+
+@media (max-width: 900px) {
+  body.brisbane-smb-landing-page
+    :is(.customer-review--metro-rags, .customer-review--meridian)
+    .metro-rags-spotlight {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    row-gap: 1rem;
+  }
+
+  body.brisbane-smb-landing-page
+    :is(.customer-review--metro-rags, .customer-review--meridian)
+    .metro-rags-spotlight__head {
+    width: 100%;
+    margin-inline: 0;
+    justify-self: stretch;
+  }
+
+  body.brisbane-smb-landing-page
+    :is(.customer-review--metro-rags, .customer-review--meridian)
+    .metro-rags-spotlight__grid,
+  body.brisbane-smb-landing-page
+    :is(.customer-review--metro-rags, .customer-review--meridian)
+    .metro-rags-spotlight__stats {
+    display: grid;
+    width: 100%;
+    margin-inline: 0;
+  }
+
+  body.brisbane-smb-landing-page
+    :is(.customer-review--metro-rags, .customer-review--meridian)
+    .metro-rags-spotlight__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+    order: 2;
+  }
+
+  body.brisbane-smb-landing-page
+    :is(.customer-review--metro-rags, .customer-review--meridian)
+    .metro-rags-spotlight__stats {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    order: 3;
+  }
+
+  body.brisbane-smb-landing-page
+    :is(.customer-review--metro-rags, .customer-review--meridian)
+    :is(.metro-rags-spotlight__media, .metro-rags-spotlight__stat) {
+    width: 100%;
+  }
+
+  body.brisbane-smb-landing-page
+    :is(.customer-review--metro-rags, .customer-review--meridian)
+    .metro-rags-spotlight__media {
+    justify-self: stretch;
+  }
+
+  body.brisbane-smb-landing-page
+    :is(.customer-review--metro-rags, .customer-review--meridian)
+    .metro-rags-spotlight__stat {
+    justify-self: start;
+  }
+}

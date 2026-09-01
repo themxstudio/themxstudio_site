@@ -1,6 +1,47 @@
 const dropdowns = Array.from(document.querySelectorAll(".nav__item--dropdown"));
 
 (() => {
+  const links = Array.from(document.querySelectorAll("[data-previous-page-link]"));
+  if (!links.length) return;
+
+  const referrer = document.referrer?.trim();
+  if (!referrer) return;
+
+  const normalizeComparableUrl = (value) => {
+    const url = new URL(value, window.location.href);
+    url.hash = "";
+    url.pathname = url.pathname.replace(/index\.html$/i, "/").replace(/\/{2,}/g, "/");
+    return `${url.origin}${url.pathname}${url.search}`;
+  };
+
+  let referrerUrl = null;
+
+  try {
+    referrerUrl = new URL(referrer, window.location.href);
+  } catch {
+    return;
+  }
+
+  if (!/^https?:$/i.test(referrerUrl.protocol)) return;
+  if (normalizeComparableUrl(referrerUrl.href) === normalizeComparableUrl(window.location.href)) {
+    return;
+  }
+
+  links.forEach((link) => {
+    link.href = referrerUrl.href;
+    link.hidden = false;
+    link.rel = "prev";
+
+    link.addEventListener("click", (event) => {
+      if (window.history.length > 1) {
+        event.preventDefault();
+        window.history.back();
+      }
+    });
+  });
+})();
+
+(() => {
   const body = document.body;
   if (!body?.classList.contains("thank-you-page")) return;
 
@@ -137,7 +178,6 @@ const dropdowns = Array.from(document.querySelectorAll(".nav__item--dropdown"));
     ["/blog/", "Blog"],
     ["/contact/", "Contact"],
     ["/locations/", "Locations"],
-    ["/pricing/", "Pricing"],
     ["/results/", "Results"],
     ["/terms/", "Terms & Conditions"],
     ["/404.html/", "Page Not Found"],
@@ -2064,17 +2104,29 @@ if (header) {
 (() => {
   const body = document.body;
   const scrollCue = document.querySelector(
-    ".brisbane-smb-landing-page__hero-scroll",
+    ".brisbane-smb-landing-page__hero-scroll, .quality-foundational-hero__scroll",
   );
   const heroWrap = document.querySelector(".website-services__hero-wrap");
   const primaryCta = document.querySelector(
     ".website-services__hero .page-hero__cta--primary",
   );
+  const isLandingHeroPage =
+    body?.classList.contains("brisbane-smb-landing-page") ||
+    body?.classList.contains("package-landing-page");
   if (
-    !body?.classList.contains("brisbane-smb-landing-page") ||
+    !isLandingHeroPage ||
     !scrollCue
   ) {
     return;
+  }
+
+  scrollCue.classList.add("landing-hero-scroll");
+
+  if (!scrollCue.querySelector(".landing-hero-scroll__label")) {
+    const label = document.createElement("span");
+    label.className = "landing-hero-scroll__label";
+    label.textContent = "See More";
+    scrollCue.append(label);
   }
 
   const viewport = window.visualViewport;
@@ -2489,6 +2541,55 @@ const initCountGroup = ({
       rootMargin: "0px 0px -12% 0px",
     });
   });
+})();
+
+(() => {
+  const body = document.body;
+  if (
+    !body.matches(
+      ".brisbane-smb-landing-page, .quality-foundational-page.package-landing-page, .professional-business-page.package-landing-page, .ultimate-brand-and-web-page.package-landing-page",
+    )
+  ) {
+    return;
+  }
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  const balloons = [
+    ...document.querySelectorAll(
+      ".results-spotlight__image--graphic[src*='balloon-graphic.webp']",
+    ),
+    ...document.querySelectorAll(
+      ".metro-rags-spotlight__image--graphic[src*='balloon-graphic.webp']",
+    ),
+    ...document.querySelectorAll(
+      ".brisbane-smb-landing-page__selling-points-balloon-image",
+    ),
+    ...document.querySelectorAll(".home-offer-float__balloon"),
+  ];
+  if (!balloons.length) return;
+
+  let rafId = 0;
+
+  const sync = () => {
+    rafId = 0;
+    const scrollY = Math.max(window.scrollY || window.pageYOffset || 0, 0);
+    const rotation = ((scrollY * 0.2) % 360 + 360) % 360;
+
+    balloons.forEach((balloon) => {
+      balloon.style.willChange = "transform";
+      balloon.style.transformOrigin = "center center";
+      balloon.style.transform = `rotate(${rotation.toFixed(2)}deg)`;
+    });
+  };
+
+  const requestSync = () => {
+    if (rafId) return;
+    rafId = requestAnimationFrame(sync);
+  };
+
+  window.addEventListener("scroll", requestSync, { passive: true });
+  window.addEventListener("resize", requestSync, { passive: true });
+  requestSync();
 })();
 
 (() => {
@@ -3028,7 +3129,7 @@ const initCountGroup = ({
   const UNIVERSAL_FORM_SUCCESS_URL = "/thank-you/";
   const FORM_NAMES = {
     apply: "apply",
-    discovery: "discovery-call",
+    discovery: "main site form",
     landingSlider: "brisbane-slider-number",
   };
   const discoveryBudgetSliderMilestones = "1750,3500,5500";
@@ -3103,7 +3204,7 @@ const initCountGroup = ({
 
       const submitButton = form.querySelector(".discovery-form__submit");
       if (submitButton) {
-        submitButton.textContent = "Book My Call";
+        submitButton.textContent = "Continue To Booking";
       }
 
       if (form.dataset.standardBudgetEnhanced === "true") return;

@@ -1,7 +1,7 @@
 body.results-case-study-page {
   background-image: none;
-  --accent: #ea2556;
-  --accent-hover: #f05f82;
+  --accent: #fb336a;
+  --accent-hover: #ffb4c7;
   --blog-post-width: var(--site-width);
 }
 
