@@ -2758,7 +2758,7 @@ body.ultimate-brand-and-web-page .ultimate-brand-and-web-meridian {
   font-variation-settings: "wght" 900 !important;
   line-height: 0.98;
   letter-spacing: -0.04em;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .hospitality-inline-form .form-modal__desc {
@@ -2900,11 +2900,13 @@ body.ultimate-brand-and-web-page .ultimate-brand-and-web-meridian {
 }
 
 .hospitality-portfolio__inner {
-  width: min(calc(100vw - 1rem), 84rem);
+  width: min(calc(100vw - 2rem), 84rem);
   max-width: none;
   margin-inline: auto;
   display: grid;
   gap: clamp(1.2rem, 2vw, 1.7rem);
+  padding-inline: clamp(0.5rem, 1.6vw, 1rem);
+  box-sizing: border-box;
 }
 
 .hospitality-portfolio__title {
@@ -2930,8 +2932,11 @@ body.ultimate-brand-and-web-page .ultimate-brand-and-web-meridian {
 
 .hospitality-portfolio__grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 15rem));
-  justify-content: center;
+  width: min(100%, 47.25rem);
+  margin-inline: auto;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  justify-items: center;
+  align-items: start;
   gap: clamp(0.85rem, 1.25vw, 1.05rem);
 }
 
@@ -2939,11 +2944,15 @@ body.ultimate-brand-and-web-page .ultimate-brand-and-web-meridian {
   display: grid;
   gap: 0.8rem;
   align-content: start;
-  width: min(100%, 15rem);
+  width: 100%;
+  min-width: 0;
+  max-width: 15rem;
+  justify-self: center;
 }
 
 .hospitality-portfolio__card {
   position: relative;
+  width: 100%;
   aspect-ratio: 1 / 1;
   overflow: hidden;
   border-radius: 1.35rem;
@@ -3757,6 +3766,7 @@ main
   .hospitality-portfolio__inner {
     width: var(--site-width);
     justify-items: center;
+    padding-inline: 0;
   }
 
   .hospitality-portfolio__title {
@@ -3772,12 +3782,13 @@ main
   }
 
   .hospitality-portfolio__grid {
+    width: min(100%, 17.5rem);
     grid-template-columns: 1fr;
     justify-items: center;
   }
 
   .hospitality-portfolio__item {
-    width: min(100%, 17.5rem);
+    max-width: none;
   }
 
   .hospitality-team .team__inner {
@@ -4125,14 +4136,14 @@ main
   }
 
   .hospitality-portfolio__grid {
-    grid-template-columns: repeat(2, minmax(0, 15rem));
-    justify-content: center;
+    width: min(100%, 31rem);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-items: center;
   }
 
   .hospitality-portfolio__item:last-child {
     grid-column: 1 / -1;
     justify-self: center;
-    width: min(100%, 15rem);
   }
 
   .hospitality-team .team__inner,
@@ -4445,7 +4456,7 @@ body.package-landing-page .form-modal .form-modal__title {
   font-variation-settings: "wght" 900 !important;
   line-height: 0.98;
   letter-spacing: -0.04em;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 body.package-landing-page .form-modal .form-modal__desc {
