@@ -1,0 +1,45 @@
+/* The SMB landing page's standalone budget step is centred as a single block. */
+body.brisbane-smb-landing-page
+  .brisbane-smb-landing-page__maxx-pass-through-form-section
+  .brisbane-smb-landing-page__slider-heading {
+  margin-inline: auto;
+  text-align: center;
+}
+
+body.brisbane-smb-landing-page
+  .brisbane-smb-landing-page__maxx-pass-through-form-section
+  .brisbane-smb-landing-page__slider-row {
+  margin-inline: auto;
+}
+
+body.brisbane-smb-landing-page
+  .brisbane-smb-landing-page__maxx-pass-through-form-section
+  .brisbane-smb-landing-page__slider-total {
+  justify-content: center;
+  margin-inline: auto;
+}
+
+body.brisbane-smb-landing-page
+  .brisbane-smb-landing-page__maxx-pass-through-form-section
+  .brisbane-smb-landing-page__slider-output {
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  body.brisbane-smb-landing-page .brisbane-smb-landing-page__maxx-pass-through-copy,
+  body.brisbane-smb-landing-page .brisbane-smb-landing-page__maxx-pass-through-title {
+    justify-items: center;
+    margin-inline: auto;
+    text-align: center !important;
+  }
+
+  body.brisbane-smb-landing-page
+    .brisbane-smb-landing-page__maxx-pass-through-title
+    > :is(
+      .brisbane-smb-landing-page__maxx-pass-through-line,
+      .brisbane-smb-landing-page__maxx-pass-through-emphasis
+    ) {
+    display: block;
+    text-align: center !important;
+  }
+}

@@ -3,6 +3,136 @@
   --accent-hover: #ffb4c7;
 }
 
+/* About uses the same image-only landing-page team card track. */
+body.about-page .team--home .team__inner {
+  width: min(calc(100vw - 1rem), 84rem);
+  max-width: none;
+}
+
+body.about-page .team--home .team__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.75rem, 1.1vw, 1rem);
+  align-items: stretch;
+  width: 100%;
+  max-width: none;
+  margin-inline: auto;
+}
+
+body.about-page .team--home .team__member,
+body.about-page .team--home .team__member--reverse,
+body.about-page .team--home .team__member:nth-child(n) {
+  grid-column: auto;
+  grid-row: auto;
+  order: 0;
+  width: 100%;
+  max-width: none;
+}
+
+body.about-page .team--home .team__member-visual::after {
+  display: none;
+}
+
+body.about-page .team--home .team__member-visual,
+body.about-page .team--home .team__member--reverse .team__member-visual {
+  width: 100% !important;
+  max-width: none;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: clamp(1rem, 1.5vw, 1.35rem);
+  background: #111;
+}
+
+body.about-page .team--home .team__member img,
+body.about-page .team--home .team__member--reverse img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transform: none !important;
+}
+
+@media (max-width: 767px) {
+  body.about-page .team--home .team__inner {
+    width: var(--site-width);
+  }
+
+  body.about-page .team--home .team__grid {
+    display: flex;
+    gap: 0.75rem;
+    width: min(100%, 17rem);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  body.about-page .team--home .team__grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  body.about-page .team--home .team__member,
+  body.about-page .team--home .team__member--reverse {
+    flex: 0 0 17rem;
+    scroll-snap-align: start;
+  }
+}
+
+/* Final mobile team-card layout. */
+@media (max-width: 767px) {
+  body.about-page .team--home .team__grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    gap: 0.85rem;
+    overflow: visible;
+  }
+
+  body.about-page .team--home :is(.team__member, .team__member--reverse) {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-height: 0 !important;
+    flex: none !important;
+  }
+
+  body.about-page .team--home :is(.team__member-visual, .team__member--reverse .team__member-visual) {
+    display: block;
+    width: 100% !important;
+    max-width: none;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    margin: 0;
+  }
+}
+
+/* Reset the legacy alternating layout on phones: show full-size team cards. */
+@media (max-width: 767px) {
+  body.about-page .team--home .team__grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    gap: 0.85rem;
+    overflow: visible;
+  }
+
+  body.about-page .team--home :is(.team__member, .team__member--reverse) {
+    display: block;
+    width: 100%;
+    max-width: none;
+    min-height: 0;
+    flex: none;
+  }
+
+  body.about-page .team--home :is(.team__member-visual, .team__member--reverse .team__member-visual) {
+    display: block;
+    width: 100% !important;
+    max-width: none;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    margin: 0;
+  }
+}
+
 body.about-page .page-hero,
 body.about-page .page-hero::before {
   border-radius: 0;
@@ -591,7 +721,7 @@ body.about-page .team--home .team__member-meta {
 body.about-page .team--home .team__member-mark {
   width: clamp(2.7rem, 3.3vw, 3.35rem);
   height: clamp(2.7rem, 3.3vw, 3.35rem);
-  background: url("/assets/icons/graphic.png") center / contain no-repeat;
+  background: none;
   flex: 0 0 auto;
 }
 
@@ -1158,5 +1288,79 @@ body.about-page .about-instagram__post .insta-card__photo {
   body.about-page .team--home .team__member-quote::before,
   body.about-page .team--home .team__member--reverse .team__member-quote::before {
     content: none;
+  }
+}
+
+/* Keep the About team cards aligned with the landing-page card treatment. */
+body.about-page .team--home .team__inner {
+  width: min(calc(100vw - 1rem), 84rem);
+  max-width: none;
+}
+
+body.about-page .team--home .team__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.75rem, 1.1vw, 1rem);
+  align-items: stretch;
+  width: 100%;
+  max-width: none;
+  margin-inline: auto;
+}
+
+body.about-page .team--home .team__member,
+body.about-page .team--home .team__member--reverse,
+body.about-page .team--home .team__member:nth-child(n) {
+  grid-column: auto;
+  grid-row: auto;
+  order: 0;
+  width: 100%;
+  max-width: none;
+}
+
+body.about-page .team--home .team__member-visual::after {
+  display: none;
+}
+
+body.about-page .team--home .team__member-visual,
+body.about-page .team--home .team__member--reverse .team__member-visual {
+  width: 100% !important;
+  max-width: none;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: clamp(1rem, 1.5vw, 1.35rem);
+  background: #111;
+}
+
+body.about-page .team--home .team__member img,
+body.about-page .team--home .team__member--reverse img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transform: none !important;
+}
+
+@media (max-width: 767px) {
+  body.about-page .team--home .team__inner {
+    width: var(--site-width);
+  }
+
+  body.about-page .team--home .team__grid {
+    display: flex;
+    gap: 0.75rem;
+    width: min(100%, 17rem);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  body.about-page .team--home .team__grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  body.about-page .team--home .team__member,
+  body.about-page .team--home .team__member--reverse {
+    flex: 0 0 17rem;
+    scroll-snap-align: start;
   }
 }

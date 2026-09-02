@@ -85,10 +85,7 @@
       sizes="180x180"
       href="/apple-touch-icon.png?v=20260819-favicon-refresh-1"
     />
-    <link
-      rel="manifest"
-      href="/site.webmanifest?v=20260819-favicon-refresh-1"
-    />
+
     <meta property="og:site_name" content="The MX Studio" />
     <meta property="og:title" content="Metro Rags Case Study | The MX Studio" />
     <meta
@@ -102,7 +99,7 @@
     />
     <meta
       property="og:image"
-      content="https://www.themxstudio.com.au/og-default.jpg?v=20260803a"
+      content="https://www.themxstudio.com.au/og-default.jpg?v=20260902a"
     />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -122,18 +119,19 @@
     />
     <meta
       name="twitter:image"
-      content="https://www.themxstudio.com.au/og-default.jpg?v=20260803a"
+      content="https://www.themxstudio.com.au/og-default.jpg?v=20260902a"
     />
     <meta
       name="twitter:image:alt"
       content="Metro Rags Case Study by The MX Studio"
     />
 
-    <link rel="stylesheet" href="/css/base.css?v=20260809b" />
-    <link rel="stylesheet" href="/css/components.css?v=20260819h" />
+    <link rel="stylesheet" href="/css/base.css?v=20260902n" />
+    <link rel="stylesheet" href="/css/components.css?v=20260902c" />
     <link rel="stylesheet" href="/css/pages/blog.css?v=20260807a" />
     <link rel="stylesheet" href="/css/pages/case-study.css?v=20260819a" />
-    <link rel="stylesheet" href="/css/forms.css?v=20260802g" />
+    <link rel="stylesheet" href="/css/forms.css?v=20260902u" />
+    <link rel="stylesheet" href="/css/main-website-form.css?v=20260902l" />
 
     <script type="application/ld+json">
       {
@@ -146,9 +144,9 @@
             "url": "https://www.themxstudio.com.au/",
             "logo": {
               "@type": "ImageObject",
-              "url": "https://www.themxstudio.com.au/assets/logos/the-mx-studio-logo.svg"
+              "url": "https://www.themxstudio.com.au/assets/logos/logo.webp"
             },
-            "image": "https://www.themxstudio.com.au/og-default.jpg?v=20260803a",
+            "image": "https://www.themxstudio.com.au/og-default.jpg?v=20260902a",
             "email": "hello@themxstudio.com.au",
             "telephone": "+61421709047"
           },
@@ -263,7 +261,7 @@
           >
             <img
               class="site-header__logo"
-              src="/assets/logos/the-mx-studio-logo.svg"
+              src="/assets/logos/logo.webp"
               alt="The MX Studio"
             />
           </a>
@@ -444,7 +442,7 @@
                     <path
                       d="M9.2 12.6l1.9 1.9 4.7-5"
                       fill="none"
-                      stroke="currentColor"
+                      stroke="#fff"
                       stroke-width="2.4"
                       stroke-linecap="round"
                       stroke-linejoin="round"
@@ -459,7 +457,7 @@
                     <path
                       d="M9.2 12.6l1.9 1.9 4.7-5"
                       fill="none"
-                      stroke="currentColor"
+                      stroke="#fff"
                       stroke-width="2.4"
                       stroke-linecap="round"
                       stroke-linejoin="round"
@@ -474,7 +472,7 @@
                     <path
                       d="M9.2 12.6l1.9 1.9 4.7-5"
                       fill="none"
-                      stroke="currentColor"
+                      stroke="#fff"
                       stroke-width="2.4"
                       stroke-linecap="round"
                       stroke-linejoin="round"
@@ -494,32 +492,35 @@
           </button>
         </div>
         <form
-          class="discovery-form"
+          class="brisbane-smb-landing-page__slider-form brisbane-smb-landing-page__slider-form--modal"
           id="discovery-form"
-          name="main site form"
+          name="main website form"
           method="POST"
           data-netlify="true"
           netlify-honeypot="bot-field"
           action="/thank-you/"
           data-success-url="/thank-you/"
         >
-          <input type="hidden" name="form-name" value="main site form" />
-          <input type="hidden" name="budget" value="0" data-range-submit-value />
-          <p style="display: none">
-            <label>Don't fill this out <input name="bot-field" /></label>
-          </p>
-          <input type="text" name="name" placeholder="Your Name" required />
-          <input type="email" name="email" placeholder="Your Email" required />
-          <input type="text" name="business" placeholder="Business / company name" />
-          <textarea
-            name="project"
-            placeholder="How can we help you grow?"
-            required
-          ></textarea>
-          <button type="submit" class="discovery-form__submit">
-            Book My Call
-          </button>
-        </form>
+  <input type="hidden" name="form-name" value="main website form" />
+  <input type="hidden" name="budget" value="1000" data-range-submit-value />
+  <p style="display: none"><label>Don't fill this out <input name="bot-field" /></label></p>
+  <h2 class="brisbane-smb-landing-page__slider-heading">What's your budget?</h2>
+  <div class="brisbane-smb-landing-page__slider-row">
+    <label class="visually-hidden" for="main-website-budget">Your budget</label>
+    <div class="brisbane-smb-landing-page__slider-shell">
+      <input class="brisbane-smb-landing-page__slider-input" id="main-website-budget" type="range" min="1000" max="7000" step="50" value="1000" data-slider-milestones="1750,3500,5500" data-range-submit-target="budget" />
+      <div class="brisbane-smb-landing-page__slider-milestones" aria-hidden="true"><span class="brisbane-smb-landing-page__slider-milestone" style="--slider-stop: 0.25"></span><span class="brisbane-smb-landing-page__slider-milestone" style="--slider-stop: 0.5"></span><span class="brisbane-smb-landing-page__slider-milestone" style="--slider-stop: 0.75"></span></div>
+    </div>
+  </div>
+  <div class="brisbane-smb-landing-page__slider-total"><output class="brisbane-smb-landing-page__slider-output" for="main-website-budget" data-range-output>$1,000</output></div>
+  <div class="brisbane-smb-landing-page__slider-field-grid brisbane-smb-landing-page__slider-field-grid--modal">
+    <label class="visually-hidden" for="main-website-name">Name</label><input class="brisbane-smb-landing-page__slider-field" id="main-website-name" type="text" name="name" placeholder="Name" autocomplete="name" required />
+    <label class="visually-hidden" for="main-website-email">Email</label><input class="brisbane-smb-landing-page__slider-field" id="main-website-email" type="email" name="email" placeholder="Email" autocomplete="email" required />
+    <label class="visually-hidden" for="main-website-business">Business name</label><input class="brisbane-smb-landing-page__slider-field" id="main-website-business" type="text" name="business" placeholder="Business Name" autocomplete="organization" />
+    <label class="visually-hidden" for="main-website-project">How can we help?</label><textarea class="brisbane-smb-landing-page__slider-field brisbane-smb-landing-page__slider-field--message" id="main-website-project" name="project" placeholder="How can we help?" rows="1" required></textarea>
+    <button type="submit" class="brisbane-smb-landing-page__slider-submit">Continue To Booking</button>
+  </div>
+</form>
         <div class="form-thanks" id="discovery-thanks" hidden>
           <p class="form-thanks__message">
             Thank you! We'll be in touch sooner than you think.
@@ -539,7 +540,7 @@
             <span class="page-hero__breadcrumb-sep" aria-hidden="true">/</span>
             <a href="/results/">Results</a>
             <span class="page-hero__breadcrumb-sep" aria-hidden="true">/</span>
-            <span aria-current="page">Metro Rags</span>
+            <span>Metro Rags</span>
           </nav>
           <p class="page-hero__eyebrow case-study-hero__eyebrow">
             Case Study
@@ -551,18 +552,7 @@
             METRO RAGS
           </h1>
           <aside class="case-study-hero__desk" aria-label="Project summary">
-            <p class="hero__sub hero__sub--stacked case-study-hero__note">
-              <img
-                class="hero__sub-icon case-study-hero__graphic"
-                src="/assets/icons/graphic.png"
-                alt=""
-                aria-hidden="true"
-                width="950"
-                height="950"
-                loading="lazy"
-                decoding="async"
-              />
-              <span class="hero__sub-text">
+            <p class="hero__sub hero__sub--stacked case-study-hero__note"><span class="hero__sub-text">
                 A high-risk SEO migration and ongoing search campaign that
                 lifted traffic by 175% and drove more than 15 form submissions
                 in the first month.
@@ -627,7 +617,7 @@
                           <path
                             d="M9.2 12.6l1.9 1.9 4.7-5"
                             fill="none"
-                            stroke="currentColor"
+                            stroke="#fff"
                             stroke-width="2.4"
                             stroke-linecap="round"
                             stroke-linejoin="round"
@@ -642,7 +632,7 @@
                           <path
                             d="M9.2 12.6l1.9 1.9 4.7-5"
                             fill="none"
-                            stroke="currentColor"
+                            stroke="#fff"
                             stroke-width="2.4"
                             stroke-linecap="round"
                             stroke-linejoin="round"
@@ -657,7 +647,7 @@
                           <path
                             d="M9.2 12.6l1.9 1.9 4.7-5"
                             fill="none"
-                            stroke="currentColor"
+                            stroke="#fff"
                             stroke-width="2.4"
                             stroke-linecap="round"
                             stroke-linejoin="round"
@@ -670,8 +660,8 @@
                 </div>
               </div>
               <form
-                class="discovery-form blog-inline-form__form case-study-inline-form__form"
-                name="main site form"
+                class="brisbane-smb-landing-page__slider-form brisbane-smb-landing-page__slider-form--modal"
+                name="main website form"
                 method="POST"
                 data-netlify="true"
                 netlify-honeypot="bot-field"
@@ -679,37 +669,26 @@
                 action="/thank-you/"
                 data-success-url="/thank-you/"
               >
-                <input type="hidden" name="form-name" value="main site form" />
-                <input type="hidden" name="budget" value="0" data-range-submit-value />
-                <p style="display: none">
-                  <label>Don't fill this out <input name="bot-field" /></label>
-                </p>
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Your Name"
-                  required
-                />
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Your Email"
-                  required
-                />
-                <input
-                  type="text"
-                  name="business"
-                  placeholder="Business / company name"
-                />
-                <textarea
-                  name="project"
-                  placeholder="How can we help you grow?"
-                  required
-                ></textarea>
-                <button type="submit" class="discovery-form__submit">
-                  Book My Call
-                </button>
-              </form>
+  <input type="hidden" name="form-name" value="main website form" />
+  <input type="hidden" name="budget" value="1000" data-range-submit-value />
+  <p style="display: none"><label>Don't fill this out <input name="bot-field" /></label></p>
+  <h2 class="brisbane-smb-landing-page__slider-heading">What's your budget?</h2>
+  <div class="brisbane-smb-landing-page__slider-row">
+    <label class="visually-hidden" for="main-website-budget">Your budget</label>
+    <div class="brisbane-smb-landing-page__slider-shell">
+      <input class="brisbane-smb-landing-page__slider-input" id="main-website-budget" type="range" min="1000" max="7000" step="50" value="1000" data-slider-milestones="1750,3500,5500" data-range-submit-target="budget" />
+      <div class="brisbane-smb-landing-page__slider-milestones" aria-hidden="true"><span class="brisbane-smb-landing-page__slider-milestone" style="--slider-stop: 0.25"></span><span class="brisbane-smb-landing-page__slider-milestone" style="--slider-stop: 0.5"></span><span class="brisbane-smb-landing-page__slider-milestone" style="--slider-stop: 0.75"></span></div>
+    </div>
+  </div>
+  <div class="brisbane-smb-landing-page__slider-total"><output class="brisbane-smb-landing-page__slider-output" for="main-website-budget" data-range-output>$1,000</output></div>
+  <div class="brisbane-smb-landing-page__slider-field-grid brisbane-smb-landing-page__slider-field-grid--modal">
+    <label class="visually-hidden" for="main-website-name">Name</label><input class="brisbane-smb-landing-page__slider-field" id="main-website-name" type="text" name="name" placeholder="Name" autocomplete="name" required />
+    <label class="visually-hidden" for="main-website-email">Email</label><input class="brisbane-smb-landing-page__slider-field" id="main-website-email" type="email" name="email" placeholder="Email" autocomplete="email" required />
+    <label class="visually-hidden" for="main-website-business">Business name</label><input class="brisbane-smb-landing-page__slider-field" id="main-website-business" type="text" name="business" placeholder="Business Name" autocomplete="organization" />
+    <label class="visually-hidden" for="main-website-project">How can we help?</label><textarea class="brisbane-smb-landing-page__slider-field brisbane-smb-landing-page__slider-field--message" id="main-website-project" name="project" placeholder="How can we help?" rows="1" required></textarea>
+    <button type="submit" class="brisbane-smb-landing-page__slider-submit">Continue To Booking</button>
+  </div>
+</form>
               <div class="form-thanks" data-inline-discovery-thanks hidden>
                 <p class="form-thanks__message">
                   Thank you! We'll be in touch sooner than you think.
@@ -893,7 +872,7 @@
                           <path
                             d="M9.2 12.6l1.9 1.9 4.7-5"
                             fill="none"
-                            stroke="currentColor"
+                            stroke="#fff"
                             stroke-width="2.4"
                             stroke-linecap="round"
                             stroke-linejoin="round"
@@ -908,7 +887,7 @@
                           <path
                             d="M9.2 12.6l1.9 1.9 4.7-5"
                             fill="none"
-                            stroke="currentColor"
+                            stroke="#fff"
                             stroke-width="2.4"
                             stroke-linecap="round"
                             stroke-linejoin="round"
@@ -923,7 +902,7 @@
                           <path
                             d="M9.2 12.6l1.9 1.9 4.7-5"
                             fill="none"
-                            stroke="currentColor"
+                            stroke="#fff"
                             stroke-width="2.4"
                             stroke-linecap="round"
                             stroke-linejoin="round"
@@ -936,8 +915,8 @@
                 </div>
               </div>
               <form
-                class="discovery-form blog-inline-form__form case-study-inline-form__form"
-                name="main site form"
+                class="brisbane-smb-landing-page__slider-form brisbane-smb-landing-page__slider-form--modal"
+                name="main website form"
                 method="POST"
                 data-netlify="true"
                 netlify-honeypot="bot-field"
@@ -945,37 +924,26 @@
                 action="/thank-you/"
                 data-success-url="/thank-you/"
               >
-                <input type="hidden" name="form-name" value="main site form" />
-                <input type="hidden" name="budget" value="0" data-range-submit-value />
-                <p style="display: none">
-                  <label>Don't fill this out <input name="bot-field" /></label>
-                </p>
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Your Name"
-                  required
-                />
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Your Email"
-                  required
-                />
-                <input
-                  type="text"
-                  name="business"
-                  placeholder="Business / company name"
-                />
-                <textarea
-                  name="project"
-                  placeholder="How can we help you grow?"
-                  required
-                ></textarea>
-                <button type="submit" class="discovery-form__submit">
-                  Book My Call
-                </button>
-              </form>
+  <input type="hidden" name="form-name" value="main website form" />
+  <input type="hidden" name="budget" value="1000" data-range-submit-value />
+  <p style="display: none"><label>Don't fill this out <input name="bot-field" /></label></p>
+  <h2 class="brisbane-smb-landing-page__slider-heading">What's your budget?</h2>
+  <div class="brisbane-smb-landing-page__slider-row">
+    <label class="visually-hidden" for="main-website-budget">Your budget</label>
+    <div class="brisbane-smb-landing-page__slider-shell">
+      <input class="brisbane-smb-landing-page__slider-input" id="main-website-budget" type="range" min="1000" max="7000" step="50" value="1000" data-slider-milestones="1750,3500,5500" data-range-submit-target="budget" />
+      <div class="brisbane-smb-landing-page__slider-milestones" aria-hidden="true"><span class="brisbane-smb-landing-page__slider-milestone" style="--slider-stop: 0.25"></span><span class="brisbane-smb-landing-page__slider-milestone" style="--slider-stop: 0.5"></span><span class="brisbane-smb-landing-page__slider-milestone" style="--slider-stop: 0.75"></span></div>
+    </div>
+  </div>
+  <div class="brisbane-smb-landing-page__slider-total"><output class="brisbane-smb-landing-page__slider-output" for="main-website-budget" data-range-output>$1,000</output></div>
+  <div class="brisbane-smb-landing-page__slider-field-grid brisbane-smb-landing-page__slider-field-grid--modal">
+    <label class="visually-hidden" for="main-website-name">Name</label><input class="brisbane-smb-landing-page__slider-field" id="main-website-name" type="text" name="name" placeholder="Name" autocomplete="name" required />
+    <label class="visually-hidden" for="main-website-email">Email</label><input class="brisbane-smb-landing-page__slider-field" id="main-website-email" type="email" name="email" placeholder="Email" autocomplete="email" required />
+    <label class="visually-hidden" for="main-website-business">Business name</label><input class="brisbane-smb-landing-page__slider-field" id="main-website-business" type="text" name="business" placeholder="Business Name" autocomplete="organization" />
+    <label class="visually-hidden" for="main-website-project">How can we help?</label><textarea class="brisbane-smb-landing-page__slider-field brisbane-smb-landing-page__slider-field--message" id="main-website-project" name="project" placeholder="How can we help?" rows="1" required></textarea>
+    <button type="submit" class="brisbane-smb-landing-page__slider-submit">Continue To Booking</button>
+  </div>
+</form>
               <div class="form-thanks" data-inline-discovery-thanks hidden>
                 <p class="form-thanks__message">
                   Thank you! We'll be in touch sooner than you think.
@@ -1412,7 +1380,7 @@
             <a class="home-footer__brand" href="/" aria-label="The MX Studio home">
               <img
                 class="home-footer__logo"
-                src="/assets/logos/the-mx-studio-logo.svg"
+                src="/assets/logos/logo.webp"
                 alt="The MX Studio"
               />
             </a>
@@ -1428,6 +1396,6 @@
       </div>
     </footer>
 
-    <script src="/js/main.js?v=20260826b" defer></script>
+    <script src="/js/main.js?v=20260902ac" defer></script>
   </body>
 </html>

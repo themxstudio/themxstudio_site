@@ -1,47 +1,6 @@
 const dropdowns = Array.from(document.querySelectorAll(".nav__item--dropdown"));
 
 (() => {
-  const links = Array.from(document.querySelectorAll("[data-previous-page-link]"));
-  if (!links.length) return;
-
-  const referrer = document.referrer?.trim();
-  if (!referrer) return;
-
-  const normalizeComparableUrl = (value) => {
-    const url = new URL(value, window.location.href);
-    url.hash = "";
-    url.pathname = url.pathname.replace(/index\.html$/i, "/").replace(/\/{2,}/g, "/");
-    return `${url.origin}${url.pathname}${url.search}`;
-  };
-
-  let referrerUrl = null;
-
-  try {
-    referrerUrl = new URL(referrer, window.location.href);
-  } catch {
-    return;
-  }
-
-  if (!/^https?:$/i.test(referrerUrl.protocol)) return;
-  if (normalizeComparableUrl(referrerUrl.href) === normalizeComparableUrl(window.location.href)) {
-    return;
-  }
-
-  links.forEach((link) => {
-    link.href = referrerUrl.href;
-    link.hidden = false;
-    link.rel = "prev";
-
-    link.addEventListener("click", (event) => {
-      if (window.history.length > 1) {
-        event.preventDefault();
-        window.history.back();
-      }
-    });
-  });
-})();
-
-(() => {
   const body = document.body;
   if (!body?.classList.contains("thank-you-page")) return;
 
@@ -291,6 +250,7 @@ const dropdowns = Array.from(document.querySelectorAll(".nav__item--dropdown"));
 
   const main = ensureMain();
   if (!main) return;
+  if (body.classList.contains("service-page")) return;
   if (
     body.classList.contains("blog-index-page") &&
     main.querySelector(".blog-hero-section")
@@ -1749,15 +1709,13 @@ const initLoopingCardCarousel = ({
 
 (() => {
   const sections = Array.from(
-    document.querySelectorAll(".about-instagram--home-carousel"),
+    document.querySelectorAll(
+      ".about-instagram--home-carousel, .team--card-carousel",
+    ),
   );
   if (!sections.length) return;
 
-  const mobileCarouselMq = window.matchMedia(
-    document.body.classList.contains("home-page")
-      ? "(max-width: 1024px)"
-      : "(max-width: 767px)",
-  );
+  const mobileCarouselMq = window.matchMedia("(max-width: 767px)");
   const activeClass = "is-carousel-active";
   const states = new WeakMap();
 
@@ -1868,7 +1826,17 @@ const initLoopingCardCarousel = ({
 
   const deactivate = (section) => {
     const state = states.get(section);
-    if (!state) return;
+    if (!state) {
+      section.classList.remove(activeClass);
+      section
+        .querySelectorAll(".about-instagram__item")
+        .forEach((item) => {
+          item.hidden = false;
+          item.classList.remove("is-mobile-current");
+          item.removeAttribute("aria-hidden");
+        });
+      return;
+    }
 
     state.cleanup();
     section.classList.remove(activeClass);
@@ -2544,14 +2512,6 @@ const initCountGroup = ({
 })();
 
 (() => {
-  const body = document.body;
-  if (
-    !body.matches(
-      ".brisbane-smb-landing-page, .quality-foundational-page.package-landing-page, .professional-business-page.package-landing-page, .ultimate-brand-and-web-page.package-landing-page",
-    )
-  ) {
-    return;
-  }
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
   const balloons = [
@@ -2574,6 +2534,11 @@ const initCountGroup = ({
     rafId = 0;
     const scrollY = Math.max(window.scrollY || window.pageYOffset || 0, 0);
     const rotation = ((scrollY * 0.2) % 360 + 360) % 360;
+
+    document.documentElement.style.setProperty(
+      "--site-balloon-scroll-rotate",
+      `${rotation.toFixed(2)}deg`,
+    );
 
     balloons.forEach((balloon) => {
       balloon.style.willChange = "transform";
@@ -3129,7 +3094,7 @@ const initCountGroup = ({
   const UNIVERSAL_FORM_SUCCESS_URL = "/thank-you/";
   const FORM_NAMES = {
     apply: "apply",
-    discovery: "main site form",
+    discovery: "main website form",
     landingSlider: "brisbane-slider-number",
   };
   const discoveryBudgetSliderMilestones = "1750,3500,5500";
@@ -3139,98 +3104,82 @@ const initCountGroup = ({
     "";
 
   const enhanceStandardDiscoveryForms = () => {
-    const buildBudgetSlider = () => {
-      const sliderId = `discovery-budget-${Math.random().toString(36).slice(2, 10)}`;
+    const renderLandingForm = (form, index) => {
+      const uid = `main-form-${index}`;
+      const sliderId = `${uid}-budget`;
       const headingId = `${sliderId}-title`;
       const outputId = `${sliderId}-output`;
-      const wrapper = document.createElement("div");
-      wrapper.className = "discovery-form__budget";
-      wrapper.innerHTML = `
-        <input type="hidden" name="budget" value="1000" data-range-submit-value>
-        <div class="discovery-form__budget-heading-row">
-          <div class="discovery-form__budget-heading">What's your budget?</div>
-          <output
-            class="discovery-form__budget-output"
-            id="${outputId}"
-            for="${sliderId}"
-            data-range-output
-          >$1,000</output>
-        </div>
-        <div class="discovery-form__budget-row">
-          <label class="visually-hidden" id="${headingId}" for="${sliderId}">
-            Your budget
-          </label>
-          <div class="discovery-form__budget-shell">
-            <input
-              class="discovery-form__budget-input"
-              id="${sliderId}"
-              type="range"
-              min="1000"
-              max="7000"
-              step="50"
-              value="1000"
-              data-slider-milestones="${discoveryBudgetSliderMilestones}"
-              data-range-submit-target="budget"
-              aria-labelledby="${headingId}"
-              aria-describedby="${outputId}"
-            />
-            <div class="discovery-form__budget-milestones" aria-hidden="true">
-              <span class="discovery-form__budget-milestone" style="--slider-stop: 0.25"></span>
-              <span class="discovery-form__budget-milestone" style="--slider-stop: 0.5"></span>
-              <span class="discovery-form__budget-milestone" style="--slider-stop: 0.75"></span>
-            </div>
-          </div>
-        </div>
-      `;
-      return wrapper;
-    };
-
-    document.querySelectorAll(".discovery-form").forEach((form) => {
-      if (getFormName(form) !== FORM_NAMES.discovery) return;
-
-      const formTitle = form
-        .closest(".form-modal__panel, .contact-forms__card, .blog-inline-form, .contact-inline-form")
-        ?.querySelector(".form-modal__title, .contact-forms__card-title");
-      if (formTitle) {
-        formTitle.innerHTML = "Book A Free<br>Discovery Call";
-      }
-
-      const formDesc = form
-        .closest(".form-modal__panel, .contact-forms__card, .blog-inline-form, .contact-inline-form")
-        ?.querySelector(".form-modal__desc span, .form-modal__desc");
-      if (formDesc) {
-        formDesc.textContent = "Pop in a few details and we'll email you back ASAP.";
-      }
-
-      const submitButton = form.querySelector(".discovery-form__submit");
-      if (submitButton) {
-        submitButton.textContent = "Continue To Booking";
-      }
-
-      if (form.dataset.standardBudgetEnhanced === "true") return;
-
-      form.dataset.standardBudgetEnhanced = "true";
-
-      const projectField = form.querySelector('textarea[name="project"]');
-      if (projectField) {
-        projectField.placeholder = "Tell us a little about your project";
-      }
-
-      form.querySelector('textarea[name="availability"]')?.remove();
-      form.querySelector('input[data-range-submit-value][name="budget"]')?.remove();
-      form.querySelector(".discovery-form__budget")?.remove();
-      form.querySelector(".brisbane-smb-landing-page__modal-slider")?.remove();
-
-      const firstField = form.querySelector(
-        'input:not([type="hidden"]):not([name="bot-field"]), textarea, select',
+      const modalPanel = form.closest(".form-modal > .form-modal__panel");
+      const legacyShell = form.closest(
+        ".form-modal__panel, .contact-forms__card, .blog-inline-form, .contact-inline-form",
       );
 
-      if (firstField) {
-        const slider = buildBudgetSlider();
-        firstField.insertAdjacentElement("beforebegin", slider);
-        window.mxStudioInitBudgetSliders?.(form);
+      form.dataset.standardBudgetEnhanced = "true";
+      legacyShell
+        ?.querySelector(
+          ".form-modal__header, .contact-forms__head, .contact-forms__card-title, .contact-forms__card-copy",
+        )
+        ?.remove();
+      // Keep the page's placement class (contact/blog/etc.). It controls where the
+      // form sits in the layout; the shared form class below controls its visuals.
+      form.className = "brisbane-smb-landing-page__slider-form brisbane-smb-landing-page__slider-form--modal";
+      form.innerHTML = `
+        <input type="hidden" name="form-name" value="${FORM_NAMES.discovery}">
+        <input type="hidden" name="budget" value="1000" data-range-submit-value>
+        <p style="display: none"><label>Don't fill this out <input name="bot-field"></label></p>
+        <h2 class="brisbane-smb-landing-page__slider-heading" id="${uid}-title">What's your budget?</h2>
+        <div class="brisbane-smb-landing-page__slider-row">
+          <label class="visually-hidden" id="${headingId}" for="${sliderId}">Your budget</label>
+          <div class="brisbane-smb-landing-page__slider-shell">
+            <input class="brisbane-smb-landing-page__slider-input" id="${sliderId}" type="range" min="1000" max="7000" step="50" value="1000" data-slider-milestones="${discoveryBudgetSliderMilestones}" data-range-submit-target="budget" aria-labelledby="${headingId}" aria-describedby="${outputId}">
+            <div class="brisbane-smb-landing-page__slider-milestones" aria-hidden="true"><span class="brisbane-smb-landing-page__slider-milestone" style="--slider-stop: 0.25"></span><span class="brisbane-smb-landing-page__slider-milestone" style="--slider-stop: 0.5"></span><span class="brisbane-smb-landing-page__slider-milestone" style="--slider-stop: 0.75"></span></div>
+          </div>
+        </div>
+        <div class="brisbane-smb-landing-page__slider-total"><output class="brisbane-smb-landing-page__slider-output" id="${outputId}" for="${sliderId}" data-range-output>$1,000</output></div>
+        <div class="brisbane-smb-landing-page__slider-field-grid brisbane-smb-landing-page__slider-field-grid--modal">
+          <label class="visually-hidden" for="${uid}-name">Name</label><input class="brisbane-smb-landing-page__slider-field" id="${uid}-name" type="text" name="name" placeholder="Name" autocomplete="name" required>
+          <label class="visually-hidden" for="${uid}-email">Email</label><input class="brisbane-smb-landing-page__slider-field" id="${uid}-email" type="email" name="email" placeholder="Email" autocomplete="email" required>
+          <label class="visually-hidden" for="${uid}-business">Business name</label><input class="brisbane-smb-landing-page__slider-field" id="${uid}-business" type="text" name="business" placeholder="Business Name" autocomplete="organization">
+          <label class="visually-hidden" for="${uid}-project">How can we help?</label><textarea class="brisbane-smb-landing-page__slider-field brisbane-smb-landing-page__slider-field--message" id="${uid}-project" name="project" placeholder="How can we help?" rows="1" required></textarea>
+          <button type="submit" class="brisbane-smb-landing-page__slider-submit">Continue To Booking</button>
+        </div>`;
+
+      const component = modalPanel || legacyShell || form.parentElement;
+      if (!component) return;
+
+      component.classList.add(
+        "main-website-form",
+        modalPanel ? "main-form--modal" : "main-form--inline",
+      );
+      modalPanel?.parentElement?.setAttribute("aria-labelledby", `${uid}-title`);
+      component.querySelector(".form-modal__header")?.remove();
+      component.querySelector(".brisbane-smb-landing-page__modal-aside")?.remove();
+
+      const column = document.createElement("div");
+      column.className = "brisbane-smb-landing-page__modal-form-column";
+      form.before(column);
+      column.append(form);
+      const thanks = component.querySelector(".form-thanks");
+      if (thanks) column.append(thanks);
+
+      if (modalPanel) {
+        const aside = document.createElement("aside");
+        aside.className = "brisbane-smb-landing-page__modal-aside";
+        aside.setAttribute("aria-label", "Client testimonial");
+        aside.innerHTML = `<figure class="brisbane-smb-landing-page__modal-testimonial"><blockquote class="brisbane-smb-landing-page__modal-testimonial-quote"><p>"The MX Studio handled our website clearly and professionally. Our new website is stronger, easier to manage, and better aligned with how we operate."</p></blockquote><figcaption class="brisbane-smb-landing-page__modal-testimonial-meta"><div class="brisbane-smb-landing-page__modal-testimonial-heading"><p class="brisbane-smb-landing-page__modal-testimonial-company">Metro Rags</p><p class="brisbane-smb-landing-page__modal-testimonial-name">Jeanne Evans</p></div></figcaption><div class="brisbane-smb-landing-page__modal-testimonial-proof"><svg class="page-hero__google-logo" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M23.49 12.27c0-.79-.07-1.54-.2-2.27H12v4.3h6.46a5.53 5.53 0 0 1-2.4 3.63v3.01h3.88c2.27-2.09 3.55-5.17 3.55-8.67Z"></path><path fill="#34A853" d="M12 24c3.24 0 5.95-1.07 7.94-2.91l-3.88-3.01c-1.07.72-2.45 1.15-4.06 1.15-3.12 0-5.76-2.11-6.71-4.95H1.29v3.11A12 12 0 0 0 12 24Z"></path><path fill="#FBBC05" d="M5.29 14.28A7.2 7.2 0 0 1 4.91 12c0-.79.14-1.56.38-2.28V6.61H1.29A12 12 0 0 0 0 12c0 1.94.46 3.78 1.29 5.39l4-3.11Z"></path><path fill="#EA4335" d="M12 4.77c1.76 0 3.34.6 4.58 1.78l3.43-3.43C17.94 1.17 15.23 0 12 0A12 12 0 0 0 1.29 6.61l4 3.11c.95-2.84 3.59-4.95 6.71-4.95Z"></path></svg><span class="page-hero__google-stars" aria-hidden="true"><svg viewBox="0 0 120 24" focusable="false"><path d="M12 2.5l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2L12 16.8 6.4 19.7l1.1-6.2L3 9.1l6.2-.9L12 2.5zm24 0l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2-4.5-4.4 6.2-.9L36 2.5zm24 0l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2-4.5-4.4 6.2-.9L60 2.5zm24 0l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2-4.5-4.4 6.2-.9L84 2.5zm24 0l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2-4.5-4.4 6.2-.9L108 2.5z" fill="currentColor"></path></svg></span></div></figure>`;
+        column.after(aside);
       }
-    });
+
+      window.mxStudioInitBudgetSliders?.(form);
+    };
+
+    document
+      .querySelectorAll('form[name="main website form"]')
+      .forEach((form, index) => {
+      if (getFormName(form) !== FORM_NAMES.discovery) return;
+      if (form.dataset.standardBudgetEnhanced === "true") return;
+      renderLandingForm(form, index);
+      });
   };
 
   const syncModalScrollLock = () => {
@@ -3256,6 +3205,46 @@ const initCountGroup = ({
   }
 
   enhanceStandardDiscoveryForms();
+
+  const placeArticleFormsAtMobilePageEnd = () => {
+    if (!document.body?.matches(".blog-post-page, .results-case-study-page")) {
+      return;
+    }
+
+    const mobileQuery = window.matchMedia("(max-width: 767px)");
+    const placements = Array.from(
+      document.querySelectorAll(
+        ".main-website-form.main-form--inline.blog-inline-form, .main-website-form.main-form--inline.case-study-inline-form",
+      ),
+    )
+      .filter(
+        (form) => !form.matches(".blog-rail-form, .case-study-form--rail"),
+      )
+      .map((form) => {
+        const marker = document.createComment("main-form-desktop-position");
+        form.before(marker);
+        form.classList.add("mobile-page-end-form");
+        return { form, marker };
+      });
+
+    if (!placements.length) return;
+
+    const updatePlacement = () => {
+      const footer = document.querySelector(".site-footer");
+      placements.forEach(({ form, marker }) => {
+        if (mobileQuery.matches && footer) {
+          footer.before(form);
+        } else if (marker.parentNode) {
+          marker.after(form);
+        }
+      });
+    };
+
+    updatePlacement();
+    mobileQuery.addEventListener("change", updatePlacement);
+  };
+
+  placeArticleFormsAtMobilePageEnd();
 
   const bindAsyncForm = ({ form, thanks, heading = null }) => {
     if (!form) return;

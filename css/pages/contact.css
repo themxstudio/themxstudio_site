@@ -126,8 +126,8 @@ main section.contact-split:not(.hero):not(.page-hero):not(.section-accent-tail) 
   display: block;
   width: 100%;
   font-size: clamp(1.32rem, 0.8vw + 1.08rem, 1.72rem);
-  font-weight: 540;
-  font-variation-settings: "wght" 540;
+  font-weight: 700;
+  font-variation-settings: "wght" 700;
   line-height: 1.2;
 }
 
@@ -176,7 +176,7 @@ main section.contact-split:not(.hero):not(.page-hero):not(.section-accent-tail) 
 
 @media (min-width: 768px) {
   .contact-split__inner {
-    --contact-form-width: 23rem;
+    --contact-form-width: clamp(23rem, 38vw, 31.75rem);
     width: var(--content-wide-width);
     max-width: none;
     grid-template-columns: var(--contact-form-width) minmax(0, 1fr);
@@ -384,7 +384,7 @@ main section.contact-split:not(.hero):not(.page-hero):not(.section-accent-tail) 
   .contact-split__content {
     --contact-detail-icon-size: 2.1rem;
     --contact-detail-gap: 0.8rem;
-    --contact-title-width: 70%;
+    --contact-title-width: 100%;
   }
 
   .contact-split__content {

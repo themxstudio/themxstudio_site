@@ -1,0 +1,177 @@
+/* The canonical SMB form component, reused by the main website form only. */
+.main-website-form,
+.main-website-form * {
+  box-sizing: border-box;
+}
+
+.main-website-form {
+  min-height: 0 !important;
+  height: auto !important;
+  overflow: hidden;
+  color: #fff;
+  background: #000 !important;
+  border-radius: 28px !important;
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.34) !important;
+}
+
+.main-website-form.main-form--inline {
+  width: min(100%, 31.75rem) !important;
+  max-width: 31.75rem !important;
+  margin: 0 !important;
+  padding: clamp(1.4rem, 1vw + 1.15rem, 1.9rem) !important;
+}
+
+.main-website-form .brisbane-smb-landing-page__modal-form-column {
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  padding: clamp(1.4rem, 1vw + 1.15rem, 1.9rem);
+  background: #000;
+}
+
+.main-website-form.main-form--inline .brisbane-smb-landing-page__modal-form-column {
+  padding: 0;
+}
+
+.main-website-form .brisbane-smb-landing-page__slider-form,
+.main-website-form .brisbane-smb-landing-page__slider-heading,
+.main-website-form .brisbane-smb-landing-page__slider-row,
+.main-website-form .brisbane-smb-landing-page__slider-total,
+.main-website-form .brisbane-smb-landing-page__slider-field-grid {
+  width: 100%;
+  max-width: none;
+}
+
+.main-website-form .brisbane-smb-landing-page__slider-heading {
+  margin: 0 0 2rem;
+  color: #fff !important;
+  font-size: clamp(1.65rem, 0.85vw + 1.38rem, 2.1rem) !important;
+  font-weight: 800;
+  font-variation-settings: "wght" 800;
+  letter-spacing: -0.03em;
+  text-transform: none !important;
+  text-align: left;
+}
+
+.main-website-form .brisbane-smb-landing-page__slider-row { margin-inline: 0; }
+.main-website-form .brisbane-smb-landing-page__slider-total { justify-content: flex-start; margin: 2rem 0 0; }
+.main-website-form .brisbane-smb-landing-page__slider-field-grid { margin: 1.5rem 0 0; }
+.main-website-form :is(input, textarea).brisbane-smb-landing-page__slider-field {
+  border: 0 !important;
+  border-bottom: 0.48rem solid #5c5c5c !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: #fff !important;
+  font-family: var(--font) !important;
+  font-weight: 800 !important;
+  font-variation-settings: "wght" 800 !important;
+  letter-spacing: -0.04em !important;
+}
+.main-website-form :is(input, textarea).brisbane-smb-landing-page__slider-field::placeholder {
+  color: #8e8e8e !important;
+  opacity: 1;
+}
+.main-website-form .brisbane-smb-landing-page__slider-submit { border-radius: 999px !important; }
+.main-website-form .brisbane-smb-landing-page__slider-milestone.is-active {
+  background: var(--accent) !important;
+}
+.main-website-form .brisbane-smb-landing-page__modal-aside { display: none; }
+
+@media (min-width: 768px) {
+  .main-website-form.main-form--inline .brisbane-smb-landing-page__slider-submit {
+    width: 100%;
+  }
+}
+
+@media (min-width: 900px) {
+  .form-modal > .main-website-form.main-form--modal {
+    display: grid;
+    grid-template-columns: 31.75rem minmax(0, 1fr);
+    width: min(calc(100vw - 2.5rem), 71rem) !important;
+    max-width: 71rem !important;
+    margin: auto !important;
+    padding: 0 !important;
+  }
+
+  .form-modal > .main-website-form.main-form--modal .brisbane-smb-landing-page__modal-form-column {
+    grid-column: 1;
+    width: 31.75rem;
+    min-width: 31.75rem;
+    padding: clamp(1.4rem, 1vw + 1.15rem, 1.9rem);
+    border-radius: 28px 0 0 28px;
+  }
+
+  .form-modal > .main-website-form.main-form--modal .brisbane-smb-landing-page__modal-aside {
+    display: grid;
+    grid-column: 2;
+    align-self: stretch;
+    place-items: center;
+    position: relative;
+    min-width: 0;
+    padding: 0 clamp(1.6rem, 2.2vw, 2.4rem);
+    overflow: hidden;
+    background: #000;
+    border-radius: 0 28px 28px 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .form-modal:has(.main-website-form.main-form--modal) { padding: 0.75rem 0.5rem; }
+
+  .form-modal > .main-website-form.main-form--modal,
+  .main-website-form.main-form--inline {
+    width: min(calc(100vw - 1rem), 26rem) !important;
+    max-width: 26rem !important;
+    margin-inline: auto !important;
+    padding: 1.5rem 1.1rem 1.6rem !important;
+    border-radius: 1.25rem !important;
+  }
+
+  /* Blog and case-study wrappers only place the form; they cannot alter it. */
+  .main-website-form.main-form--inline:is(
+    .blog-inline-form,
+    .case-study-inline-form,
+    .contact-inline-form
+  ) {
+    display: block !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+  }
+
+  /* Only the footer-adjacent instance is shown on article pages. */
+  body.blog-post-page
+    .main-website-form.main-form--inline:is(
+      .blog-inline-form,
+      .case-study-inline-form
+    ):not(.mobile-page-end-form) {
+    display: none !important;
+  }
+
+  body.blog-post-page .main-website-form.mobile-page-end-form {
+    display: block !important;
+    margin: 0 auto clamp(1.5rem, 6vw, 2.5rem) !important;
+  }
+
+  .form-modal > .main-website-form.main-form--modal { padding: 0 !important; }
+  .form-modal > .main-website-form.main-form--modal .brisbane-smb-landing-page__modal-form-column { padding: 1.5rem 1.1rem 1.6rem; }
+  .main-website-form.main-form--inline .brisbane-smb-landing-page__slider-heading,
+  body.brisbane-smb-landing-page
+    .brisbane-smb-landing-page__maxx-pass-through-form-section
+    .brisbane-smb-landing-page__slider-heading {
+    display: block;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 0 2rem !important;
+    text-align: left !important;
+    font-size: clamp(2.15rem, 8vw, 2.8rem);
+    font-weight: 900;
+    line-height: 0.98;
+  }
+  .main-website-form .brisbane-smb-landing-page__slider-field-grid { gap: 1rem; }
+  .main-website-form .brisbane-smb-landing-page__slider-field { min-height: 3.9rem; padding-bottom: 1rem; font-size: clamp(1.9rem, 1.6vw + 1.45rem, 2.55rem); line-height: 1.02; }
+  .main-website-form .brisbane-smb-landing-page__slider-field--message { min-height: 6.9rem; }
+  .main-website-form .brisbane-smb-landing-page__slider-output { font-size: clamp(1.9rem, 1.45vw + 1.48rem, 2.4rem); line-height: 1.02; }
+  .main-website-form .brisbane-smb-landing-page__slider-submit { width: 100%; min-height: 4.05rem; padding: 0.82rem 1rem 0.82rem 1.2rem; border-radius: 1.25rem !important; font-size: 1.16rem; }
+}

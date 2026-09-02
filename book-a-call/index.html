@@ -82,10 +82,7 @@
       sizes="180x180"
       href="/apple-touch-icon.png?v=20260819-favicon-refresh-1"
     />
-    <link
-      rel="manifest"
-      href="/site.webmanifest?v=20260819-favicon-refresh-1"
-    />
+
     <meta property="og:site_name" content="The MX Studio" />
     <meta property="og:title" content="Book a Discovery Call | The MX Studio" />
     <meta
@@ -96,7 +93,7 @@
     <meta property="og:url" content="https://www.themxstudio.com.au/book-a-call/" />
     <meta
       property="og:image"
-      content="https://www.themxstudio.com.au/og-default.jpg?v=20260803a"
+      content="https://www.themxstudio.com.au/og-default.jpg?v=20260902a"
     />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -110,7 +107,7 @@
     />
     <meta
       name="twitter:image"
-      content="https://www.themxstudio.com.au/og-default.jpg?v=20260803a"
+      content="https://www.themxstudio.com.au/og-default.jpg?v=20260902a"
     />
     <meta
       name="twitter:image:alt"
@@ -143,7 +140,7 @@
             "url": "https://www.themxstudio.com.au/",
             "email": "hello@themxstudio.com.au",
             "telephone": "+61421709047",
-            "image": "https://www.themxstudio.com.au/og-default.jpg?v=20260803a",
+            "image": "https://www.themxstudio.com.au/og-default.jpg?v=20260902a",
             "serviceType": [
               "Website design",
               "Website development",
@@ -292,18 +289,19 @@
             "about": { "@id": "https://www.themxstudio.com.au/#business" },
             "primaryImageOfPage": {
               "@type": "ImageObject",
-              "url": "https://www.themxstudio.com.au/og-default.jpg?v=20260803a"
+              "url": "https://www.themxstudio.com.au/og-default.jpg?v=20260902a"
             }
           }
         ]
       }
     </script>
 
-    <link rel="stylesheet" href="/css/base.css?v=20260809b" />
-    <link rel="stylesheet" href="/css/components.css?v=20260819h" />
+    <link rel="stylesheet" href="/css/base.css?v=20260902n" />
+    <link rel="stylesheet" href="/css/components.css?v=20260902c" />
     <link rel="stylesheet" href="/css/pages/quality-foundational.css?v=20260824a" />
     <link rel="stylesheet" href="/css/pages/book-a-call.css?v=20260826h" />
-    <link rel="stylesheet" href="/css/forms.css?v=20260802g" />
+    <link rel="stylesheet" href="/css/forms.css?v=20260902u" />
+    <link rel="stylesheet" href="/css/main-website-form.css?v=20260902l" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -389,9 +387,9 @@
             aria-label="Discovery call form"
           >
             <form
-              class="brisbane-smb-landing-page__slider-form"
+              class="brisbane-smb-landing-page__slider-form brisbane-smb-landing-page__slider-form--modal"
               id="book-a-call-inline-form"
-              name="main site form"
+              name="main website form"
               method="POST"
               data-netlify="true"
               netlify-honeypot="bot-field"
@@ -399,138 +397,26 @@
               action="/thank-you/"
               data-success-url="/thank-you/"
             >
-              <input type="hidden" name="form-name" value="main site form" />
-              <input
-                type="hidden"
-                name="budget"
-                value="1000"
-                data-range-submit-value
-              />
-              <p style="display: none">
-                <label>Don't fill this out <input name="bot-field" /></label>
-              </p>
-
-              <h2 class="brisbane-smb-landing-page__slider-heading">
-                What's your budget?
-              </h2>
-
-              <div class="brisbane-smb-landing-page__slider-row">
-                <label
-                  class="visually-hidden"
-                  id="book-a-call-slider-title"
-                  for="book-a-call-slider-input"
-                >
-                  Your number
-                </label>
-
-                <div class="brisbane-smb-landing-page__slider-shell">
-                  <input
-                    class="brisbane-smb-landing-page__slider-input"
-                    id="book-a-call-slider-input"
-                    type="range"
-                    min="1000"
-                    max="7000"
-                    step="50"
-                    value="1000"
-                    data-slider-milestones="1750,3500,5500"
-                    data-range-submit-target="budget"
-                    aria-labelledby="book-a-call-slider-title"
-                    aria-describedby="book-a-call-slider-output"
-                  />
-
-                  <div
-                    class="brisbane-smb-landing-page__slider-milestones"
-                    aria-hidden="true"
-                  >
-                    <span
-                      class="brisbane-smb-landing-page__slider-milestone"
-                      style="--slider-stop: 0.25"
-                    ></span>
-                    <span
-                      class="brisbane-smb-landing-page__slider-milestone"
-                      style="--slider-stop: 0.5"
-                    ></span>
-                    <span
-                      class="brisbane-smb-landing-page__slider-milestone"
-                      style="--slider-stop: 0.75"
-                    ></span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="brisbane-smb-landing-page__slider-total">
-                <output
-                  class="brisbane-smb-landing-page__slider-output"
-                  id="book-a-call-slider-output"
-                  for="book-a-call-slider-input"
-                  data-range-output
-                >
-                  $1,000
-                </output>
-              </div>
-
-              <div class="brisbane-smb-landing-page__slider-reveal" data-slider-reveal aria-hidden="true">
-                <div class="brisbane-smb-landing-page__slider-field-grid">
-                  <label class="visually-hidden" for="book-a-call-slider-name">
-                    Name
-                  </label>
-                  <input
-                    class="brisbane-smb-landing-page__slider-field"
-                    id="book-a-call-slider-name"
-                    type="text"
-                    name="name"
-                    placeholder="Name"
-                    autocomplete="name"
-                    required
-                  />
-
-                  <label class="visually-hidden" for="book-a-call-slider-email">
-                    Email
-                  </label>
-                  <input
-                    class="brisbane-smb-landing-page__slider-field"
-                    id="book-a-call-slider-email"
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    autocomplete="email"
-                    required
-                  />
-
-                  <label class="visually-hidden" for="book-a-call-slider-company">
-                    Business name
-                  </label>
-                  <input
-                    class="brisbane-smb-landing-page__slider-field"
-                    id="book-a-call-slider-company"
-                    type="text"
-                    name="business"
-                    placeholder="Business name"
-                    autocomplete="organization"
-                    required
-                  />
-
-                  <label class="visually-hidden" for="book-a-call-slider-message">
-                    Short message
-                  </label>
-                  <textarea
-                    class="brisbane-smb-landing-page__slider-field brisbane-smb-landing-page__slider-field--message"
-                    id="book-a-call-slider-message"
-                    name="project"
-                    placeholder="How can we help?"
-                    rows="1"
-                    required
-                  ></textarea>
-
-                  <button
-                    class="brisbane-smb-landing-page__slider-submit"
-                    type="submit"
-                  >
-                    Book My Call
-                  </button>
-                </div>
-              </div>
-            </form>
+  <input type="hidden" name="form-name" value="main website form" />
+  <input type="hidden" name="budget" value="1000" data-range-submit-value />
+  <p style="display: none"><label>Don't fill this out <input name="bot-field" /></label></p>
+  <h2 class="brisbane-smb-landing-page__slider-heading">What's your budget?</h2>
+  <div class="brisbane-smb-landing-page__slider-row">
+    <label class="visually-hidden" for="main-website-budget">Your budget</label>
+    <div class="brisbane-smb-landing-page__slider-shell">
+      <input class="brisbane-smb-landing-page__slider-input" id="main-website-budget" type="range" min="1000" max="7000" step="50" value="1000" data-slider-milestones="1750,3500,5500" data-range-submit-target="budget" />
+      <div class="brisbane-smb-landing-page__slider-milestones" aria-hidden="true"><span class="brisbane-smb-landing-page__slider-milestone" style="--slider-stop: 0.25"></span><span class="brisbane-smb-landing-page__slider-milestone" style="--slider-stop: 0.5"></span><span class="brisbane-smb-landing-page__slider-milestone" style="--slider-stop: 0.75"></span></div>
+    </div>
+  </div>
+  <div class="brisbane-smb-landing-page__slider-total"><output class="brisbane-smb-landing-page__slider-output" for="main-website-budget" data-range-output>$1,000</output></div>
+  <div class="brisbane-smb-landing-page__slider-field-grid brisbane-smb-landing-page__slider-field-grid--modal">
+    <label class="visually-hidden" for="main-website-name">Name</label><input class="brisbane-smb-landing-page__slider-field" id="main-website-name" type="text" name="name" placeholder="Name" autocomplete="name" required />
+    <label class="visually-hidden" for="main-website-email">Email</label><input class="brisbane-smb-landing-page__slider-field" id="main-website-email" type="email" name="email" placeholder="Email" autocomplete="email" required />
+    <label class="visually-hidden" for="main-website-business">Business name</label><input class="brisbane-smb-landing-page__slider-field" id="main-website-business" type="text" name="business" placeholder="Business Name" autocomplete="organization" />
+    <label class="visually-hidden" for="main-website-project">How can we help?</label><textarea class="brisbane-smb-landing-page__slider-field brisbane-smb-landing-page__slider-field--message" id="main-website-project" name="project" placeholder="How can we help?" rows="1" required></textarea>
+    <button type="submit" class="brisbane-smb-landing-page__slider-submit">Continue To Booking</button>
+  </div>
+</form>
             <div
               class="form-thanks"
               id="book-a-call-inline-thanks"
@@ -1004,121 +890,33 @@
         <form
           class="brisbane-smb-landing-page__slider-form brisbane-smb-landing-page__slider-form--modal"
           id="discovery-form"
-          name="main site form"
+          name="main website form"
           method="POST"
           data-netlify="true"
           netlify-honeypot="bot-field"
           action="/thank-you/"
           data-success-url="/thank-you/"
         >
-          <input type="hidden" name="form-name" value="main site form" />
-          <input
-            type="hidden"
-            name="budget"
-            value="1000"
-            data-range-submit-value
-          />
-          <p style="display: none">
-            <label>Don&apos;t fill this out <input name="bot-field" /></label>
-          </p>
-          <h2 class="brisbane-smb-landing-page__slider-heading" id="discovery-modal-title">
-            What&apos;s your budget?
-          </h2>
-          <div class="brisbane-smb-landing-page__slider-row">
-            <label
-              class="visually-hidden"
-              id="discovery-budget-title"
-              for="discovery-budget-input"
-            >
-              Your budget
-            </label>
-            <div class="brisbane-smb-landing-page__slider-shell">
-              <input
-                class="brisbane-smb-landing-page__slider-input"
-                id="discovery-budget-input"
-                type="range"
-                min="1000"
-                max="7000"
-                step="50"
-                value="1000"
-                data-slider-milestones="1750,3500,5500"
-                data-range-submit-target="budget"
-                aria-labelledby="discovery-budget-title"
-                aria-describedby="discovery-budget-output"
-              />
-              <div
-                class="brisbane-smb-landing-page__slider-milestones"
-                aria-hidden="true"
-              >
-                <span
-                  class="brisbane-smb-landing-page__slider-milestone"
-                  style="--slider-stop: 0.25"
-                ></span>
-                <span
-                  class="brisbane-smb-landing-page__slider-milestone"
-                  style="--slider-stop: 0.5"
-                ></span>
-                <span
-                  class="brisbane-smb-landing-page__slider-milestone"
-                  style="--slider-stop: 0.75"
-                ></span>
-              </div>
-            </div>
-          </div>
-          <div class="brisbane-smb-landing-page__slider-total">
-            <output
-              class="brisbane-smb-landing-page__slider-output"
-              id="discovery-budget-output"
-              for="discovery-budget-input"
-              data-range-output
-            >
-              $1,000
-            </output>
-          </div>
-          <div class="brisbane-smb-landing-page__slider-field-grid brisbane-smb-landing-page__slider-field-grid--modal">
-            <label class="visually-hidden" for="discovery-name">Name</label>
-            <input
-              class="brisbane-smb-landing-page__slider-field"
-              id="discovery-name"
-              type="text"
-              name="name"
-              placeholder="Name"
-              autocomplete="name"
-              required
-            />
-            <label class="visually-hidden" for="discovery-email">Email</label>
-            <input
-              class="brisbane-smb-landing-page__slider-field"
-              id="discovery-email"
-              type="email"
-              name="email"
-              placeholder="Email"
-              autocomplete="email"
-              required
-            />
-            <label class="visually-hidden" for="discovery-company">Business name</label>
-            <input
-              class="brisbane-smb-landing-page__slider-field"
-              id="discovery-company"
-              type="text"
-              name="business"
-              placeholder="Business name"
-              autocomplete="organization"
-            />
-            <label class="visually-hidden" for="discovery-project">How can we help?</label>
-            <textarea
-              class="brisbane-smb-landing-page__slider-field brisbane-smb-landing-page__slider-field--message"
-              id="discovery-project"
-              name="project"
-              placeholder="How can we help?"
-              rows="1"
-              required
-            ></textarea>
-            <button type="submit" class="brisbane-smb-landing-page__slider-submit">
-              Book My Call
-            </button>
-          </div>
-        </form>
+  <input type="hidden" name="form-name" value="main website form" />
+  <input type="hidden" name="budget" value="1000" data-range-submit-value />
+  <p style="display: none"><label>Don't fill this out <input name="bot-field" /></label></p>
+  <h2 class="brisbane-smb-landing-page__slider-heading">What's your budget?</h2>
+  <div class="brisbane-smb-landing-page__slider-row">
+    <label class="visually-hidden" for="main-website-budget">Your budget</label>
+    <div class="brisbane-smb-landing-page__slider-shell">
+      <input class="brisbane-smb-landing-page__slider-input" id="main-website-budget" type="range" min="1000" max="7000" step="50" value="1000" data-slider-milestones="1750,3500,5500" data-range-submit-target="budget" />
+      <div class="brisbane-smb-landing-page__slider-milestones" aria-hidden="true"><span class="brisbane-smb-landing-page__slider-milestone" style="--slider-stop: 0.25"></span><span class="brisbane-smb-landing-page__slider-milestone" style="--slider-stop: 0.5"></span><span class="brisbane-smb-landing-page__slider-milestone" style="--slider-stop: 0.75"></span></div>
+    </div>
+  </div>
+  <div class="brisbane-smb-landing-page__slider-total"><output class="brisbane-smb-landing-page__slider-output" for="main-website-budget" data-range-output>$1,000</output></div>
+  <div class="brisbane-smb-landing-page__slider-field-grid brisbane-smb-landing-page__slider-field-grid--modal">
+    <label class="visually-hidden" for="main-website-name">Name</label><input class="brisbane-smb-landing-page__slider-field" id="main-website-name" type="text" name="name" placeholder="Name" autocomplete="name" required />
+    <label class="visually-hidden" for="main-website-email">Email</label><input class="brisbane-smb-landing-page__slider-field" id="main-website-email" type="email" name="email" placeholder="Email" autocomplete="email" required />
+    <label class="visually-hidden" for="main-website-business">Business name</label><input class="brisbane-smb-landing-page__slider-field" id="main-website-business" type="text" name="business" placeholder="Business Name" autocomplete="organization" />
+    <label class="visually-hidden" for="main-website-project">How can we help?</label><textarea class="brisbane-smb-landing-page__slider-field brisbane-smb-landing-page__slider-field--message" id="main-website-project" name="project" placeholder="How can we help?" rows="1" required></textarea>
+    <button type="submit" class="brisbane-smb-landing-page__slider-submit">Continue To Booking</button>
+  </div>
+</form>
         <div class="form-thanks" id="discovery-thanks" hidden>
           <p class="form-thanks__message">
             Thank you! We&apos;ll be in touch sooner than you think.
@@ -1135,6 +933,6 @@
       </div>
     </div>
 
-    <script src="/js/main.js?v=20260826b" defer></script>
+    <script src="/js/main.js?v=20260902ac" defer></script>
   </body>
 </html>

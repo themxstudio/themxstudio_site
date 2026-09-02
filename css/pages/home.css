@@ -179,7 +179,7 @@ body.home-page .team--home .team__member-meta {
 body.home-page .team--home .team__member-mark {
   width: clamp(2.7rem, 3.3vw, 3.35rem);
   height: clamp(2.7rem, 3.3vw, 3.35rem);
-  background: url("/assets/icons/graphic.png") center / contain no-repeat;
+  background: none;
   flex: 0 0 auto;
 }
 
@@ -383,11 +383,7 @@ body.home-page .results-spotlight--light .results-spotlight__eyebrow {
 }
 
 body.home-page .results-spotlight__eyebrow::before {
-  content: "";
-  width: 0.95rem;
-  height: 0.95rem;
-  flex: 0 0 auto;
-  background: url("/assets/icons/graphic.png") center / contain no-repeat;
+  display: none;
 }
 
 body.home-page .results-spotlight__title {
@@ -449,7 +445,7 @@ body.home-page .results-spotlight__media--graphic {
 }
 
 body.home-page .results-spotlight__image--graphic {
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
 }
 
@@ -812,6 +808,162 @@ body.home-page .results-spotlight__project-link:focus-visible {
   }
 }
 
+/* Final mobile override: use the landing-page card width, never the old portrait size. */
+@media (max-width: 767px) {
+  body.home-page .team--home .team__inner {
+    width: var(--site-width) !important;
+    max-width: none !important;
+    padding-inline: 0 !important;
+  }
+
+  body.home-page .team--home .team__grid {
+    display: flex !important;
+    gap: 0.75rem !important;
+    width: min(100%, 17rem) !important;
+    max-width: 17rem !important;
+    margin-inline: auto !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  body.home-page .team--home .team__grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  body.home-page .team--home .team__member,
+  body.home-page .team--home .team__member--reverse {
+    display: block !important;
+    flex: 0 0 17rem !important;
+    width: 17rem !important;
+    max-width: 17rem !important;
+    min-width: 17rem !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    scroll-snap-align: start;
+  }
+
+  body.home-page .team--home .team__member-visual,
+  body.home-page .team--home .team__member--reverse .team__member-visual {
+    display: block !important;
+    width: 17rem !important;
+    max-width: 17rem !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    aspect-ratio: 4 / 5;
+  }
+
+  body.home-page .team--home .team__member img,
+  body.home-page .team--home .team__member--reverse img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    transform: none !important;
+  }
+}
+
+/* Homepage team carousel follows the landing-page card and control pattern. */
+body.home-page .team--card-carousel .team-card-carousel__shell {
+  position: relative;
+  width: 100%;
+  padding-inline: clamp(0.35rem, 0.9vw, 0.7rem);
+}
+
+body.home-page .team--card-carousel .about-instagram__viewport {
+  overflow: visible;
+}
+
+body.home-page .team--card-carousel .about-instagram__track {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.75rem, 1.1vw, 1rem);
+}
+
+body.home-page .team--card-carousel .about-instagram__item {
+  min-width: 0;
+  width: 100%;
+}
+
+body.home-page .team--card-carousel .ultimate-brand-and-web-team-strip__card {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: clamp(1rem, 1.5vw, 1.35rem);
+  background: #111;
+}
+
+body.home-page .team--card-carousel .ultimate-brand-and-web-team-strip__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+body.home-page .team--card-carousel .about-instagram__arrow {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  body.home-page .team--card-carousel .team-card-carousel__shell {
+    --team-card-gap: 0.75rem;
+    --team-card-width: min(calc(100vw - 7rem), 21rem);
+    display: grid;
+    grid-template-columns: auto minmax(0, var(--team-card-width)) auto;
+    align-items: center;
+    justify-content: center;
+    column-gap: clamp(0.1rem, 0.9vw, 0.35rem);
+    width: min(100%, calc(var(--team-card-width) + 5.75rem));
+    margin-inline: auto;
+    padding-inline: 0;
+  }
+
+  body.home-page .team--card-carousel .about-instagram__viewport {
+    grid-column: 2;
+    width: 100%;
+    overflow: hidden;
+    touch-action: pan-y;
+    overscroll-behavior-x: contain;
+    padding-block: 0.4rem 0.65rem;
+  }
+
+  body.home-page .team--card-carousel .about-instagram__track {
+    display: flex;
+    gap: var(--team-card-gap);
+    align-items: stretch;
+  }
+
+  body.home-page .team--card-carousel .about-instagram__item {
+    flex: 0 0 var(--team-card-width);
+  }
+
+  body.home-page .team--card-carousel.is-carousel-active .about-instagram__arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.1rem;
+    height: 3.1rem;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--accent);
+  }
+
+  body.home-page .team--card-carousel.is-carousel-active .about-instagram__arrow svg {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+@media (max-width: 767px) {
+  body.home-page .team--card-carousel .team-card-carousel__shell {
+    --team-card-width: min(calc(100vw - 7.5rem), 17rem);
+  }
+}
+
 body.home-page .home-links-grid {
   padding-top: 0;
 }
@@ -1154,6 +1306,8 @@ body.home-page .web-design-copy__inner::before {
   pointer-events: none;
   user-select: none;
   z-index: 0;
+  transform: rotate(var(--site-balloon-scroll-rotate, 0deg));
+  transform-origin: center;
 }
 
 body.home-page .web-design-copy__row {
@@ -1259,19 +1413,7 @@ body.home-page .hero + .services {
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background:
-    linear-gradient(
-      90deg,
-      rgba(0, 0, 0, 0.88) 0%,
-      rgba(0, 0, 0, 0.78) 38%,
-      rgba(0, 0, 0, 0.52) 64%,
-      rgba(0, 0, 0, 0.24) 100%
-    ),
-    linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0.16) 0%,
-      rgba(0, 0, 0, 0.52) 100%
-    );
+  display: none;
 }
 
 .hero__bg-image {
@@ -1282,7 +1424,7 @@ body.home-page .hero + .services {
   height: 100%;
   object-fit: cover;
   object-position: center;
-  filter: grayscale(1) contrast(1.05) brightness(0.92);
+  filter: none;
   z-index: 0;
   pointer-events: none;
   user-select: none;
@@ -1438,18 +1580,24 @@ body.home-page .hero + .services {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 1.08rem;
-  height: 1.08rem;
+  width: 1.22rem;
+  height: 1.22rem;
   aspect-ratio: 1;
   flex-shrink: 0;
   margin-top: 0.08rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
 }
 
-.hero__check-icon {
+.hero__check svg {
   display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+  width: 0.94rem;
+  height: 0.94rem;
+}
+
+.hero__check path {
+  stroke-width: 3.4;
 }
 
 .hero__check-copy {
@@ -1658,6 +1806,98 @@ body.home-page .hero + .services {
   }
 }
 
+/* Homepage team cards use the landing-page card track beneath the existing header. */
+body.home-page .team--home .team__inner {
+  width: min(calc(100vw - 1rem), 84rem);
+  max-width: none;
+}
+
+body.home-page .team--home .team__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.75rem, 1.1vw, 1rem);
+  align-items: stretch;
+  width: 100%;
+  max-width: none;
+  margin-inline: auto;
+}
+
+body.home-page .team--home .team__member,
+body.home-page .team--home .team__member--reverse,
+body.home-page .team--home .team__member:nth-child(n) {
+  grid-column: auto;
+  grid-row: auto;
+  order: 0;
+  width: 100%;
+  max-width: none;
+}
+
+body.home-page .team--home .team__member::after,
+body.home-page .team--home .team__member-visual::after {
+  display: none;
+}
+
+body.home-page .team--home .team__member-visual,
+body.home-page .team--home .team__member--reverse .team__member-visual {
+  width: 100% !important;
+  max-width: none;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: clamp(1rem, 1.5vw, 1.35rem);
+  background: #111;
+}
+
+body.home-page .team--home .team__member img,
+body.home-page .team--home .team__member--reverse img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transform: none !important;
+}
+
+@media (max-width: 767px) {
+  body.home-page .team--home .team__inner {
+    width: var(--site-width);
+  }
+
+  body.home-page .team--home .team__grid {
+    display: flex;
+    gap: 0.75rem;
+    width: min(100%, 17rem);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  body.home-page .team--home .team__grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  body.home-page .team--home .team__member,
+  body.home-page .team--home .team__member--reverse {
+    flex: 0 0 17rem;
+    scroll-snap-align: start;
+  }
+}
+
+@media (min-width: 1025px) {
+  body.home-page .team--home .team__member,
+  body.home-page .team--home .team__member--reverse {
+    grid-template-rows: auto !important;
+    height: auto;
+  }
+
+  body.home-page .team--home .team__member-visual,
+  body.home-page .team--home .team__member--reverse .team__member-visual {
+    display: block;
+    height: auto !important;
+    min-height: 0;
+    align-self: auto;
+    justify-self: auto;
+  }
+}
+
 @media (min-width: 820px) {
   .hero {
     height: auto;
@@ -1826,7 +2066,7 @@ body.home-page .faq__card {
 }
 
 body.home-page .hero__title {
-  font-size: clamp(2.2rem, 4.35vw, 4.45rem) !important;
+  font-size: clamp(2.5rem, 5.15vw, 5.35rem) !important;
 }
 
 body.home-page
@@ -1847,8 +2087,6 @@ body.home-page .hero__title-accent * {
 }
 
 body.home-page .hero__sub {
-  align-items: center;
-  gap: 0.55em;
   font-weight: 300 !important;
   font-variation-settings: "wght" 300 !important;
 }
@@ -1859,14 +2097,6 @@ body.home-page .hero__sub--stacked {
 
 body.home-page .hero__sub--inline {
   display: none !important;
-}
-
-body.home-page .hero__sub-icon {
-  width: 1.75em;
-  height: 1.75em;
-  flex: 0 0 1.75em;
-  margin-top: 0;
-  object-fit: contain;
 }
 
 body.home-page .hero__sub-text {
@@ -1911,8 +2141,20 @@ body.home-page .hero__sub-text {
   body.home-page .hero__sub--stacked {
     width: min(100%, 35rem);
     max-width: 35rem;
-    font-size: clamp(0.98rem, 0.28vw + 0.92rem, 1.18rem);
-    line-height: 1.14;
+    font-size: clamp(1.3rem, 0.8vw + 1.12rem, 1.58rem);
+    line-height: 1.18;
+  }
+
+  .hero__checks {
+    flex-wrap: wrap;
+  }
+
+  .hero__check-item:not(:last-child) {
+    padding-right: 0;
+  }
+
+  .hero__check-item:not(:last-child)::after {
+    display: none;
   }
 }
 
@@ -1923,20 +2165,7 @@ body.home-page .hero {
 }
 
 body.home-page .hero::after {
-  display: block !important;
-  background:
-    linear-gradient(
-      90deg,
-      rgba(0, 0, 0, 0.88) 0%,
-      rgba(0, 0, 0, 0.78) 38%,
-      rgba(0, 0, 0, 0.52) 64%,
-      rgba(0, 0, 0, 0.24) 100%
-    ),
-    linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0.16) 0%,
-      rgba(0, 0, 0, 0.52) 100%
-    ) !important;
+  display: none !important;
 }
 
 body.home-page .hero__bg-image {
@@ -1955,13 +2184,7 @@ body.home-page .hero__bg-image {
 
 @media (max-width: 819px) {
   body.home-page .hero::after {
-    background:
-      linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0.74) 0%,
-        rgba(0, 0, 0, 0.66) 44%,
-        rgba(0, 0, 0, 0.82) 100%
-      ) !important;
+    display: none !important;
   }
 
   body.home-page .hero__bg-image {
@@ -1972,6 +2195,81 @@ body.home-page .hero__bg-image {
     height: 100%;
     object-fit: cover;
     object-position: center;
+    transform: none !important;
+  }
+}
+
+/* Final homepage team-card override: never crop the 4:5 landing cards. */
+@media (min-width: 1025px) {
+  body.home-page .team--home .team__member,
+  body.home-page .team--home .team__member--reverse {
+    grid-template-rows: auto !important;
+    height: auto !important;
+  }
+
+  body.home-page .team--home .team__member-visual,
+  body.home-page .team--home .team__member--reverse .team__member-visual {
+    display: block !important;
+    height: auto !important;
+    min-height: 0;
+    align-self: auto;
+    justify-self: auto;
+  }
+}
+
+/* Final mobile override: use the landing-page card width, never the old portrait size. */
+@media (max-width: 767px) {
+  body.home-page .team--home .team__inner {
+    width: var(--site-width) !important;
+    max-width: none !important;
+    padding-inline: 0 !important;
+  }
+
+  body.home-page .team--home .team__grid {
+    display: flex !important;
+    gap: 0.75rem !important;
+    width: min(100%, 17rem) !important;
+    max-width: 17rem !important;
+    margin-inline: auto !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  body.home-page .team--home .team__grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  body.home-page .team--home .team__member,
+  body.home-page .team--home .team__member--reverse {
+    display: block !important;
+    flex: 0 0 17rem !important;
+    width: 17rem !important;
+    max-width: 17rem !important;
+    min-width: 17rem !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    scroll-snap-align: start;
+  }
+
+  body.home-page .team--home .team__member-visual,
+  body.home-page .team--home .team__member--reverse .team__member-visual {
+    display: block !important;
+    width: 17rem !important;
+    max-width: 17rem !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    aspect-ratio: 4 / 5;
+  }
+
+  body.home-page .team--home .team__member img,
+  body.home-page .team--home .team__member--reverse img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
     transform: none !important;
   }
 }

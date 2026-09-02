@@ -2,6 +2,7 @@
   --form-surface: #000;
   --form-field-bg: color-mix(in srgb, #000 92%, #fff 8%);
   --form-text: #fff;
+  --main-form-cta-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5.5 12h12.5m-5-5 5 5-5 5' fill='none' stroke='%23fb336a' stroke-width='2.35' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 }
 
 .form-modal {
@@ -661,4 +662,673 @@ body:has(.form-modal.is-open) .site-header {
 
 .discovery-form__submit {
   border-radius: 3px;
+}
+
+/* Main Form shares the landing-page slider flow without changing its Netlify identity. */
+.discovery-form__budget {
+  gap: 1.5rem;
+}
+
+.discovery-form__budget-heading-row {
+  display: contents;
+}
+
+.discovery-form .discovery-form__budget-heading {
+  order: 1;
+  color: #fff !important;
+  font-size: clamp(1.45rem, 0.85vw + 1.2rem, 2.05rem) !important;
+  font-weight: 800 !important;
+  font-variation-settings: "wght" 800 !important;
+  line-height: 1.05 !important;
+  text-align: center !important;
+}
+
+.discovery-form__budget-row {
+  order: 2;
+}
+
+.discovery-form__budget-output {
+  order: 3;
+  justify-self: center;
+  color: #fff;
+  font-size: clamp(1.45rem, 0.85vw + 1.2rem, 2.05rem);
+  font-weight: 800;
+  font-variation-settings: "wght" 800;
+  text-align: center;
+}
+
+.discovery-form__budget-shell {
+  height: 1.45rem;
+  --slider-thumb-size: 1.5rem;
+}
+
+.discovery-form__budget-shell::before,
+.discovery-form__budget-shell::after {
+  height: 0.48rem;
+}
+
+.discovery-form__reveal {
+  display: grid;
+  gap: 0.9rem;
+  overflow: hidden;
+  max-height: 0;
+  margin-top: 0;
+  opacity: 0;
+  transform: translateY(-1.25rem);
+  pointer-events: none;
+  transition:
+    max-height 520ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 360ms ease,
+    transform 520ms cubic-bezier(0.22, 1, 0.36, 1),
+    margin-top 520ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.discovery-form__reveal.is-visible {
+  max-height: 40rem;
+  margin-top: 1.5rem;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.discovery-form :is(input:not(.discovery-form__budget-input), textarea) {
+  min-height: 3.5rem;
+  padding: 0 0 0.9rem;
+  border: 0;
+  border-bottom: 0.48rem solid #5c5c5c;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: #fff;
+  font-size: clamp(1.15rem, 0.6vw + 1rem, 1.6rem);
+  font-weight: 800;
+  font-variation-settings: "wght" 800;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+.discovery-form :is(input:not(.discovery-form__budget-input), textarea)::placeholder {
+  color: #8e8e8e;
+  opacity: 1;
+}
+
+.discovery-form :is(input:not(.discovery-form__budget-input), textarea):focus {
+  outline: none;
+  border-bottom-color: var(--accent);
+}
+
+.discovery-form textarea {
+  min-height: 6rem;
+  padding-top: 0;
+}
+
+.discovery-form .discovery-form__submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-height: 3.75rem;
+  margin-top: 0.35rem;
+  padding: 0.7rem 0.92rem 0.7rem 1.2rem;
+  border-radius: 999px;
+  font-size: clamp(1rem, 0.45vw + 0.94rem, 1.3rem);
+}
+
+.discovery-form .discovery-form__submit::after {
+  content: "";
+  width: 1.82rem;
+  height: 1.82rem;
+  flex: 0 0 1.82rem;
+  border-radius: 999px;
+  background:
+    var(--main-form-cta-arrow) center / 1rem 1rem no-repeat,
+    #fff;
+}
+
+@media (max-width: 767px) {
+  .discovery-form .discovery-form__budget-heading,
+  .discovery-form__budget-output {
+    text-align: left !important;
+    justify-self: start;
+  }
+
+  .discovery-form .discovery-form__submit {
+    width: 100%;
+  }
+}
+
+@media (min-width: 900px) {
+  .form-modal > .form-modal__panel.main-form--modal {
+    width: min(calc(100vw - 2.5rem), 71rem);
+    max-width: 71rem;
+    max-height: min(100dvh, calc(100dvh - 2.5rem));
+    display: grid;
+    grid-template-columns: 31.75rem minmax(0, 1fr);
+    column-gap: 0;
+    padding: clamp(1.4rem, 1vw + 1.15rem, 1.9rem);
+    border-radius: 28px;
+  }
+
+  .form-modal > .form-modal__panel.main-form--modal :is(.discovery-form, .form-thanks) {
+    grid-column: 1;
+  }
+
+  .form-modal > .form-modal__panel.main-form--modal .main-form__aside {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+  }
+
+  .main-form__aside {
+    display: grid;
+    align-content: center;
+    gap: 1.25rem;
+    min-width: 0;
+    margin: calc(clamp(1.4rem, 1vw + 1.15rem, 1.9rem) * -1);
+    margin-left: clamp(1.4rem, 1vw + 1.15rem, 1.9rem);
+    padding: clamp(2rem, 3vw, 3.5rem);
+    color: #fff;
+    background: #000;
+    border-radius: 0 28px 28px 0;
+  }
+
+  .main-form__quote {
+    margin: 0;
+    font-size: clamp(1.3rem, 1.1vw + 0.95rem, 2rem);
+    font-weight: 700;
+    line-height: 1.12;
+  }
+
+  .main-form__quote-meta {
+    display: grid;
+    gap: 0.15rem;
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  .main-form__quote-meta span,
+  .main-form__quote-proof {
+    color: #aaa;
+  }
+
+  .main-form__quote-proof {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 800;
+  }
+}
+
+/* Exact testimonial rules from the SMB landing-page form modal. */
+.main-form--modal .brisbane-smb-landing-page__modal-testimonial {
+  width: min(100%, 24.5rem);
+  display: grid;
+  gap: 1.3rem;
+  justify-items: start;
+  align-content: center;
+  margin: 0;
+  text-align: left;
+}
+
+.main-form--modal .brisbane-smb-landing-page__modal-testimonial-quote,
+.main-form--modal .brisbane-smb-landing-page__modal-testimonial-quote p,
+.main-form--modal .brisbane-smb-landing-page__modal-testimonial-meta,
+.main-form--modal .brisbane-smb-landing-page__modal-testimonial-company,
+.main-form--modal .brisbane-smb-landing-page__modal-testimonial-name,
+.main-form--modal .brisbane-smb-landing-page__modal-testimonial-proof {
+  margin: 0;
+}
+
+.main-form--modal .brisbane-smb-landing-page__modal-testimonial-quote { display: block !important; visibility: visible !important; color: #fff !important; opacity: 1 !important; }
+.main-form--modal .brisbane-smb-landing-page__modal-testimonial-quote p { display: block !important; visibility: visible !important; color: #fff !important; opacity: 1 !important; font-size: clamp(1.08rem, 0.48vw + 0.98rem, 1.42rem); font-weight: 400; line-height: 1.28; text-wrap: pretty; }
+.main-form--modal .brisbane-smb-landing-page__modal-testimonial-meta { display: inline-grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 0.55rem; justify-self: start; }
+.main-form--modal .brisbane-smb-landing-page__modal-testimonial-heading { display: grid; gap: 0.18rem; }
+.main-form--modal .brisbane-smb-landing-page__modal-testimonial-company { color: rgba(255, 255, 255, 0.74); font-size: clamp(0.94rem, 0.3vw + 0.88rem, 1.02rem); line-height: 1.2; }
+.main-form--modal .brisbane-smb-landing-page__modal-testimonial-name { color: #fff; font-size: clamp(1.36rem, 0.8vw + 1.04rem, 1.76rem); font-weight: 900; line-height: 0.95; letter-spacing: -0.04em; white-space: nowrap; }
+.main-form--modal .brisbane-smb-landing-page__modal-testimonial-proof { display: inline-flex; align-items: center; gap: 0.9rem; justify-self: start; width: fit-content; max-width: 100%; margin-top: 1.45rem; color: #fff; }
+.main-form--modal .brisbane-smb-landing-page__modal-testimonial-proof .page-hero__google-stars { color: #ffd54a; line-height: 0; }
+.main-form--modal .brisbane-smb-landing-page__modal-testimonial-proof .page-hero__google-stars svg { display: block; width: 8.9rem; height: auto; }
+.main-form--modal .brisbane-smb-landing-page__modal-testimonial-proof .page-hero__google-logo { width: 1.72rem; height: 1.72rem; flex: 0 0 auto; }
+
+.main-form__landing-heading {
+  margin: 0 0 2rem;
+  color: #fff;
+  font-size: clamp(1.65rem, 0.85vw + 1.38rem, 2.1rem);
+  font-weight: 800;
+  font-variation-settings: "wght" 800;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  text-align: left;
+}
+
+.main-form--modal .discovery-form__budget-heading {
+  display: none !important;
+}
+
+.main-form--modal .discovery-form__budget {
+  gap: 0;
+}
+
+.main-form--modal .discovery-form__budget-output {
+  margin-top: 2rem;
+}
+
+/* The sitewide Main Form uses the same component structure as the SMB landing form. */
+.brisbane-smb-landing-page__slider-form {
+  width: 100%;
+  min-width: 0;
+}
+
+.main-form-shell.main-form--modal {
+  width: min(100%, 71rem);
+  margin-inline: auto;
+  overflow: hidden;
+  color: #fff;
+  background: #000;
+  border-radius: 28px;
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.34);
+}
+
+.main-form-host {
+  width: min(100%, 71rem);
+  margin-inline: auto;
+  min-height: 0 !important;
+  height: auto !important;
+  align-self: start;
+}
+
+.main-form-host .main-form-shell,
+.main-form-host .brisbane-smb-landing-page__modal-form-column,
+.main-form-host .brisbane-smb-landing-page__slider-form {
+  min-height: 0 !important;
+  height: auto !important;
+  align-self: start;
+}
+
+.main-form-shell,
+.main-form-shell *,
+.main-form--modal .brisbane-smb-landing-page__modal-form-column,
+.main-form--modal .brisbane-smb-landing-page__modal-form-column * {
+  box-sizing: border-box;
+}
+
+.main-form-shell .brisbane-smb-landing-page__modal-form-column {
+  padding: clamp(1.4rem, 1vw + 1.15rem, 1.9rem);
+  background: #000;
+}
+
+.main-form--modal .brisbane-smb-landing-page__modal-aside {
+  display: none;
+}
+
+.brisbane-smb-landing-page__slider-heading {
+  display: block !important;
+  width: min(100%, 35rem);
+  margin: 0 auto 2rem;
+  color: #fff;
+  font-size: clamp(1.65rem, 0.85vw + 1.38rem, 2.1rem);
+  font-weight: 800;
+  font-variation-settings: "wght" 800;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  text-align: center;
+}
+
+.brisbane-smb-landing-page__slider-row {
+  display: block;
+  width: min(100%, 35rem);
+  margin-inline: auto;
+}
+
+.brisbane-smb-landing-page__slider-total {
+  display: flex;
+  justify-content: center;
+  width: min(100%, 35rem);
+  margin: 2rem auto 0;
+}
+
+.brisbane-smb-landing-page__slider-field-grid {
+  display: grid;
+  gap: 0.9rem;
+  width: min(100%, 35rem);
+  margin: 1.5rem auto 0;
+}
+
+.brisbane-smb-landing-page__slider-field {
+  display: block;
+  width: 100%;
+  min-height: 3.5rem;
+  padding: 0 0 0.9rem;
+  border: 0;
+  border-bottom: 0.48rem solid #5c5c5c;
+  border-radius: 0;
+  background: transparent;
+  color: #fff;
+  -webkit-appearance: none;
+  appearance: none;
+  font-size: clamp(1.65rem, 1.2vw + 1.28rem, 2.45rem);
+  font-weight: 800;
+  font-variation-settings: "wght" 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.brisbane-smb-landing-page__slider-field::placeholder {
+  color: #8e8e8e;
+  font-size: clamp(1.65rem, 0.85vw + 1.38rem, 2.1rem);
+  font-weight: 800;
+  font-variation-settings: "wght" 800;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  opacity: 1;
+}
+
+.brisbane-smb-landing-page__slider-field:focus {
+  outline: none;
+  border-bottom-color: var(--accent);
+}
+
+.brisbane-smb-landing-page__slider-field:focus::placeholder {
+  color: transparent;
+}
+
+.brisbane-smb-landing-page__slider-field--message {
+  min-height: 6rem;
+  padding-top: 0;
+  resize: vertical;
+}
+
+.brisbane-smb-landing-page__slider-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.82rem;
+  width: fit-content;
+  min-height: 3.75rem;
+  margin-top: 0.35rem;
+  padding: 0.7rem 0.92rem 0.7rem 1.2rem;
+  border: 0;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-size: clamp(1.1rem, 0.45vw + 1rem, 1.3rem);
+  font-weight: 800;
+  font-variation-settings: "wght" 800;
+  letter-spacing: -0.03em;
+  cursor: pointer;
+}
+
+.brisbane-smb-landing-page__slider-submit::after {
+  content: "";
+  width: 1.82rem;
+  height: 1.82rem;
+  flex: 0 0 1.82rem;
+  border-radius: 999px;
+  background: var(--main-form-cta-arrow) center / 1rem 1rem no-repeat, #fff;
+}
+
+.brisbane-smb-landing-page__slider-shell {
+  position: relative;
+  width: 100%;
+  height: 1.45rem;
+  --slider-progress: 0%;
+  --slider-muted: #5c5c5c;
+  --slider-thumb-size: 1.5rem;
+  --slider-thumb-radius: calc(var(--slider-thumb-size) / 2);
+}
+
+.brisbane-smb-landing-page__slider-shell::before,
+.brisbane-smb-landing-page__slider-shell::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  height: 0.48rem;
+  border-radius: 999px;
+  transform: translateY(-50%);
+}
+
+.brisbane-smb-landing-page__slider-shell::before {
+  right: 0;
+  left: 0;
+  background: var(--slider-muted);
+}
+
+.brisbane-smb-landing-page__slider-shell::after {
+  left: 0;
+  width: var(--slider-progress);
+  background: var(--accent);
+}
+
+.brisbane-smb-landing-page__slider-input {
+  -webkit-appearance: none;
+  appearance: none;
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  width: 100%;
+  height: 1.45rem;
+  margin: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.main-form--modal input.brisbane-smb-landing-page__slider-input {
+  min-height: 0 !important;
+  height: 1.45rem !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.brisbane-smb-landing-page__slider-input::-webkit-slider-runnable-track { height: 0.48rem; background: transparent; }
+.brisbane-smb-landing-page__slider-input::-webkit-slider-thumb { width: var(--slider-thumb-size); height: var(--slider-thumb-size); margin-top: calc((0.48rem - var(--slider-thumb-size)) / 2); border: 0; border-radius: 50%; background: var(--accent); -webkit-appearance: none; }
+.brisbane-smb-landing-page__slider-input::-moz-range-track { height: 0.48rem; background: transparent; }
+.brisbane-smb-landing-page__slider-input::-moz-range-progress { height: 0.48rem; background: transparent; }
+.brisbane-smb-landing-page__slider-input::-moz-range-thumb { width: var(--slider-thumb-size); height: var(--slider-thumb-size); border: 0; border-radius: 50%; background: var(--accent); }
+
+.brisbane-smb-landing-page__slider-output {
+  color: #fff;
+  font-size: clamp(1.65rem, 0.85vw + 1.38rem, 2.1rem);
+  font-weight: 800;
+  font-variation-settings: "wght" 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.brisbane-smb-landing-page__slider-milestones { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+.brisbane-smb-landing-page__slider-milestone { position: absolute; top: 50%; left: calc(var(--slider-thumb-radius) + (100% - (var(--slider-thumb-radius) * 2)) * var(--slider-stop)); width: 1.14rem; height: 1.14rem; border-radius: 50%; background: #5c5c5c; transform: translate(-50%, -50%); }
+
+/* Every form uses the same full-width submit layout. */
+form :is(.discovery-form__submit, .brisbane-smb-landing-page__slider-submit) {
+  width: 100% !important;
+  max-width: none !important;
+  justify-content: center !important;
+}
+
+@media (min-width: 900px) {
+  :is(.form-modal > .form-modal__panel, .main-form-shell).main-form--modal {
+    width: min(calc(100vw - 2.5rem), 71rem);
+    max-width: 71rem;
+    min-height: 0;
+    max-height: none;
+    padding: 0;
+    overflow: visible;
+    display: grid;
+    grid-template-columns: 31.75rem minmax(0, 1fr);
+    background: #000;
+    border-radius: 28px;
+    box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.34);
+  }
+
+  .main-form--modal .brisbane-smb-landing-page__modal-form-column {
+    grid-column: 1;
+    display: grid;
+    align-content: start;
+    width: 31.75rem;
+    min-width: 31.75rem;
+    padding: clamp(1.4rem, 1vw + 1.15rem, 1.9rem);
+    background: #000;
+    border-radius: 28px 0 0 28px;
+  }
+
+  .main-form--modal .brisbane-smb-landing-page__modal-aside {
+    display: grid;
+    grid-column: 2;
+    align-self: stretch;
+    place-items: center;
+    position: relative;
+    padding: 0 clamp(1.6rem, 2.2vw, 2.4rem);
+    overflow: hidden;
+    color: #fff;
+    background: #000;
+    border-radius: 0 28px 28px 0;
+  }
+
+  .main-form--modal .brisbane-smb-landing-page__modal-aside::before,
+  .main-form--modal .brisbane-smb-landing-page__modal-aside::after {
+    content: "";
+    position: absolute;
+    width: clamp(9.5rem, 15vw, 13rem);
+    aspect-ratio: 4316 / 3591;
+    background: url("/assets/images/balloon-graphic.webp") left bottom / 200% 200% no-repeat;
+  }
+
+  .main-form--modal .brisbane-smb-landing-page__modal-aside::before { top: 0; right: 0; }
+  .main-form--modal .brisbane-smb-landing-page__modal-aside::after { bottom: 0; left: 0; background-position: right top; }
+  .main-form--modal .brisbane-smb-landing-page__modal-testimonial { position: relative; z-index: 1; }
+  .main-form--modal .brisbane-smb-landing-page__slider-heading,
+  .main-form--modal .brisbane-smb-landing-page__slider-row,
+  .main-form--modal .brisbane-smb-landing-page__slider-total,
+  .main-form--modal .brisbane-smb-landing-page__slider-field-grid { width: 100%; max-width: none; }
+  .main-form--modal .brisbane-smb-landing-page__slider-heading { margin: 0 0 2rem; text-align: left; }
+  .main-form--modal .brisbane-smb-landing-page__slider-row { margin-inline: 0; }
+  .main-form--modal .brisbane-smb-landing-page__slider-total { justify-content: flex-start; margin: 2rem 0 0; }
+  .main-form--modal input.brisbane-smb-landing-page__slider-field,
+  .main-form--modal textarea.brisbane-smb-landing-page__slider-field {
+    min-height: 3.5rem;
+    padding: 0 0 0.9rem;
+    border: 0;
+    border-bottom: 0.48rem solid #5c5c5c;
+    border-radius: 0;
+    background: transparent;
+    color: #fff;
+    font-size: clamp(1.65rem, 1.2vw + 1.28rem, 2.45rem);
+  }
+  .main-form--modal textarea.brisbane-smb-landing-page__slider-field--message { min-height: 6rem; }
+}
+
+@media (max-width: 767px) {
+  .brisbane-smb-landing-page__slider-heading {
+    margin-inline: 0;
+    text-align: left;
+  }
+  .brisbane-smb-landing-page__slider-row,
+  .brisbane-smb-landing-page__slider-total,
+  .brisbane-smb-landing-page__slider-field-grid {
+    margin-inline: 0;
+  }
+  .brisbane-smb-landing-page__slider-total {
+    justify-content: flex-start;
+    text-align: left;
+  }
+  .brisbane-smb-landing-page__slider-submit { width: 100%; }
+}
+
+/* Exact SMB landing-form mobile rules, shared by every Main Form instance. */
+@media (max-width: 767px) {
+  .form-modal:has(.main-form--modal) {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .form-modal > .form-modal__panel.main-form--modal,
+  .main-form-shell.main-form--modal {
+    width: min(calc(100vw - 1rem), 26rem);
+    max-width: 26rem;
+    margin: auto;
+    padding: 0;
+    background: #000;
+    border-radius: 1.25rem;
+    overflow: hidden;
+    scrollbar-gutter: auto;
+  }
+
+  .main-form--modal .brisbane-smb-landing-page__modal-form-column {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    box-sizing: border-box;
+    padding: 1.5rem 1.1rem 1.6rem;
+    border-radius: 1.25rem;
+    box-shadow: none;
+  }
+
+  .main-form--modal :is(
+    .brisbane-smb-landing-page__slider-heading,
+    .brisbane-smb-landing-page__slider-row,
+    .brisbane-smb-landing-page__slider-total,
+    .brisbane-smb-landing-page__slider-field-grid
+  ) {
+    width: 100%;
+    max-width: none;
+  }
+
+  .main-form--modal .brisbane-smb-landing-page__slider-heading {
+    margin: 0 0 2rem;
+    font-size: clamp(2.15rem, 8vw, 2.8rem);
+    font-weight: 900;
+    line-height: 0.98;
+    text-align: left;
+  }
+
+  .main-form--modal .brisbane-smb-landing-page__slider-row {
+    margin-inline: 0;
+  }
+
+  .main-form--modal .brisbane-smb-landing-page__slider-total {
+    justify-content: flex-start;
+    margin: 2rem 0 0;
+  }
+
+  .main-form--modal .brisbane-smb-landing-page__slider-output {
+    font-size: clamp(1.9rem, 1.45vw + 1.48rem, 2.4rem);
+    line-height: 1.02;
+    text-align: left;
+  }
+
+  .main-form--modal .brisbane-smb-landing-page__slider-field-grid {
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .main-form--modal :is(input, textarea).brisbane-smb-landing-page__slider-field {
+    min-height: 3.9rem;
+    padding: 0 0 1rem;
+    font-size: clamp(1.9rem, 1.6vw + 1.45rem, 2.55rem);
+    line-height: 1.02;
+  }
+
+  .main-form--modal .brisbane-smb-landing-page__slider-field::placeholder {
+    font-size: clamp(1.9rem, 1.45vw + 1.48rem, 2.4rem);
+    line-height: 1.04;
+  }
+
+  .main-form--modal textarea.brisbane-smb-landing-page__slider-field--message {
+    min-height: 6.9rem;
+  }
+
+  .main-form--modal .brisbane-smb-landing-page__slider-submit {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 4.05rem;
+    padding: 0.82rem 1rem 0.82rem 1.2rem;
+    border-radius: 1.25rem;
+    font-size: 1.16rem;
+  }
+
+  .main-form--modal .brisbane-smb-landing-page__slider-submit::after {
+    width: 1.9rem;
+    height: 1.9rem;
+    flex-basis: 1.9rem;
+  }
 }

@@ -1,0 +1,44 @@
+/* Landing-page team strips show all three cards until the phone carousel begins. */
+@media (min-width: 768px) {
+  body.brisbane-smb-landing-page .ultimate-brand-and-web-team-strip .about-instagram__shell,
+  body.quality-foundational-page.package-landing-page .ultimate-brand-and-web-team-strip .about-instagram__shell {
+    display: block;
+    width: 100%;
+    max-width: none;
+    margin-inline: 0;
+    padding-inline: clamp(0.35rem, 0.9vw, 0.7rem);
+  }
+
+  body.brisbane-smb-landing-page .ultimate-brand-and-web-team-strip .about-instagram__viewport,
+  body.quality-foundational-page.package-landing-page .ultimate-brand-and-web-team-strip .about-instagram__viewport {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    overflow: visible;
+    padding: 0;
+  }
+
+  body.brisbane-smb-landing-page .ultimate-brand-and-web-team-strip .about-instagram__track,
+  body.quality-foundational-page.package-landing-page .ultimate-brand-and-web-team-strip .about-instagram__track {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(0.75rem, 1.1vw, 1rem);
+    align-items: stretch;
+    justify-content: initial;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  body.brisbane-smb-landing-page .ultimate-brand-and-web-team-strip .about-instagram__item,
+  body.quality-foundational-page.package-landing-page .ultimate-brand-and-web-team-strip .about-instagram__item {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    flex: none;
+  }
+
+  body.brisbane-smb-landing-page .ultimate-brand-and-web-team-strip .about-instagram__arrow,
+  body.quality-foundational-page.package-landing-page .ultimate-brand-and-web-team-strip .about-instagram__arrow {
+    display: none !important;
+  }
+}

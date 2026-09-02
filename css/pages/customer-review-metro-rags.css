@@ -44,11 +44,7 @@
 
 :is(.customer-review--metro-rags, .customer-review--meridian)
   .metro-rags-spotlight__eyebrow::before {
-  content: "";
-  width: 1rem;
-  height: 1rem;
-  flex: 0 0 auto;
-  background: url("/assets/icons/graphic.png") center / contain no-repeat;
+  display: none;
 }
 
 :is(.customer-review--metro-rags, .customer-review--meridian) .metro-rags-spotlight__title {

@@ -87,14 +87,6 @@ body.results-case-study-page main section.case-study-hero {
   text-wrap: pretty;
 }
 
-.case-study-hero__graphic.hero__sub-icon {
-  width: 1.75em;
-  height: 1.75em;
-  flex: 0 0 1.75em;
-  margin-top: 0;
-  object-fit: contain;
-}
-
 .case-study-hero__note .hero__sub-text {
   display: inline;
 }

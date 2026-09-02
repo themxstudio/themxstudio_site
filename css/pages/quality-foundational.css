@@ -160,9 +160,12 @@ body.brisbane-smb-landing-page
   left: 0;
   width: 1.22rem;
   height: 1.22rem;
-  background:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9.2 12.6l1.9 1.9 4.7-5' fill='none' stroke='%23fb336a' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
-    center / contain no-repeat;
+  border-radius: 999px;
+  background-color: var(--accent);
+  background-image: var(--brisbane-check-icon);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 0.94rem;
 }
 
 body.brisbane-smb-landing-page
@@ -941,7 +944,7 @@ body.brisbane-smb-landing-page .brisbane-smb-landing-page__maxx-pass-through-ide
 body.brisbane-smb-landing-page .brisbane-smb-landing-page__maxx-pass-through-mark {
   width: clamp(2.9rem, 3.3vw, 3.3rem);
   height: clamp(2.9rem, 3.3vw, 3.3rem);
-  background: url("/assets/icons/graphic.png") center / contain no-repeat;
+  background: none;
   flex: 0 0 auto;
 }
 
@@ -1021,6 +1024,8 @@ body.brisbane-smb-landing-page .brisbane-smb-landing-page__faq-gap {
   align-items: center;
   margin-left: auto;
   flex: 0 0 auto;
+  grid-column: 3 !important;
+  justify-self: end !important;
 }
 
 body.quality-foundational-page.package-landing-page
@@ -1032,7 +1037,7 @@ body.quality-foundational-page.package-landing-page
 body.quality-foundational-page.package-landing-page
   .quality-foundational-header
   .site-header__brand {
-  width: clamp(5.8rem, 5vw, 6.5rem);
+  width: clamp(12rem, 14vw, 14.5rem);
 }
 
 .quality-foundational-header .site-header__actions .site-header__cta {
@@ -1043,52 +1048,16 @@ body.quality-foundational-page.package-landing-page
   font-size: clamp(0.92rem, 0.45vw + 0.88rem, 1.05rem);
 }
 
-body.quality-foundational-page.package-landing-page .quality-foundational-header__back[hidden] {
-  display: none !important;
-}
-
-body.quality-foundational-page.package-landing-page .quality-foundational-header__back {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  flex: 0 1 auto;
-  min-width: 0;
-  color: var(--accent);
-  text-decoration: none;
-  font-size: clamp(0.8rem, 0.24vw + 0.78rem, 0.94rem);
-  font-weight: 800;
-  font-variation-settings: "wght" 800;
-  letter-spacing: -0.02em;
-  line-height: 1;
-  white-space: nowrap;
-}
-
-body.quality-foundational-page.package-landing-page .quality-foundational-header__back:is(:hover, :focus-visible) {
-  color: var(--accent);
-  text-decoration: none;
-}
-
-body.quality-foundational-page.package-landing-page .quality-foundational-header__back-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 0.95rem;
-  height: 0.95rem;
-  flex: 0 0 0.95rem;
-}
-
-body.quality-foundational-page.package-landing-page .quality-foundational-header__back-icon svg {
-  width: 100%;
-  height: 100%;
-  transform: scaleX(-1);
-}
-
 body.brisbane-smb-landing-page .website-services__hero-portraits {
   display: none !important;
 }
 
 body.brisbane-smb-landing-page .website-services__hero-wrap::before {
-  background: rgba(0, 0, 0, 0.86);
+  display: none;
+}
+
+body.brisbane-smb-landing-page .website-services__hero-bg {
+  filter: none;
 }
 
 body.brisbane-smb-landing-page .website-services__hero-wrap {
@@ -1234,15 +1203,6 @@ body.brisbane-smb-landing-page .website-services__hero .page-hero__sub {
   font-size: clamp(1.18rem, 0.95vw + 1rem, 1.8rem);
   line-height: 1.28;
   text-align: center;
-}
-
-body.brisbane-smb-landing-page .website-services__hero .page-hero__sub::before {
-  content: none !important;
-  display: none !important;
-}
-
-body.brisbane-smb-landing-page .website-services__hero .page-hero__sub-icon {
-  display: none !important;
 }
 
 body.brisbane-smb-landing-page .website-services__hero .page-hero__actions,
@@ -1879,7 +1839,7 @@ body.brisbane-smb-landing-page .brisbane-smb-landing-page__selling-points-media 
 body.brisbane-smb-landing-page .brisbane-smb-landing-page__selling-points-media .team__member-mark {
   width: clamp(2.4rem, 3vw, 2.85rem);
   height: clamp(2.4rem, 3vw, 2.85rem);
-  background: url("/assets/icons/graphic.png") center / contain no-repeat;
+  background: none;
 }
 
 body.brisbane-smb-landing-page .brisbane-smb-landing-page__selling-points-media .team__member-heading {
@@ -2105,7 +2065,7 @@ body.brisbane-smb-landing-page
   .team__member-mark {
   width: clamp(2.4rem, 3vw, 2.85rem);
   height: clamp(2.4rem, 3vw, 2.85rem);
-  background: url("/assets/icons/graphic.png") center / contain no-repeat;
+  background: none;
 }
 
 body.brisbane-smb-landing-page
@@ -2465,11 +2425,6 @@ body.ultimate-brand-and-web-page .hospitality-comparison__balloon {
   max-width: 37rem;
   font-size: clamp(1.08rem, 0.38vw + 1rem, 1.34rem);
   line-height: 1.18;
-}
-
-.quality-foundational-hero .page-hero__sub::before {
-  content: none !important;
-  display: none !important;
 }
 
 .quality-foundational-hero .page-hero__actions {
@@ -3081,7 +3036,7 @@ body.ultimate-brand-and-web-page .ultimate-brand-and-web-meridian {
 .hospitality-team .team__member-mark {
   width: clamp(2.2rem, 2.9vw, 2.65rem);
   height: clamp(2.2rem, 2.9vw, 2.65rem);
-  background: url("/assets/icons/graphic.png") center / contain no-repeat;
+  background: none;
 }
 
 .hospitality-team .team__member-heading {
@@ -3178,9 +3133,10 @@ main
 
 .quality-foundational-footer .site-footer__bottom {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.85rem;
   padding-inline: clamp(0.4rem, 1vw, 0.7rem);
   padding-top: clamp(1rem, 2vw, 1.25rem);
   padding-bottom: clamp(1rem, 2vw, 1.25rem);
@@ -3189,7 +3145,7 @@ main
 
 .quality-foundational-footer .site-footer__bottom-brand {
   flex: 0 0 auto;
-  width: auto;
+  width: min(18rem, 100%);
   margin: 0;
   align-items: flex-start;
   text-align: left;
@@ -3197,7 +3153,8 @@ main
 
 .quality-foundational-footer .home-footer__brand {
   flex: 0 0 auto;
-  align-self: auto;
+  align-self: flex-start;
+  justify-content: flex-start;
 }
 
 .quality-foundational-footer__cta {
@@ -3207,6 +3164,7 @@ main
   padding: 0.8rem 1.2rem;
   gap: 0.7rem;
   font-size: 1rem;
+  align-self: center;
 }
 
 .quality-foundational-footer__cta::after {
@@ -3819,12 +3777,11 @@ main
   }
 
   .quality-foundational-footer .site-footer__bottom {
-    flex-direction: column;
     align-items: flex-start;
   }
 
   .quality-foundational-footer__cta {
-    width: 100%;
+    width: min(18rem, 100%);
   }
 }
 
@@ -4170,7 +4127,30 @@ body.package-landing-page .quality-foundational-hero-wrap {
 }
 
 body.package-landing-page .quality-foundational-hero-wrap::before {
-  background: rgba(0, 0, 0, 0.86);
+  display: none;
+}
+
+body.package-landing-page .website-services__hero-bg {
+  filter: none;
+}
+
+body.brisbane-smb-landing-page .faq__title::before,
+body.package-landing-page .faq__title::before {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  body.brisbane-smb-landing-page main :is(h1, h2, h3, h4, h5, h6, p, li),
+  body.package-landing-page main :is(h1, h2, h3, h4, h5, h6, p, li) {
+    text-align: left !important;
+  }
+
+  body.brisbane-smb-landing-page main :is(.page-hero__content, .page-hero__actions, .page-hero__google-proof),
+  body.package-landing-page main :is(.page-hero__content, .page-hero__actions, .page-hero__google-proof) {
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    justify-items: start !important;
+  }
 }
 
 body.package-landing-page .website-services__hero-portraits {
@@ -6147,22 +6127,7 @@ body.quality-foundational-page.package-landing-page .hospitality-post-faq__form-
   body.quality-foundational-page.package-landing-page
     .quality-foundational-header
     .site-header__brand {
-    width: 5.8rem;
-  }
-
-  body.quality-foundational-page.package-landing-page .quality-foundational-header__back {
-    position: static;
-    gap: 0.28rem;
-    margin: 0;
-    font-size: 0.74rem;
-    transform: none;
-    z-index: 2;
-  }
-
-  body.quality-foundational-page.package-landing-page .quality-foundational-header__back-icon {
-    width: 0.88rem;
-    height: 0.88rem;
-    flex-basis: 0.88rem;
+    width: 10rem;
   }
 
   body.quality-foundational-page.package-landing-page .quality-foundational-header__cta {

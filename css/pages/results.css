@@ -204,11 +204,7 @@ body.results-page main section.results-spotlight {
 }
 
 .results-spotlight__eyebrow::before {
-  content: "";
-  width: 0.95rem;
-  height: 0.95rem;
-  flex: 0 0 auto;
-  background: url("/assets/icons/graphic.png") center / contain no-repeat;
+  display: none;
 }
 
 .results-spotlight__title {

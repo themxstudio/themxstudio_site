@@ -1,0 +1,38 @@
+/* Exact homepage team-card carousel, reused on About. */
+body.about-page .team--card-carousel .team-card-carousel__shell {
+  position: relative;
+  width: 100%;
+  padding-inline: clamp(0.35rem, 0.9vw, 0.7rem);
+}
+
+body.about-page .team--card-carousel .about-instagram__viewport { overflow: visible; }
+body.about-page .team--card-carousel .about-instagram__track { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(0.75rem, 1.1vw, 1rem); }
+body.about-page .team--card-carousel .about-instagram__item { min-width: 0; width: 100%; }
+body.about-page .team--card-carousel .ultimate-brand-and-web-team-strip__card { width: 100%; aspect-ratio: 4 / 5; overflow: hidden; border-radius: clamp(1rem, 1.5vw, 1.35rem); background: #111; }
+body.about-page .team--card-carousel .ultimate-brand-and-web-team-strip__image { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+body.about-page .team--card-carousel .about-instagram__arrow { display: none; }
+
+@media (max-width: 767px) {
+  body.about-page .team--card-carousel .team-card-carousel__shell {
+    --team-card-gap: 0.75rem;
+    --team-card-width: min(calc(100vw - 7rem), 21rem);
+    display: grid;
+    grid-template-columns: auto minmax(0, var(--team-card-width)) auto;
+    align-items: center;
+    justify-content: center;
+    column-gap: clamp(0.1rem, 0.9vw, 0.35rem);
+    width: min(100%, calc(var(--team-card-width) + 5.75rem));
+    margin-inline: auto;
+    padding-inline: 0;
+  }
+
+  body.about-page .team--card-carousel .about-instagram__viewport { grid-column: 2; width: 100%; overflow: hidden; touch-action: pan-y; overscroll-behavior-x: contain; padding-block: 0.4rem 0.65rem; }
+  body.about-page .team--card-carousel .about-instagram__track { display: flex; gap: var(--team-card-gap); align-items: stretch; }
+  body.about-page .team--card-carousel .about-instagram__item { flex: 0 0 var(--team-card-width); }
+  body.about-page .team--card-carousel.is-carousel-active .about-instagram__arrow { display: inline-flex; align-items: center; justify-content: center; width: 3.1rem; height: 3.1rem; padding: 0; border: 0; background: transparent; color: var(--accent); }
+  body.about-page .team--card-carousel.is-carousel-active .about-instagram__arrow svg { width: 2rem; height: 2rem; }
+}
+
+@media (max-width: 767px) {
+  body.about-page .team--card-carousel .team-card-carousel__shell { --team-card-width: min(calc(100vw - 7.5rem), 17rem); }
+}

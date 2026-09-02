@@ -84,10 +84,7 @@
       sizes="180x180"
       href="/apple-touch-icon.png?v=20260819-favicon-refresh-1"
     />
-    <link
-      rel="manifest"
-      href="/site.webmanifest?v=20260819-favicon-refresh-1"
-    />
+
     <meta property="og:site_name" content="The MX Studio" />
     <meta
       property="og:title"
@@ -101,7 +98,7 @@
     <meta property="og:url" content="https://www.themxstudio.com.au/about/" />
     <meta
       property="og:image"
-      content="https://www.themxstudio.com.au/og-default.jpg?v=20260803a"
+      content="https://www.themxstudio.com.au/og-default.jpg?v=20260902a"
     />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -121,7 +118,7 @@
     />
     <meta
       name="twitter:image"
-      content="https://www.themxstudio.com.au/og-default.jpg?v=20260803a"
+      content="https://www.themxstudio.com.au/og-default.jpg?v=20260902a"
     />
     <meta
       name="twitter:image:alt"
@@ -162,7 +159,7 @@
             "url": "https://www.themxstudio.com.au/",
             "email": "hello@themxstudio.com.au",
             "telephone": "+61421709047",
-            "image": "https://www.themxstudio.com.au/og-default.jpg?v=20260803a",
+            "image": "https://www.themxstudio.com.au/og-default.jpg?v=20260902a",
             "serviceType": [
               "Website design",
               "Website development",
@@ -311,17 +308,19 @@
             "about": { "@id": "https://www.themxstudio.com.au/#business" },
             "primaryImageOfPage": {
               "@type": "ImageObject",
-              "url": "https://www.themxstudio.com.au/og-default.jpg?v=20260803a"
+              "url": "https://www.themxstudio.com.au/og-default.jpg?v=20260902a"
             }
           }
         ]
       }
     </script>
 
-    <link rel="stylesheet" href="/css/base.css?v=20260809b" />
-    <link rel="stylesheet" href="/css/components.css?v=20260819h" />
-    <link rel="stylesheet" href="/css/pages/about.css?v=20260809c" />
-    <link rel="stylesheet" href="/css/forms.css?v=20260802g" />
+    <link rel="stylesheet" href="/css/base.css?v=20260902n" />
+    <link rel="stylesheet" href="/css/components.css?v=20260902c" />
+    <link rel="stylesheet" href="/css/pages/about.css?v=20260902e" />
+    <link rel="stylesheet" href="/css/about-team-carousel.css?v=20260902b" />
+    <link rel="stylesheet" href="/css/forms.css?v=20260902u" />
+    <link rel="stylesheet" href="/css/main-website-form.css?v=20260902l" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -381,7 +380,7 @@
           >
             <img
               class="site-header__logo"
-              src="/assets/logos/the-mx-studio-logo.svg"
+              src="/assets/logos/logo.webp"
               alt="The MX Studio"
             />
           </a>
@@ -964,9 +963,9 @@
 
     <main>
       <div class="about-landing">
-        <section class="page-hero" data-page-hero-eyebrow="ABOUT THE MX STUDIO">
+        <section class="page-hero" data-page-hero-eyebrow="About the MX Studio">
           <div class="page-hero__content">
-            <h2 class="page-hero__title">ONE LEAN TEAM</h2>
+            <h1 class="page-hero__title">ONE LEAN TEAM</h1>
             <div class="hero-stats" aria-label="What we focus on">
               <div class="hero-stats__item">
                 <p class="hero-stats__figure">3000+</p>
@@ -1051,7 +1050,7 @@
           </div>
         </section>
 
-        <section class="team team--home" aria-labelledby="about-team-title">
+        <section class="team team--home team--card-carousel" aria-labelledby="about-team-title">
           <div class="team__inner">
             <div class="team__header">
               <h2
@@ -1066,79 +1065,20 @@
                 </span>
               </h2>
             </div>
-            <div class="team__grid">
-              <div class="team__member">
-                <div class="team__member-visual">
-                  <img
-                    src="/assets/images/Maxx-Mills-TheMXStudio.webp"
-                    alt="Maxx Mills"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-                <div class="team__member-info">
-                  <p class="team__member-quote">
-                    &ldquo;I&rsquo;ll probably spend three hours fixing
-                    something you&rsquo;ll never notice. You&rsquo;re
-                    welcome.&rdquo;
-                  </p>
-                  <div class="team__member-meta">
-                    <span class="team__member-mark" aria-hidden="true"></span>
-                    <div class="team__member-heading">
-                      <h3 class="team__member-name">Maxx Mills</h3>
-                      <p class="team__member-desc">Founder and Director</p>
-                    </div>
-                  </div>
+            <div class="team-card-carousel__shell">
+              <button class="about-instagram__arrow" type="button" data-direction="prev" aria-label="Show previous team member">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </button>
+              <div class="about-instagram__viewport">
+                <div class="about-instagram__track">
+                  <article class="about-instagram__item"><div class="ultimate-brand-and-web-team-strip__card"><img class="ultimate-brand-and-web-team-strip__image" src="/assets/images/maxx-mills-intro.webp" alt="Maxx Mills" loading="lazy" decoding="async" /></div></article>
+                  <article class="about-instagram__item"><div class="ultimate-brand-and-web-team-strip__card"><img class="ultimate-brand-and-web-team-strip__image" src="/assets/images/gero-intro.webp" alt="Geronimo Gentili" loading="lazy" decoding="async" /></div></article>
+                  <article class="about-instagram__item"><div class="ultimate-brand-and-web-team-strip__card"><img class="ultimate-brand-and-web-team-strip__image" src="/assets/images/habib-intro.webp" alt="Habibur Rahaman" loading="lazy" decoding="async" /></div></article>
                 </div>
               </div>
-
-              <div class="team__member team__member--reverse">
-                <div class="team__member-visual">
-                  <img
-                    src="/assets/images/Geronimo-Gentili-TheMXStudio.webp"
-                    alt="Geronimo Gentili"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-                <div class="team__member-info">
-                  <p class="team__member-quote">
-                    &ldquo;The best designs don&rsquo;t just look beautiful.
-                    They make your business feel trustworthy.&rdquo;
-                  </p>
-                  <div class="team__member-meta">
-                    <span class="team__member-mark" aria-hidden="true"></span>
-                    <div class="team__member-heading">
-                      <h3 class="team__member-name">Geronimo Gentili</h3>
-                      <p class="team__member-desc">Lead Designer</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="team__member">
-                <div class="team__member-visual">
-                  <img
-                    src="/assets/images/Habibur-Ramahan.webp"
-                    alt="Habibur Rahaman"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-                <div class="team__member-info">
-                  <p class="team__member-quote">
-                    &ldquo;I care about the details because your customers will
-                    notice them, even if they don&rsquo;t realize it.&rdquo;
-                  </p>
-                  <div class="team__member-meta">
-                    <span class="team__member-mark" aria-hidden="true"></span>
-                    <div class="team__member-heading">
-                      <h3 class="team__member-name">Habibur Rahaman</h3>
-                      <p class="team__member-desc">Website Developer</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <button class="about-instagram__arrow" type="button" data-direction="next" aria-label="Show next team member">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </button>
             </div>
           </div>
         </section>
@@ -1822,7 +1762,7 @@
                     <path
                       d="M9.2 12.6l1.9 1.9 4.7-5"
                       fill="none"
-                      stroke="currentColor"
+                      stroke="#fff"
                       stroke-width="2.4"
                       stroke-linecap="round"
                       stroke-linejoin="round"
@@ -1837,7 +1777,7 @@
                     <path
                       d="M9.2 12.6l1.9 1.9 4.7-5"
                       fill="none"
-                      stroke="currentColor"
+                      stroke="#fff"
                       stroke-width="2.4"
                       stroke-linecap="round"
                       stroke-linejoin="round"
@@ -1852,7 +1792,7 @@
                     <path
                       d="M9.2 12.6l1.9 1.9 4.7-5"
                       fill="none"
-                      stroke="currentColor"
+                      stroke="#fff"
                       stroke-width="2.4"
                       stroke-linecap="round"
                       stroke-linejoin="round"
@@ -1872,36 +1812,35 @@
           </button>
         </div>
         <form
-          class="discovery-form"
+          class="brisbane-smb-landing-page__slider-form brisbane-smb-landing-page__slider-form--modal"
           id="discovery-form"
-          name="main site form"
+          name="main website form"
           method="POST"
           data-netlify="true"
           netlify-honeypot="bot-field"
           action="/thank-you/"
           data-success-url="/thank-you/"
         >
-          <input type="hidden" name="form-name" value="main site form" />
-          <input type="hidden" name="budget" value="0" data-range-submit-value />
-          <p style="display: none">
-            <label>Don't fill this out <input name="bot-field" /></label>
-          </p>
-          <input type="text" name="name" placeholder="Your Name" required />
-          <input type="email" name="email" placeholder="Your Email" required />
-          <input
-            type="text"
-            name="business"
-            placeholder="Business / company name"
-          />
-          <textarea
-            name="project"
-            placeholder="How can we help you grow?"
-            required
-          ></textarea>
-          <button type="submit" class="discovery-form__submit">
-            Book My Call
-          </button>
-        </form>
+  <input type="hidden" name="form-name" value="main website form" />
+  <input type="hidden" name="budget" value="1000" data-range-submit-value />
+  <p style="display: none"><label>Don't fill this out <input name="bot-field" /></label></p>
+  <h2 class="brisbane-smb-landing-page__slider-heading">What's your budget?</h2>
+  <div class="brisbane-smb-landing-page__slider-row">
+    <label class="visually-hidden" for="main-website-budget">Your budget</label>
+    <div class="brisbane-smb-landing-page__slider-shell">
+      <input class="brisbane-smb-landing-page__slider-input" id="main-website-budget" type="range" min="1000" max="7000" step="50" value="1000" data-slider-milestones="1750,3500,5500" data-range-submit-target="budget" />
+      <div class="brisbane-smb-landing-page__slider-milestones" aria-hidden="true"><span class="brisbane-smb-landing-page__slider-milestone" style="--slider-stop: 0.25"></span><span class="brisbane-smb-landing-page__slider-milestone" style="--slider-stop: 0.5"></span><span class="brisbane-smb-landing-page__slider-milestone" style="--slider-stop: 0.75"></span></div>
+    </div>
+  </div>
+  <div class="brisbane-smb-landing-page__slider-total"><output class="brisbane-smb-landing-page__slider-output" for="main-website-budget" data-range-output>$1,000</output></div>
+  <div class="brisbane-smb-landing-page__slider-field-grid brisbane-smb-landing-page__slider-field-grid--modal">
+    <label class="visually-hidden" for="main-website-name">Name</label><input class="brisbane-smb-landing-page__slider-field" id="main-website-name" type="text" name="name" placeholder="Name" autocomplete="name" required />
+    <label class="visually-hidden" for="main-website-email">Email</label><input class="brisbane-smb-landing-page__slider-field" id="main-website-email" type="email" name="email" placeholder="Email" autocomplete="email" required />
+    <label class="visually-hidden" for="main-website-business">Business name</label><input class="brisbane-smb-landing-page__slider-field" id="main-website-business" type="text" name="business" placeholder="Business Name" autocomplete="organization" />
+    <label class="visually-hidden" for="main-website-project">How can we help?</label><textarea class="brisbane-smb-landing-page__slider-field brisbane-smb-landing-page__slider-field--message" id="main-website-project" name="project" placeholder="How can we help?" rows="1" required></textarea>
+    <button type="submit" class="brisbane-smb-landing-page__slider-submit">Continue To Booking</button>
+  </div>
+</form>
         <div class="form-thanks" id="discovery-thanks" hidden>
           <p class="form-thanks__message">
             Thank you! We'll be in touch sooner than you think.
@@ -2340,7 +2279,7 @@
             >
               <img
                 class="home-footer__logo"
-                src="/assets/logos/the-mx-studio-logo.svg"
+                src="/assets/logos/logo.webp"
                 alt="The MX Studio"
               />
             </a>
@@ -2356,6 +2295,6 @@
       </div>
     </footer>
 
-    <script src="/js/main.js?v=20260826b" defer></script>
+    <script src="/js/main.js?v=20260902ac" defer></script>
   </body>
 </html>
