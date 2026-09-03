@@ -36,19 +36,13 @@
       <image:loc>https://www.themxstudio.com.au/assets/images/AI-SEO-MXSTUDIO.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/assets/images/Geronimo-Gentili-TheMXStudio.webp</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.themxstudio.com.au/assets/images/Habibur-Ramahan.webp</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.themxstudio.com.au/assets/images/Maxx-Mills-TheMXStudio.webp</image:loc>
-    </image:image>
-    <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/images/SEO-TIMELINE-MXSTUDIO.webp</image:loc>
     </image:image>
     <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/images/WEBDESIGN-THEMXSTUDIO.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.themxstudio.com.au/assets/images/background.webp</image:loc>
     </image:image>
     <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/images/balloon-graphic.webp</image:loc>
@@ -57,7 +51,16 @@
       <image:loc>https://www.themxstudio.com.au/assets/images/everything-just-for-you.webp</image:loc>
     </image:image>
     <image:image>
+      <image:loc>https://www.themxstudio.com.au/assets/images/gero-intro.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.themxstudio.com.au/assets/images/habib-intro.webp</image:loc>
+    </image:image>
+    <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/images/lean-positioning.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.themxstudio.com.au/assets/images/maxx-mills-intro.webp</image:loc>
     </image:image>
     <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/images/meridian-camera.webp</image:loc>
@@ -67,9 +70,6 @@
     </image:image>
     <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/images/meridian-prooof.webp</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.themxstudio.com.au/assets/images/thailand.webp</image:loc>
     </image:image>
     <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/images/unique-trust-position.webp</image:loc>
@@ -96,13 +96,13 @@
       <image:loc>https://www.themxstudio.com.au/assets/logos/client/Studio-Tupos-Logo.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
-    </image:image>
-    <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/logos/logo.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260803a</image:loc>
+      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260902a</image:loc>
     </image:image>
   </url>
 
@@ -114,34 +114,34 @@
       <image:loc>https://www.themxstudio.com.au/assets/images/AI-SEO-MXSTUDIO.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/assets/images/Geronimo-Gentili-TheMXStudio.webp</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.themxstudio.com.au/assets/images/Habibur-Ramahan.webp</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.themxstudio.com.au/assets/images/Maxx-Mills-TheMXStudio.webp</image:loc>
-    </image:image>
-    <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/images/SEO-TIMELINE-MXSTUDIO.webp</image:loc>
     </image:image>
     <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/images/WEBDESIGN-THEMXSTUDIO.webp</image:loc>
     </image:image>
     <image:image>
+      <image:loc>https://www.themxstudio.com.au/assets/images/gero-intro.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.themxstudio.com.au/assets/images/habib-intro.webp</image:loc>
+    </image:image>
+    <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/images/lean-positioning.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.themxstudio.com.au/assets/images/maxx-mills-intro.webp</image:loc>
     </image:image>
     <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/images/unique-trust-position.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
-    </image:image>
-    <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/logos/logo.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260803a</image:loc>
+      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260902a</image:loc>
     </image:image>
   </url>
 
@@ -149,9 +149,6 @@
     <loc>https://www.themxstudio.com.au/blog/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.themxstudio.com.au/assets/icons/graphic.png</image:loc>
-    </image:image>
     <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/images/AI-SEO-MXSTUDIO.webp</image:loc>
     </image:image>
@@ -168,13 +165,13 @@
       <image:loc>https://www.themxstudio.com.au/assets/images/unique-trust-position.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
-    </image:image>
-    <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/logos/logo.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260803a</image:loc>
+      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260902a</image:loc>
     </image:image>
   </url>
 
@@ -189,13 +186,13 @@
       <image:loc>https://www.themxstudio.com.au/assets/images/Web-Design-Instagram.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
-    </image:image>
-    <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/logos/logo.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260803a</image:loc>
+      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260902a</image:loc>
     </image:image>
   </url>
 
@@ -210,13 +207,13 @@
       <image:loc>https://www.themxstudio.com.au/assets/images/Web-Design-Instagram.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
-    </image:image>
-    <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/logos/logo.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260803a</image:loc>
+      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260902a</image:loc>
     </image:image>
   </url>
 
@@ -231,13 +228,13 @@
       <image:loc>https://www.themxstudio.com.au/assets/images/Web-Design-Instagram.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
-    </image:image>
-    <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/logos/logo.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260803a</image:loc>
+      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260902a</image:loc>
     </image:image>
   </url>
 
@@ -252,13 +249,13 @@
       <image:loc>https://www.themxstudio.com.au/assets/images/Web-Design-Instagram.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
-    </image:image>
-    <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/logos/logo.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260803a</image:loc>
+      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260902a</image:loc>
     </image:image>
   </url>
 
@@ -273,13 +270,13 @@
       <image:loc>https://www.themxstudio.com.au/assets/images/Web-Design-Instagram.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
-    </image:image>
-    <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/logos/logo.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260803a</image:loc>
+      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260902a</image:loc>
     </image:image>
   </url>
 
@@ -294,13 +291,13 @@
       <image:loc>https://www.themxstudio.com.au/assets/images/Web-Design-Instagram.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
-    </image:image>
-    <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/logos/logo.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260803a</image:loc>
+      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260902a</image:loc>
     </image:image>
   </url>
 
@@ -315,13 +312,13 @@
       <image:loc>https://www.themxstudio.com.au/assets/images/Web-Design-Instagram.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
-    </image:image>
-    <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/logos/logo.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260803a</image:loc>
+      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260902a</image:loc>
     </image:image>
   </url>
 
@@ -336,13 +333,13 @@
       <image:loc>https://www.themxstudio.com.au/assets/images/Web-Design-Instagram.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
-    </image:image>
-    <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/logos/logo.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260803a</image:loc>
+      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260902a</image:loc>
     </image:image>
   </url>
 
@@ -357,13 +354,13 @@
       <image:loc>https://www.themxstudio.com.au/assets/images/Web-Design-Instagram.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
-    </image:image>
-    <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/logos/logo.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260803a</image:loc>
+      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260902a</image:loc>
     </image:image>
   </url>
 
@@ -378,13 +375,13 @@
       <image:loc>https://www.themxstudio.com.au/assets/images/Web-Design-Instagram.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
-    </image:image>
-    <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/logos/logo.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260803a</image:loc>
+      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260902a</image:loc>
     </image:image>
   </url>
 
@@ -420,7 +417,7 @@
       <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260803a</image:loc>
+      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260902a</image:loc>
     </image:image>
   </url>
 
@@ -432,7 +429,7 @@
       <image:loc>https://www.themxstudio.com.au/assets/logos/logo.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260803a</image:loc>
+      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260902a</image:loc>
     </image:image>
   </url>
 
@@ -447,7 +444,7 @@
       <image:loc>https://www.themxstudio.com.au/assets/logos/logo.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260803a</image:loc>
+      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260902a</image:loc>
     </image:image>
   </url>
 
@@ -483,13 +480,13 @@
       <image:loc>https://www.themxstudio.com.au/assets/images/still-waters.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
-    </image:image>
-    <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/logos/logo.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260803a</image:loc>
+      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260902a</image:loc>
     </image:image>
   </url>
 
@@ -525,13 +522,13 @@
       <image:loc>https://www.themxstudio.com.au/assets/images/still-waters.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
-    </image:image>
-    <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/logos/logo.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260803a</image:loc>
+      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260902a</image:loc>
     </image:image>
   </url>
 
@@ -564,13 +561,13 @@
       <image:loc>https://www.themxstudio.com.au/assets/images/metro-rags.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
-    </image:image>
-    <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/logos/logo.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260803a</image:loc>
+      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260902a</image:loc>
     </image:image>
   </url>
 
@@ -603,13 +600,13 @@
       <image:loc>https://www.themxstudio.com.au/assets/images/metro-rags.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
-    </image:image>
-    <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/logos/logo.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260803a</image:loc>
+      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260902a</image:loc>
     </image:image>
   </url>
 
@@ -642,13 +639,13 @@
       <image:loc>https://www.themxstudio.com.au/assets/images/metro-rags.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
-    </image:image>
-    <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/logos/logo.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260803a</image:loc>
+      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260902a</image:loc>
     </image:image>
   </url>
 
@@ -681,13 +678,13 @@
       <image:loc>https://www.themxstudio.com.au/assets/images/metro-rags.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
-    </image:image>
-    <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/logos/logo.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260803a</image:loc>
+      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260902a</image:loc>
     </image:image>
   </url>
 
@@ -720,13 +717,13 @@
       <image:loc>https://www.themxstudio.com.au/assets/images/unique-trust-position.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
-    </image:image>
-    <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/logos/logo.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260803a</image:loc>
+      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260902a</image:loc>
     </image:image>
   </url>
 
@@ -759,13 +756,13 @@
       <image:loc>https://www.themxstudio.com.au/assets/images/unique-trust-position.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
-    </image:image>
-    <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/logos/logo.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260803a</image:loc>
+      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260902a</image:loc>
     </image:image>
   </url>
 
@@ -798,13 +795,13 @@
       <image:loc>https://www.themxstudio.com.au/assets/images/unique-trust-position.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
-    </image:image>
-    <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/logos/logo.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260803a</image:loc>
+      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260902a</image:loc>
     </image:image>
   </url>
 
@@ -837,13 +834,13 @@
       <image:loc>https://www.themxstudio.com.au/assets/images/unique-trust-position.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
-    </image:image>
-    <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/logos/logo.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260803a</image:loc>
+      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260902a</image:loc>
     </image:image>
   </url>
 
@@ -876,13 +873,13 @@
       <image:loc>https://www.themxstudio.com.au/assets/images/unique-trust-position.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
-    </image:image>
-    <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/logos/logo.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260803a</image:loc>
+      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260902a</image:loc>
     </image:image>
   </url>
 
@@ -915,13 +912,13 @@
       <image:loc>https://www.themxstudio.com.au/assets/images/unique-trust-position.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
-    </image:image>
-    <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/logos/logo.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260803a</image:loc>
+      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260902a</image:loc>
     </image:image>
   </url>
 
@@ -954,13 +951,13 @@
       <image:loc>https://www.themxstudio.com.au/assets/images/unique-trust-position.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
-    </image:image>
-    <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/logos/logo.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260803a</image:loc>
+      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260902a</image:loc>
     </image:image>
   </url>
 
@@ -1014,7 +1011,7 @@
       <image:loc>https://www.themxstudio.com.au/assets/logos/logo.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260803a</image:loc>
+      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260902a</image:loc>
     </image:image>
   </url>
 
@@ -1022,9 +1019,6 @@
     <loc>https://www.themxstudio.com.au/results/everything-just-for-you/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-    <image:image>
-      <image:loc>https://www.themxstudio.com.au/assets/icons/graphic.png</image:loc>
-    </image:image>
     <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/images/e-commerce-web-design-the-mx-studio.webp</image:loc>
     </image:image>
@@ -1038,7 +1032,7 @@
       <image:loc>https://www.themxstudio.com.au/assets/logos/logo.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260803a</image:loc>
+      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260902a</image:loc>
     </image:image>
   </url>
 
@@ -1046,9 +1040,6 @@
     <loc>https://www.themxstudio.com.au/results/meridian-camera/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-    <image:image>
-      <image:loc>https://www.themxstudio.com.au/assets/icons/graphic.png</image:loc>
-    </image:image>
     <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/images/meridian-camera.webp</image:loc>
     </image:image>
@@ -1062,7 +1053,7 @@
       <image:loc>https://www.themxstudio.com.au/assets/logos/logo.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260803a</image:loc>
+      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260902a</image:loc>
     </image:image>
   </url>
 
@@ -1070,9 +1061,6 @@
     <loc>https://www.themxstudio.com.au/results/metro-rags/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-    <image:image>
-      <image:loc>https://www.themxstudio.com.au/assets/icons/graphic.png</image:loc>
-    </image:image>
     <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/images/metro-rags-example.webp</image:loc>
     </image:image>
@@ -1086,7 +1074,7 @@
       <image:loc>https://www.themxstudio.com.au/assets/logos/logo.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260803a</image:loc>
+      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260902a</image:loc>
     </image:image>
   </url>
 
@@ -1094,9 +1082,6 @@
     <loc>https://www.themxstudio.com.au/results/still-waters/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-    <image:image>
-      <image:loc>https://www.themxstudio.com.au/assets/icons/graphic.png</image:loc>
-    </image:image>
     <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/images/branding-the-mx-studio.webp</image:loc>
     </image:image>
@@ -1110,7 +1095,7 @@
       <image:loc>https://www.themxstudio.com.au/assets/logos/logo.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260803a</image:loc>
+      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260902a</image:loc>
     </image:image>
   </url>
 
@@ -1128,6 +1113,9 @@
       <image:loc>https://www.themxstudio.com.au/assets/images/Maxx-Mills-TheMXStudio.webp</image:loc>
     </image:image>
     <image:image>
+      <image:loc>https://www.themxstudio.com.au/assets/images/background.webp</image:loc>
+    </image:image>
+    <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/images/balloon-graphic.webp</image:loc>
     </image:image>
     <image:image>
@@ -1143,13 +1131,13 @@
       <image:loc>https://www.themxstudio.com.au/assets/images/metro-rags.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
-    </image:image>
-    <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/logos/logo.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260803a</image:loc>
+      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260902a</image:loc>
     </image:image>
   </url>
 
@@ -1167,6 +1155,9 @@
       <image:loc>https://www.themxstudio.com.au/assets/images/Geronimo-instagram.webp</image:loc>
     </image:image>
     <image:image>
+      <image:loc>https://www.themxstudio.com.au/assets/images/background.webp</image:loc>
+    </image:image>
+    <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/images/balloon-graphic.webp</image:loc>
     </image:image>
     <image:image>
@@ -1182,13 +1173,13 @@
       <image:loc>https://www.themxstudio.com.au/assets/images/still-waters.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
-    </image:image>
-    <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/logos/logo.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260803a</image:loc>
+      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260902a</image:loc>
     </image:image>
   </url>
 
@@ -1201,6 +1192,9 @@
     </image:image>
     <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/images/Maxx-Mills-TheMXStudio.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.themxstudio.com.au/assets/images/background.webp</image:loc>
     </image:image>
     <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/images/balloon-graphic.webp</image:loc>
@@ -1221,13 +1215,13 @@
       <image:loc>https://www.themxstudio.com.au/assets/images/unique-trust-position.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
-    </image:image>
-    <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/logos/logo.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260803a</image:loc>
+      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260902a</image:loc>
     </image:image>
   </url>
 
@@ -1245,6 +1239,9 @@
       <image:loc>https://www.themxstudio.com.au/assets/images/SEO-Instagram.webp</image:loc>
     </image:image>
     <image:image>
+      <image:loc>https://www.themxstudio.com.au/assets/images/background.webp</image:loc>
+    </image:image>
+    <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/images/balloon-graphic.webp</image:loc>
     </image:image>
     <image:image>
@@ -1260,13 +1257,13 @@
       <image:loc>https://www.themxstudio.com.au/assets/images/metro-rags.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
-    </image:image>
-    <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/logos/logo.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260803a</image:loc>
+      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260902a</image:loc>
     </image:image>
   </url>
 
@@ -1284,6 +1281,9 @@
       <image:loc>https://www.themxstudio.com.au/assets/images/SEO-TIMELINE-MXSTUDIO.webp</image:loc>
     </image:image>
     <image:image>
+      <image:loc>https://www.themxstudio.com.au/assets/images/background.webp</image:loc>
+    </image:image>
+    <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/images/balloon-graphic.webp</image:loc>
     </image:image>
     <image:image>
@@ -1299,13 +1299,13 @@
       <image:loc>https://www.themxstudio.com.au/assets/images/metro-rags.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
-    </image:image>
-    <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/logos/logo.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260803a</image:loc>
+      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260902a</image:loc>
     </image:image>
   </url>
 
@@ -1332,19 +1332,22 @@
       <image:loc>https://www.themxstudio.com.au/assets/images/SEO-TIMELINE-MXSTUDIO.webp</image:loc>
     </image:image>
     <image:image>
+      <image:loc>https://www.themxstudio.com.au/assets/images/background.webp</image:loc>
+    </image:image>
+    <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/images/everything-just-for-you.webp</image:loc>
     </image:image>
     <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/images/metro-rags.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
-    </image:image>
-    <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/logos/logo.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260803a</image:loc>
+      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260902a</image:loc>
     </image:image>
   </url>
 
@@ -1362,6 +1365,9 @@
       <image:loc>https://www.themxstudio.com.au/assets/images/SEO-TIMELINE-MXSTUDIO.webp</image:loc>
     </image:image>
     <image:image>
+      <image:loc>https://www.themxstudio.com.au/assets/images/background.webp</image:loc>
+    </image:image>
+    <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/images/balloon-graphic.webp</image:loc>
     </image:image>
     <image:image>
@@ -1377,13 +1383,13 @@
       <image:loc>https://www.themxstudio.com.au/assets/images/metro-rags.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
-    </image:image>
-    <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/logos/logo.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260803a</image:loc>
+      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260902a</image:loc>
     </image:image>
   </url>
 
@@ -1401,10 +1407,19 @@
       <image:loc>https://www.themxstudio.com.au/assets/images/Maxx-Mills-TheMXStudio.webp</image:loc>
     </image:image>
     <image:image>
+      <image:loc>https://www.themxstudio.com.au/assets/images/background.webp</image:loc>
+    </image:image>
+    <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/images/balloon-graphic.webp</image:loc>
     </image:image>
     <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/images/everything-just-for-you.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.themxstudio.com.au/assets/images/gero-intro.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.themxstudio.com.au/assets/images/habib-intro.webp</image:loc>
     </image:image>
     <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/images/maxx-mills-intro.webp</image:loc>
@@ -1428,19 +1443,16 @@
       <image:loc>https://www.themxstudio.com.au/assets/images/metro-rags.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/assets/images/thailand.webp</image:loc>
-    </image:image>
-    <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/images/unique-trust-position.webp</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
     </image:image>
     <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/logos/logo.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260803a</image:loc>
+      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260902a</image:loc>
     </image:image>
   </url>
 
@@ -1458,6 +1470,9 @@
       <image:loc>https://www.themxstudio.com.au/assets/images/Maxx-Quote-Instagram.webp</image:loc>
     </image:image>
     <image:image>
+      <image:loc>https://www.themxstudio.com.au/assets/images/background.webp</image:loc>
+    </image:image>
+    <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/images/balloon-graphic.webp</image:loc>
     </image:image>
     <image:image>
@@ -1473,13 +1488,13 @@
       <image:loc>https://www.themxstudio.com.au/assets/images/metro-rags.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
-    </image:image>
-    <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/logos/logo.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260803a</image:loc>
+      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260902a</image:loc>
     </image:image>
   </url>
 
@@ -1494,6 +1509,9 @@
       <image:loc>https://www.themxstudio.com.au/assets/images/Maxx-Mills-TheMXStudio.webp</image:loc>
     </image:image>
     <image:image>
+      <image:loc>https://www.themxstudio.com.au/assets/images/background.webp</image:loc>
+    </image:image>
+    <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/images/balloon-graphic.webp</image:loc>
     </image:image>
     <image:image>
@@ -1512,13 +1530,13 @@
       <image:loc>https://www.themxstudio.com.au/assets/images/unique-trust-position.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
-    </image:image>
-    <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/logos/logo.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260803a</image:loc>
+      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260902a</image:loc>
     </image:image>
   </url>
 
@@ -1533,6 +1551,9 @@
       <image:loc>https://www.themxstudio.com.au/assets/images/Maxx-Mills-TheMXStudio.webp</image:loc>
     </image:image>
     <image:image>
+      <image:loc>https://www.themxstudio.com.au/assets/images/background.webp</image:loc>
+    </image:image>
+    <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/images/balloon-graphic.webp</image:loc>
     </image:image>
     <image:image>
@@ -1551,13 +1572,13 @@
       <image:loc>https://www.themxstudio.com.au/assets/images/unique-trust-position.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
-    </image:image>
-    <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/logos/logo.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260803a</image:loc>
+      <image:loc>https://www.themxstudio.com.au/assets/logos/the-mx-studio-instagram.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260902a</image:loc>
     </image:image>
   </url>
 
@@ -1569,7 +1590,7 @@
       <image:loc>https://www.themxstudio.com.au/assets/logos/logo.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260803a</image:loc>
+      <image:loc>https://www.themxstudio.com.au/og-default.jpg?v=20260902a</image:loc>
     </image:image>
   </url>
 </urlset>
