@@ -327,15 +327,37 @@ const dropdowns = Array.from(document.querySelectorAll(".nav__item--dropdown"));
   if (!body) return;
   if (body.classList.contains("home-page")) return;
   if (body.classList.contains("service-page")) return;
+  if (body.classList.contains("apply-page")) return;
+  if (body.classList.contains("thank-you-page")) return;
 
   const hero =
     document.querySelector("main > .page-hero--simple") ||
     document.querySelector("main .page-hero--simple");
   if (!hero) return;
-  if (hero.parentElement?.classList.contains("page-hero-wrap--simple")) return;
+  const shouldUseBackgroundHeroWrap = body.matches(
+    [
+      ".about-page",
+      ".contact-page",
+      ".blog-index-page",
+      ".blog-post-page:not(.results-case-study-page)",
+      ".results-page",
+      ".terms-page",
+      ".error-page",
+    ].join(", "),
+  );
+  if (hero.parentElement?.classList.contains("page-hero-wrap--simple")) {
+    hero.parentElement.classList.toggle(
+      "page-hero-wrap--with-background",
+      shouldUseBackgroundHeroWrap,
+    );
+    return;
+  }
 
   const wrap = document.createElement("div");
   wrap.className = "page-hero-wrap--simple";
+  if (shouldUseBackgroundHeroWrap) {
+    wrap.classList.add("page-hero-wrap--with-background");
+  }
   hero.before(wrap);
   wrap.append(hero);
 })();
@@ -2529,10 +2551,15 @@ const initCountGroup = ({
   if (!balloons.length) return;
 
   let rafId = 0;
+  let lastScrollY = -1;
+  let keepAnimatingUntil = 0;
 
   const sync = () => {
-    rafId = 0;
     const scrollY = Math.max(window.scrollY || window.pageYOffset || 0, 0);
+    if (scrollY === lastScrollY) return;
+
+    lastScrollY = scrollY;
+    keepAnimatingUntil = Math.max(keepAnimatingUntil, performance.now() + 120);
     const rotation = ((scrollY * 0.2) % 360 + 360) % 360;
 
     document.documentElement.style.setProperty(
@@ -2547,13 +2574,27 @@ const initCountGroup = ({
     });
   };
 
+  const tick = () => {
+    rafId = 0;
+    sync();
+
+    if (performance.now() < keepAnimatingUntil) {
+      rafId = requestAnimationFrame(tick);
+    }
+  };
+
   const requestSync = () => {
-    if (rafId) return;
-    rafId = requestAnimationFrame(sync);
+    keepAnimatingUntil = Math.max(keepAnimatingUntil, performance.now() + 180);
+    if (!rafId) rafId = requestAnimationFrame(tick);
   };
 
   window.addEventListener("scroll", requestSync, { passive: true });
   window.addEventListener("resize", requestSync, { passive: true });
+  window.visualViewport?.addEventListener("scroll", requestSync, { passive: true });
+  window.addEventListener("touchstart", requestSync, { passive: true });
+  window.addEventListener("touchmove", requestSync, { passive: true });
+  window.addEventListener("touchend", requestSync, { passive: true });
+  window.addEventListener("wheel", requestSync, { passive: true });
   requestSync();
 })();
 
@@ -2926,6 +2967,11 @@ const initCountGroup = ({
     const submitField =
       submitFieldName &&
       shell?.querySelector(`[data-range-submit-value][name="${submitFieldName}"]`);
+    const formName = shell?.querySelector('input[name="form-name"]')?.value?.trim();
+    const useUnspecifiedBudget =
+      (document.body.classList.contains("brisbane-smb-landing-page") ||
+        formName === "main website form") &&
+      input.dataset.sliderTouched !== "true";
 
     if (value !== rawValue) {
       input.value = `${value}`;
@@ -2939,7 +2985,9 @@ const initCountGroup = ({
     }
 
     if (submitField instanceof HTMLInputElement) {
-      submitField.value = `${Math.round(displayedValue)}`;
+      submitField.value = useUnspecifiedBudget
+        ? "Not specified"
+        : `${Math.round(displayedValue)}`;
     }
 
     input.setCustomValidity("");
@@ -3023,11 +3071,13 @@ const initCountGroup = ({
 
     const revealOnRelease = () => {
       draggingInputs.delete(input);
+      input.dataset.sliderTouched = "true";
       syncSlider(input);
       showReveal(input);
     };
 
     input.addEventListener("input", () => {
+      input.dataset.sliderTouched = "true";
       syncSlider(input);
     });
 
@@ -3070,6 +3120,7 @@ const initCountGroup = ({
 
     input.form?.addEventListener("reset", () => {
       draggingInputs.delete(input);
+      delete input.dataset.sliderTouched;
       hideReveal(input);
       window.requestAnimationFrame(() => syncSlider(input));
     });
@@ -3125,7 +3176,7 @@ const initCountGroup = ({
       form.className = "brisbane-smb-landing-page__slider-form brisbane-smb-landing-page__slider-form--modal";
       form.innerHTML = `
         <input type="hidden" name="form-name" value="${FORM_NAMES.discovery}">
-        <input type="hidden" name="budget" value="1000" data-range-submit-value>
+        <input type="hidden" name="budget" value="Not specified" data-range-submit-value>
         <p style="display: none"><label>Don't fill this out <input name="bot-field"></label></p>
         <h2 class="brisbane-smb-landing-page__slider-heading" id="${uid}-title">What's your budget?</h2>
         <div class="brisbane-smb-landing-page__slider-row">

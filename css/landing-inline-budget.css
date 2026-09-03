@@ -26,6 +26,30 @@ body.brisbane-smb-landing-page
 }
 
 @media (max-width: 767px) {
+  body.brisbane-smb-landing-page
+    .brisbane-smb-landing-page__maxx-pass-through-form-section
+    .brisbane-smb-landing-page__slider-heading {
+    width: 100% !important;
+    margin-inline: auto !important;
+    text-align: center !important;
+  }
+
+  /* Cover the hairline seam before the following white FAQ gap. */
+  body.brisbane-smb-landing-page .brisbane-smb-landing-page__maxx-pass-through {
+    overflow: visible;
+  }
+
+  body.brisbane-smb-landing-page .brisbane-smb-landing-page__maxx-pass-through::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -0.35rem;
+    left: 0;
+    height: 0.4rem;
+    background: #000;
+    pointer-events: none;
+  }
+
   body.brisbane-smb-landing-page .brisbane-smb-landing-page__maxx-pass-through-copy,
   body.brisbane-smb-landing-page .brisbane-smb-landing-page__maxx-pass-through-title {
     justify-items: center;

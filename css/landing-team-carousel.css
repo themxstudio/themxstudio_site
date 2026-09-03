@@ -21,10 +21,10 @@
   body.brisbane-smb-landing-page .ultimate-brand-and-web-team-strip .about-instagram__track,
   body.quality-foundational-page.package-landing-page .ultimate-brand-and-web-team-strip .about-instagram__track {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, min(28vw, 24rem)));
     gap: clamp(0.75rem, 1.1vw, 1rem);
     align-items: stretch;
-    justify-content: initial;
+    justify-content: center;
     transform: none !important;
     transition: none !important;
   }
