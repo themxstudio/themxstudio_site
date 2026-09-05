@@ -1,0 +1,144 @@
+body.brisbane-smb-landing-page .brisbane-sales-video {
+  --section-padding-top: clamp(2.6rem, 3.8vw, 3.35rem);
+  --section-padding-bottom: var(--section-padding-top);
+  /* Shared order keeps the video, budget slider and sales copy in DOM order. */
+  order: 2;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  background: var(--bg);
+  border-radius: var(--section-radius) var(--section-radius) 0 0;
+  overflow: hidden;
+}
+
+.brisbane-sales-video__player {
+  position: relative;
+  width: min(54rem, var(--content-shell-width));
+  margin-inline: auto;
+  /* Match the project images further down the landing page. */
+  border-radius: clamp(1rem, 1.9vw, 1.55rem);
+  overflow: hidden;
+  background: #000;
+}
+
+.brisbane-sales-video__video,
+.brisbane-sales-video__poster {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border-radius: inherit;
+}
+
+/* Remove the native panel's shading where the browser exposes this styling. */
+.brisbane-sales-video__video::-webkit-media-controls {
+  background: transparent;
+  box-shadow: none;
+}
+
+.brisbane-sales-video__video::-webkit-media-controls-panel {
+  background: transparent;
+  box-shadow: none;
+}
+
+.brisbane-sales-video__video::-webkit-media-controls-enclosure {
+  background: transparent;
+  box-shadow: none;
+}
+
+.brisbane-sales-video__video::-webkit-media-controls-overlay-enclosure {
+  background: transparent;
+  box-shadow: none;
+}
+
+.brisbane-sales-video__play {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: inherit;
+  background: transparent;
+  box-shadow: none;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+}
+
+.brisbane-sales-video__play-icon {
+  display: grid;
+  place-items: center;
+  width: clamp(3.75rem, 6vw, 5.5rem);
+  aspect-ratio: 1;
+  color: rgb(255 255 255 / 85%);
+}
+
+.brisbane-sales-video__play-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.brisbane-sales-video__play:focus,
+.brisbane-sales-video__play:focus-visible {
+  outline: none;
+}
+
+html.has-sales-video-dialog {
+  overflow: hidden;
+}
+
+.brisbane-sales-video__dialog {
+  width: min(64rem, calc(100vw - 2rem), calc((100dvh - 6rem) * 16 / 9));
+  max-width: none;
+  max-height: none;
+  margin: auto;
+  padding: 0;
+  border: 0;
+  border-radius: clamp(1rem, 1.9vw, 1.55rem);
+  background: transparent;
+  color: #fff;
+  overflow: visible;
+}
+
+.brisbane-sales-video__dialog::backdrop {
+  background: rgb(0 0 0 / 60%);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.brisbane-sales-video__dialog-media {
+  border-radius: inherit;
+  overflow: hidden;
+  background: #000;
+}
+
+.brisbane-sales-video__close {
+  position: absolute;
+  top: -3rem;
+  right: 0;
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  box-shadow: none;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+}
+
+.brisbane-sales-video__close svg {
+  width: 2.25rem;
+  height: 2.25rem;
+}
+
+.brisbane-sales-video__close:focus,
+.brisbane-sales-video__close:focus-visible {
+  outline: none;
+}

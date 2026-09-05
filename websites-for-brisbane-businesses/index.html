@@ -313,7 +313,8 @@
       href="/css/pages/quality-foundational.css?v=20260903ar"
     />
     <link rel="stylesheet" href="/css/landing-team-carousel.css?v=20260903a" />
-    <link rel="stylesheet" href="/css/landing-inline-budget.css?v=20260903a" />
+    <link rel="stylesheet" href="/css/landing-inline-budget.css?v=20260905c" />
+    <link rel="stylesheet" href="/css/pages/brisbane-sales-video.css?v=20260904k" />
     <link
       rel="stylesheet"
       href="/css/pages/customer-review-metro-rags.css?v=20260903a"
@@ -496,7 +497,7 @@
           </div>
           <a
             class="brisbane-smb-landing-page__hero-scroll"
-            href="#web-design-copy-title"
+            href="#studio-video"
             aria-label="Scroll to the next section"
           >
             <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -512,6 +513,215 @@
           </a>
         </section>
       </div>
+
+      <section
+        class="brisbane-sales-video"
+        id="studio-video"
+        aria-label="Why The MX Studio"
+      >
+        <div class="brisbane-sales-video__player" data-sales-video>
+          <img
+            class="brisbane-sales-video__poster"
+            src="/assets/images/why-the-mx-studio-poster.webp?v=20260904b"
+            alt=""
+            width="1280"
+            height="720"
+            decoding="async"
+            hidden
+          />
+          <video
+            class="brisbane-sales-video__video"
+            id="studio-sales-video"
+            width="1920"
+            height="1080"
+            controls
+            playsinline
+            preload="none"
+            poster="/assets/images/why-the-mx-studio-poster.webp?v=20260904b"
+            aria-label="Maxx introduces web design at The MX Studio"
+          >
+            <source src="/assets/why-the-mx-studio-web.mp4" type="video/mp4" />
+            <a href="/assets/why-the-mx-studio-web.mp4">Watch Why The MX Studio</a>.
+          </video>
+          <button
+            class="brisbane-sales-video__play"
+            type="button"
+            aria-label="Play Why The MX Studio with sound"
+            aria-controls="studio-video-dialog"
+            aria-haspopup="dialog"
+            hidden
+          >
+            <span class="brisbane-sales-video__play-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path d="M8 5.5v13L19 12Z" fill="currentColor"></path>
+              </svg>
+            </span>
+          </button>
+        </div>
+      </section>
+
+      <section
+        class="brisbane-smb-landing-page__maxx-pass-through brisbane-smb-landing-page__maxx-pass-through--video"
+        aria-labelledby="brisbane-budget-title"
+      >
+        <div class="brisbane-smb-landing-page__maxx-pass-through-inner">
+          <section
+            class="brisbane-smb-landing-page__maxx-pass-through-form-section"
+            aria-label="Number slider"
+          >
+            <form
+              class="brisbane-smb-landing-page__slider-form"
+              name="main landing page form"
+              method="POST"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
+              action="/thank-you/"
+              data-submit-url="/"
+              data-success-url="/thank-you/"
+            >
+              <input
+                type="hidden"
+                name="form-name"
+                value="main landing page form"
+              />
+              <input
+                type="hidden"
+                name="budget"
+                value="Not specified"
+                data-range-submit-value
+              />
+              <p style="display: none">
+                <label>Don't fill this out <input name="bot-field" /></label>
+              </p>
+
+              <h3 class="brisbane-smb-landing-page__slider-heading" id="brisbane-budget-title">
+                What's your budget?
+              </h3>
+
+              <div class="brisbane-smb-landing-page__slider-row">
+                <label
+                  class="visually-hidden"
+                  id="brisbane-video-slider-form-title"
+                  for="brisbane-video-slider-input"
+                >
+                  Your number
+                </label>
+
+                <div class="brisbane-smb-landing-page__slider-shell">
+                  <input
+                    class="brisbane-smb-landing-page__slider-input"
+                    id="brisbane-video-slider-input"
+                    type="range"
+                    min="1000"
+                    max="7000"
+                    step="50"
+                    value="1000"
+                    data-slider-milestones="1750,3500,5500"
+                    data-range-submit-target="budget"
+                    aria-labelledby="brisbane-video-slider-form-title"
+                    aria-describedby="brisbane-video-slider-output"
+                  />
+
+                  <div
+                    class="brisbane-smb-landing-page__slider-milestones"
+                    aria-hidden="true"
+                  >
+                    <span
+                      class="brisbane-smb-landing-page__slider-milestone"
+                      style="--slider-stop: 0.25"
+                    ></span>
+                    <span
+                      class="brisbane-smb-landing-page__slider-milestone"
+                      style="--slider-stop: 0.5"
+                    ></span>
+                    <span
+                      class="brisbane-smb-landing-page__slider-milestone"
+                      style="--slider-stop: 0.75"
+                    ></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="brisbane-smb-landing-page__slider-total">
+                <output
+                  class="brisbane-smb-landing-page__slider-output"
+                  id="brisbane-video-slider-output"
+                  for="brisbane-video-slider-input"
+                  data-range-output
+                >
+                  $1,000
+                </output>
+              </div>
+
+              <div
+                class="brisbane-smb-landing-page__slider-reveal"
+                data-slider-reveal
+                aria-hidden="true"
+              >
+                <div class="brisbane-smb-landing-page__slider-field-grid">
+                  <label class="visually-hidden" for="brisbane-video-slider-name">
+                    Name
+                  </label>
+                  <input
+                    class="brisbane-smb-landing-page__slider-field"
+                    id="brisbane-video-slider-name"
+                    type="text"
+                    name="name"
+                    placeholder="Name"
+                    autocomplete="name"
+                    required
+                  />
+
+                  <label class="visually-hidden" for="brisbane-video-slider-email">
+                    Email
+                  </label>
+                  <input
+                    class="brisbane-smb-landing-page__slider-field"
+                    id="brisbane-video-slider-email"
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    autocomplete="email"
+                    required
+                  />
+
+                  <label class="visually-hidden" for="brisbane-video-slider-company">
+                    Business name
+                  </label>
+                  <input
+                    class="brisbane-smb-landing-page__slider-field"
+                    id="brisbane-video-slider-company"
+                    type="text"
+                    name="business"
+                    placeholder="Business Name"
+                    autocomplete="organization"
+                    required
+                  />
+
+                  <label class="visually-hidden" for="brisbane-video-slider-message">
+                    Short message
+                  </label>
+                  <textarea
+                    class="brisbane-smb-landing-page__slider-field brisbane-smb-landing-page__slider-field--message"
+                    id="brisbane-video-slider-message"
+                    name="project"
+                    placeholder="How can we help?"
+                    rows="1"
+                    required
+                  ></textarea>
+
+                  <button
+                    class="brisbane-smb-landing-page__slider-submit"
+                    type="submit"
+                  >
+                    Continue To Booking
+                  </button>
+                </div>
+              </div>
+            </form>
+          </section>
+        </div>
+      </section>
 
       <section
         class="web-design-copy brisbane-smb-landing-page__selling-points"
@@ -2162,6 +2372,25 @@
       </div>
     </footer>
 
+    <dialog
+      class="brisbane-sales-video__dialog"
+      id="studio-video-dialog"
+      aria-label="Why The MX Studio"
+    >
+      <button
+        class="brisbane-sales-video__close"
+        type="button"
+        aria-label="Close video"
+        autofocus
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="m6 6 12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+        </svg>
+      </button>
+      <div class="brisbane-sales-video__dialog-media" data-sales-video-mount></div>
+    </dialog>
+
     <script src="/js/main.js?v=20260903ag" defer></script>
+    <script src="/js/landing-sales-video.js?v=20260904h" defer></script>
   </body>
 </html>

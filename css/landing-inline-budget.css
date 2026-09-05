@@ -27,6 +27,13 @@ body.brisbane-smb-landing-page
 
 @media (max-width: 767px) {
   body.brisbane-smb-landing-page
+    .brisbane-smb-landing-page__maxx-pass-through--video
+    .brisbane-smb-landing-page__maxx-pass-through-inner {
+    /* Match the top gap after the white section overlaps the bottom. */
+    padding-bottom: calc(clamp(3.8rem, 5.8vw, 5rem) + var(--section-radius));
+  }
+
+  body.brisbane-smb-landing-page
     .brisbane-smb-landing-page__maxx-pass-through-form-section
     .brisbane-smb-landing-page__slider-heading {
     width: 100% !important;
@@ -34,12 +41,14 @@ body.brisbane-smb-landing-page
     text-align: center !important;
   }
 
-  /* Cover the hairline seam before the following white FAQ gap. */
-  body.brisbane-smb-landing-page .brisbane-smb-landing-page__maxx-pass-through {
+  /* Preserve the original lower block's mobile seam treatment. */
+  body.brisbane-smb-landing-page
+    .brisbane-smb-landing-page__maxx-pass-through:not(.brisbane-smb-landing-page__maxx-pass-through--video) {
     overflow: visible;
   }
 
-  body.brisbane-smb-landing-page .brisbane-smb-landing-page__maxx-pass-through::after {
+  body.brisbane-smb-landing-page
+    .brisbane-smb-landing-page__maxx-pass-through:not(.brisbane-smb-landing-page__maxx-pass-through--video)::after {
     content: "";
     position: absolute;
     right: 0;
@@ -66,4 +75,18 @@ body.brisbane-smb-landing-page
     display: block;
     text-align: center !important;
   }
+}
+
+/* Keep the extra slider between the video and sales copy. */
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__maxx-pass-through--video {
+  order: 2;
+}
+
+body.brisbane-smb-landing-page
+  .brisbane-smb-landing-page__maxx-pass-through--video
+  + .brisbane-smb-landing-page__selling-points {
+  margin-top: calc(-1 * var(--section-radius)) !important;
+  border-radius: var(--section-radius) var(--section-radius) 0 0;
+  background: #fff;
+  z-index: 4;
 }
