@@ -1398,9 +1398,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://www.themxstudio.com.au/assets/hero.webp</image:loc>
-    </image:image>
-    <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/icons/graphic.png</image:loc>
     </image:image>
     <image:image>
@@ -1414,15 +1411,6 @@
     </image:image>
     <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/images/everything-just-for-you.webp</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.themxstudio.com.au/assets/images/gero-intro.webp</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.themxstudio.com.au/assets/images/habib-intro.webp</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.themxstudio.com.au/assets/images/maxx-mills-intro.webp</image:loc>
     </image:image>
     <image:image>
       <image:loc>https://www.themxstudio.com.au/assets/images/meridian-camera.webp</image:loc>
