@@ -8,59 +8,17 @@ document.querySelectorAll("[data-sales-video]").forEach((player) => {
   if (!video || !poster || !playButton || !mount || !closeButton || typeof dialog.showModal !== "function") return;
 
   mount.append(video);
+  // Keep the native controls mounted so the browser can fade them smoothly.
   video.controls = true;
   poster.hidden = false;
   playButton.hidden = false;
 
-  // Keep the browser's controls; clear them after 0.5 seconds without activity.
-  let controlsTimer;
-  let pointerDown = false;
-  let lastPointerX;
-  let lastPointerY;
-  const showControls = () => {
-    window.clearTimeout(controlsTimer);
-    if (!video.controls) video.controls = true;
-    if (!dialog.open || video.paused || video.ended || video.seeking || pointerDown || video.readyState < 3) return;
-    controlsTimer = window.setTimeout(() => {
-      if (!dialog.open || video.paused || video.ended || video.seeking || pointerDown) return;
-      if (video.controls) {
-        video.controls = false;
-        if (document.activeElement === video) video.focus({ preventScroll: true });
-      }
-    }, 500);
-  };
-  ["playing", "pause", "ended", "waiting", "seeking", "seeked", "volumechange"].forEach((event) => {
-    video.addEventListener(event, showControls);
-  });
-  document.addEventListener("pointermove", (event) => {
-    // Native controls can cause a stationary pointer event when they disappear.
-    // Only real position changes should bring them back.
-    if (event.clientX === lastPointerX && event.clientY === lastPointerY) return;
-    lastPointerX = event.clientX;
-    lastPointerY = event.clientY;
-    if (dialog.open) showControls();
-  }, { passive: true, capture: true });
-  document.addEventListener("pointerdown", (event) => {
-    lastPointerX = event.clientX;
-    lastPointerY = event.clientY;
-    if (!dialog.open) return;
-    pointerDown = true;
-    showControls();
-  }, { passive: true, capture: true });
-  const releasePointer = () => {
-    pointerDown = false;
-    if (dialog.open) showControls();
-  };
-  document.addEventListener("pointerup", releasePointer, true);
-  document.addEventListener("pointercancel", releasePointer, true);
   const startPlayback = async () => {
     if (video.ended) video.currentTime = 0;
     try {
-      const playback = video.play();
-      showControls();
-      await playback;
+      await video.play();
     } catch {
-      showControls();
+      // Native controls remain available if playback cannot start.
     }
   };
   const isSpaceShortcut = (event) => {
@@ -72,24 +30,19 @@ document.querySelectorAll("[data-sales-video]").forEach((player) => {
   };
   // Handle Space before native controls or the focused close button can consume it.
   window.addEventListener("keydown", (event) => {
-    if (!dialog.open) return;
-    showControls();
     if (!isSpaceShortcut(event)) return;
     event.preventDefault();
     event.stopImmediatePropagation();
     if (event.repeat) return;
     if (video.paused || video.ended) void startPlayback();
-    else {
-      video.pause();
-      showControls();
-    }
+    else video.pause();
   }, true);
   window.addEventListener("keyup", (event) => {
     if (!isSpaceShortcut(event)) return;
     event.preventDefault();
     event.stopImmediatePropagation();
   }, true);
-  // Native sliders can retain keyboard focus inside the browser's controls.
+  // Return focus from native sliders so Space still works after scrubbing.
   ["play", "pause", "seeked", "volumechange"].forEach((event) => {
     video.addEventListener(event, () => {
       if (dialog.open && document.activeElement === video) video.focus({ preventScroll: true });
@@ -119,9 +72,7 @@ document.querySelectorAll("[data-sales-video]").forEach((player) => {
   });
   dialog.addEventListener("close", () => {
     video.pause();
-    pointerDown = false;
     pressedBackdrop = false;
-    showControls();
     document.documentElement.classList.remove("has-sales-video-dialog");
     playButton.focus({ preventScroll: true });
   });
