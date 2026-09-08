@@ -30,27 +30,6 @@ body.brisbane-smb-landing-page .brisbane-sales-video {
   border-radius: inherit;
 }
 
-/* Remove the native panel's shading where the browser exposes this styling. */
-.brisbane-sales-video__video::-webkit-media-controls {
-  background: transparent;
-  box-shadow: none;
-}
-
-.brisbane-sales-video__video::-webkit-media-controls-panel {
-  background: transparent;
-  box-shadow: none;
-}
-
-.brisbane-sales-video__video::-webkit-media-controls-enclosure {
-  background: transparent;
-  box-shadow: none;
-}
-
-.brisbane-sales-video__video::-webkit-media-controls-overlay-enclosure {
-  background: transparent;
-  box-shadow: none;
-}
-
 .brisbane-sales-video__play {
   position: absolute;
   inset: 0;
@@ -110,6 +89,7 @@ html.has-sales-video-dialog {
 }
 
 .brisbane-sales-video__dialog-media {
+  position: relative;
   border-radius: inherit;
   overflow: hidden;
   background: #000;

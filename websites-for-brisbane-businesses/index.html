@@ -314,7 +314,7 @@
     />
     <link rel="stylesheet" href="/css/landing-team-carousel.css?v=20260903a" />
     <link rel="stylesheet" href="/css/landing-inline-budget.css?v=20260905c" />
-    <link rel="stylesheet" href="/css/pages/brisbane-sales-video.css?v=20260904k" />
+    <link rel="stylesheet" href="/css/pages/brisbane-sales-video.css?v=20260907e" />
     <link
       rel="stylesheet"
       href="/css/pages/customer-review-metro-rags.css?v=20260903a"
@@ -437,12 +437,13 @@
             <div class="brisbane-smb-landing-page__hero-lower">
               <p class="page-hero__sub">
                 <span class="page-hero__sub-text">
-                  No BS. We build custom websites around your actual business
-                  needs, designed to
+                  No BS.
                   <span class="brisbane-smb-landing-page__sub-highlight"
-                    >turn the right traffic into enquiries</span
+                    >We build really good websites for really good businesses.</span
                   >
-                  and work alongside your marketing.
+                  Whether you need a simple, high-quality website or a complete
+                  search engine marketing strategy, we’re committed to
+                  helping your business grow.
                 </span>
               </p>
               <div class="page-hero__actions">
@@ -451,7 +452,7 @@
                   type="button"
                   data-open-discovery
                 >
-                  Book A Free Strategy Call
+                  Book A Free Consultation
                 </button>
                 <a
                   class="page-hero__cta page-hero__cta--secondary"
@@ -522,7 +523,7 @@
         <div class="brisbane-sales-video__player" data-sales-video>
           <img
             class="brisbane-sales-video__poster"
-            src="/assets/images/why-the-mx-studio-poster.webp?v=20260904b"
+            src="/assets/images/why-the-mx-studio-poster.webp?v=20260907c"
             alt=""
             width="1280"
             height="720"
@@ -537,11 +538,13 @@
             controls
             playsinline
             preload="none"
-            poster="/assets/images/why-the-mx-studio-poster.webp?v=20260904b"
+            poster="/assets/images/why-the-mx-studio-poster.webp?v=20260907c"
+            tabindex="0"
+            aria-keyshortcuts="Space"
             aria-label="Maxx introduces web design at The MX Studio"
           >
-            <source src="/assets/why-the-mx-studio-web.mp4" type="video/mp4" />
-            <a href="/assets/why-the-mx-studio-web.mp4">Watch Why The MX Studio</a>.
+            <source src="/assets/why-the-mx-studio-playback.mp4" type="video/mp4" />
+            <a href="/assets/why-the-mx-studio-playback.mp4">Watch Why The MX Studio</a>.
           </video>
           <button
             class="brisbane-sales-video__play"
@@ -562,9 +565,23 @@
 
       <section
         class="brisbane-smb-landing-page__maxx-pass-through brisbane-smb-landing-page__maxx-pass-through--video"
-        aria-labelledby="brisbane-budget-title"
+        aria-labelledby="brisbane-video-consultation-title"
       >
         <div class="brisbane-smb-landing-page__maxx-pass-through-inner">
+          <div class="brisbane-smb-landing-page__maxx-pass-through-copy">
+            <h2
+              class="brisbane-smb-landing-page__maxx-pass-through-title"
+              id="brisbane-video-consultation-title"
+            >
+              <span class="brisbane-smb-landing-page__maxx-pass-through-line"
+                >Pop in a few details and book your call today.</span
+              >
+              <span class="brisbane-smb-landing-page__maxx-pass-through-emphasis"
+                >We want to make this as easy as possible for you.</span
+              >
+            </h2>
+          </div>
+
           <section
             class="brisbane-smb-landing-page__maxx-pass-through-form-section"
             aria-label="Number slider"
@@ -654,9 +671,8 @@
               </div>
 
               <div
-                class="brisbane-smb-landing-page__slider-reveal"
-                data-slider-reveal
-                aria-hidden="true"
+                class="brisbane-smb-landing-page__slider-reveal is-visible"
+                aria-hidden="false"
               >
                 <div class="brisbane-smb-landing-page__slider-field-grid">
                   <label class="visually-hidden" for="brisbane-video-slider-name">
@@ -764,7 +780,7 @@
 
             <div class="brisbane-smb-landing-page__selling-points-cta">
               <button class="home-maxx__cta" type="button" data-open-discovery>
-                Book A Free Strategy Call
+                Book A Free Consultation
               </button>
             </div>
           </div>
@@ -2391,6 +2407,6 @@
     </dialog>
 
     <script src="/js/main.js?v=20260903ag" defer></script>
-    <script src="/js/landing-sales-video.js?v=20260904h" defer></script>
+    <script src="/js/landing-sales-video.js?v=20260907h" defer></script>
   </body>
 </html>
