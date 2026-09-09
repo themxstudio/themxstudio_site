@@ -1048,6 +1048,18 @@ body.quality-foundational-page.package-landing-page
   font-size: clamp(0.92rem, 0.45vw + 0.88rem, 1.05rem);
 }
 
+/* Preserve the hero's spacing beneath the shared fixed header. */
+body.brisbane-smb-landing-page main {
+  --brisbane-hero-header-space: 80px;
+  padding-top: var(--brisbane-hero-header-space);
+}
+
+@media (max-width: 1366px) {
+  body.brisbane-smb-landing-page:has(.site-header:not(.site-header--desktop-fit)) main {
+    --brisbane-hero-header-space: 64px;
+  }
+}
+
 body.brisbane-smb-landing-page .website-services__hero-portraits {
   display: none !important;
 }
@@ -1111,6 +1123,22 @@ body.brisbane-smb-landing-page .website-services__hero .page-hero__title {
   font-size: clamp(2.85rem, 4.9vw, 5.35rem);
 }
 
+body.brisbane-smb-landing-page .website-services__hero .brisbane-smb-landing-page__eyebrow {
+  flex: 0 0 auto;
+  align-self: flex-start;
+  width: auto;
+  max-width: 100%;
+  /* Retain the old H1's one-pixel footprint so the mobile content stays put. */
+  margin: 0 0 calc(1px - 1.25rem);
+  font-size: clamp(0.98rem, 0.35vw + 0.95rem, 1.1rem);
+  font-weight: 700 !important;
+  font-variation-settings: "wght" 700 !important;
+  line-height: 1.25rem;
+  letter-spacing: 0.06em;
+  color: var(--accent) !important;
+  text-align: left;
+}
+
 body.brisbane-smb-landing-page .brisbane-smb-landing-page__hero-lower {
   width: min(100%, 44rem);
   max-width: 44rem;
@@ -1125,74 +1153,6 @@ body.brisbane-smb-landing-page .website-services__hero {
   position: relative;
   z-index: 3;
   padding-bottom: 0;
-}
-
-body.brisbane-smb-landing-page .brisbane-smb-landing-page__hero-scroll {
-  --brisbane-hero-scroll-x: -50%;
-  --brisbane-hero-scroll-bottom-gap: clamp(1.05rem, 2.2vw, 2rem);
-  position: fixed;
-  left: 50%;
-  bottom: calc(
-    var(--brisbane-hero-scroll-bottom-offset, 0px) +
-      var(--brisbane-hero-scroll-bottom-gap)
-  );
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: clamp(2.5rem, 3.3vw, 3rem);
-  height: clamp(2.5rem, 3.3vw, 3rem);
-  color: #fff;
-  transform: translateX(var(--brisbane-hero-scroll-x)) translateY(0);
-  z-index: 5;
-  animation: brisbaneHeroArrowBob 1.55s ease-in-out infinite;
-  text-decoration: none;
-  opacity: 1;
-  visibility: visible;
-  transition:
-    opacity 180ms ease,
-    transform 180ms ease,
-    visibility 0s linear 180ms;
-}
-
-body.brisbane-smb-landing-page
-  .brisbane-smb-landing-page__hero-scroll:is(
-    .is-dismissed,
-    .is-content-blocked
-  ) {
-  animation: none;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transform: translateX(var(--brisbane-hero-scroll-x)) translateY(0.85rem);
-  transition-delay: 0s;
-}
-
-body.brisbane-smb-landing-page .brisbane-smb-landing-page__hero-scroll svg {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-body.brisbane-smb-landing-page .brisbane-smb-landing-page__hero-scroll:focus-visible,
-body.brisbane-smb-landing-page .brisbane-smb-landing-page__hero-scroll:hover {
-  color: rgba(255, 255, 255, 0.86);
-}
-
-@keyframes brisbaneHeroArrowBob {
-  0%,
-  100% {
-    transform: translateX(var(--brisbane-hero-scroll-x)) translateY(0);
-  }
-
-  50% {
-    transform: translateX(var(--brisbane-hero-scroll-x)) translateY(0.45rem);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  body.brisbane-smb-landing-page .brisbane-smb-landing-page__hero-scroll {
-    animation: none;
-  }
 }
 
 body.brisbane-smb-landing-page .website-services__hero .page-hero__sub {
@@ -1363,6 +1323,164 @@ body.brisbane-smb-landing-page
   display: inline;
   color: #fff !important;
   text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  body.brisbane-smb-landing-page .website-services__hero .page-hero__content {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  body.brisbane-smb-landing-page .website-services__hero .brisbane-smb-landing-page__hero-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    min-width: 0;
+    gap: clamp(1.25rem, 2.6vh, 1.75rem);
+  }
+
+  body.brisbane-smb-landing-page .website-services__hero .brisbane-smb-landing-page__eyebrow {
+    margin: 0;
+  }
+
+  body.brisbane-smb-landing-page .website-services__hero .page-hero__content
+    > :is(.page-hero__title, .brisbane-smb-landing-page__hero-lower) {
+    align-self: flex-start !important;
+    margin-inline: 0 !important;
+  }
+
+  body.brisbane-smb-landing-page .website-services__hero .page-hero__title {
+    flex: 0 0 auto;
+    width: min(100%, 22ch);
+    max-width: 22ch;
+    font-size: clamp(2.35rem, 3.6vw, 4rem);
+  }
+
+  body.brisbane-smb-landing-page .website-services__hero .brisbane-smb-landing-page__hero-lower {
+    justify-items: start;
+    max-width: 100%;
+    margin-block: clamp(1rem, 2.4vh, 1.5rem) 0;
+    gap: clamp(1.75rem, 4vh, 2.75rem);
+  }
+
+  body.brisbane-smb-landing-page .website-services__hero
+    :is(.page-hero__sub, .page-hero__sub-text) {
+    text-align: left;
+  }
+
+  body.brisbane-smb-landing-page .website-services__hero
+    :is(.page-hero__actions, .page-hero__google-proof) {
+    justify-content: flex-start;
+    justify-self: start;
+    align-self: flex-start;
+    margin-inline: 0 !important;
+  }
+
+  body.brisbane-smb-landing-page .website-services__hero .page-hero__actions {
+    margin-top: 0;
+  }
+
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__hero-copy {
+  display: contents;
+}
+
+/* Let the form's contents determine its height, independently of the copy. */
+body.brisbane-smb-landing-page .hospitality-inline-form.brisbane-smb-landing-page__booking-form {
+  display: block;
+  width: 100%;
+  max-width: 33rem;
+  min-width: 0;
+  height: auto;
+  min-height: 0;
+  align-self: center;
+  padding: clamp(1.65rem, 2.35vw, 2.35rem);
+  box-sizing: border-box;
+}
+
+body.brisbane-smb-landing-page .hospitality-inline-form.brisbane-smb-landing-page__booking-form .brisbane-smb-landing-page__slider-form {
+  display: block;
+  flex: none;
+  height: auto;
+}
+
+body.brisbane-smb-landing-page .hospitality-inline-form.brisbane-smb-landing-page__booking-form .brisbane-smb-landing-page__slider-heading {
+  font-size: clamp(1.85rem, 2vw, 2.4rem) !important;
+}
+
+body.brisbane-smb-landing-page .hospitality-inline-form.brisbane-smb-landing-page__booking-form .brisbane-smb-landing-page__slider-field-grid {
+  display: grid;
+  flex: none;
+  gap: 1.5rem;
+  margin-top: 1.75rem;
+}
+
+body.brisbane-smb-landing-page .hospitality-inline-form.brisbane-smb-landing-page__booking-form .brisbane-smb-landing-page__slider-field {
+  min-height: 3.75rem;
+}
+
+body.brisbane-smb-landing-page .hospitality-inline-form.brisbane-smb-landing-page__booking-form .brisbane-smb-landing-page__slider-field--message {
+  flex: none;
+  min-height: 8rem;
+}
+
+body.brisbane-smb-landing-page .hospitality-inline-form.brisbane-smb-landing-page__booking-form .brisbane-smb-landing-page__slider-submit {
+  margin-top: 0.5rem;
+}
+
+body.brisbane-smb-landing-page .website-services__hero .brisbane-smb-landing-page__hero-form {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  body.brisbane-smb-landing-page .website-services__hero-wrap {
+    height: auto;
+    min-height: calc(95svh + var(--hero-section-overlap));
+    margin-top: calc(-1 * var(--brisbane-hero-header-space));
+    padding-top: var(--brisbane-hero-header-space);
+  }
+
+  body.brisbane-smb-landing-page .website-services__hero {
+    padding-top: 0;
+    padding-bottom: 0 !important;
+  }
+
+  body.brisbane-smb-landing-page .website-services__hero .page-hero__content {
+    display: grid;
+    flex: 1 0 auto;
+    width: min(92vw, 92rem);
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    align-items: center;
+    align-content: center;
+    gap: clamp(2.5rem, 4vw, 4rem);
+    padding-block: clamp(1.5rem, 2.5vw, 2.5rem);
+  }
+
+  body.brisbane-smb-landing-page .website-services__hero .brisbane-smb-landing-page__hero-form {
+    display: block;
+    width: 97%;
+    justify-self: end;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1199px) {
+  body.brisbane-smb-landing-page .website-services__hero .brisbane-smb-landing-page__hero-form {
+    width: 94%;
+  }
+
+  body.brisbane-smb-landing-page .hospitality-inline-form.brisbane-smb-landing-page__booking-form {
+    padding: 1.5rem;
+  }
+
+  body.brisbane-smb-landing-page .hospitality-inline-form.brisbane-smb-landing-page__booking-form .brisbane-smb-landing-page__slider-heading {
+    font-size: 1.75rem !important;
+  }
+
+  body.brisbane-smb-landing-page .hospitality-inline-form.brisbane-smb-landing-page__booking-form .brisbane-smb-landing-page__slider-field-grid {
+    gap: 1.25rem;
+  }
 }
 
 body.brisbane-smb-landing-page .comparison__point {
@@ -2104,10 +2222,7 @@ body.brisbane-smb-landing-page
 
 @media (min-width: 820px) {
   body.brisbane-smb-landing-page
-    :is(
-      .website-services__hero .page-hero__title,
-      .home-maxx--maxx-intro .brisbane-smb-landing-page__intro-title
-    ) {
+    .home-maxx--maxx-intro .brisbane-smb-landing-page__intro-title {
     width: min(100%, 76rem) !important;
     max-width: 76rem !important;
   }
@@ -3384,11 +3499,6 @@ main
     text-align: left;
   }
 
-  body.brisbane-smb-landing-page .brisbane-smb-landing-page__hero-scroll {
-    --brisbane-hero-scroll-x: 0;
-    --brisbane-hero-scroll-bottom-gap: 1rem;
-    left: clamp(1.2rem, 5vw, 2rem);
-  }
 
   body.brisbane-smb-landing-page
     .website-services__hero
@@ -6442,23 +6552,23 @@ body.brisbane-smb-landing-page .brisbane-smb-landing-page__post-faq-form .form-t
 }
 
 body.brisbane-smb-landing-page
-  .brisbane-smb-landing-page__post-faq-form
+  .brisbane-smb-landing-page__inline-form
   .brisbane-smb-landing-page__slider-heading,
 body.brisbane-smb-landing-page
-  .brisbane-smb-landing-page__post-faq-form
+  .brisbane-smb-landing-page__inline-form
   .brisbane-smb-landing-page__slider-row,
 body.brisbane-smb-landing-page
-  .brisbane-smb-landing-page__post-faq-form
+  .brisbane-smb-landing-page__inline-form
   .brisbane-smb-landing-page__slider-total,
 body.brisbane-smb-landing-page
-  .brisbane-smb-landing-page__post-faq-form
+  .brisbane-smb-landing-page__inline-form
   .brisbane-smb-landing-page__slider-field-grid {
   width: 100%;
   max-width: none;
 }
 
 body.brisbane-smb-landing-page
-  .brisbane-smb-landing-page__post-faq-form
+  .brisbane-smb-landing-page__inline-form
   .brisbane-smb-landing-page__slider-heading {
   margin: 0 0 2rem;
   color: #fff;
@@ -6467,20 +6577,20 @@ body.brisbane-smb-landing-page
 }
 
 body.brisbane-smb-landing-page
-  .brisbane-smb-landing-page__post-faq-form
+  .brisbane-smb-landing-page__inline-form
   .brisbane-smb-landing-page__slider-row {
   margin-inline: 0;
 }
 
 body.brisbane-smb-landing-page
-  .brisbane-smb-landing-page__post-faq-form
+  .brisbane-smb-landing-page__inline-form
   .brisbane-smb-landing-page__slider-total {
   justify-content: flex-start;
   margin: 2rem 0 0;
 }
 
 body.brisbane-smb-landing-page
-  .brisbane-smb-landing-page__post-faq-form
+  .brisbane-smb-landing-page__inline-form
   .brisbane-smb-landing-page__slider-output {
   color: #fff;
   font-size: clamp(1.65rem, 0.85vw + 1.38rem, 2.1rem);
@@ -6490,7 +6600,7 @@ body.brisbane-smb-landing-page
 }
 
 body.brisbane-smb-landing-page
-  .brisbane-smb-landing-page__post-faq-form
+  .brisbane-smb-landing-page__inline-form
   .brisbane-smb-landing-page__slider-shell {
   height: 1.45rem;
   --slider-muted: #5c5c5c;
@@ -6498,25 +6608,25 @@ body.brisbane-smb-landing-page
 }
 
 body.brisbane-smb-landing-page
-  .brisbane-smb-landing-page__post-faq-form
+  .brisbane-smb-landing-page__inline-form
   .brisbane-smb-landing-page__slider-shell::before,
 body.brisbane-smb-landing-page
-  .brisbane-smb-landing-page__post-faq-form
+  .brisbane-smb-landing-page__inline-form
   .brisbane-smb-landing-page__slider-shell::after,
 body.brisbane-smb-landing-page
-  .brisbane-smb-landing-page__post-faq-form
+  .brisbane-smb-landing-page__inline-form
   .brisbane-smb-landing-page__slider-input::-webkit-slider-runnable-track,
 body.brisbane-smb-landing-page
-  .brisbane-smb-landing-page__post-faq-form
+  .brisbane-smb-landing-page__inline-form
   .brisbane-smb-landing-page__slider-input::-moz-range-track,
 body.brisbane-smb-landing-page
-  .brisbane-smb-landing-page__post-faq-form
+  .brisbane-smb-landing-page__inline-form
   .brisbane-smb-landing-page__slider-input::-moz-range-progress {
   height: 0.48rem;
 }
 
 body.brisbane-smb-landing-page
-  .brisbane-smb-landing-page__post-faq-form
+  .brisbane-smb-landing-page__inline-form
   .brisbane-smb-landing-page__slider-input::-webkit-slider-thumb {
   width: var(--slider-thumb-size);
   height: var(--slider-thumb-size);
@@ -6524,21 +6634,21 @@ body.brisbane-smb-landing-page
 }
 
 body.brisbane-smb-landing-page
-  .brisbane-smb-landing-page__post-faq-form
+  .brisbane-smb-landing-page__inline-form
   .brisbane-smb-landing-page__slider-input::-moz-range-thumb {
   width: var(--slider-thumb-size);
   height: var(--slider-thumb-size);
 }
 
 body.brisbane-smb-landing-page
-  .brisbane-smb-landing-page__post-faq-form
+  .brisbane-smb-landing-page__inline-form
   .brisbane-smb-landing-page__slider-milestone {
   width: 1.14rem;
   height: 1.14rem;
 }
 
 body.brisbane-smb-landing-page
-  .brisbane-smb-landing-page__post-faq-form
+  .brisbane-smb-landing-page__inline-form
   .brisbane-smb-landing-page__slider-field-grid {
   margin-top: 1.5rem;
   opacity: 1;
@@ -6546,7 +6656,7 @@ body.brisbane-smb-landing-page
 }
 
 body.brisbane-smb-landing-page
-  .brisbane-smb-landing-page__post-faq-form
+  .brisbane-smb-landing-page__inline-form
   .brisbane-smb-landing-page__slider-field {
   min-height: 3.5rem;
   padding: 0 0 0.9rem;
@@ -6558,26 +6668,26 @@ body.brisbane-smb-landing-page
 }
 
 body.brisbane-smb-landing-page
-  .brisbane-smb-landing-page__post-faq-form
+  .brisbane-smb-landing-page__inline-form
   .brisbane-smb-landing-page__slider-field::placeholder {
   color: #8e8e8e;
   opacity: 1;
 }
 
 body.brisbane-smb-landing-page
-  .brisbane-smb-landing-page__post-faq-form
+  .brisbane-smb-landing-page__inline-form
   .brisbane-smb-landing-page__slider-field:focus {
   border-bottom-color: var(--accent);
 }
 
 body.brisbane-smb-landing-page
-  .brisbane-smb-landing-page__post-faq-form
+  .brisbane-smb-landing-page__inline-form
   .brisbane-smb-landing-page__slider-field--message {
   min-height: 6rem;
 }
 
 body.brisbane-smb-landing-page
-  .brisbane-smb-landing-page__post-faq-form
+  .brisbane-smb-landing-page__inline-form
   .brisbane-smb-landing-page__slider-submit {
   margin-top: 0.9rem;
 }
@@ -7677,7 +7787,6 @@ body.brisbane-smb-landing-page .quality-foundational-offers__heading {
     ),
   body.brisbane-smb-landing-page
     :is(
-      .site-header__cta,
       .page-hero__cta,
       .home-maxx__cta,
       .portfolio-cta,
@@ -7748,19 +7857,19 @@ body:is(
 
 /* Keep the pass-through budget slider, but use standard forms for the popup and post-FAQ inline form. */
 body.brisbane-smb-landing-page
-  :is(#post-faq-discovery-form, #discovery-form)
+  :is(#hero-discovery-form, #video-discovery-form, #post-faq-discovery-form, #discovery-form)
   :is(.brisbane-smb-landing-page__slider-row, .brisbane-smb-landing-page__slider-total) {
   display: none;
 }
 
 body.brisbane-smb-landing-page
-  :is(#post-faq-discovery-form, #discovery-form)
+  :is(#hero-discovery-form, #video-discovery-form, #post-faq-discovery-form, #discovery-form)
   .form-modal__desc {
   margin: 0 0 1.5rem;
 }
 
 body.brisbane-smb-landing-page
-  :is(#post-faq-discovery-form, #discovery-form)
+  :is(#hero-discovery-form, #video-discovery-form, #post-faq-discovery-form, #discovery-form)
   .brisbane-smb-landing-page__slider-heading {
   margin-bottom: 0.35rem !important;
 }

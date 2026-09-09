@@ -237,6 +237,11 @@ main > .section-accent-tail {
   will-change: transform, opacity;
   backface-visibility: hidden;
 }
+body:is(.home-page, .brisbane-smb-landing-page) .site-header {
+  position: fixed;
+  inset-inline: 0;
+}
+
 .site-header.is-hidden {
   transform: translate3d(0, -160%, 0);
   opacity: 1;
@@ -2127,7 +2132,7 @@ main > .section-accent-tail {
 }
 
 @media (max-width: 767px) {
-  body:not(.package-landing-page):not(.brisbane-smb-landing-page)
+  body:not(.package-landing-page)
     .site-header__cta {
     min-height: 2.3rem;
     padding: 0.48rem 0.64rem 0.48rem 0.78rem;
@@ -2135,7 +2140,7 @@ main > .section-accent-tail {
     font-size: 0.82rem;
   }
 
-  body:not(.package-landing-page):not(.brisbane-smb-landing-page)
+  body:not(.package-landing-page)
     .site-header__cta::after {
     width: 1.5rem;
     height: 1.5rem;
@@ -2144,19 +2149,19 @@ main > .section-accent-tail {
 }
 
 @media (max-width: 900px) {
-  body:not(.package-landing-page):not(.brisbane-smb-landing-page)
+  body:not(.package-landing-page)
     .site-header:not(.site-header--desktop-fit)
     .site-header__wrap {
     gap: 0.45rem;
   }
 
-  body:not(.package-landing-page):not(.brisbane-smb-landing-page)
+  body:not(.package-landing-page)
     .site-header:not(.site-header--desktop-fit)
     .site-header__brand {
     width: clamp(8rem, 18vw, 10rem);
   }
 
-  body:not(.package-landing-page):not(.brisbane-smb-landing-page)
+  body:not(.package-landing-page)
     .site-header:not(.site-header--desktop-fit)
     .site-header__cta {
     min-height: 2.3rem;
@@ -2165,7 +2170,7 @@ main > .section-accent-tail {
     font-size: clamp(0.76rem, 1.8vw, 0.82rem);
   }
 
-  body:not(.package-landing-page):not(.brisbane-smb-landing-page)
+  body:not(.package-landing-page)
     .site-header:not(.site-header--desktop-fit)
     .site-header__cta::after {
     width: 1.5rem;
@@ -2173,10 +2178,24 @@ main > .section-accent-tail {
     background-size: 0.8rem 0.8rem, auto;
   }
 
-  body:not(.package-landing-page):not(.brisbane-smb-landing-page)
+  body:not(.package-landing-page)
     .site-header:not(.site-header--desktop-fit)
     .site-header__burger {
     width: 2.3rem;
+  }
+}
+
+/* Let the shared logo shrink before it overlaps the CTA on narrow phones. */
+@media (max-width: 360px) {
+  body:not(.package-landing-page) .site-header:not(.site-header--desktop-fit)
+    .site-header__wrap {
+    grid-template-columns: minmax(0, 1fr) auto auto;
+  }
+
+  body:not(.package-landing-page) .site-header:not(.site-header--desktop-fit)
+    .site-header__brand {
+    width: 100%;
+    max-width: 8rem;
   }
 }
 
