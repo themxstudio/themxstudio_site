@@ -58,7 +58,7 @@
 .main-website-form .brisbane-smb-landing-page__slider-field-grid { margin: 1.5rem 0 0; }
 .main-website-form :is(input, textarea).brisbane-smb-landing-page__slider-field {
   border: 0 !important;
-  border-bottom: 0.48rem solid #5c5c5c !important;
+  border-bottom: 0.48rem solid var(--form-muted-line) !important;
   border-radius: 0 !important;
   background: transparent !important;
   box-shadow: none !important;
@@ -69,7 +69,7 @@
   letter-spacing: -0.04em !important;
 }
 .main-website-form :is(input, textarea).brisbane-smb-landing-page__slider-field::placeholder {
-  color: #8e8e8e !important;
+  color: var(--form-muted-text) !important;
   opacity: 1;
 }
 .main-website-form .brisbane-smb-landing-page__slider-submit { border-radius: 999px !important; }

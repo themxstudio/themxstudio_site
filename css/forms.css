@@ -2,6 +2,9 @@
   --form-surface: #000;
   --form-field-bg: color-mix(in srgb, #000 92%, #fff 8%);
   --form-text: #fff;
+  /* Muted form details: approximately 18% brighter while remaining grey. */
+  --form-muted-text: #a8a8a8;
+  --form-muted-line: #6d6d6d;
   --main-form-cta-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5.5 12h12.5m-5-5 5 5-5 5' fill='none' stroke='%23fb336a' stroke-width='2.35' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 }
 
@@ -166,7 +169,7 @@ body:has(.form-modal.is-open) .site-header {
   gap: 0.25rem;
   font-size: clamp(0.9rem, 0.12vw + 0.88rem, 0.98rem);
   line-height: 1.42;
-  color: #8e8e8e !important;
+  color: var(--form-muted-text) !important;
   font-weight: 300;
   opacity: 1;
   text-wrap: pretty;
@@ -224,7 +227,7 @@ body:has(.form-modal.is-open) .site-header {
   font-size: clamp(0.9rem, 0.16vw + 0.86rem, 0.98rem);
   line-height: 1.55;
   color: var(--form-text);
-  opacity: 0.72;
+  opacity: 0.85;
 }
 
 .form-modal__close {
@@ -313,7 +316,7 @@ body:has(.form-modal.is-open) .site-header {
   height: 1.2rem;
   margin-inline: calc(var(--slider-thumb-size) / 2);
   --slider-progress: 0%;
-  --slider-muted: #5c5c5c;
+  --slider-muted: var(--form-muted-line);
   --slider-thumb-size: 1.25rem;
   --slider-thumb-radius: calc(var(--slider-thumb-size) / 2);
 }
@@ -457,7 +460,7 @@ body:has(.form-modal.is-open) .site-header {
 
 .discovery-form input::placeholder,
 .discovery-form textarea::placeholder {
-  color: color-mix(in srgb, var(--form-text) 68%, transparent);
+  color: color-mix(in srgb, var(--form-text) 80%, transparent);
   opacity: 1;
 }
 
@@ -804,7 +807,7 @@ body:has(.form-modal.is-open) .site-header {
   min-height: 3.5rem;
   padding: 0 0 0.9rem;
   border: 0;
-  border-bottom: 0.48rem solid #5c5c5c;
+  border-bottom: 0.48rem solid var(--form-muted-line);
   border-radius: 0;
   background: transparent;
   box-shadow: none;
@@ -817,7 +820,7 @@ body:has(.form-modal.is-open) .site-header {
 }
 
 .discovery-form :is(input:not(.discovery-form__budget-input), textarea)::placeholder {
-  color: #8e8e8e;
+  color: var(--form-muted-text);
   opacity: 1;
 }
 
@@ -1068,7 +1071,7 @@ body:has(.form-modal.is-open) .site-header {
   min-height: 3.5rem;
   padding: 0 0 0.9rem;
   border: 0;
-  border-bottom: 0.48rem solid #5c5c5c;
+  border-bottom: 0.48rem solid var(--form-muted-line);
   border-radius: 0;
   background: transparent;
   color: #fff;
@@ -1082,7 +1085,7 @@ body:has(.form-modal.is-open) .site-header {
 }
 
 .brisbane-smb-landing-page__slider-field::placeholder {
-  color: #8e8e8e;
+  color: var(--form-muted-text);
   font-size: clamp(1.65rem, 0.85vw + 1.38rem, 2.1rem);
   font-weight: 800;
   font-variation-settings: "wght" 800;
@@ -1140,7 +1143,7 @@ body:has(.form-modal.is-open) .site-header {
   width: 100%;
   height: 1.45rem;
   --slider-progress: 0%;
-  --slider-muted: #5c5c5c;
+  --slider-muted: var(--form-muted-line);
   --slider-thumb-size: 1.5rem;
   --slider-thumb-radius: calc(var(--slider-thumb-size) / 2);
 }
@@ -1207,7 +1210,7 @@ body:has(.form-modal.is-open) .site-header {
 }
 
 .brisbane-smb-landing-page__slider-milestones { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
-.brisbane-smb-landing-page__slider-milestone { position: absolute; top: 50%; left: calc(var(--slider-thumb-radius) + (100% - (var(--slider-thumb-radius) * 2)) * var(--slider-stop)); width: 1.14rem; height: 1.14rem; border-radius: 50%; background: #5c5c5c; transform: translate(-50%, -50%); }
+.brisbane-smb-landing-page__slider-milestone { position: absolute; top: 50%; left: calc(var(--slider-thumb-radius) + (100% - (var(--slider-thumb-radius) * 2)) * var(--slider-stop)); width: 1.14rem; height: 1.14rem; border-radius: 50%; background: var(--form-muted-line); transform: translate(-50%, -50%); }
 
 /* Every form uses the same full-width submit layout. */
 form :is(.discovery-form__submit, .brisbane-smb-landing-page__slider-submit) {
@@ -1311,7 +1314,7 @@ form :is(.discovery-form__submit, .brisbane-smb-landing-page__slider-submit) {
     min-height: 3.5rem;
     padding: 0 0 0.9rem;
     border: 0;
-    border-bottom: 0.48rem solid #5c5c5c;
+    border-bottom: 0.48rem solid var(--form-muted-line);
     border-radius: 0;
     background: transparent;
     color: #fff;

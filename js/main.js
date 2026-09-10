@@ -3146,7 +3146,7 @@ const initCountGroup = ({
   const FORM_NAMES = {
     apply: "apply",
     discovery: "main website form",
-    landingSlider: "brisbane-slider-number",
+    landing: "main landing page form",
   };
   const discoveryBudgetSliderMilestones = "1750,3500,5500";
   const getFormName = (form) =>
@@ -3155,7 +3155,7 @@ const initCountGroup = ({
     "";
 
   const enhanceStandardDiscoveryForms = () => {
-    const renderLandingForm = (form, index) => {
+    const renderMainWebsiteForm = (form, index) => {
       const uid = `main-form-${index}`;
       const sliderId = `${uid}-budget`;
       const headingId = `${sliderId}-title`;
@@ -3229,7 +3229,7 @@ const initCountGroup = ({
       .forEach((form, index) => {
       if (getFormName(form) !== FORM_NAMES.discovery) return;
       if (form.dataset.standardBudgetEnhanced === "true") return;
-      renderLandingForm(form, index);
+      renderMainWebsiteForm(form, index);
       });
   };
 

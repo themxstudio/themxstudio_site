@@ -6,9 +6,6 @@ const excludedDirectories = new Set([
   ".git",
   "node_modules",
   "apply",
-  "quality-foundational",
-  "professional-business",
-  "ultimate-brand-and-web",
   "websites-for-brisbane-businesses",
 ]);
 

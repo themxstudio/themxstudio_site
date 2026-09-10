@@ -1,24 +1,291 @@
+body.brisbane-smb-landing-page {
+  --brisbane-hero-content-width: min(92vw, 92rem);
+  --brisbane-hero-column-gap: clamp(2.5rem, 4vw, 4rem);
+  --brisbane-booking-form-width: min(92vw, 33rem);
+  --brisbane-form-logo-column: clamp(7.5rem, 9vw, 10rem);
+}
+
 body.brisbane-smb-landing-page .brisbane-sales-video {
-  --section-padding-top: clamp(2.6rem, 3.8vw, 3.35rem);
-  --section-padding-bottom: var(--section-padding-top);
-  /* Shared order keeps the video, budget slider and sales copy in DOM order. */
-  order: 2;
-  position: relative;
-  z-index: 1;
+  flex: 0 0 auto;
+  width: min(100%, 32rem);
+  min-width: 0;
+}
+
+body.brisbane-smb-landing-page .website-services__hero-wrap {
+  height: auto;
+  min-height: calc(105svh + var(--hero-section-overlap));
+}
+
+body.brisbane-smb-landing-page .website-services__hero .page-hero__sub {
+  font-size: clamp(1.2rem, 1.65vw, 1.65rem);
+  line-height: 1.45;
+}
+
+body.brisbane-smb-landing-page .website-services__hero .brisbane-smb-landing-page__hero-proof-actions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center !important;
+  gap: 1rem 1.5rem;
   width: 100%;
-  background: var(--bg);
-  border-radius: var(--section-radius) var(--section-radius) 0 0;
-  overflow: hidden;
+  max-width: none;
+  margin-top: 0;
+}
+
+body.brisbane-smb-landing-page .website-services__hero .brisbane-smb-landing-page__hero-proof-actions
+  .page-hero__google-proof {
+  order: 0;
+  flex: 0 0 auto;
+  align-self: center;
+  width: auto;
+  margin: 0 !important;
+}
+
+:is(#hero-discovery-form, #commitment-discovery-form, #discovery-form) .brisbane-smb-landing-page__hero-form-header {
+  display: grid;
+  grid-template-columns: calc(var(--brisbane-form-logo-column) * 0.8) minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(0.6rem, 1vw, 0.85rem);
+}
+
+:is(#hero-discovery-form, #commitment-discovery-form, #discovery-form) .brisbane-smb-landing-page__hero-form-intro {
+  min-width: 0;
+}
+
+:is(#hero-discovery-form, #commitment-discovery-form, #discovery-form) .brisbane-smb-landing-page__slider-heading {
+  max-width: 60% !important;
+  margin-top: 0;
+  margin-left: 0;
+  font-size: clamp(1.35rem, 1.65vw, 1.55rem) !important;
+}
+
+:is(#hero-discovery-form, #commitment-discovery-form, #discovery-form) .brisbane-smb-landing-page__hero-form-intro .form-modal__desc {
+  max-width: none;
+  margin: 0;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__booking-form .brisbane-smb-landing-page__hero-form-logo {
+  display: block;
+  width: calc(var(--brisbane-form-logo-column) * 0.8);
+  height: auto;
 }
 
 .brisbane-sales-video__player {
   position: relative;
-  width: min(54rem, var(--content-shell-width));
-  margin-inline: auto;
+  width: 100%;
   /* Match the project images further down the landing page. */
   border-radius: clamp(1rem, 1.9vw, 1.55rem);
   overflow: hidden;
   background: #000;
+}
+
+:is(#hero-discovery-form, #commitment-discovery-form, #discovery-form) .brisbane-landing-form__name-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.25rem;
+  min-width: 0;
+}
+
+:is(#hero-discovery-form, #commitment-discovery-form, #discovery-form) .brisbane-landing-form__name-row input {
+  min-width: 0;
+}
+
+:is(#hero-discovery-form, #commitment-discovery-form, #discovery-form) .brisbane-landing-form__package-field {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  min-width: 0;
+}
+
+:is(#hero-project, #commitment-project, #discovery-project) {
+  grid-area: 1 / 1;
+  min-width: 0;
+  padding-right: 2.25rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='m6 9 6 6 6-6' fill='none' stroke='%23a8a8a8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-position: right 0.25rem center;
+  background-size: 1.25rem;
+  background-repeat: no-repeat;
+  color-scheme: dark;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+:is(#hero-project, #commitment-project, #discovery-project):invalid {
+  color: var(--form-muted-text);
+}
+
+:is(#hero-project, #commitment-project, #discovery-project) option {
+  background: #000;
+  color: #fff;
+}
+
+:is(#hero-discovery-form, #commitment-discovery-form, #discovery-form) .brisbane-landing-form__package-text {
+  display: none;
+  grid-area: 1 / 1;
+  align-items: center;
+  min-height: 3.75rem;
+  padding: 0 2.25rem 0.9rem 0;
+  border-bottom: 0.48rem solid transparent;
+  color: var(--form-muted-text);
+  font-size: 1.2rem;
+  font-weight: 800;
+  font-variation-settings: "wght" 800;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+  pointer-events: none;
+}
+
+:is(#hero-discovery-form, #commitment-discovery-form, #discovery-form) .brisbane-landing-form__package-field.is-enhanced :is(#hero-project, #commitment-project, #discovery-project) {
+  color: transparent;
+}
+
+:is(#hero-discovery-form, #commitment-discovery-form, #discovery-form) .brisbane-landing-form__package-field.is-enhanced .brisbane-landing-form__package-text {
+  display: flex;
+}
+
+:is(#hero-project, #commitment-project, #discovery-project):valid + .brisbane-landing-form__package-text {
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  body.brisbane-smb-landing-page .website-services__hero .page-hero__content {
+    padding-block: clamp(3rem, 5vw, 5rem);
+  }
+
+  body.brisbane-smb-landing-page .website-services__hero .brisbane-smb-landing-page__hero-copy {
+    gap: clamp(2rem, 2.5vw, 2.25rem);
+  }
+
+  body.brisbane-smb-landing-page .website-services__hero .brisbane-smb-landing-page__hero-lower {
+    margin-block: 0;
+    gap: clamp(1.25rem, 1.8vw, 1.5rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  body.brisbane-smb-landing-page {
+    --brisbane-booking-form-scale: 0.97;
+    --brisbane-booking-form-width: min(
+      33rem,
+      calc((var(--brisbane-hero-content-width) - var(--brisbane-hero-column-gap)) / 2.15 * var(--brisbane-booking-form-scale))
+    );
+  }
+
+  body.brisbane-smb-landing-page .website-services__hero .page-hero__content {
+    width: var(--brisbane-hero-content-width);
+    column-gap: var(--brisbane-hero-column-gap);
+  }
+
+  body.brisbane-smb-landing-page .website-services__hero .brisbane-smb-landing-page__hero-form {
+    align-self: start;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1199px) {
+  body.brisbane-smb-landing-page {
+    --brisbane-booking-form-scale: 0.94;
+  }
+}
+
+@media (max-width: 1023px) {
+  body.brisbane-smb-landing-page .website-services__hero .brisbane-smb-landing-page__hero-form {
+    display: block;
+    flex: 0 0 auto;
+    align-self: flex-start;
+    width: 100%;
+    max-width: 33rem;
+    margin: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  body.brisbane-smb-landing-page .website-services__hero .page-hero__content {
+    gap: 2.5rem;
+    padding-block: 1.75rem 3.5rem;
+  }
+
+  body.brisbane-smb-landing-page .website-services__hero .brisbane-smb-landing-page__eyebrow {
+    max-width: 70%;
+  }
+
+  body.brisbane-smb-landing-page .website-services__hero .page-hero__sub {
+    max-width: 100%;
+    margin-bottom: 2.25rem;
+  }
+
+  body.brisbane-smb-landing-page {
+    --brisbane-form-logo-column: clamp(4rem, 18vw, 5rem);
+  }
+}
+
+/* Share the hero's form dimensions and spacing across this landing page. */
+body.brisbane-smb-landing-page
+  :is(.website-services__hero, .form-modal, .brisbane-smb-landing-page__commitment)
+  .hospitality-inline-form.brisbane-smb-landing-page__booking-form {
+  display: block;
+  width: var(--brisbane-booking-form-width);
+  max-width: 100%;
+  min-width: 0;
+  height: auto;
+  min-height: 0;
+  padding: clamp(1.65rem, 2.35vw, 2.35rem);
+}
+
+:is(#hero-discovery-form, #commitment-discovery-form, #discovery-form) {
+  display: block;
+  flex: none;
+  height: auto;
+}
+
+:is(#hero-discovery-form, #commitment-discovery-form, #discovery-form)
+  .brisbane-smb-landing-page__slider-field-grid {
+  display: grid;
+  flex: none;
+  gap: 1.5rem;
+  margin: 1.75rem 0 0;
+}
+
+:is(#hero-discovery-form, #commitment-discovery-form, #discovery-form)
+  .brisbane-smb-landing-page__slider-heading {
+  margin-bottom: 0.35rem !important;
+  text-align: left;
+}
+
+:is(#hero-discovery-form, #commitment-discovery-form, #discovery-form)
+  .brisbane-smb-landing-page__slider-submit {
+  margin-top: 0.5rem;
+}
+
+#discovery-modal {
+  align-items: flex-start;
+  overflow-y: auto;
+}
+
+#discovery-modal > .form-modal__panel {
+  flex-shrink: 0;
+  width: var(--brisbane-booking-form-width);
+  max-width: calc(100vw - 1rem);
+  max-height: none;
+  margin-block: auto;
+}
+
+@media (min-width: 900px) {
+  #discovery-modal > .form-modal__panel {
+    width: min(calc(100vw - 2.5rem), 71rem);
+    max-width: 71rem;
+    grid-template-columns: var(--brisbane-booking-form-width) minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  :is(#hero-discovery-form, #commitment-discovery-form, #discovery-form)
+    .brisbane-smb-landing-page__slider-heading {
+    max-width: none !important;
+  }
+
+  :is(#hero-discovery-form, #commitment-discovery-form, #discovery-form)
+    .brisbane-smb-landing-page__slider-field-grid {
+    gap: 1rem;
+  }
 }
 
 .brisbane-sales-video__video,
