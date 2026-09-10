@@ -6,7 +6,7 @@ const excludedDirectories = new Set([
   ".git",
   "node_modules",
   "apply",
-  "websites-for-brisbane-businesses",
+  "websites-for-australian-businesses",
 ]);
 
 const formFields = `

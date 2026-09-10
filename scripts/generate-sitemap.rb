@@ -21,7 +21,7 @@ EXACT_METADATA = {
   "/locations/" => { changefreq: "monthly", priority: "0.6" },
   "/results/" => { changefreq: "monthly", priority: "0.7" },
   "/terms/" => { changefreq: "yearly", priority: "0.2" },
-  "/websites-for-brisbane-businesses/" => {
+  "/websites-for-australian-businesses/" => {
     changefreq: "monthly",
     priority: "0.7",
   },
