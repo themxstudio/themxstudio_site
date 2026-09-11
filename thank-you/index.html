@@ -28,8 +28,9 @@
 
       gtag("config", "G-41D0NFF4ZZ");
       gtag("config", "AW-18039650926");
+      // Event snippet for Submit lead form (4) conversion page.
       gtag("event", "conversion", {
-        send_to: "AW-18039650926/hp6jCODEg-0cEO70_JlD",
+        send_to: "AW-18039650926/MMwvCMzmw_QcEO70_JlD",
         value: 1.0,
         currency: "AUD",
       });
@@ -199,53 +200,6 @@
       </section>
     </main>
 
-    <script>
-      window.addEventListener("message", function (event) {
-        var hostname = "";
-
-        try {
-          hostname = new URL(event.origin).hostname;
-        } catch (error) {
-          return;
-        }
-
-        if (
-          hostname !== "scheduler.zoom.us" &&
-          !hostname.endsWith(".zoom.us") &&
-          hostname !== "www.recaptcha.net"
-        ) {
-          return;
-        }
-
-        var data = event.data;
-        if (!data || typeof data !== "object") return;
-
-        var appointmentId = data.appointmentId || data.scheduledEventId || "";
-        var attendees = Array.isArray(data.attendees) ? data.attendees : [];
-        var firstAttendee = attendees[0] || {};
-        var attendeeId =
-          data.attendeeId || firstAttendee.id || firstAttendee.email || "";
-
-        if (!appointmentId) return;
-        if (window.__zoomBookingConversionSent) return;
-        window.__zoomBookingConversionSent = true;
-
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-          event: "zoom_scheduler_booked",
-          scheduledEventId: appointmentId,
-          attendeeId: attendeeId,
-        });
-
-        if (typeof gtag === "function") {
-          gtag("event", "conversion", {
-            send_to: "AW-18039650926/NvN5CKnG0uccEO70_JID",
-            value: 200,
-            currency: "AUD",
-          });
-        }
-      });
-    </script>
     <script src="/js/main.js?v=20260903ad" defer></script>
   </body>
 </html>
