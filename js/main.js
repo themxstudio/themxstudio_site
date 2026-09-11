@@ -2,7 +2,7 @@ const dropdowns = Array.from(document.querySelectorAll(".nav__item--dropdown"));
 
 (() => {
   const body = document.body;
-  if (!body?.classList.contains("thank-you-page")) return;
+  if (!body?.matches(".thank-you-page, .book-a-call-page")) return;
 
   const layer = document.createElement("div");
   layer.className = "thank-you-page__celebration";
