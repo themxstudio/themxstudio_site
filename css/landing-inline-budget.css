@@ -50,8 +50,9 @@ body.brisbane-smb-landing-page .brisbane-smb-landing-page__video-offer {
   padding: clamp(1.65rem, 2.35vw, 2.35rem);
   background: #000;
   color: #fff;
+  border: 1px solid var(--accent);
   border-radius: 28px;
-  box-shadow: 0 1px 4px rgba(255, 255, 255, 0.1);
+  box-shadow: none;
   text-align: left;
 }
 
