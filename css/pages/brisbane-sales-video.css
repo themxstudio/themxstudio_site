@@ -5,6 +5,45 @@ body.brisbane-smb-landing-page {
   --brisbane-form-logo-column: clamp(7.5rem, 9vw, 10rem);
 }
 
+.site-header.site-header--minimal .site-header__actions {
+  grid-column: 3;
+}
+
+/* Retain the compact desktop header styling after removing navigation. */
+@media (min-width: 1200px) and (max-width: 1366px) {
+  .site-header.site-header--minimal {
+    width: min(
+      calc(var(--content-shell-width) + clamp(3rem, 4vw, 5rem)),
+      calc(100vw - 1.1rem)
+    );
+    max-width: none;
+  }
+
+  .site-header.site-header--minimal .site-header__wrap {
+    height: 80px;
+    padding-inline: clamp(0.75rem, 1vw, 1.15rem);
+    box-shadow: var(--site-header-shadow);
+  }
+
+  .site-header.site-header--minimal .site-header__brand {
+    width: clamp(12rem, 13.25vw, 14rem);
+  }
+
+  body.brisbane-smb-landing-page:has(.site-header.site-header--minimal) main {
+    --brisbane-hero-header-space: 80px;
+  }
+}
+
+.site-footer--minimal .site-footer__container {
+  grid-template-rows: auto;
+  gap: 0;
+  padding-bottom: 0;
+}
+
+.site-footer--minimal .site-footer__bottom {
+  padding-block: clamp(1.5rem, 3vw, 2.5rem);
+}
+
 body.brisbane-smb-landing-page .brisbane-sales-video {
   flex: 0 0 auto;
   width: min(100%, 32rem);
@@ -14,6 +53,11 @@ body.brisbane-smb-landing-page .brisbane-sales-video {
 body.brisbane-smb-landing-page .website-services__hero-wrap {
   height: auto;
   min-height: calc(105svh + var(--hero-section-overlap));
+}
+
+body.brisbane-smb-landing-page .website-services__hero-wrap::before {
+  display: block;
+  background: rgb(255 255 255 / 4%);
 }
 
 body.brisbane-smb-landing-page .website-services__hero .page-hero__sub {
@@ -50,13 +94,16 @@ body.brisbane-smb-landing-page .website-services__hero .brisbane-smb-landing-pag
 
 :is(#hero-discovery-form, #commitment-discovery-form, #discovery-form) .brisbane-smb-landing-page__hero-form-intro {
   min-width: 0;
+  container-type: inline-size;
 }
 
 :is(#hero-discovery-form, #commitment-discovery-form, #discovery-form) .brisbane-smb-landing-page__slider-heading {
-  max-width: 60% !important;
+  /* Scale to the space beside the logo and let longer headings wrap. */
+  max-width: 80% !important;
   margin-top: 0;
   margin-left: 0;
-  font-size: clamp(1.35rem, 1.65vw, 1.55rem) !important;
+  font-size: clamp(1.3rem, 11cqi, 1.6rem) !important;
+  white-space: normal;
 }
 
 :is(#hero-discovery-form, #commitment-discovery-form, #discovery-form) .brisbane-smb-landing-page__hero-form-intro .form-modal__desc {
@@ -170,9 +217,14 @@ body.brisbane-smb-landing-page .brisbane-smb-landing-page__booking-form .brisban
     );
   }
 
+  body.brisbane-smb-landing-page .website-services__hero-wrap {
+    min-height: 0;
+  }
+
   body.brisbane-smb-landing-page .website-services__hero .page-hero__content {
     width: var(--brisbane-hero-content-width);
     column-gap: var(--brisbane-hero-column-gap);
+    padding-block: clamp(3.5rem, 5vw, 5rem);
   }
 
   body.brisbane-smb-landing-page .website-services__hero .brisbane-smb-landing-page__hero-form {
@@ -261,27 +313,21 @@ body.brisbane-smb-landing-page
 }
 
 #discovery-modal > .form-modal__panel {
+  display: block;
   flex-shrink: 0;
   width: var(--brisbane-booking-form-width);
   max-width: calc(100vw - 1rem);
   max-height: none;
   margin-block: auto;
+  padding: 0;
+  border-radius: 28px;
 }
 
-@media (min-width: 900px) {
-  #discovery-modal > .form-modal__panel {
-    width: min(calc(100vw - 2.5rem), 71rem);
-    max-width: 71rem;
-    grid-template-columns: var(--brisbane-booking-form-width) minmax(0, 1fr);
-  }
+#discovery-modal .brisbane-smb-landing-page__modal-form-column {
+  border-radius: 28px;
 }
 
 @media (max-width: 767px) {
-  :is(#hero-discovery-form, #commitment-discovery-form, #discovery-form)
-    .brisbane-smb-landing-page__slider-heading {
-    max-width: none !important;
-  }
-
   :is(#hero-discovery-form, #commitment-discovery-form, #discovery-form)
     .brisbane-smb-landing-page__slider-field-grid {
     gap: 1rem;

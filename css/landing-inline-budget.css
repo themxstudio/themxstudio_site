@@ -13,7 +13,9 @@ body.brisbane-smb-landing-page .brisbane-smb-landing-page__video-booking-wrap {
   position: relative;
   z-index: 4;
   margin-top: calc(-1 * var(--section-radius));
-  background: #000 url("/assets/images/background.webp") center / cover no-repeat;
+  background:
+    linear-gradient(rgb(255 255 255 / 4%), rgb(255 255 255 / 4%)),
+    #000 url("/assets/images/background.webp") center / cover no-repeat;
   border-radius: var(--section-radius) var(--section-radius) 0 0;
   overflow: hidden;
 }
@@ -50,7 +52,7 @@ body.brisbane-smb-landing-page .brisbane-smb-landing-page__video-offer {
   padding: clamp(1.65rem, 2.35vw, 2.35rem);
   background: #000;
   color: #fff;
-  border: 1px solid var(--accent);
+  border: 0;
   border-radius: 28px;
   box-shadow: none;
   text-align: left;
@@ -62,7 +64,7 @@ body.brisbane-smb-landing-page .brisbane-smb-landing-page__video-offer-title {
   color: #fff;
   font-size: clamp(1.85rem, 2vw, 2.4rem);
   font-weight: 900 !important;
-  font-style: italic !important;
+  font-style: normal !important;
   font-variation-settings: "wght" 900;
   line-height: 1.05;
   letter-spacing: -0.03em;
