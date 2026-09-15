@@ -312,7 +312,37 @@ body.brisbane-smb-landing-page
   align-self: start;
 }
 
+body.brisbane-smb-landing-page
+  :is(.customer-review--metro-rags, .customer-review--meridian)
+  .metro-rags-spotlight__summary {
+  grid-column: 1 / -1;
+  order: 4;
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1.75rem, 3vw, 3.25rem);
+  font-weight: 900;
+  font-variation-settings: "wght" 900;
+  line-height: 1.4;
+  letter-spacing: -0.018em;
+}
+
+body.brisbane-smb-landing-page
+  :is(.customer-review--metro-rags, .customer-review--meridian)
+  .metro-rags-spotlight__summary > span {
+  padding: 0.03em 0.14em 0.08em;
+  background: var(--accent);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
 @media (max-width: 900px) {
+  body.brisbane-smb-landing-page
+    :is(.customer-review--metro-rags, .customer-review--meridian)
+    .metro-rags-spotlight__summary {
+    font-size: clamp(1.6rem, 6vw, 2.8rem);
+    letter-spacing: -0.016em;
+  }
+
   body.brisbane-smb-landing-page
     :is(.customer-review--metro-rags, .customer-review--meridian)
     .metro-rags-spotlight {
