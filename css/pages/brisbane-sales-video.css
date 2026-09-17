@@ -5,6 +5,11 @@ body.brisbane-smb-landing-page {
   --brisbane-form-logo-column: clamp(7.5rem, 9vw, 10rem);
 }
 
+/* Bound the review content without changing the full-width section background. */
+body.brisbane-smb-landing-page .reviews__inner {
+  max-width: var(--site-width);
+}
+
 .site-header.site-header--minimal .site-header__actions {
   grid-column: 3;
   gap: clamp(0.375rem, 0.8vw, 0.75rem);
@@ -276,6 +281,10 @@ body.brisbane-smb-landing-page .brisbane-smb-landing-page__booking-form .brisban
 }
 
 @media (min-width: 1024px) {
+  body.brisbane-smb-landing-page .website-services__hero .page-hero__title {
+    font-size: clamp(2.4rem, 3.5vw, 4rem);
+  }
+
   body.brisbane-smb-landing-page .website-services__hero .brisbane-smb-landing-page__eyebrow {
     font-size: 1rem;
   }
