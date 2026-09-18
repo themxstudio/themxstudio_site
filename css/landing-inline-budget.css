@@ -20,13 +20,13 @@ body.brisbane-smb-landing-page .brisbane-smb-landing-page__video-booking-wrap {
   overflow: hidden;
 }
 
-/* Center the two equal offer cards, each with its own call to action. */
+/* Center the two website packages. */
 body.brisbane-smb-landing-page .brisbane-smb-landing-page__video-booking {
   --section-padding-top: var(--video-booking-gap);
   --section-padding-bottom: calc(var(--video-booking-gap) + var(--section-radius));
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: auto;
   justify-content: center;
   gap: clamp(1.5rem, 2vw, 2rem);
   order: 2;
@@ -35,18 +35,12 @@ body.brisbane-smb-landing-page .brisbane-smb-landing-page__video-booking {
   border-radius: var(--section-radius) var(--section-radius) 0 0;
 }
 
-body.brisbane-smb-landing-page .brisbane-smb-landing-page__video-offer-cta {
-  align-self: flex-start;
-  flex-shrink: 0;
-  margin: auto 0 0;
-}
-
 body.brisbane-smb-landing-page .brisbane-smb-landing-page__video-offer {
   display: flex;
   flex-direction: column;
   align-self: stretch;
   width: 100%;
-  max-width: 33rem;
+  max-width: 36rem;
   min-width: 0;
   margin-inline: auto;
   padding: clamp(1.65rem, 2.35vw, 2.35rem);
@@ -59,29 +53,37 @@ body.brisbane-smb-landing-page .brisbane-smb-landing-page__video-offer {
 }
 
 body.brisbane-smb-landing-page .brisbane-smb-landing-page__video-offer-title {
-  max-width: 15ch;
+  max-width: 100%;
   margin: 0;
-  color: #fff;
-  font-size: clamp(1.85rem, 2vw, 2.4rem);
+  color: #fff !important;
+  font-size: calc(var(--brisbane-booking-form-title-size) * 1.1) !important;
   font-weight: 900 !important;
   font-style: normal !important;
   font-variation-settings: "wght" 900;
-  line-height: 1.05;
+  line-height: 1.1;
   letter-spacing: -0.03em;
-  text-wrap: balance;
+  text-wrap: wrap;
+  text-transform: none;
+}
+
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__video-offer-cta {
+  align-self: flex-start;
+  flex-shrink: 0;
+  margin: auto 0 0;
 }
 
 body.brisbane-smb-landing-page .brisbane-smb-landing-page__video-offer-desc {
   margin: 0.75rem 0 0;
   color: #fff;
   font-size: 1.2rem;
-  font-weight: 300;
+  font-weight: 100 !important;
+  font-variation-settings: "wght" 100 !important;
   line-height: 1.45;
 }
 
 body.brisbane-smb-landing-page .brisbane-smb-landing-page__video-offer-list {
   display: grid;
-  gap: 1.4rem;
+  gap: 1.25rem;
   margin: 2rem 0;
   padding: 0;
   list-style: none;
@@ -107,10 +109,35 @@ body.brisbane-smb-landing-page .brisbane-smb-landing-page__video-offer-list li::
   background: var(--brisbane-check-icon) center / 1.5rem 1.5rem no-repeat var(--accent);
 }
 
+@media (max-width: 767px) {
+  body.brisbane-smb-landing-page .brisbane-smb-landing-page__video-offer-desc {
+    font-size: 1rem;
+  }
+
+  body.brisbane-smb-landing-page .brisbane-smb-landing-page__video-offer-list li {
+    grid-template-columns: 1.1rem minmax(0, 1fr);
+    gap: 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  body.brisbane-smb-landing-page .brisbane-smb-landing-page__video-offer-list li::before {
+    width: 1.1rem;
+    height: 1.1rem;
+    background-size: 1.1rem 1.1rem;
+  }
+}
+
 @media (min-width: 768px) {
   body.brisbane-smb-landing-page .brisbane-smb-landing-page__video-booking {
-    grid-template-columns: repeat(2, minmax(0, 33rem));
+    grid-template-columns: repeat(2, minmax(0, 36rem));
     grid-template-rows: 1fr;
+  }
+
+}
+
+@media (min-width: 1200px) {
+  body.brisbane-smb-landing-page .brisbane-smb-landing-page__video-offer {
+    aspect-ratio: 1;
   }
 }
 
@@ -119,9 +146,6 @@ body.brisbane-smb-landing-page .brisbane-smb-landing-page__video-offer-list li::
     padding: 1.5rem;
   }
 
-  body.brisbane-smb-landing-page .brisbane-smb-landing-page__video-offer-title {
-    font-size: 1.75rem;
-  }
 }
 
 /* Place the camera project on white directly beneath the offer cards. */

@@ -2462,27 +2462,52 @@ body.home-page .hero__title-accent .hero__title-char {
   color: #fff !important;
 }
 
-/* Standard-site heroes share the homepage's raw background treatment. */
-body:not(.service-page):not(.package-landing-page):not(.brisbane-smb-landing-page)
-  :is(.website-services__hero-wrap, .page-hero) {
-  z-index: 1;
-  background: #000 url("/assets/images/background.webp") center top / 100% auto no-repeat !important;
+/* Show only the darker upper half of the rotated hero texture. */
+:root body main .hero--landscape-background {
+  background: #000 !important;
 }
 
-body:not(.service-page):not(.package-landing-page):not(.brisbane-smb-landing-page)
-  .website-services__hero-bg {
+:root body main .hero--landscape-background > .hero-background {
+  position: absolute !important;
+  inset: 0;
+  display: block !important;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  overflow: hidden;
+  transform: none !important;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+:root body main .hero-background > .hero-background__image {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: calc(var(--hero-background-height) * 2);
+  height: var(--hero-background-width);
+  max-width: none;
+  max-height: none;
+  object-fit: fill;
+  filter: none;
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+:root body main .hero--landscape-background > img:is(.hero__bg-image, .website-services__hero-bg) {
   display: none !important;
 }
 
-body:not(.service-page):not(.package-landing-page):not(.brisbane-smb-landing-page)
-  :is(.website-services__hero-wrap, .page-hero)::before {
-  z-index: 0;
-  background: #000 url("/assets/images/background.webp") center top / 100% auto no-repeat !important;
-  opacity: 1 !important;
+:root body main .hero--landscape-background > .page-hero {
+  background: transparent !important;
 }
 
-body:not(.service-page):not(.package-landing-page):not(.brisbane-smb-landing-page)
-  .page-hero__content {
+:root body main .hero--landscape-background::before,
+:root body main .hero--landscape-background > .page-hero::before {
+  background: none !important;
+}
+
+:root body main .hero--landscape-background .page-hero__content {
   position: relative;
   z-index: 1;
 }

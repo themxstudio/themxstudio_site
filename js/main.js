@@ -363,6 +363,40 @@ const dropdowns = Array.from(document.querySelectorAll(".nav__item--dropdown"));
 })();
 
 (() => {
+  const hero = document.querySelector(
+    "main .hero, main .website-services__hero-wrap, main .page-hero-wrap--simple, main .page-hero",
+  );
+  if (!hero) return;
+
+  const background = document.createElement("div");
+  background.className = "hero-background hero__bg-image";
+  background.setAttribute("aria-hidden", "true");
+
+  const image = document.createElement("img");
+  image.className = "hero-background__image";
+  image.src = "/assets/images/background.webp?v=20260917-old-dark-half";
+  image.alt = "";
+  image.decoding = "async";
+  background.append(image);
+
+  const fitBackground = () => {
+    hero.style.setProperty("--hero-background-width", `${hero.clientWidth}px`);
+    hero.style.setProperty("--hero-background-height", `${hero.clientHeight}px`);
+  };
+
+  fitBackground();
+  hero.classList.add("hero--landscape-background");
+  hero.prepend(background);
+
+  if (window.ResizeObserver) {
+    const observer = new ResizeObserver(fitBackground);
+    observer.observe(hero);
+  } else {
+    window.addEventListener("resize", fitBackground, { passive: true });
+  }
+})();
+
+(() => {
   const normalizePath = (value) => {
     if (!value) return "/";
     const path = value

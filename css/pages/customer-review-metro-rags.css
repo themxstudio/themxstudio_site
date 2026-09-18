@@ -316,10 +316,11 @@ body.brisbane-smb-landing-page
   :is(.customer-review--metro-rags, .customer-review--meridian)
   .metro-rags-spotlight__summary {
   grid-column: 1 / -1;
+  width: min(80%, 50rem);
   order: 4;
   margin: 0;
   color: #fff;
-  font-size: clamp(1.75rem, 3vw, 3.25rem);
+  font-size: clamp(1.25rem, 2vw, 2.1rem);
   font-weight: 900;
   font-variation-settings: "wght" 900;
   line-height: 1.4;
@@ -339,7 +340,8 @@ body.brisbane-smb-landing-page
   body.brisbane-smb-landing-page
     :is(.customer-review--metro-rags, .customer-review--meridian)
     .metro-rags-spotlight__summary {
-    font-size: clamp(1.6rem, 6vw, 2.8rem);
+    width: 90%;
+    font-size: clamp(1.125rem, 4.2vw, 1.8rem);
     letter-spacing: -0.016em;
   }
 
