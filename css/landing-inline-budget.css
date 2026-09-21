@@ -4,6 +4,14 @@ body.brisbane-smb-landing-page .customer-review--metro-rags {
   --section-padding-bottom: calc(var(--site-gap) + var(--section-radius));
 }
 
+/* Use the same image and white overlay on the hero and offer section. */
+body.brisbane-smb-landing-page .website-services__hero-wrap,
+body.brisbane-smb-landing-page .brisbane-smb-landing-page__video-booking-wrap {
+  background:
+    linear-gradient(rgb(255 255 255 / 4%), rgb(255 255 255 / 4%)),
+    #000 url("/assets/images/background.webp") center / cover no-repeat;
+}
+
 /* Keep the image behind both sections and clip it to the rounded top corners. */
 body.brisbane-smb-landing-page .brisbane-smb-landing-page__video-booking-wrap {
   --video-booking-gap: clamp(2.5rem, 5vw, 4rem);
@@ -13,9 +21,6 @@ body.brisbane-smb-landing-page .brisbane-smb-landing-page__video-booking-wrap {
   position: relative;
   z-index: 4;
   margin-top: calc(-1 * var(--section-radius));
-  background:
-    linear-gradient(rgb(255 255 255 / 4%), rgb(255 255 255 / 4%)),
-    #000 url("/assets/images/background.webp") center / cover no-repeat;
   border-radius: var(--section-radius) var(--section-radius) 0 0;
   overflow: hidden;
 }

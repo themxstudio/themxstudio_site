@@ -71,7 +71,7 @@ body.brisbane-smb-landing-page .brisbane-smb-landing-page__hero-heading {
   gap: 0.5rem;
   width: 100%;
   min-width: 0;
-  justify-items: center;
+  justify-items: start;
 }
 
 body.brisbane-smb-landing-page .website-services__hero .brisbane-smb-landing-page__eyebrow {
@@ -82,8 +82,8 @@ body.brisbane-smb-landing-page .website-services__hero .brisbane-smb-landing-pag
   font-weight: 900 !important;
   font-variation-settings: "wght" 900 !important;
   line-height: 1.4;
-  align-self: center;
-  text-align: center !important;
+  align-self: flex-start;
+  text-align: left !important;
 }
 
 /* Retain the compact desktop header styling after removing navigation. */
@@ -132,11 +132,6 @@ body.brisbane-smb-landing-page .website-services__hero-wrap {
   min-height: 0;
 }
 
-body.brisbane-smb-landing-page .website-services__hero-wrap::before {
-  display: block;
-  background: rgb(255 255 255 / 4%);
-}
-
 body.brisbane-smb-landing-page .website-services__hero {
   height: auto;
   min-height: 0;
@@ -146,16 +141,16 @@ body.brisbane-smb-landing-page .website-services__hero {
 body.brisbane-smb-landing-page .website-services__hero .page-hero__content {
   display: flex;
   flex-direction: column;
-  align-items: center !important;
+  align-items: flex-start !important;
   justify-content: flex-start !important;
-  justify-items: center !important;
-  text-align: center;
+  justify-items: start !important;
+  text-align: left;
 }
 
 body.brisbane-smb-landing-page .website-services__hero .brisbane-smb-landing-page__hero-copy {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
   gap: clamp(1.75rem, 3.5vh, 3rem);
 }
@@ -163,11 +158,11 @@ body.brisbane-smb-landing-page .website-services__hero .brisbane-smb-landing-pag
 body.brisbane-smb-landing-page .website-services__hero .page-hero__title {
   width: min(100%, 18em);
   max-width: 18em;
-  align-self: center;
-  margin-inline: auto;
+  align-self: flex-start;
+  margin-inline: 0;
   font-size: clamp(2.2rem, 4.2vw, 4rem);
   line-height: 1.08;
-  text-align: center !important;
+  text-align: left !important;
   text-transform: uppercase;
   text-wrap: wrap;
 }
@@ -175,7 +170,7 @@ body.brisbane-smb-landing-page .website-services__hero .page-hero__title {
 body.brisbane-smb-landing-page .website-services__hero .brisbane-smb-landing-page__hero-lower {
   width: min(100%, 44rem);
   max-width: 44rem;
-  justify-items: center;
+  justify-items: start;
   margin-block: 0;
   gap: clamp(1.5rem, 2.5vh, 2rem);
 }
@@ -184,20 +179,20 @@ body.brisbane-smb-landing-page .website-services__hero .page-hero__sub {
   margin-bottom: 0;
   font-size: clamp(1.2rem, 1.65vw, 1.65rem);
   line-height: 1.45;
-  text-align: center !important;
+  text-align: left !important;
 }
 
 body.brisbane-smb-landing-page .website-services__hero .page-hero__sub-text {
-  text-align: center;
+  text-align: left;
 }
 
 body.brisbane-smb-landing-page .website-services__hero .brisbane-smb-landing-page__hero-proof-actions {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  align-items: center !important;
-  justify-content: center !important;
-  align-self: center;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  align-self: flex-start;
   gap: 2rem 1.5rem;
   width: 100%;
   max-width: none;
@@ -207,7 +202,7 @@ body.brisbane-smb-landing-page .website-services__hero .brisbane-smb-landing-pag
 body.brisbane-smb-landing-page .website-services__hero .brisbane-smb-landing-page__hero-cta-row {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 1.5rem;
   width: 100%;
 }
@@ -254,7 +249,7 @@ body.brisbane-smb-landing-page .website-services__hero .brisbane-smb-landing-pag
   .page-hero__google-proof {
   order: 0;
   flex: 0 0 auto;
-  align-self: center;
+  align-self: flex-start;
   width: auto;
   margin: 0 !important;
 }
