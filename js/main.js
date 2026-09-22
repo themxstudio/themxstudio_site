@@ -366,7 +366,7 @@ const dropdowns = Array.from(document.querySelectorAll(".nav__item--dropdown"));
   const hero = document.querySelector(
     "main .hero, main .website-services__hero-wrap, main .page-hero-wrap--simple, main .page-hero",
   );
-  if (!hero) return;
+  if (!hero || document.body.classList.contains("brisbane-smb-landing-page")) return;
 
   const background = document.createElement("div");
   background.className = "hero-background hero__bg-image";

@@ -87,13 +87,6 @@
       href="/apple-touch-icon.png?v=20260819-favicon-refresh-1"
     />
 
-    <link
-      rel="preload"
-      href="/assets/images/background.webp"
-      as="image"
-      type="image/webp"
-      fetchpriority="high"
-    />
     <meta property="og:site_name" content="The MX Studio" />
     <meta
       property="og:title"
@@ -258,14 +251,14 @@
       rel="stylesheet"
       href="/css/pages/quality-foundational.css?v=20260909-muted"
     />
-    <link rel="stylesheet" href="/css/landing-inline-budget.css?v=20260921-shared-overlay" />
+    <link rel="stylesheet" href="/css/landing-inline-budget.css?v=20260921-footer-underlay-type" />
     <link
       rel="stylesheet"
-      href="/css/pages/brisbane-sales-video.css?v=20260921-hero-overlay"
+      href="/css/pages/brisbane-sales-video.css?v=20260921-booking-font-gap"
     />
     <link
       rel="stylesheet"
-      href="/css/pages/customer-review-metro-rags.css?v=20260917b"
+      href="/css/pages/customer-review-metro-rags.css?v=20260921-metrics-refined"
     />
     <link rel="stylesheet" href="/css/pages/home-offer-float.css?v=20260810a" />
     <link rel="stylesheet" href="/css/forms.css?v=20260909-muted" />
@@ -368,14 +361,266 @@
     <header class="site-header site-header--minimal">
       <div class="site-header__wrap">
         <div class="site-header__left">
-          <span class="site-header__brand">
+          <a class="site-header__brand" href="/" aria-label="The MX Studio home">
             <img
               class="site-header__logo"
               src="/assets/logos/logo.webp"
               alt="The MX Studio"
             />
-          </span>
+          </a>
         </div>
+
+        <nav class="site-header__nav" aria-label="Primary">
+          <ul class="nav">
+            <li class="nav__item nav__item--dropdown">
+              <a
+                class="nav__link nav__trigger"
+                href="/services/web-design-brisbane/"
+                aria-expanded="false"
+                aria-haspopup="true"
+              >
+                Websites <span class="nav__caret" aria-hidden="true"></span>
+              </a>
+
+              <div
+                class="nav__menu nav__menu--stack"
+                role="menu"
+                aria-label="Websites"
+              >
+                <div class="nav__group">
+                  <a
+                    class="nav__menu-link"
+                    href="/services/web-design-brisbane/"
+                  >
+                    Web Design
+                    <span class="link-arrow" aria-hidden="true">
+                      <svg
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                        width="14"
+                        height="14"
+                      >
+                        <path
+                          fill="currentColor"
+                          d="M13.5 5l7 7-7 7-1.4-1.4 4.6-4.6H4v-2h12.7l-4.6-4.6L13.5 5z"
+                        />
+                      </svg>
+                    </span>
+                  </a>
+
+                  <a
+                    class="nav__menu-link"
+                    href="/services/web-redesign-brisbane/"
+                  >
+                    Web Redesign
+                    <span class="link-arrow" aria-hidden="true">
+                      <svg
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                        width="14"
+                        height="14"
+                      >
+                        <path
+                          fill="currentColor"
+                          d="M13.5 5l7 7-7 7-1.4-1.4 4.6-4.6H4v-2h12.7l-4.6-4.6L13.5 5z"
+                        />
+                      </svg>
+                    </span>
+                  </a>
+
+                  <a
+                    class="nav__menu-link"
+                    href="/services/wordpress-web-design-brisbane/"
+                  >
+                    WordPress Web Design
+                    <span class="link-arrow" aria-hidden="true">
+                      <svg
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                        width="14"
+                        height="14"
+                      >
+                        <path
+                          fill="currentColor"
+                          d="M13.5 5l7 7-7 7-1.4-1.4 4.6-4.6H4v-2h12.7l-4.6-4.6L13.5 5z"
+                        />
+                      </svg>
+                    </span>
+                  </a>
+
+                  <a
+                    class="nav__menu-link"
+                    href="/services/ecommerce-web-design-brisbane/"
+                  >
+                    E-Commerce Web Design
+                    <span class="link-arrow" aria-hidden="true">
+                      <svg
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                        width="14"
+                        height="14"
+                      >
+                        <path
+                          fill="currentColor"
+                          d="M13.5 5l7 7-7 7-1.4-1.4 4.6-4.6H4v-2h12.7l-4.6-4.6L13.5 5z"
+                        />
+                      </svg>
+                    </span>
+                  </a>
+
+                  <a
+                    class="nav__menu-link"
+                    href="/services/web-hosting-and-maintenance-brisbane/"
+                  >
+                    Web Hosting and Maintenance
+                    <span class="link-arrow" aria-hidden="true">
+                      <svg
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                        width="14"
+                        height="14"
+                      >
+                        <path
+                          fill="currentColor"
+                          d="M13.5 5l7 7-7 7-1.4-1.4 4.6-4.6H4v-2h12.7l-4.6-4.6L13.5 5z"
+                        />
+                      </svg>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li class="nav__item nav__item--dropdown">
+              <a
+                class="nav__link nav__trigger"
+                href="/services/seo-brisbane/"
+                aria-expanded="false"
+                aria-haspopup="true"
+              >
+                Search Marketing
+                <span class="nav__caret" aria-hidden="true"></span>
+              </a>
+
+              <div
+                class="nav__menu nav__menu--stack"
+                role="menu"
+                aria-label="Search Marketing"
+              >
+                <div class="nav__group">
+                  <a class="nav__menu-link" href="/services/seo-brisbane/">
+                    SEO
+                    <span class="link-arrow" aria-hidden="true">
+                      <svg
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                        width="14"
+                        height="14"
+                      >
+                        <path
+                          fill="currentColor"
+                          d="M13.5 5l7 7-7 7-1.4-1.4 4.6-4.6H4v-2h12.7l-4.6-4.6L13.5 5z"
+                        />
+                      </svg>
+                    </span>
+                  </a>
+
+                  <a class="nav__menu-link" href="/services/ai-seo-brisbane/">
+                    AI SEO
+                    <span class="link-arrow" aria-hidden="true">
+                      <svg
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                        width="14"
+                        height="14"
+                      >
+                        <path
+                          fill="currentColor"
+                          d="M13.5 5l7 7-7 7-1.4-1.4 4.6-4.6H4v-2h12.7l-4.6-4.6L13.5 5z"
+                        />
+                      </svg>
+                    </span>
+                  </a>
+
+                  <a
+                    class="nav__menu-link"
+                    href="/services/local-seo-brisbane/"
+                  >
+                    Local SEO
+                    <span class="link-arrow" aria-hidden="true">
+                      <svg
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                        width="14"
+                        height="14"
+                      >
+                        <path
+                          fill="currentColor"
+                          d="M13.5 5l7 7-7 7-1.4-1.4 4.6-4.6H4v-2h12.7l-4.6-4.6L13.5 5z"
+                        />
+                      </svg>
+                    </span>
+                  </a>
+
+                  <a
+                    class="nav__menu-link"
+                    href="/services/google-ads-brisbane/"
+                  >
+                    Google Ads
+                    <span class="link-arrow" aria-hidden="true">
+                      <svg
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                        width="14"
+                        height="14"
+                      >
+                        <path
+                          fill="currentColor"
+                          d="M13.5 5l7 7-7 7-1.4-1.4 4.6-4.6H4v-2h12.7l-4.6-4.6L13.5 5z"
+                        />
+                      </svg>
+                    </span>
+                  </a>
+
+                  <a
+                    class="nav__menu-link"
+                    href="/services/seo-migration-brisbane/"
+                  >
+                    SEO Migration
+                    <span class="link-arrow" aria-hidden="true">
+                      <svg
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                        width="14"
+                        height="14"
+                      >
+                        <path
+                          fill="currentColor"
+                          d="M13.5 5l7 7-7 7-1.4-1.4 4.6-4.6H4v-2h12.7l-4.6-4.6L13.5 5z"
+                        />
+                      </svg>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="/services/brand-design-brisbane/"
+                >Branding</a
+              >
+            </li>
+
+            <li class="nav__item">
+              <a class="nav__link" href="/results/">Results</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="/about/">About</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="/contact/">Contact</a>
+            </li>
+          </ul>
+        </nav>
+
         <div class="site-header__actions">
           <a
             class="site-header__phone"
@@ -400,7 +645,281 @@
             Book A Call
           </button>
         </div>
+
+        <button
+          class="site-header__burger"
+          type="button"
+          aria-label="Open menu"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+        >
+          <span class="burger" aria-hidden="true"
+            ><span></span><span></span><span></span
+          ></span>
+        </button>
       </div>
+
+      <div class="mobile-overlay" hidden></div>
+
+      <aside
+        class="mobile-panel"
+        id="mobile-menu"
+        aria-label="Mobile menu"
+        hidden
+      >
+        <nav class="mobile-nav" aria-label="Mobile primary">
+          <div class="mobile-acc">
+            <button
+              class="nav__link mobile-acc__trigger"
+              type="button"
+              aria-expanded="false"
+              aria-controls="mobile-acc-websites"
+            >
+              <span>Websites</span>
+              <span class="nav__caret" aria-hidden="true"></span>
+            </button>
+
+            <div class="mobile-acc__panel" id="mobile-acc-websites" hidden>
+              <a class="nav__menu-link" href="/services/web-design-brisbane/">
+                Web Design
+                <span class="link-arrow" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                    width="14"
+                    height="14"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M13.5 5l7 7-7 7-1.4-1.4 4.6-4.6H4v-2h12.7l-4.6-4.6L13.5 5z"
+                    />
+                  </svg>
+                </span>
+              </a>
+
+              <a class="nav__menu-link" href="/services/web-redesign-brisbane/">
+                Web Redesign
+                <span class="link-arrow" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                    width="14"
+                    height="14"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M13.5 5l7 7-7 7-1.4-1.4 4.6-4.6H4v-2h12.7l-4.6-4.6L13.5 5z"
+                    />
+                  </svg>
+                </span>
+              </a>
+
+              <a
+                class="nav__menu-link"
+                href="/services/wordpress-web-design-brisbane/"
+              >
+                WordPress Web Design
+                <span class="link-arrow" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                    width="14"
+                    height="14"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M13.5 5l7 7-7 7-1.4-1.4 4.6-4.6H4v-2h12.7l-4.6-4.6L13.5 5z"
+                    />
+                  </svg>
+                </span>
+              </a>
+
+              <a
+                class="nav__menu-link"
+                href="/services/ecommerce-web-design-brisbane/"
+              >
+                E-Commerce Web Design
+                <span class="link-arrow" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                    width="14"
+                    height="14"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M13.5 5l7 7-7 7-1.4-1.4 4.6-4.6H4v-2h12.7l-4.6-4.6L13.5 5z"
+                    />
+                  </svg>
+                </span>
+              </a>
+
+              <a
+                class="nav__menu-link"
+                href="/services/web-hosting-and-maintenance-brisbane/"
+              >
+                Web Hosting and Maintenance
+                <span class="link-arrow" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                    width="14"
+                    height="14"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M13.5 5l7 7-7 7-1.4-1.4 4.6-4.6H4v-2h12.7l-4.6-4.6L13.5 5z"
+                    />
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <div class="mobile-acc">
+            <button
+              class="nav__link mobile-acc__trigger"
+              type="button"
+              aria-expanded="false"
+              aria-controls="mobile-acc-growth"
+            >
+              <span>Search Marketing</span>
+              <span class="nav__caret" aria-hidden="true"></span>
+            </button>
+
+            <div class="mobile-acc__panel" id="mobile-acc-growth" hidden>
+              <a class="nav__menu-link" href="/services/seo-brisbane/">
+                SEO
+                <span class="link-arrow" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                    width="14"
+                    height="14"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M13.5 5l7 7-7 7-1.4-1.4 4.6-4.6H4v-2h12.7l-4.6-4.6L13.5 5z"
+                    />
+                  </svg>
+                </span>
+              </a>
+
+              <a class="nav__menu-link" href="/services/ai-seo-brisbane/">
+                AI SEO
+                <span class="link-arrow" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                    width="14"
+                    height="14"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M13.5 5l7 7-7 7-1.4-1.4 4.6-4.6H4v-2h12.7l-4.6-4.6L13.5 5z"
+                    />
+                  </svg>
+                </span>
+              </a>
+
+              <a class="nav__menu-link" href="/services/local-seo-brisbane/">
+                Local SEO
+                <span class="link-arrow" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                    width="14"
+                    height="14"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M13.5 5l7 7-7 7-1.4-1.4 4.6-4.6H4v-2h12.7l-4.6-4.6L13.5 5z"
+                    />
+                  </svg>
+                </span>
+              </a>
+
+              <a class="nav__menu-link" href="/services/google-ads-brisbane/">
+                Google Ads
+                <span class="link-arrow" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                    width="14"
+                    height="14"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M13.5 5l7 7-7 7-1.4-1.4 4.6-4.6H4v-2h12.7l-4.6-4.6L13.5 5z"
+                    />
+                  </svg>
+                </span>
+              </a>
+
+              <a
+                class="nav__menu-link"
+                href="/services/seo-migration-brisbane/"
+              >
+                SEO Migration
+                <span class="link-arrow" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                    width="14"
+                    height="14"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M13.5 5l7 7-7 7-1.4-1.4 4.6-4.6H4v-2h12.7l-4.6-4.6L13.5 5z"
+                    />
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <a
+            class="nav__link mobile-nav__link"
+            href="/services/brand-design-brisbane/"
+            >Branding</a
+          >
+          <a class="nav__link mobile-nav__link" href="/results/">Results</a>
+          <a class="nav__link mobile-nav__link" href="/about/">About</a>
+          <a
+            class="nav__link mobile-nav__link mobile-nav__link--contact"
+            href="/contact/"
+            >Contact</a
+          >
+          <div class="mobile-panel__direct" aria-label="Direct contact">
+            <a
+              class="mobile-panel__direct-link"
+              href="mailto:hello@themxstudio.com.au?subject=Website%20Enquiry"
+              aria-label="Email hello@themxstudio.com.au"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  fill="currentColor"
+                  d="M12 13.5L2 6.75V18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6.75L12 13.5zM20 4H4c-1.1 0-2 .9-2 2l10 6.25L22 6c0-1.1-.9-2-2-2z"
+                />
+              </svg>
+              <span>hello@themxstudio.com.au</span>
+            </a>
+            <a
+              class="mobile-panel__direct-link"
+              href="tel:+61421709047"
+              aria-label="Call 0421 709 047"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  fill="currentColor"
+                  d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.07 21 3 13.93 3 5c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.24.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
+                />
+              </svg>
+              <span>0421 709 047</span>
+            </a>
+          </div>
+        </nav>
+      </aside>
     </header>
 
     <main>
@@ -422,8 +941,15 @@
                   class="page-hero__title brisbane-smb-landing-page__title"
                   data-page-hero-title-static="true"
                 >
-                  <span class="brisbane-smb-landing-page__title-main"
-                    >Custom websites for small businesses</span
+                  <span class="visually-hidden"
+                    >We build high quality websites for service businesses,
+                    therapists, tradies, clinics and small businesses</span
+                  >
+                  <span class="brisbane-smb-landing-page__title-main" aria-hidden="true"
+                    >WE BUILD HIGH QUALITY WEBSITES</span
+                  >
+                  <span class="brisbane-smb-landing-page__title-rotating" aria-hidden="true"
+                    >FOR SERVICE BUSINESSES</span
                   >
                 </h2>
               </div>
@@ -486,9 +1012,9 @@
               <div class="brisbane-smb-landing-page__hero-lower">
                 <p class="page-hero__sub">
                   <span class="page-hero__sub-text">
-                    Your professional website shouldn’t cost $15k. We'll handle
-                    design, SEO, and all the technical stuff for a fraction.
-                    Trust our small business to help yours.
+                    Your professional website shouldn’t cost $15k. We offer
+                    fixed-price web design with a two-week turnaround. Book a
+                    call to get started.
                   </span>
                 </p>
                 <div
@@ -625,13 +1151,20 @@
             </div>
           </div>
 
-          <p class="metro-rags-spotlight__summary">
-            <span>
-              Metro Rags has been in Brissy for over 50 years. We relaunched their
-              whole site, handled their SEO migration, and within the first month
-              they received 18 new form submissions.
-            </span>
-          </p>
+          <div class="metro-rags-spotlight__stats" aria-label="Metro Rags results">
+            <div class="metro-rags-spotlight__stat">
+              <p class="metro-rags-spotlight__stat-value">50+</p>
+              <p class="metro-rags-spotlight__stat-label">Years in business, with an established brand and strong trading history</p>
+            </div>
+            <div class="metro-rags-spotlight__stat">
+              <p class="metro-rags-spotlight__stat-value">18</p>
+              <p class="metro-rags-spotlight__stat-label">New form submissions in the first month following the website launch</p>
+            </div>
+            <div class="metro-rags-spotlight__stat">
+              <p class="metro-rags-spotlight__stat-value">03</p>
+              <p class="metro-rags-spotlight__stat-label">Dedicated landing pages created for paid advertising campaigns</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -639,19 +1172,43 @@
         <section
           class="brisbane-smb-landing-page__video-booking"
           id="website-packages"
-          aria-label="Website packages and consultation"
+          aria-labelledby="website-packages-statement"
         >
+          <h2
+            class="brisbane-smb-landing-page__video-booking-statement"
+            id="website-packages-statement"
+          >
+            Two clear offers for different
+            <span class="brisbane-smb-landing-page__video-booking-statement-end">
+              needs
+              <svg
+                class="brisbane-smb-landing-page__video-booking-statement-arrow"
+                viewBox="0 0 48 48"
+                fill="none"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  d="M6 24h36m-14-14 14 14-14 14"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+          </h2>
           <article
             class="brisbane-smb-landing-page__video-offer"
             aria-labelledby="video-professional-business-title"
           >
-            <h2
+            <h3
               class="brisbane-smb-landing-page__video-offer-title"
               id="video-professional-business-title"
             >
               <span class="brisbane-smb-landing-page__video-offer-price">$1,750</span>
-              - Professional Website
-            </h2>
+              <span>Professional Website</span>
+            </h3>
             <p class="brisbane-smb-landing-page__video-offer-desc">
               Best for therapists, cafes, and small owner-operated businesses.
             </p>
@@ -663,28 +1220,19 @@
               <li>Editable pages with your own WordPress login</li>
               <li>Domain, DNS records and security handled</li>
             </ul>
-            <button
-              class="site-header__cta brisbane-smb-landing-page__video-offer-cta"
-              type="button"
-              data-open-discovery
-              aria-haspopup="dialog"
-              aria-controls="discovery-modal"
-            >
-              Book A Call
-            </button>
           </article>
 
           <article
             class="brisbane-smb-landing-page__video-offer"
             aria-labelledby="video-seo-authority-engine-title"
           >
-            <h2
+            <h3
               class="brisbane-smb-landing-page__video-offer-title"
               id="video-seo-authority-engine-title"
             >
               <span class="brisbane-smb-landing-page__video-offer-price">$3,500</span>
-              - Go-To-Market Website
-            </h2>
+              <span>Go-To-Market Website</span>
+            </h3>
             <p class="brisbane-smb-landing-page__video-offer-desc">
               Best for trade, commercial and B2B businesses that need a website
               built for SEO, advertising and lead generation.
@@ -698,15 +1246,6 @@
               <li>In-depth on-page SEO</li>
               <li>Google Business Profile setup and optimisation</li>
             </ul>
-            <button
-              class="site-header__cta brisbane-smb-landing-page__video-offer-cta"
-              type="button"
-              data-open-discovery
-              aria-haspopup="dialog"
-              aria-controls="discovery-modal"
-            >
-              Book A Call
-            </button>
           </article>
 
         </section>
@@ -777,154 +1316,23 @@
               </div>
             </div>
 
-            <p class="metro-rags-spotlight__summary">
-              <span>
-                Meridian Camera manages $150k in monthly recurring revenue across
-                government and private clients, so their brand new website and
-                search engine marketing plan were no joke.
-              </span>
-            </p>
+            <div class="metro-rags-spotlight__stats" aria-label="Meridian Camera results">
+              <div class="metro-rags-spotlight__stat">
+                <p class="metro-rags-spotlight__stat-value">$150k+</p>
+                <p class="metro-rags-spotlight__stat-label">Monthly recurring revenue across corporate and government clients</p>
+              </div>
+              <div class="metro-rags-spotlight__stat">
+                <p class="metro-rags-spotlight__stat-value">25</p>
+                <p class="metro-rags-spotlight__stat-label">Page SEO website with a clear structure for services and enquiries</p>
+              </div>
+              <div class="metro-rags-spotlight__stat">
+                <p class="metro-rags-spotlight__stat-value">175%</p>
+                <p class="metro-rags-spotlight__stat-label">Increase in site traffic after the redesigned website launched</p>
+              </div>
+            </div>
           </div>
         </section>
       </div>
-
-      <section class="reviews" aria-labelledby="reviews-title">
-        <div class="reviews__inner">
-          <h2 class="reviews__title" id="reviews-title">
-            Happy clients.
-            <span class="reviews__title-accent">Happy life.</span>
-          </h2>
-
-          <div class="reviews__carousel" aria-label="Review navigation">
-            <button
-              class="reviews__arrow"
-              type="button"
-              data-direction="prev"
-              aria-label="Show previous reviews"
-            >
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M15 5l-7 7 7 7"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="3"
-                  stroke-linecap="butt"
-                  stroke-linejoin="miter"
-                ></path>
-              </svg>
-            </button>
-
-            <div class="reviews__shell">
-              <div class="reviews__viewport">
-                <div class="reviews__track">
-                  <article class="reviews__item">
-                    <blockquote class="reviews__quote">
-                      &quot;Working with Maxx has been a wonderful experience. I
-                      am really happy with how it all turned out and looking
-                      forward to future projects.&quot;
-                    </blockquote>
-                    <p class="reviews__name">Francisco Martinez</p>
-                    <div class="reviews__stars" aria-label="5 star review">
-                      <svg viewBox="0 0 120 24" aria-hidden="true">
-                        <path
-                          d="M12 2.5l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2L12 16.8 6.4 19.7l1.1-6.2L3 9.1l6.2-.9L12 2.5zm24 0l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2-4.5-4.4 6.2-.9L36 2.5zm24 0l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2-4.5-4.4 6.2-.9L60 2.5zm24 0l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2-4.5-4.4 6.2-.9L84 2.5zm24 0l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2-4.5-4.4 6.2-.9L108 2.5z"
-                          fill="currentColor"
-                        ></path>
-                      </svg>
-                    </div>
-                  </article>
-
-                  <article class="reviews__item">
-                    <blockquote class="reviews__quote">
-                      &quot;The MX Studio did an excellent job updating our
-                      website. The work was professional throughout, and it made
-                      sense to keep going with SEO support.&quot;
-                    </blockquote>
-                    <p class="reviews__name">Chris Watson</p>
-                    <div class="reviews__stars" aria-label="5 star review">
-                      <svg viewBox="0 0 120 24" aria-hidden="true">
-                        <path
-                          d="M12 2.5l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2L12 16.8 6.4 19.7l1.1-6.2L3 9.1l6.2-.9L12 2.5zm24 0l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2-4.5-4.4 6.2-.9L36 2.5zm24 0l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2-4.5-4.4 6.2-.9L60 2.5zm24 0l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2-4.5-4.4 6.2-.9L84 2.5zm24 0l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2-4.5-4.4 6.2-.9L108 2.5z"
-                          fill="currentColor"
-                        ></path>
-                      </svg>
-                    </div>
-                  </article>
-
-                  <article class="reviews__item">
-                    <blockquote class="reviews__quote">
-                      &quot;Clear process, thoughtful design, and a website that
-                      feels aligned with the business. The final result feels
-                      calm, credible, and easy to share.&quot;
-                    </blockquote>
-                    <p class="reviews__name">Dannielle Sutton</p>
-                    <div class="reviews__stars" aria-label="5 star review">
-                      <svg viewBox="0 0 120 24" aria-hidden="true">
-                        <path
-                          d="M12 2.5l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2L12 16.8 6.4 19.7l1.1-6.2L3 9.1l6.2-.9L12 2.5zm24 0l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2-4.5-4.4 6.2-.9L36 2.5zm24 0l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2-4.5-4.4 6.2-.9L60 2.5zm24 0l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2-4.5-4.4 6.2-.9L84 2.5zm24 0l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2-4.5-4.4 6.2-.9L108 2.5z"
-                          fill="currentColor"
-                        ></path>
-                      </svg>
-                    </div>
-                  </article>
-
-                  <article class="reviews__item">
-                    <blockquote class="reviews__quote">
-                      &quot;Maxx designed a professional website for my business
-                      and explained every step clearly. The whole process felt
-                      smooth, straightforward, and stress-free.&quot;
-                    </blockquote>
-                    <p class="reviews__name">Francis Fryer</p>
-                    <div class="reviews__stars" aria-label="5 star review">
-                      <svg viewBox="0 0 120 24" aria-hidden="true">
-                        <path
-                          d="M12 2.5l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2L12 16.8 6.4 19.7l1.1-6.2L3 9.1l6.2-.9L12 2.5zm24 0l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2-4.5-4.4 6.2-.9L36 2.5zm24 0l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2-4.5-4.4 6.2-.9L60 2.5zm24 0l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2-4.5-4.4 6.2-.9L84 2.5zm24 0l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2-4.5-4.4 6.2-.9L108 2.5z"
-                          fill="currentColor"
-                        ></path>
-                      </svg>
-                    </div>
-                  </article>
-
-                  <article class="reviews__item">
-                    <blockquote class="reviews__quote">
-                      &quot;The MX Studio handled the site work clearly and
-                      professionally. The new setup feels stronger, easier to
-                      manage, and better aligned with how we operate.&quot;
-                    </blockquote>
-                    <p class="reviews__name">Jeanne Evans</p>
-                    <div class="reviews__stars" aria-label="5 star review">
-                      <svg viewBox="0 0 120 24" aria-hidden="true">
-                        <path
-                          d="M12 2.5l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2L12 16.8 6.4 19.7l1.1-6.2L3 9.1l6.2-.9L12 2.5zm24 0l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2-4.5-4.4 6.2-.9L36 2.5zm24 0l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2-4.5-4.4 6.2-.9L60 2.5zm24 0l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2-4.5-4.4 6.2-.9L84 2.5zm24 0l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2-4.5-4.4 6.2-.9L108 2.5z"
-                          fill="currentColor"
-                        ></path>
-                      </svg>
-                    </div>
-                  </article>
-                </div>
-              </div>
-            </div>
-
-            <button
-              class="reviews__arrow"
-              type="button"
-              data-direction="next"
-              aria-label="Show next reviews"
-            >
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M9 5l7 7-7 7"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="3"
-                  stroke-linecap="butt"
-                  stroke-linejoin="miter"
-                ></path>
-              </svg>
-            </button>
-          </div>
-        </div>
-      </section>
 
       <section
         class="brisbane-smb-landing-page__commitment"
@@ -1066,7 +1474,7 @@
             class="brisbane-smb-landing-page__commitment-title"
             id="brisbane-commitment-title"
           >
-            <span>WE’RE COMMITTED TO HELPING BRISBANE BUSINESSES</span>
+            WE’RE COMMITTED TO HELPING BRISBANE BUSINESSES
           </h2>
         </div>
       </section>
@@ -1304,7 +1712,8 @@
       ></div>
     </dialog>
 
-    <script src="/js/main.js?v=20260917-old-dark-half" defer></script>
+    <script src="/js/main.js?v=20260921-white-hero" defer></script>
+    <script src="/js/landing-hero-typewriter.js?v=20260921g" defer></script>
     <script src="/js/landing-sales-video.js?v=20260907i" defer></script>
     <script src="/js/landing-page-form.js?v=20260910b" defer></script>
   </body>
