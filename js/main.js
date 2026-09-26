@@ -4,6 +4,7 @@ const dropdowns = Array.from(document.querySelectorAll(".nav__item--dropdown"));
   const body = document.body;
   if (!body?.matches(".thank-you-page, .book-a-call-page")) return;
 
+  const celebrationEmoji = body.classList.contains("book-a-call-page") ? "😃" : "🎉";
   const layer = document.createElement("div");
   layer.className = "thank-you-page__celebration";
   layer.setAttribute("aria-hidden", "true");
@@ -19,7 +20,7 @@ const dropdowns = Array.from(document.querySelectorAll(".nav__item--dropdown"));
     const rotate = `${-320 + Math.random() * 640}deg`;
 
     piece.className = "thank-you-page__celebration-piece";
-    piece.textContent = "🎉";
+    piece.textContent = celebrationEmoji;
     piece.style.left = `${Math.random() * 100}vw`;
     piece.style.animationDelay = `${delay}ms`;
     piece.style.setProperty("--party-x", driftX);
