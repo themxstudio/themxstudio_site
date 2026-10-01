@@ -255,7 +255,7 @@
     <link rel="stylesheet" href="/css/landing-inline-budget.css?v=20260921-landing-nav-solid" />
     <link
       rel="stylesheet"
-      href="/css/pages/brisbane-sales-video.css?v=20260925-centered-hero"
+      href="/css/pages/brisbane-sales-video.css?v=20261001-phone-country"
     />
     <link
       rel="stylesheet"
@@ -882,15 +882,25 @@
                 <label class="visually-hidden" for="commitment-phone"
                   >Phone Number</label
                 >
-                <input
-                  class="brisbane-smb-landing-page__slider-field"
-                  id="commitment-phone"
-                  type="tel"
-                  name="phone_number"
-                  placeholder="Phone Number"
-                  autocomplete="tel"
-                  required
-                />
+                <div class="brisbane-landing-form__phone-field">
+                  <div class="brisbane-landing-form__phone-country" hidden>
+                    <label class="visually-hidden" for="commitment-phone-country">Phone country code</label>
+                    <select class="brisbane-smb-landing-page__slider-field" id="commitment-phone-country" data-phone-country>
+                      <option value="AU" selected>Australia (+61)</option>
+                    </select>
+                    <span class="brisbane-landing-form__phone-country-text" aria-hidden="true">AU +61</span>
+                  </div>
+                  <input
+                    class="brisbane-smb-landing-page__slider-field"
+                    id="commitment-phone"
+                    type="tel"
+                    name="phone_number"
+                    placeholder="Phone Number"
+                    autocomplete="tel"
+                    inputmode="tel"
+                    required
+                  />
+                </div>
                 <label class="visually-hidden" for="commitment-company"
                   >Business Name</label
                 >
@@ -1029,15 +1039,25 @@
               <label class="visually-hidden" for="discovery-phone"
                 >Phone Number</label
               >
-              <input
-                class="brisbane-smb-landing-page__slider-field"
-                id="discovery-phone"
-                type="tel"
-                name="phone_number"
-                placeholder="Phone Number"
-                autocomplete="tel"
-                required
-              />
+              <div class="brisbane-landing-form__phone-field">
+                <div class="brisbane-landing-form__phone-country" hidden>
+                  <label class="visually-hidden" for="discovery-phone-country">Phone country code</label>
+                  <select class="brisbane-smb-landing-page__slider-field" id="discovery-phone-country" data-phone-country>
+                    <option value="AU" selected>Australia (+61)</option>
+                  </select>
+                  <span class="brisbane-landing-form__phone-country-text" aria-hidden="true">AU +61</span>
+                </div>
+                <input
+                  class="brisbane-smb-landing-page__slider-field"
+                  id="discovery-phone"
+                  type="tel"
+                  name="phone_number"
+                  placeholder="Phone Number"
+                  autocomplete="tel"
+                  inputmode="tel"
+                  required
+                />
+              </div>
               <label class="visually-hidden" for="discovery-company"
                 >Business Name</label
               >
@@ -1188,6 +1208,7 @@
     <script src="/js/main.js?v=20260921-white-hero" defer></script>
     <script src="/js/landing-hero-typewriter.js?v=20260921g" defer></script>
     <script src="/js/landing-sales-video.js?v=20260907i" defer></script>
-    <script src="/js/landing-page-form.js?v=20261001" defer></script>
+    <script src="/js/vendor/libphonenumber-js/libphonenumber-min-1.13.14.js" defer></script>
+    <script src="/js/landing-page-form.js?v=20261001-phone-country" defer></script>
   </body>
 </html>

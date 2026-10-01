@@ -456,6 +456,53 @@ body.brisbane-smb-landing-page .brisbane-smb-landing-page__booking-form .brisban
   min-width: 0;
 }
 
+.brisbane-landing-form__phone-field {
+  min-width: 0;
+}
+
+.brisbane-landing-form__phone-field.is-enhanced {
+  display: grid;
+  grid-template-columns: 6.25rem minmax(0, 1fr);
+  gap: 0.65rem;
+}
+
+.brisbane-landing-form__phone-country:not([hidden]) {
+  position: relative;
+  display: grid;
+  min-width: 0;
+}
+
+:is(#commitment-discovery-form, #discovery-form) [data-phone-country] {
+  grid-area: 1 / 1;
+  min-width: 0;
+  color: transparent;
+  color-scheme: dark;
+  cursor: pointer;
+}
+
+[data-phone-country] option {
+  background: #000;
+  color: #fff;
+}
+
+.brisbane-landing-form__phone-country-text {
+  grid-area: 1 / 1;
+  display: flex;
+  align-items: center;
+  padding: 0 1.2rem 0.9rem 0;
+  border-bottom: 0.48rem solid transparent;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 800;
+  white-space: nowrap;
+  pointer-events: none;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='m6 9 6 6 6-6' fill='none' stroke='%23a8a8a8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") right 0.2rem top 0.75rem / 1rem no-repeat;
+}
+
+.brisbane-landing-form__phone-field input {
+  min-width: 0;
+}
+
 :is(#hero-project, #commitment-project, #discovery-project) {
   grid-area: 1 / 1;
   min-width: 0;
