@@ -1,3 +1,31 @@
+document.querySelectorAll('form[name="main landing page form"]').forEach((form) => {
+  const emailInput = form.querySelector('input[name="email"]');
+  if (!emailInput) return;
+
+  const syncEmail = () => {
+    emailInput.value = emailInput.value.trim();
+    emailInput.setCustomValidity(
+      emailInput.validity.typeMismatch || emailInput.validity.patternMismatch
+        ? "Enter a valid email address, for example name@example.com."
+        : "",
+    );
+  };
+
+  emailInput.addEventListener("input", syncEmail);
+  emailInput.addEventListener("change", syncEmail);
+  emailInput.addEventListener("blur", syncEmail);
+  form.addEventListener("reset", () => queueMicrotask(syncEmail));
+  form.addEventListener("submit", (event) => {
+    syncEmail();
+    if (!emailInput.checkValidity()) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      emailInput.reportValidity();
+    }
+  }, { capture: true });
+  syncEmail();
+});
+
 (() => {
   const phoneLibrary = window.libphonenumber;
   if (!phoneLibrary) return;
@@ -37,18 +65,21 @@
 
     const syncPhone = (formatInput = false) => {
       const phone = parsePhone();
-      const isPossible = phone?.isPossible() && !phone.ext && phone.country;
-      phoneInput.setCustomValidity(phoneInput.value && !isPossible
-        ? "Enter a complete phone number, including the area code."
+      // Full metadata checks the length for this number's prefix/type, too.
+      const isValid = phone?.isValid() && !phone.ext && phone.country;
+      const country = phone?.country || countrySelect.value;
+      const countryName = countryNames?.of(country) || country;
+      phoneInput.setCustomValidity(phoneInput.value && !isValid
+        ? `Enter a valid phone number for ${countryName}, with the correct number of digits and area code.`
         : "");
 
-      if (isPossible) {
+      if (isValid) {
         // Pasted international numbers select their own country, without doubling the prefix.
         countrySelect.value = phone.country;
         if (formatInput) phoneInput.value = phone.nationalNumber;
       }
       syncCountryText();
-      return isPossible ? phone : null;
+      return isValid ? phone : null;
     };
 
     phoneInput.addEventListener("input", () => syncPhone());
