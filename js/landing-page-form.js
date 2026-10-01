@@ -1,6 +1,6 @@
 document.querySelectorAll('form[name="main landing page form"]').forEach((form) => {
   // Wrap long package labels while retaining the native select interaction.
-  const packageSelect = form.querySelector('select[name="project"]');
+  const packageSelect = form.querySelector('select[name="website_situation"]');
   const packageText = form.querySelector(".brisbane-landing-form__package-text");
   if (!packageSelect || !packageText) return;
 
